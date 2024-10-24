@@ -10,17 +10,16 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
+	ShortKeyPropType,
 	Stringified,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { InputFileController } from './controller';
 import { KolInputWcTag } from '../../core/component-names';
 
@@ -64,7 +63,6 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
-		const hasExpertSlot = showExpertSlot(this.state._label);
 
 		return (
 			<Host class="kol-input-file">
@@ -83,26 +81,13 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 					_id={this.state._id}
 					_label={this.state._label}
 					_required={this.state._required}
+					_shortKey={this.state._shortKey}
 					_smartButton={this.state._smartButton}
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}
 					onClick={() => this.inputRef?.focus()}
 					role={`presentation` /* Avoid element being read as 'clickable' in NVDA */}
 				>
-					<span slot="label">
-						{hasExpertSlot ? (
-							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
-							<>
-								<InternalUnderlinedBadgeText badgeText={this.state._accessKey} label={this.state._label} />{' '}
-								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
-								</span>
-							</>
-						) : (
-							<span>{this.state._label}</span>
-						)}
-					</span>
 					<div slot="input">
 						<input
 							ref={this.catchRef}
@@ -219,6 +204,11 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 	 * @TODO: Change type back to `RequiredPropType` after Stencil#4663 has been resolved.
 	 */
 	@Prop() public _required?: boolean = false;
+
+	/**
+	 * Defines the elements short key.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
 
 	/**
 	 * Allows to add a button with an arbitrary action within the element (_hide-label only).
@@ -340,6 +330,11 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 	@Watch('_required')
 	public validateRequired(value?: boolean): void {
 		this.controller.validateRequired(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_smartButton')

@@ -14,6 +14,7 @@ import type {
 	Stringified,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
+	ShortKeyPropType,
 } from '../../schema';
 import { showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
@@ -124,6 +125,7 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 								_label={option.label as string}
 								_renderNoLabel={true}
 								_required={this.state._required}
+								_shortKey={this.state._shortKey}
 								_slotName={slotName}
 								_tooltipAlign={this._tooltipAlign}
 								_touched={this.state._touched}
@@ -258,6 +260,11 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 	@Prop() public _required?: boolean = false;
 
 	/**
+	 * Defines the elements short key.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
 	 * Selector for synchronizing the value with another input element.
 	 * @internal
 	 */
@@ -373,6 +380,11 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 	@Watch('_required')
 	public validateRequired(value?: boolean): void {
 		this.controller.validateRequired(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_syncValueBySelector')

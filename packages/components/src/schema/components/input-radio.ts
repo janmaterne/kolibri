@@ -1,5 +1,6 @@
 import type { Generic } from 'adopted-style-sheets';
-import type {
+import {
+	PropAccessKey,
 	PropDisabled,
 	PropHideError,
 	PropHideLabel,
@@ -9,6 +10,7 @@ import type {
 	PropName,
 	PropRadioOptions,
 	PropRequired,
+	PropShortKey,
 	PropSyncValueBySelector,
 	PropTooltipAlign,
 	PropTouched,
@@ -17,7 +19,6 @@ import type { InputTypeOnDefault, RadioOption, Orientation, StencilUnknown } fro
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {
-	accessKey: string;
 	alert: boolean;
 	/**
 	 * @deprecated Will be removed in v3. Use `msg` instead.
@@ -28,13 +29,15 @@ type OptionalProps = {
 	orientation: Orientation;
 	tabIndex: number;
 	value: StencilUnknown;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideError &
 	PropHideLabel &
 	PropMsg &
 	PropName &
 	PropRadioOptions & // PropRadioOptions becomes required with 2.0
 	PropRequired &
+	PropShortKey &
 	PropSyncValueBySelector &
 	PropTouched &
 	PropTooltipAlign;
@@ -46,17 +49,18 @@ type RequiredStates = {
 	PropHideError &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	hint: string;
 	on: InputTypeOnDefault;
 	tabIndex: number;
 	value: StencilUnknown;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideLabel &
 	PropMsg &
 	PropName &
 	PropRequired &
+	PropShortKey &
 	PropTouched;
 
 export type InputRadioProps = Generic.Element.Members<RequiredProps, OptionalProps>;

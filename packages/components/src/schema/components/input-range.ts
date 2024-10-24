@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
-import type {
+import {
+	PropAccessKey,
 	PropDisabled,
 	PropHideError,
 	PropHideLabel,
@@ -8,6 +9,7 @@ import type {
 	PropLabelWithExpertSlot,
 	PropMsg,
 	PropName,
+	PropShortKey,
 	PropSuggestions,
 	PropSyncValueBySelector,
 	PropTouched,
@@ -16,7 +18,6 @@ import type { InputTypeOnDefault, InputTypeOnOff, KoliBriHorizontalIcons, String
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {
-	accessKey: string;
 	alert: boolean;
 	autoComplete: InputTypeOnOff;
 	/**
@@ -31,13 +32,15 @@ type OptionalProps = {
 	step: number;
 	tabIndex: number;
 	value: number;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideError &
 	PropHideLabel &
 	PropMsg &
 	PropName &
 	PropSuggestions &
 	PropSyncValueBySelector &
+	PropShortKey &
 	PropTouched;
 
 type RequiredStates = {
@@ -47,7 +50,6 @@ type RequiredStates = {
 	PropHideError &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	hint: string;
 	icons: KoliBriHorizontalIcons;
@@ -57,10 +59,12 @@ type OptionalStates = {
 	step: number;
 	tabIndex: number;
 	value: number;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideLabel &
 	PropMsg &
 	PropName &
+	PropShortKey &
 	PropTouched;
 
 export type InputRangeProps = Generic.Element.Members<RequiredProps, OptionalProps>;

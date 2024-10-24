@@ -11,18 +11,18 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
+	ShortKeyPropType,
 	Stringified,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { devHint, setState, showExpertSlot } from '../../schema';
+import { devHint, setState } from '../../schema';
 import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { InputPasswordController } from './controller';
 import { KolButtonWcTag, KolInputWcTag } from '../../core/component-names';
 import { translate } from '../../i18n';
@@ -82,7 +82,6 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
-		const hasExpertSlot = showExpertSlot(this.state._label);
 
 		return (
 			<Host
@@ -110,26 +109,13 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 					_maxLength={this.state._maxLength}
 					_readOnly={this.state._readOnly}
 					_required={this.state._required}
+					_shortKey={this.state._shortKey}
 					_smartButton={this.state._smartButton}
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}
 					onClick={() => this.inputRef?.focus()}
 					role={`presentation` /* Avoid element being read as 'clickable' in NVDA */}
 				>
-					<span slot="label">
-						{hasExpertSlot ? (
-							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
-							<>
-								<InternalUnderlinedBadgeText badgeText={this.state._accessKey} label={this.state._label} />{' '}
-								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
-								</span>
-							</>
-						) : (
-							<span>{this.state._label}</span>
-						)}
-					</span>
 					<div slot="input">
 						<input
 							ref={this.catchRef}
@@ -288,6 +274,11 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 	@Prop() public _required?: boolean = false;
 
 	/**
+	 * Defines the elements short key.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
 	 * Allows to add a button with an arbitrary action within the element (_hide-label only).
 	 */
 	@Prop() public _smartButton?: Stringified<ButtonProps>;
@@ -444,6 +435,11 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 	@Watch('_required')
 	public validateRequired(value?: boolean): void {
 		this.controller.validateRequired(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_smartButton')
