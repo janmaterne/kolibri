@@ -233,7 +233,7 @@ export class KolInputWc implements Props {
 	@Prop() public _required?: boolean = false;
 
 	/**
-	 * Defines the elements access key.
+	 * Defines the elements short key.
 	 */
 	@Prop() public _shortKey?: ShortKeyPropType;
 

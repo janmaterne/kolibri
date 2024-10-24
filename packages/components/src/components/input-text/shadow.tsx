@@ -273,7 +273,7 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 	@Prop() public _required?: boolean = false;
 
 	/**
-	 * Defines which key combination can be used to trigger or focus the interactive element of the component.
+	 * Defines the elements short key.
 	 */
 	@Prop() public _shortKey?: ShortKeyPropType;
 

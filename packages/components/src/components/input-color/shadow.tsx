@@ -211,6 +211,11 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 	@Prop() public _on?: InputTypeOnDefault;
 
 	/**
+	 * Defines the elements short key.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
 	 * Allows to add a button with an arbitrary action within the element (_hide-label only).
 	 */
 	@Prop() public _smartButton?: Stringified<ButtonProps>;

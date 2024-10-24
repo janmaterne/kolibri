@@ -1,5 +1,5 @@
 import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 import type {
 	ButtonProps,
 	HideErrorPropType,
@@ -14,17 +14,17 @@ import type {
 	LabelWithExpertSlotPropType,
 	NamePropType,
 	ReadOnlyPropType,
+	ShortKeyPropType,
 	Stringified,
 	SuggestionsPropType,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { deprecatedHint, type FocusableElement, type MsgPropType, showExpertSlot } from '../../schema';
+import { deprecatedHint, type FocusableElement, type MsgPropType } from '../../schema';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { InputDateController } from './controller';
 import { KolInputWcTag } from '../../core/component-names';
 
@@ -121,7 +121,6 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 	public render(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
 		const hasSuggestions = Array.isArray(this.state._suggestions) && this.state._suggestions.length > 0;
-		const hasExpertSlot = showExpertSlot(this.state._label);
 
 		return (
 			<Host class={{ 'kol-input-date': true, 'has-value': this.state._hasValue }}>
@@ -146,20 +145,6 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}
 				>
-					<span slot="label">
-						{hasExpertSlot ? (
-							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
-							<>
-								<InternalUnderlinedBadgeText badgeText={this.state._accessKey} label={this.state._label} />{' '}
-								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
-								</span>
-							</>
-						) : (
-							<span>{this.state._label}</span>
-						)}
-					</span>
 					<div slot="input">
 						<input
 							ref={this.catchRef}
@@ -291,6 +276,11 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 	 * @TODO: Change type back to `RequiredPropType` after Stencil#4663 has been resolved.
 	 */
 	@Prop() public _required?: boolean = false;
+
+	/**
+	 * Defines the elements short key.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
 
 	/**
 	 * Allows to add a button with an arbitrary action within the element (_hide-label only).
@@ -441,6 +431,11 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 	@Watch('_required')
 	public validateRequired(value?: boolean): void {
 		this.controller.validateRequired(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_smartButton')
