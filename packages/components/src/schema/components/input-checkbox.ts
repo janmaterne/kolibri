@@ -1,6 +1,6 @@
 import type { Generic } from 'adopted-style-sheets';
 
-import type {
+import {
 	PropChecked,
 	PropDisabled,
 	PropHideError,
@@ -13,6 +13,8 @@ import type {
 	PropSyncValueBySelector,
 	PropTouched,
 	PropLabelAlign,
+	PropShortKey,
+	PropAccessKey,
 } from '../props';
 import type { AnyIconFontClass, InputTypeOnDefault, StencilUnknown, Stringified } from '../types';
 
@@ -44,7 +46,6 @@ export type InputCheckboxIconsState = {
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {
-	accessKey: string;
 	alert: boolean;
 	/**
 	 * @deprecated Will be removed in v3. Use `msg` instead.
@@ -56,7 +57,8 @@ type OptionalProps = {
 	tabIndex: number;
 	value: Stringified<StencilUnknown>;
 	variant: InputCheckboxVariant;
-} & PropChecked &
+} & PropAccessKey &
+	PropChecked &
 	PropDisabled &
 	PropHideError &
 	PropHideLabel &
@@ -64,6 +66,7 @@ type OptionalProps = {
 	PropMsg &
 	PropName &
 	PropRequired &
+	PropShortKey &
 	PropSyncValueBySelector &
 	PropTouched &
 	PropLabelAlign;
@@ -78,16 +81,17 @@ type RequiredStates = {
 	PropIndeterminate &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	hint: string;
 	on: InputTypeOnDefault;
 	tabIndex: number;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideLabel &
 	PropMsg &
 	PropName &
 	PropRequired &
+	PropShortKey &
 	PropTouched &
 	PropLabelAlign;
 

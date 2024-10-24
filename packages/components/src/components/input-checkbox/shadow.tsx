@@ -12,6 +12,7 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
+	ShortKeyPropType,
 	StencilUnknown,
 	Stringified,
 	SyncValueBySelectorPropType,
@@ -97,6 +98,7 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 					_id={this.state._id}
 					_label={this.state._label}
 					_required={this.state._required}
+					_shortKey={this.state._shortKey}
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}
 				>
@@ -244,6 +246,11 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 	@Prop() public _required?: boolean = false;
 
 	/**
+	 * Defines which key combination can be used to trigger or focus the interactive element of the component.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
 	 * Selector for synchronizing the value with another input element.
 	 * @internal
 	 */
@@ -378,6 +385,11 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 	@Watch('_required')
 	public validateRequired(value?: boolean): void {
 		this.controller.validateRequired(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_syncValueBySelector')

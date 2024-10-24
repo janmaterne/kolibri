@@ -2,11 +2,13 @@
 @import '../mixins/focus-outline';
 @import '../mixins/alert-wc.scss';
 @import '../mixins/input-error';
+@import '../mixins/input-required';
 
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
 		@include kol-alert-theme;
+		@include input-required;
 	}
 
 	.kol-input {
@@ -109,11 +111,6 @@
 	/* CHECKBOX */
 	.kol-input label span {
 		margin-top: rem(2);
-	}
-
-	.required label > span::after {
-		content: '*';
-		padding-left: 0.125em;
 	}
 
 	.kol-input input[type='checkbox'] {

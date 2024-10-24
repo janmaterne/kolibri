@@ -1,11 +1,13 @@
 @import '../mixins/rem';
 @import '../mixins/alert-wc.scss';
 @import '../mixins/input-error';
+@import '../mixins/input-required';
 
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
 		@include kol-alert-theme;
+		@include input-required;
 	}
 
 	.kol-input {
@@ -87,9 +89,5 @@
 	.kol-span-wc {
 		place-items: unset;
 		width: fit-content;
-	}
-	.required label > .kol-span-wc > span > .span-label::after {
-		content: '*';
-		padding-left: 0.125em;
 	}
 }

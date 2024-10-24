@@ -22,7 +22,6 @@ import type { ButtonProps } from './button';
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {
-	accessKey: string;
 	alert: boolean;
 	autoComplete: InputTypeOnOff;
 	/**
@@ -39,7 +38,8 @@ type OptionalProps = {
 	tabIndex: number;
 	type: InputTextType;
 	value: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHasCounter &
 	PropHideError &
 	PropHideLabel &
