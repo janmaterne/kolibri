@@ -2,13 +2,11 @@
 @import '../mixins/focus-outline';
 @import '../mixins/alert-wc.scss';
 @import '../mixins/input-error';
-@import '../mixins/input-required';
 
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
 		@include kol-alert-theme;
-		@include input-required;
 	}
 
 	.kol-input {
