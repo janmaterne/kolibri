@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	PropAccessKey,
 	PropDisabled,
 	PropHideError,
 	PropHideLabel,
@@ -12,6 +13,7 @@ import type {
 	PropOptionsWithOptgroup,
 	PropRequired,
 	PropRows,
+	PropShortKey,
 	PropSyncValueBySelector,
 	PropTouched,
 } from '../props';
@@ -19,7 +21,6 @@ import type { InputTypeOnDefault, KoliBriHorizontalIcons, SelectOption, Stringif
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {
-	accessKey: string;
 	alert: boolean;
 	/**
 	 * @deprecated Will be removed in v3. Use `msg` instead.
@@ -30,7 +31,8 @@ type OptionalProps = {
 	on: InputTypeOnDefault;
 	tabIndex: number;
 	value: Stringified<W3CInputValue[]>;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideError &
 	PropHideLabel &
 	PropMsg &
@@ -39,6 +41,7 @@ type OptionalProps = {
 	PropOptionsWithOptgroup & // PropOptionsWithOptgroup becomes required with 2.0
 	PropRequired &
 	PropRows &
+	PropShortKey &
 	PropSyncValueBySelector &
 	PropTouched;
 
@@ -51,20 +54,21 @@ type RequiredStates = {
 	PropMultiple &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	error: string;
 	hint: string;
 	icons: KoliBriHorizontalIcons;
 	on: InputTypeOnDefault;
 	tabIndex: number;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideLabel &
 	PropId &
 	PropName &
 	PropRequired &
 	PropRows &
 	PropMsg &
+	PropShortKey &
 	PropTouched;
 
 export type SelectProps = Generic.Element.Members<RequiredProps, OptionalProps>;

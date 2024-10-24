@@ -14,19 +14,18 @@ import type {
 	SelectAPI,
 	SelectOption,
 	SelectStates,
+	ShortKeyPropType,
 	Stringified,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 	W3CInputValue,
 } from '../../schema';
-import { showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { SelectController } from './controller';
 import { KolInputWcTag } from '../../core/component-names';
 import { propagateSubmitEventToForm } from '../form/controller';
@@ -100,7 +99,6 @@ export class KolSelect implements SelectAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
-		const hasExpertSlot = showExpertSlot(this.state._label);
 
 		return (
 			<Host class={{ 'kol-select': true, 'has-value': this.state._hasValue }}>
@@ -119,25 +117,12 @@ export class KolSelect implements SelectAPI, FocusableElement {
 					_label={this.state._label}
 					_msg={this.state._msg}
 					_required={this.state._required}
+					_shortKey={this.state._shortKey}
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}
 					onClick={() => this.selectRef?.focus()}
 					role={`presentation` /* Avoid element being read as 'clickable' in NVDA */}
 				>
-					<span slot="label">
-						{hasExpertSlot ? (
-							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
-							<>
-								<InternalUnderlinedBadgeText badgeText={this.state._accessKey} label={this.state._label} />{' '}
-								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
-								</span>
-							</>
-						) : (
-							<span>{this.state._label}</span>
-						)}
-					</span>
 					<div slot="input">
 						<form
 							onSubmit={(event) => {
@@ -289,6 +274,11 @@ export class KolSelect implements SelectAPI, FocusableElement {
 	@Prop() public _required?: boolean = false;
 
 	/**
+	 * Defines the elements short key.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
 	 * Defines how many rows of options should be visible at the same time.
 	 */
 	@Prop() public _rows?: RowsPropType;
@@ -417,6 +407,11 @@ export class KolSelect implements SelectAPI, FocusableElement {
 	@Watch('_rows')
 	public validateRows(value?: RowsPropType): void {
 		this.controller.validateRows(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_syncValueBySelector')

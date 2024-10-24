@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	PropAccessKey,
 	PropAdjustHeight,
 	PropDisabled,
 	PropHasCounter,
@@ -13,6 +14,7 @@ import type {
 	PropReadOnly,
 	PropRequired,
 	PropRows,
+	PropShortKey,
 	PropSyncValueBySelector,
 	PropTouched,
 } from '../props';
@@ -26,7 +28,6 @@ export type CSSResize = (typeof cssResizeOptions)[number];
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {
-	accessKey: string;
 	alert: boolean;
 	/**
 	 * @deprecated Will be removed in v3. Use `msg` instead.
@@ -40,7 +41,8 @@ type OptionalProps = {
 	resize: CSSResize;
 	tabIndex: number;
 	value: string;
-} & PropAdjustHeight &
+} & PropAccessKey &
+	PropAdjustHeight &
 	PropDisabled &
 	PropHasCounter &
 	PropHideError &
@@ -51,6 +53,7 @@ type OptionalProps = {
 	PropRequired &
 	PropRows &
 	PropSyncValueBySelector &
+	PropShortKey &
 	PropTouched;
 
 type RequiredStates = {
@@ -63,7 +66,6 @@ type RequiredStates = {
 	PropHideError &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	error: string;
 	hint: string;
@@ -73,7 +75,8 @@ type OptionalStates = {
 	placeholder: string;
 	tabIndex: number;
 	value: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHasCounter &
 	PropHideLabel &
 	PropMsg &
@@ -81,6 +84,7 @@ type OptionalStates = {
 	PropReadOnly &
 	PropRequired &
 	PropRows &
+	PropShortKey &
 	PropTouched;
 
 export type TextareaProps = Generic.Element.Members<RequiredProps, OptionalProps>;
