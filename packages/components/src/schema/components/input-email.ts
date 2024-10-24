@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	PropAccessKey,
 	PropDisabled,
 	PropHasCounter,
 	PropHideError,
@@ -12,6 +13,7 @@ import type {
 	PropName,
 	PropReadOnly,
 	PropRequired,
+	PropShortKey,
 	PropSuggestions,
 	PropSyncValueBySelector,
 	PropTouched,
@@ -21,7 +23,6 @@ import type { ButtonProps } from './button';
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {
-	accessKey: string;
 	alert: boolean;
 	autoComplete: InputTypeOnOff;
 	/**
@@ -37,7 +38,8 @@ type OptionalProps = {
 	smartButton: Stringified<ButtonProps>;
 	tabIndex: number;
 	value: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHasCounter &
 	PropHideError &
 	PropHideLabel &
@@ -46,6 +48,7 @@ type OptionalProps = {
 	PropName &
 	PropReadOnly &
 	PropRequired &
+	PropShortKey &
 	PropSuggestions &
 	PropSyncValueBySelector &
 	PropTouched;
@@ -59,7 +62,6 @@ type RequiredStates = {
 	PropLabelWithExpertSlot;
 
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	currentLength: number;
 	hint: string;
@@ -71,7 +73,8 @@ type OptionalStates = {
 	smartButton: ButtonProps;
 	tabIndex: number;
 	value: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHasCounter &
 	PropHideLabel &
 	PropMsg &
@@ -79,6 +82,7 @@ type OptionalStates = {
 	PropName &
 	PropReadOnly &
 	PropRequired &
+	PropShortKey &
 	PropTouched;
 
 export type InputEmailProps = Generic.Element.Members<RequiredProps, OptionalProps>;

@@ -141,6 +141,7 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 					_suggestions={this.state._suggestions}
 					_readOnly={this.state._readOnly}
 					_required={this.state._required}
+					_shortKey={this.state._shortKey}
 					_smartButton={this.state._smartButton}
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}

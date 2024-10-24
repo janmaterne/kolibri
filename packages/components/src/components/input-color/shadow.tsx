@@ -86,6 +86,7 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 					_hideError={this.state._hideError}
 					_id={this.state._id}
 					_label={this.state._label}
+					_shortKey={this.state._shortKey}
 					_suggestions={this.state._suggestions}
 					_smartButton={this.state._smartButton}
 					_tooltipAlign={this._tooltipAlign}
