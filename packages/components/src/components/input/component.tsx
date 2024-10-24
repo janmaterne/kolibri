@@ -66,11 +66,13 @@ export class KolInputWc implements Props {
 					'hidden-error': this._hideError === true,
 				})}
 			>
-				<label class="input-label" id={!useTooltopInsteadOfLabel ? `${this._id}-label` : undefined} hidden={useTooltopInsteadOfLabel} htmlFor={this._id}>
-					<KolSpanWcTag _badgeText={this._accessKey || this._shortKey} _hideLabel={this._hideLabel} _label={hasExpertSlot ? '' : this._label}>
-						<slot name="expert" slot="expert"></slot>
-					</KolSpanWcTag>
-				</label>
+				{!this._renderNoLabel && (
+					<label class="input-label" id={!useTooltopInsteadOfLabel ? `${this._id}-label` : undefined} hidden={useTooltopInsteadOfLabel} htmlFor={this._id}>
+						<KolSpanWcTag _badgeText={this._accessKey || this._shortKey} _hideLabel={this._hideLabel} _label={hasExpertSlot ? '' : this._label}>
+							<slot name="expert" slot="expert"></slot>
+						</KolSpanWcTag>
+					</label>
+				)}
 				{hasHint && (
 					<span class="hint" id={`${this._id}-hint`}>
 						{this._hint}
