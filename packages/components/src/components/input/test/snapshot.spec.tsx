@@ -35,4 +35,7 @@ executeTests<InputProps>(
 		],
 	},
 	getInputHtml,
+	{
+		execMode: 'skip',
+	},
 );

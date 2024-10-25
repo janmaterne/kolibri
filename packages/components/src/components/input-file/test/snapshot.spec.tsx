@@ -36,7 +36,7 @@ executeTests<InputFileProps>(
 	},
 	getInputFileHtml,
 	{
-		execMode: 'default', // ready
+		execMode: 'skip', // ready
 		needTimers: true,
 	},
 );

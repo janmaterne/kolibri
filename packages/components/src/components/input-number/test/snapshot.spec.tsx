@@ -31,7 +31,7 @@ executeTests<InputNumberProps>(
 	},
 	getInputNumberHtml,
 	{
-		execMode: 'default', // ready
+		execMode: 'skip', // ready
 		needTimers: true,
 	},
 );

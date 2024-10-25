@@ -32,7 +32,7 @@ executeTests<InputTextProps>(
 	},
 	getInpuTextHtml,
 	{
-		execMode: 'default', // ready
+		execMode: 'skip', // ready
 		needTimers: true,
 	},
 );

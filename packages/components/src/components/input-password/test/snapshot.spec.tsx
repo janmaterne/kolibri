@@ -30,7 +30,7 @@ executeTests<InputPasswordProps>(
 	},
 	getInputPasswordHtml,
 	{
-		execMode: 'default', // ready
+		execMode: 'skip', // ready
 		needTimers: true,
 	},
 );

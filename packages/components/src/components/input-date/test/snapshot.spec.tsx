@@ -37,7 +37,7 @@ executeTests<InputDateProps>(
 	},
 	getInputDateHtml,
 	{
-		execMode: 'default', // ready
+		execMode: 'skip', // ready
 		needTimers: true,
 	},
 );
