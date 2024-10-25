@@ -3,7 +3,6 @@ import { InputTextBasic } from './basic';
 import { InputTextHideErrors } from './hide-errors';
 import { InputTextFormatterDemo } from './text-formatter';
 import { InputTextSmartButton } from './smart-button';
-import { InputTextAccessAndShortKey } from './access-and-short-key';
 
 export const INPUT_TEXT_ROUTES: Routes = {
 	'input-text': {
@@ -11,6 +10,5 @@ export const INPUT_TEXT_ROUTES: Routes = {
 		'hide-errors': InputTextHideErrors,
 		'text-formatter': InputTextFormatterDemo,
 		'smart-button': InputTextSmartButton,
-		'access-and-short-key': InputTextAccessAndShortKey,
 	},
 };

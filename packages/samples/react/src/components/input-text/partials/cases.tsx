@@ -46,6 +46,8 @@ export const InputTextCases = forwardRef<HTMLKolInputTextElement, Components.Kol
 			<KolInputText {...props} _value="Value" _readOnly _label="First name (text, readonly)" />
 			<KolInputText {...props} _placeholder="Placeholder" _disabled _label="First name (text, disabled)" />
 			<KolInputText {...props} _value="Value" _disabled _label="First name (text, disabled)" />
+			<KolInputText {...props} _value="Value" _label="With access key" _accessKey="c" />
+			<KolInputText {...props} _value="Value" _label="With short key" _shortKey="s" />
 		</div>
 	);
 });
