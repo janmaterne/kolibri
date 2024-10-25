@@ -8,6 +8,7 @@ import { InputGroupWithError } from './input-group-with-error';
 import { InputsGetValue } from './inputs-get-value';
 import { StaticForm } from './static-form';
 import { TableHorizontalScrollAdvanced } from './horizontal-scrollbar-advanced';
+import { ChangeTabindex } from './change-tabindex';
 
 export const SCENARIO_ROUTES: Routes = {
 	scenarios: {
@@ -20,5 +21,6 @@ export const SCENARIO_ROUTES: Routes = {
 		'inputs-get-value': InputsGetValue,
 		'static-form': StaticForm,
 		'table-horizontal-scrollbar-advanced': TableHorizontalScrollAdvanced,
+		'change-tabindex': ChangeTabindex,
 	},
 };

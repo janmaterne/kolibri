@@ -1,17 +1,9 @@
 import type { Generic } from 'adopted-style-sheets';
+import type { PropDetailsCallbacks } from '../props';
+import type * as CollapsibleTypes from './collapsible';
 
-import type { PropDisabled, PropLabel, PropOpen } from '../props';
-import type { EventValueOrEventCallback } from '../types';
-
-export type EventCallbacks = {
-	onToggle?: EventValueOrEventCallback<Event, boolean>;
-};
-
-type RequiredProps = PropLabel;
-type OptionalProps = {
-	on: EventCallbacks;
-} & PropDisabled &
-	PropOpen;
+type RequiredProps = CollapsibleTypes.RequiredProps;
+type OptionalProps = CollapsibleTypes.OptionalProps & PropDetailsCallbacks<boolean>;
 
 type RequiredStates = RequiredProps;
 type OptionalStates = OptionalProps;
