@@ -1,9 +1,10 @@
-import { Component, h, Host, Method, Prop, State, Watch, type JSX } from '@stencil/core';
+import { Component, Element, h, Host, Method, Prop, State, Watch, type JSX } from '@stencil/core';
 import type { CollapsibleCallbacksPropType, DetailsAPI, DetailsStates, DisabledPropType, FocusableElement, HeadingLevel, LabelPropType } from '../../schema';
 import { validateCollapsibleCallbacks, validateDisabled, validateLabel, validateOpen } from '../../schema';
 import KolCollapsibleFc, { type CollapsibleProps } from '../../functional-components/Collapsible';
 import { nonce } from '../../utils/dev.utils';
 import { watchHeadingLevel } from '../heading/validation';
+import { tryToDispatchKoliBriEvent } from '../../utils/events';
 
 /**
  * @slot - Der Inhalt, der in der Detailbeschreibung angezeigt wird.
@@ -16,6 +17,8 @@ import { watchHeadingLevel } from '../heading/validation';
 	shadow: true,
 })
 export class KolDetails implements DetailsAPI, FocusableElement {
+	@Element() private readonly host?: HTMLKolDetailsElement;
+
 	private readonly nonce = nonce();
 	private buttonWcRef?: HTMLKolButtonWcElement;
 
@@ -52,9 +55,7 @@ export class KolDetails implements DetailsAPI, FocusableElement {
 		clearTimeout(this.toggleTimeout);
 
 		this.toggleTimeout = setTimeout(() => {
-			//this.state._on?.onClick?.(event, this._open === true);
-
-			// tryToDispatchKoliBriEvent('toggle', this.host, this._open);
+			tryToDispatchKoliBriEvent('toggle', this.host, this._open);
 
 			this.state._on?.onToggle?.(event, Boolean(this._open));
 		}, 25);

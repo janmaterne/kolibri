@@ -1,7 +1,7 @@
 @use '../@shared/mixins';
 @use '../style';
 @use '../host-display-block';
-@use '../../functional-components/Collapsible/styles.scss';
+@use '../../functional-components/Collapsible/collapsible.scss';
 
 @layer kol-component {
 	:host {
