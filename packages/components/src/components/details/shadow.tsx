@@ -1,6 +1,6 @@
 import { Component, Element, h, Host, Method, Prop, State, Watch, type JSX } from '@stencil/core';
-import type { CollapsibleCallbacksPropType, DetailsAPI, DetailsStates, DisabledPropType, FocusableElement, HeadingLevel, LabelPropType } from '../../schema';
-import { validateCollapsibleCallbacks, validateDisabled, validateLabel, validateOpen } from '../../schema';
+import type { DetailsCallbacksPropType, DetailsAPI, DetailsStates, DisabledPropType, FocusableElement, HeadingLevel, LabelPropType } from '../../schema';
+import { validateDetailsCallbacks, validateDisabled, validateLabel, validateOpen } from '../../schema';
 import KolCollapsibleFc, { type CollapsibleProps } from '../../functional-components/Collapsible';
 import { nonce } from '../../utils/dev.utils';
 import { watchHeadingLevel } from '../heading/validation';
@@ -115,7 +115,7 @@ export class KolDetails implements DetailsAPI, FocusableElement {
 	/**
 	 * Defines the callback functions for details.
 	 */
-	@Prop() public _on?: CollapsibleCallbacksPropType<boolean>;
+	@Prop() public _on?: DetailsCallbacksPropType<boolean>;
 
 	/**
 	 * If set (to true) opens/expands the element, closes if not set (or set to false).
@@ -147,8 +147,8 @@ export class KolDetails implements DetailsAPI, FocusableElement {
 	}
 
 	@Watch('_on')
-	public validateOn(on?: CollapsibleCallbacksPropType<boolean>) {
-		validateCollapsibleCallbacks(this, on);
+	public validateOn(on?: DetailsCallbacksPropType<boolean>) {
+		validateDetailsCallbacks(this, on);
 	}
 
 	@Watch('_open')

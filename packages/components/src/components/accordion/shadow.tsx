@@ -4,14 +4,14 @@ import type { JSX } from '@stencil/core';
 import type {
 	AccordionAPI,
 	AccordionStates,
-	CollapsibleCallbacksPropType,
+	AccordionCallbacksPropType,
 	DisabledPropType,
 	FocusableElement,
 	HeadingLevel,
 	LabelPropType,
 	OpenPropType,
 } from '../../schema';
-import { featureHint, validateCollapsibleCallbacks, validateDisabled, validateLabel, validateOpen } from '../../schema';
+import { featureHint, validateAccordionCallbacks, validateDisabled, validateLabel, validateOpen } from '../../schema';
 import { nonce } from '../../utils/dev.utils';
 import { watchHeadingLevel } from '../heading/validation';
 import KolCollapsibleFc, { type CollapsibleProps } from '../../functional-components/Collapsible';
@@ -120,7 +120,7 @@ export class KolAccordion implements AccordionAPI, FocusableElement {
 	/**
 	 * Gibt die EventCallback-Funktionen an.
 	 */
-	@Prop() public _on?: CollapsibleCallbacksPropType<boolean>;
+	@Prop() public _on?: AccordionCallbacksPropType<boolean>;
 
 	/**
 	 * If set (to true) opens/expands the element, closes if not set (or set to false).
@@ -152,8 +152,8 @@ export class KolAccordion implements AccordionAPI, FocusableElement {
 	}
 
 	@Watch('_on')
-	public validateOn(on?: CollapsibleCallbacksPropType<boolean>): void {
-		validateCollapsibleCallbacks(this, on);
+	public validateOn(on?: AccordionCallbacksPropType<boolean>): void {
+		validateAccordionCallbacks(this, on);
 	}
 
 	@Watch('_open')
