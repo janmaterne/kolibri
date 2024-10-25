@@ -8,8 +8,8 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
-	RadioOptionsPropType,
 	Orientation,
+	RadioOptionsPropType,
 	StencilUnknown,
 	Stringified,
 	SyncValueBySelectorPropType,
@@ -24,8 +24,6 @@ import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
 import { getRenderStates } from '../input/controller';
 import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
 import { InputRadioController } from './controller';
-import { FormFieldMsg } from '../@shared/form-field-msg';
-import { KolInputTag } from '../../core/component-names';
 import { propagateSubmitEventToForm } from '../form/controller';
 
 /**
@@ -36,7 +34,9 @@ import { propagateSubmitEventToForm } from '../form/controller';
 	styleUrls: {
 		default: './style.scss',
 	},
-	shadow: true,
+	shadow: {
+		delegatesFocus: true,
+	},
 })
 export class KolInputRadio implements InputRadioAPI, FocusableElement {
 	@Element() private readonly host?: HTMLKolInputRadioElement;
@@ -175,7 +175,7 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 							</KolInputTag>
 						);
 					})}
-					{hasError && <FormFieldMsg _alert={this.showAsAlert()} _hideError={this.state._hideError} _msg={this.state._msg} _id={this.state._id} />}
+					{hasError && <KolFormFieldMsgFc _alert={this.showAsAlert()} _hideError={this.state._hideError} _msg={this.state._msg} _id={this.state._id} />}
 					{hasHint && <span class="hint">{this.state._hint}</span>}
 				</fieldset>
 			</Host>

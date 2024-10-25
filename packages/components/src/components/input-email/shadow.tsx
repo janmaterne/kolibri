@@ -36,7 +36,9 @@ import { KolInputTag } from '../../core/component-names';
 	styleUrls: {
 		default: './style.scss',
 	},
-	shadow: true,
+	shadow: {
+		delegatesFocus: true,
+	},
 })
 export class KolInputEmail implements InputEmailAPI, FocusableElement {
 	@Element() private readonly host?: HTMLKolInputEmailElement;
