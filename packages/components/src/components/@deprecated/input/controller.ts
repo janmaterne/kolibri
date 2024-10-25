@@ -37,6 +37,7 @@ import { ControlledInputController } from '../../input-adapter-leanup/controller
 
 import type { Props as AdapterProps } from '../../input-adapter-leanup/types';
 import type { Props, Watches } from './types';
+import {validateAccessAndShortKey} from "../../../schema/validators/access-and-short-key";
 
 type ValueChangeListener = (value: StencilUnknown) => void;
 
@@ -166,6 +167,8 @@ export class InputController extends ControlledInputController implements Watche
 		this.validateSmartButton(this.component._smartButton);
 		this.validateOn(this.component._on);
 		this.validateTabIndex(this.component._tabIndex);
+		validateAccessAndShortKey(this.component._accessKey, this.component._shortKey);
+
 	}
 
 	protected onBlur(event: Event): void {
