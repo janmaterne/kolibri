@@ -13,16 +13,17 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { ${componentListStr} } from './components';
 import { ReplaceTagDirective } from './angular-component-lib/ReplaceTagDirective';
+import { TextValueAccessor } from './text-value-accessor';
 export { setTagNameTransformer } from './angular-component-lib/tagNameTransformer';
 
 @NgModule({
-  declarations: [ReplaceTagDirective, ${componentListStr}],
+  declarations: [ReplaceTagDirective, TextValueAccessor, ${componentListStr}],
   exports: [${componentListStr}],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule],
 })
 export class KoliBriModule {}
-export { ${componentListStr} }
+export { TextValueAccessor, ${componentListStr} }
 `,
 	'utf-8',
 );

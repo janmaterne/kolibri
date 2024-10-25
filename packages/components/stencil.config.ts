@@ -1,15 +1,15 @@
 import { promises as fsPromises } from 'fs';
 
+import type { ValueAccessorConfig } from '@public-ui/stencil-angular-output-target';
 import { angularOutputTarget } from '@public-ui/stencil-angular-output-target';
-import { Config } from '@stencil/core';
-import { JsonDocs, OutputTarget } from '@stencil/core/internal';
+import type { Config } from '@stencil/core';
+import type { JsonDocs, OutputTarget } from '@stencil/core/internal';
 import { postcss } from '@stencil-community/postcss';
 import { sass } from '@stencil/sass';
 import { reactOutputTarget } from '@public-ui/stencil-react-output-target';
 import { solidOutputTarget } from '@public-ui/stencil-solid-output-target';
 import { vueOutputTarget } from '@public-ui/stencil-vue-output-target';
-
-const KOLIBRI_VERSION = require('./package.json').version;
+import { version as KOLIBRI_VERSION } from './package.json' assert { type: 'json' };
 
 const TAGS = [
 	'kol-abbr',
@@ -150,6 +150,7 @@ async function generateCustomElementsJson(docsData: JsonDocs) {
 		})),
 	};
 
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 	await fsPromises.writeFile('./custom-elements.json', JSON.stringify(jsonData, null, 2));
 }
 
@@ -177,27 +178,41 @@ let outputTargets: OutputTarget[] = [
 	//   generator: generateCSPHashes,
 	// },
 ];
+
+const angularValueAccessorConfigs: ValueAccessorConfig[] = [
+	{
+		elementSelectors: ['kol-input-text'],
+		event: 'input',
+		targetAttr: '_value',
+		type: 'text',
+	},
+];
+
 if (process.env.NODE_ENV === 'production') {
 	outputTargets = outputTargets.concat([
 		angularOutputTarget({
 			componentCorePackage: '@public-ui/components',
 			excludeComponents: EXCLUDE_TAGS,
 			directivesProxyFile: '../adapters/angular/v15/src/components.ts',
+			valueAccessorConfigs: angularValueAccessorConfigs,
 		}),
 		angularOutputTarget({
 			componentCorePackage: '@public-ui/components',
 			excludeComponents: EXCLUDE_TAGS,
 			directivesProxyFile: '../adapters/angular/v16/src/components.ts',
+			valueAccessorConfigs: angularValueAccessorConfigs,
 		}),
 		angularOutputTarget({
 			componentCorePackage: '@public-ui/components',
 			excludeComponents: EXCLUDE_TAGS,
 			directivesProxyFile: '../adapters/angular/v17/src/components.ts',
+			valueAccessorConfigs: angularValueAccessorConfigs,
 		}),
 		angularOutputTarget({
 			componentCorePackage: '@public-ui/components',
 			excludeComponents: EXCLUDE_TAGS,
 			directivesProxyFile: '../adapters/angular/v18/src/components.ts',
+			valueAccessorConfigs: angularValueAccessorConfigs,
 		}),
 		reactOutputTarget({
 			componentCorePackage: '@public-ui/components',

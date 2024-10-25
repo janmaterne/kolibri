@@ -11,6 +11,7 @@ import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class AppComponent {
 	date = new Date();
+	text = 'Hello, World';
 
 	get dateJson() {
 		return JSON.stringify(this.date);
@@ -18,6 +19,14 @@ export class AppComponent {
 
 	get dateType() {
 		return typeof this.date;
+	}
+
+	get textJson() {
+		return JSON.stringify(this.text);
+	}
+
+	get textType() {
+		return typeof this.text;
 	}
 
 	public handleInput(evt: Event) {
