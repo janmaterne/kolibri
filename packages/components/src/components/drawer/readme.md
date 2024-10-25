@@ -16,36 +16,31 @@ Mit Hilfe der **Drawer**-Komponente können zusätzliche Informationen oder auch
 
 #### Uncontrolled
 
-<kol-drawer
-id="example-drawer"
-\_align="left"
-\_label="Drawer"
-
->
-
-    <div>
-        <p>Dies ist der Inhalt des Drawers. Hier können Sie beliebige HTML-Elemente einfügen.</p>
-        <kol-button class="close-drawer" _label="Schließen"></kol-button>
-    </div>
-
+```html
+<kol-drawer id="example-drawer" \_align="left" \_label="Drawer">
+	<div>
+		<p>Dies ist der Inhalt des Drawers. Hier können Sie beliebige HTML-Elemente einfügen.</p>
+		<kol-button class="close-drawer" _label="Schließen"></kol-button>
+	</div>
 </kol-drawer>
 <kol-button id="drawer-open-button" _label="Drawer öffnen"></kol-button>
 
 <script>
-  const drawer = document.querySelector('#example-drawer');
-  const drawerOpenButton = document.querySelector('#drawer-open-button');
+	const drawer = document.querySelector('#example-drawer');
+	const drawerOpenButton = document.querySelector('#drawer-open-button');
 
-  function openDrawer() {
-    drawer.open();
-  }
+	function openDrawer() {
+		drawer.open();
+	}
 
-  function closeDrawer() {
-    drawer.close();
-  }
+	function closeDrawer() {
+		drawer.close();
+	}
 
-  document.querySelectorAll('.close-drawer').forEach((b) => (b.onclick = closeDrawer));
-  drawerOpenButton.onclick = openDrawer;
+	document.querySelectorAll('.close-drawer').forEach((b) => (b.onclick = closeDrawer));
+	drawerOpenButton.onclick = openDrawer;
 </script>
+```
 
 #### Uncontrolled Modal
 
@@ -59,14 +54,14 @@ id="example-drawer"
 #### Controlled
 
 <kol-drawer
-\_open=true
+\_open={true}
 \_align="left"
 \_label="Drawer"
 
 > </kol-drawer>
 
 <kol-drawer
-\_open=true
+\_open={true}
 \_align="left"
 \_label="Drawer"
 
