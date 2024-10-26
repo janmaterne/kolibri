@@ -12,24 +12,27 @@ import type {
 	PropSyncValueBySelector,
 	PropTouched,
 	PropSuggestions,
+	PropAccessKey,
+	PropShortKey,
 } from '../props';
 import type { InputTypeOnDefault, KoliBriHorizontalIcons, Stringified, W3CInputValue } from '../types';
 
 type RequiredProps = PropLabelWithExpertSlot & PropSuggestions;
 type OptionalProps = {
-	accessKey: string;
 	hint: string;
 	icons: Stringified<KoliBriHorizontalIcons>;
 	on: InputTypeOnDefault;
 	tabIndex: number;
 	value: string;
 	placeholder: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideError &
 	PropHideLabel &
 	PropMsg &
 	PropName &
 	PropRequired &
+	PropShortKey &
 	PropSyncValueBySelector &
 	PropTouched;
 
@@ -41,19 +44,20 @@ type RequiredStates = {
 	PropHideError &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	hint: string;
 	icons: KoliBriHorizontalIcons;
 	on: InputTypeOnDefault;
 	tabIndex: number;
 	placeholder: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideLabel &
 	PropId &
 	PropName &
 	PropRequired &
 	PropMsg &
+	PropShortKey &
 	PropTouched;
 
 export type ComboboxProps = Generic.Element.Members<RequiredProps, OptionalProps>;

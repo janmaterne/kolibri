@@ -50,6 +50,7 @@ import { nonce } from '../../utils/dev.utils';
 import { KolIconTag, KolSpanWcTag, KolTooltipWcTag } from '../../core/component-names';
 
 import { translate } from '../../i18n';
+import { validateAccessAndShortKey } from '../../schema/validators/access-and-short-key';
 
 /**
  * @internal
@@ -392,6 +393,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 		this.unsubscribeOnLocationChange = onLocationChange((location) => {
 			this.state._ariaCurrent = location === this.state._href ? this.state._ariaCurrentValue : undefined;
 		});
+		validateAccessAndShortKey(this._accessKey, this._shortKey);
 	}
 
 	public disconnectedCallback(): void {

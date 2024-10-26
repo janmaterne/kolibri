@@ -30,6 +30,8 @@ export const ButtonLinkBasic: FC = () => (
 			</p>
 			<p>
 				<KolButtonLink _label="Disabled ButtonLink" _disabled />
+				<KolButtonLink _label="With access key" _accessKey="c" />
+				<KolButtonLink _label="Disabled ButtonLink" _shortKey="s" />
 			</p>
 		</section>
 	</>

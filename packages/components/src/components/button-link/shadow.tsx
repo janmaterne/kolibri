@@ -9,7 +9,7 @@ import type {
 	IconsPropType,
 	IdPropType,
 	LabelWithExpertSlotPropType,
-	NamePropType,
+	NamePropType, ShortKeyPropType,
 	StencilUnknown,
 	Stringified,
 	SyncValueBySelectorPropType,
@@ -70,6 +70,7 @@ export class KolButtonLink implements ButtonLinkProps, FocusableElement {
 					_name={this._name}
 					_on={this._on}
 					_role="link"
+					_shortKey={this._shortKey}
 					_syncValueBySelector={this._syncValueBySelector}
 					_tabIndex={this._tabIndex}
 					_tooltipAlign={this._tooltipAlign}
@@ -151,6 +152,11 @@ export class KolButtonLink implements ButtonLinkProps, FocusableElement {
 	 * Defines the role of the components primary element.
 	 */
 	@Prop() public _role?: AlternativeButtonLinkRolePropType;
+
+	/**
+	 * Defines the elements short key.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
 
 	/**
 	 * Selector for synchronizing the value with another input element.

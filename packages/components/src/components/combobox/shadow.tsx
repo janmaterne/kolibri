@@ -8,21 +8,20 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
+	ShortKeyPropType,
 	Stringified,
 	SuggestionsPropType,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 	W3CInputValue,
 } from '../../schema';
-import { showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Listen, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Listen, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
 import { ComboboxController } from './controller';
 import { KolIconTag, KolInputWcTag } from '../../core/component-names';
-import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { getRenderStates } from '../input/controller';
 import { translate } from '../../i18n';
 import clsx from 'clsx';
@@ -146,7 +145,6 @@ export class KolCombobox implements ComboboxAPI {
 	}
 
 	public render(): JSX.Element {
-		const hasExpertSlot = showExpertSlot(this.state._label);
 		const { ariaDescribedBy } = getRenderStates(this.state);
 
 		return (
@@ -163,25 +161,12 @@ export class KolCombobox implements ComboboxAPI {
 						_label={this.state._label}
 						_msg={this.state._msg}
 						_required={this.state._required}
+						_shortKey={this.state._shortKey}
 						_tooltipAlign={this._tooltipAlign}
 						_touched={this.state._touched}
 						onClick={() => this.refInput?.focus()}
 						role={`presentation` /* Avoid element being read as 'clickable' in NVDA */}
 					>
-						<span slot="label">
-							{hasExpertSlot ? (
-								<slot name="expert"></slot>
-							) : typeof this.state._accessKey === 'string' ? (
-								<>
-									<InternalUnderlinedBadgeText badgeText={this.state._accessKey} label={this.state._label} />{' '}
-									<span class="access-key-hint" aria-hidden="true">
-										{this.state._accessKey}
-									</span>
-								</>
-							) : (
-								<span>{this.state._label}</span>
-							)}
-						</span>
 						<div slot="input">
 							<div class="combobox__group">
 								<input
@@ -434,6 +419,11 @@ export class KolCombobox implements ComboboxAPI {
 	@Prop() public _required?: boolean = false;
 
 	/**
+	 * Defines the elements short key.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
 	 * Selector for synchronizing the value with another input element.
 	 * @internal
 	 */
@@ -537,6 +527,11 @@ export class KolCombobox implements ComboboxAPI {
 	@Watch('_on')
 	public validateOn(value?: InputTypeOnDefault): void {
 		this.controller.validateOn(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_suggestions')
