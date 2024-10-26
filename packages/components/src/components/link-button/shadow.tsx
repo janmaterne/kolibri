@@ -68,7 +68,7 @@ export class KolLinkButton implements LinkButtonProps, FocusableElement {
 					_label={this._label}
 					_on={this._on}
 					_role="button"
-					_shortKey={this.state._shortKey}
+					_shortKey={this._shortKey}
 					_tabIndex={this._tabIndex}
 					_target={this._target}
 					_tooltipAlign={this._tooltipAlign}
