@@ -1,4 +1,4 @@
-import { BadgeTextPropType, HideLabelPropType, KoliBriIconsProp, LabelWithExpertSlotPropType, SpanAPI, SpanStates, Stringified } from '../../schema';
+import type { BadgeTextPropType, HideLabelPropType, KoliBriIconsProp, LabelWithExpertSlotPropType, SpanAPI, SpanStates, Stringified } from '../../schema';
 import { showExpertSlot, validateBadgeText, validateHideLabel, validateIcons, validateLabelWithExpertSlot, watchBoolean } from '../../schema';
 import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
 

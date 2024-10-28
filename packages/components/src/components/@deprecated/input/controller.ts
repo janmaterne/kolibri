@@ -1,6 +1,6 @@
 import type { Generic } from 'adopted-style-sheets';
 
-import {
+import type {
 	AccessKeyPropType,
 	AdjustHeightPropType,
 	ButtonProps,
@@ -11,8 +11,6 @@ import {
 	ShortKeyPropType,
 	StencilUnknown,
 	TooltipAlignPropType,
-	validateShortKey,
-	validateAccessKey,
 } from '../../../schema';
 import {
 	a11yHint,
@@ -21,6 +19,7 @@ import {
 	objectObjectHandler,
 	parseJson,
 	setState,
+	validateAccessKey,
 	validateAdjustHeight,
 	validateHideError,
 	validateHideLabel,
@@ -30,6 +29,7 @@ import {
 	watchBoolean,
 	watchString,
 	validateTooltipAlign,
+	validateShortKey,
 } from '../../../schema';
 
 import { stopPropagation, tryToDispatchKoliBriEvent } from '../../../utils/events';

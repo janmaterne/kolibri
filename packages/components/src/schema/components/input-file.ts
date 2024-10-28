@@ -12,10 +12,11 @@ import type {
 	PropRequired,
 	PropSyncValueBySelector,
 	PropTouched,
+	PropAccessKey,
+	PropShortKey,
 } from '../props';
 import type { InputTypeOnDefault, KoliBriHorizontalIcons, Stringified } from '../types';
 import type { ButtonProps } from './button';
-import { PropAccessKey, PropShortKey } from '../props';
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {

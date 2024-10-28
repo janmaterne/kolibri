@@ -1,5 +1,5 @@
 import type { Generic } from 'adopted-style-sheets';
-import {
+import type {
 	PropAccessKey,
 	PropDisabled,
 	PropHideError,

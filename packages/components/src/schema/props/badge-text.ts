@@ -1,7 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 import { watchString } from '../utils';
-import { AccessKeyPropType } from './access-key';
-import { ShortKeyPropType } from './short-key';
+import type { AccessKeyPropType } from './access-key';
+import type { ShortKeyPropType } from './short-key';
 
 /* types */
 export type BadgeTextPropType = string;
