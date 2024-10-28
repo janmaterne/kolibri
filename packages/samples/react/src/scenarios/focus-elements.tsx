@@ -94,16 +94,24 @@ const getFocusElements = () => {
 	));
 	focusElements.set('textarea', (_, ref) => <KolTextarea className="w-full" _name="textarea" _label="Textarea" _rows={5} ref={ref} />);
 	focusElements.set('accordion', (_, ref) => <KolAccordion className="w-full" _label="Accordion here" ref={ref} />);
-	focusElements.set('button', (_, ref) => <KolButton _label="Button here" ref={ref}></KolButton>);
-	focusElements.set('buttonLink', (_, ref) => <KolButtonLink _label="ButtonLink here" ref={ref}></KolButtonLink>);
-	focusElements.set('combobox', (_, ref) => <KolCombobox className="w-full" _label="KolCombobox here" _suggestions={[]} ref={ref}></KolCombobox>);
+	focusElements.set('button', (_, ref) => (
+		<div>
+			<KolButton _label="Button here" ref={ref} />
+		</div>
+	));
+	focusElements.set('buttonLink', (_, ref) => <KolButtonLink _label="ButtonLink here" ref={ref} />);
+	focusElements.set('combobox', (_, ref) => <KolCombobox className="w-full" _label="KolCombobox here" _suggestions={[]} ref={ref} />);
 	focusElements.set('details', (_, ref) => (
 		<KolDetails className="w-full" _label="Details here" ref={ref}>
 			detailed details
 		</KolDetails>
 	));
-	focusElements.set('link', (_, ref) => <KolLink className="w-full" _label="Link here" _href="#" ref={ref}></KolLink>);
-	focusElements.set('linkButton', (_, ref) => <KolLinkButton _label="LinkButton here" _href="#" ref={ref}></KolLinkButton>);
+	focusElements.set('link', (_, ref) => <KolLink className="w-full" _label="Link here" _href="#" ref={ref} />);
+	focusElements.set('linkButton', (_, ref) => (
+		<div>
+			<KolLinkButton _label="LinkButton here" _href="#" ref={ref} />
+		</div>
+	));
 
 	return focusElements;
 };
@@ -134,7 +142,7 @@ const Fallback = (props: FallbackProps) => {
 			<ul>
 				{componentNames.map((componentName) => (
 					<li key={componentName}>
-						<KolLink _label={componentName} _href={`#/scenarios/focus-elements?component=${componentName}`}></KolLink>
+						<KolLink _label={componentName} _href={`#/scenarios/focus-elements?component=${componentName}`} />
 					</li>
 				))}
 			</ul>
