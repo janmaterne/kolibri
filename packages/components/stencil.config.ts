@@ -1,15 +1,14 @@
 import { promises as fsPromises } from 'fs';
 
 import { angularOutputTarget } from '@public-ui/stencil-angular-output-target';
-import { Config } from '@stencil/core';
-import { JsonDocs, OutputTarget } from '@stencil/core/internal';
+import type { Config } from '@stencil/core';
+import type { JsonDocs, OutputTarget } from '@stencil/core/internal';
 import { postcss } from '@stencil-community/postcss';
 import { sass } from '@stencil/sass';
 import { reactOutputTarget } from '@public-ui/stencil-react-output-target';
 import { solidOutputTarget } from '@public-ui/stencil-solid-output-target';
 import { vueOutputTarget } from '@public-ui/stencil-vue-output-target';
-
-const KOLIBRI_VERSION = require('./package.json').version;
+import { version as KOLIBRI_VERSION } from './package.json' assert { type: 'json' };
 
 const TAGS = [
 	'kol-abbr',
@@ -150,6 +149,7 @@ async function generateCustomElementsJson(docsData: JsonDocs) {
 		})),
 	};
 
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 	await fsPromises.writeFile('./custom-elements.json', JSON.stringify(jsonData, null, 2));
 }
 
