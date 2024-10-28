@@ -32,7 +32,7 @@ test.describe('inputs-common', () => {
 															_alert
 														/>`);
 
-					await expect(page.locator('kol-alert-wc')).toHaveAttribute('role', 'alert');
+					await expect(page.locator('.kol-alert-wc')).toHaveAttribute('role', 'alert');
 				});
 
 				test('should control the role=alert on error messages based on focus when no _alert prop is set', async ({ page }) => {
@@ -50,11 +50,11 @@ test.describe('inputs-common', () => {
 					// target all primary input elements, no hidden elements
 					const inputElement = page.locator('input:visible:not([aria-hidden="true"]), textarea, select');
 
-					await expect(page.locator('kol-alert-wc')).toHaveAttribute('role', 'alert');
+					await expect(page.locator('.kol-alert-wc')).toHaveAttribute('role', 'alert');
 					await inputElement.focus();
-					await expect(page.locator('kol-alert-wc')).not.toHaveAttribute('role', 'alert');
+					await expect(page.locator('.kol-alert-wc')).not.toHaveAttribute('role', 'alert');
 					await inputElement.blur();
-					await expect(page.locator('kol-alert-wc')).toHaveAttribute('role', 'alert');
+					await expect(page.locator('.kol-alert-wc')).toHaveAttribute('role', 'alert');
 				});
 			});
 		});
