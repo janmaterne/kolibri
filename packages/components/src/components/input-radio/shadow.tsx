@@ -25,6 +25,8 @@ import { getRenderStates } from '../input/controller';
 import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
 import { InputRadioController } from './controller';
 import { propagateSubmitEventToForm } from '../form/controller';
+import { KolInputTag } from '../../core/component-names';
+import { KolFormFieldMsgFc } from '../../functional-components';
 
 /**
  * @slot - Die Legende/Überschrift der Radiobuttons.
