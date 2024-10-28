@@ -25,6 +25,6 @@
 	}
 
 	a .kol-span-wc {
-		display: block;
+		place-items: unset; // unset 'center' style from global layer
 	}
 }
