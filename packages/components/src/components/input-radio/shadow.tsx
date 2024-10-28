@@ -8,8 +8,8 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
-	RadioOptionsPropType,
 	Orientation,
+	RadioOptionsPropType,
 	StencilUnknown,
 	Stringified,
 	SyncValueBySelectorPropType,
@@ -24,8 +24,8 @@ import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
 import { getRenderStates } from '../input/controller';
 import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
 import { InputRadioController } from './controller';
-import { KolInputWcTag } from '../../core/component-names';
 import { propagateSubmitEventToForm } from '../form/controller';
+import { KolInputTag } from '../../core/component-names';
 import { KolFormFieldMsgFc } from '../../functional-components';
 
 /**
@@ -112,7 +112,7 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 						const selected = this.state._value === option.value;
 
 						return (
-							<KolInputWcTag
+							<KolInputTag
 								class={{
 									radio: true,
 									disabled: Boolean(this.state._disabled || option.disabled),
@@ -150,6 +150,14 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 										onClick={undefined} // onClick is not needed since onChange already triggers the correct event
 										onInput={this.onInput}
 										onKeyDown={this.onKeyDown.bind(this)}
+										onFocus={(event) => {
+											this.controller.onFacade.onFocus(event);
+											this.inputHasFocus = true;
+										}}
+										onBlur={(event) => {
+											this.controller.onFacade.onBlur(event);
+											this.inputHasFocus = false;
+										}}
 									/>
 									<label
 										class="radio-label"
@@ -166,10 +174,10 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 										</span>
 									</label>
 								</div>
-							</KolInputWcTag>
+							</KolInputTag>
 						);
 					})}
-					{hasError && <KolFormFieldMsgFc _alert={this.state._alert} _hideError={this.state._hideError} _msg={this.state._msg} _id={this.state._id} />}
+					{hasError && <KolFormFieldMsgFc _alert={this.showAsAlert()} _hideError={this.state._hideError} _msg={this.state._msg} _id={this.state._id} />}
 					{hasHint && <span class="hint">{this.state._hint}</span>}
 				</fieldset>
 			</Host>
@@ -185,8 +193,9 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 
 	/**
 	 * Defines whether the screen-readers should read out the notification.
+	 * @deprecated Will be removed in v3. Use automatic behaviour instead.
 	 */
-	@Prop({ mutable: true, reflect: true }) public _alert?: boolean = true;
+	@Prop({ mutable: true, reflect: true }) public _alert?: boolean;
 
 	/**
 	 * Makes the element not focusable and ignore all events.
@@ -231,7 +240,7 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 	/**
 	 * Defines the properties for a message rendered as Alert component.
 	 */
-	@Prop() public _msg?: MsgPropType;
+	@Prop() public _msg?: Stringified<MsgPropType>;
 
 	/**
 	 * Defines the technical name of an input field.
@@ -295,8 +304,17 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 		_orientation: 'vertical',
 	};
 
+	@State() private inputHasFocus = false;
+
 	public constructor() {
 		this.controller = new InputRadioController(this, 'radio', this.host);
+	}
+
+	private showAsAlert(): boolean {
+		if (this.state._alert === undefined) {
+			return Boolean(this.state._touched) && !this.inputHasFocus;
+		}
+		return this.state._alert;
 	}
 
 	@Watch('_accessKey')
@@ -348,7 +366,7 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 	}
 
 	@Watch('_msg')
-	public validateMsg(value?: MsgPropType): void {
+	public validateMsg(value?: Stringified<MsgPropType>): void {
 		this.controller.validateMsg(value);
 	}
 
@@ -398,7 +416,6 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 	}
 
 	public componentWillLoad(): void {
-		this._alert = this._alert === true;
 		this._touched = this._touched === true;
 		this.currentValue = this._value;
 		this.controller.componentWillLoad();

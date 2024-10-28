@@ -21,7 +21,7 @@ import { Component, Element, Fragment, h, Host, Listen, Method, Prop, State, Wat
 import { nonce } from '../../utils/dev.utils';
 import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
 import { ComboboxController } from './controller';
-import { KolIconTag, KolInputWcTag } from '../../core/component-names';
+import { KolIconTag, KolInputTag } from '../../core/component-names';
 import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
 import { getRenderStates } from '../input/controller';
 import { translate } from '../../i18n';
@@ -154,8 +154,9 @@ export class KolCombobox implements ComboboxAPI {
 		return (
 			<Host class="kol-combobox">
 				<div class={clsx('combobox', this.state._disabled && 'combobox--disabled')}>
-					<KolInputWcTag
+					<KolInputTag
 						_accessKey={this.state._accessKey}
+						_alert={this.showAsAlert()}
 						_disabled={this.state._disabled}
 						_hideError={this.state._hideError}
 						_hideLabel={this.state._hideLabel}
@@ -208,8 +209,16 @@ export class KolCombobox implements ComboboxAPI {
 									required={this.state._required}
 									spellcheck="false"
 									{...this.controller.onFacade}
-									onInput={this.onInput.bind(this)}
+									onFocus={(event) => {
+										this.controller.onFacade.onFocus(event);
+										this.inputHasFocus = true;
+									}}
+									onBlur={(event) => {
+										this.controller.onFacade.onBlur(event);
+										this.inputHasFocus = false;
+									}}
 									onChange={this.onChange.bind(this)}
+									onInput={this.onInput.bind(this)}
 									placeholder={this.state._placeholder}
 								/>
 								<button tabindex="-1" class="combobox__icon" onClick={this.toggleListbox.bind(this)} disabled={this.state._disabled}>
@@ -262,7 +271,7 @@ export class KolCombobox implements ComboboxAPI {
 								</ul>
 							)}
 						</div>
-					</KolInputWcTag>
+					</KolInputTag>
 				</div>
 			</Host>
 		);
@@ -368,8 +377,9 @@ export class KolCombobox implements ComboboxAPI {
 
 	/**
 	 * Defines whether the screen-readers should read out the notification.
+	 * @deprecated Will be removed in v3. Use automatic behaviour instead.
 	 */
-	@Prop({ mutable: true, reflect: true }) public _alert?: boolean = true;
+	@Prop({ mutable: true, reflect: true }) public _alert?: boolean;
 
 	/**
 	 * Makes the element not focusable and ignore all events.
@@ -412,7 +422,7 @@ export class KolCombobox implements ComboboxAPI {
 	/**
 	 * Defines the properties for a message rendered as Alert component.
 	 */
-	@Prop() public _msg?: MsgPropType;
+	@Prop() public _msg?: Stringified<MsgPropType>;
 
 	/**
 	 * Defines the technical name of an input field.
@@ -471,9 +481,18 @@ export class KolCombobox implements ComboboxAPI {
 		_value: '',
 	};
 
+	@State() private inputHasFocus = false;
+
 	public constructor() {
 		this.controller = new ComboboxController(this, 'combobox', this.host);
 		this.onInput = this.onInput.bind(this);
+	}
+
+	private showAsAlert(): boolean {
+		if (this.state._alert === undefined) {
+			return Boolean(this.state._touched) && !this.inputHasFocus;
+		}
+		return this.state._alert;
 	}
 
 	@Watch('_placeholder')
@@ -527,7 +546,7 @@ export class KolCombobox implements ComboboxAPI {
 	}
 
 	@Watch('_msg')
-	public validateMsg(value?: MsgPropType): void {
+	public validateMsg(value?: Stringified<MsgPropType>): void {
 		this.controller.validateMsg(value);
 	}
 
@@ -575,7 +594,6 @@ export class KolCombobox implements ComboboxAPI {
 
 	public componentWillLoad(): void {
 		this.refSuggestions = [];
-		this._alert = this._alert === true;
 		this._touched = this._touched === true;
 		this.controller.componentWillLoad();
 

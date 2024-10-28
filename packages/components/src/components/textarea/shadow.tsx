@@ -25,7 +25,7 @@ import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
 import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
 import { TextareaController } from './controller';
-import { KolInputWcTag } from '../../core/component-names';
+import { KolInputTag } from '../../core/component-names';
 
 /**
  * https://stackoverflow.com/questions/17772260/textarea-auto-height
@@ -86,10 +86,10 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 
 		return (
 			<Host class={{ 'kol-textarea': true, 'has-value': this.state._hasValue }}>
-				<KolInputWcTag
+				<KolInputTag
 					class={{ textarea: true, 'hide-label': !!this.state._hideLabel, 'has-counter': !!this.state._hasCounter }}
 					_accessKey={this.state._accessKey}
-					_alert={this.state._alert}
+					_alert={this.showAsAlert()}
 					_currentLength={this.state._currentLength}
 					_disabled={this.state._disabled}
 					_hideError={this.state._hideError}
@@ -142,13 +142,21 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 							spellcheck="false"
 							{...this.controller.onFacade}
 							onInput={this.onInput}
+							onFocus={(event) => {
+								this.controller.onFacade.onFocus(event);
+								this.inputHasFocus = true;
+							}}
+							onBlur={(event) => {
+								this.controller.onFacade.onBlur(event);
+								this.inputHasFocus = false;
+							}}
 							style={{
 								resize: this.state._resize,
 							}}
 							value={this.state._value}
 						/>
 					</div>
-				</KolInputWcTag>
+				</KolInputTag>
 			</Host>
 		);
 	}
@@ -168,8 +176,9 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 
 	/**
 	 * Defines whether the screen-readers should read out the notification.
+	 * @deprecated Will be removed in v3. Use automatic behaviour instead.
 	 */
-	@Prop({ mutable: true, reflect: true }) public _alert?: boolean = true;
+	@Prop({ mutable: true, reflect: true }) public _alert?: boolean;
 
 	/**
 	 * Makes the element not focusable and ignore all events.
@@ -230,7 +239,7 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	/**
 	 * Defines the properties for a message rendered as Alert component.
 	 */
-	@Prop() public _msg?: MsgPropType;
+	@Prop() public _msg?: Stringified<MsgPropType>;
 
 	/**
 	 * Defines the technical name of an input field.
@@ -307,8 +316,17 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 		_resize: 'vertical',
 	};
 
+	@State() private inputHasFocus = false;
+
 	public constructor() {
 		this.controller = new TextareaController(this, 'textarea', this.host);
+	}
+
+	private showAsAlert(): boolean {
+		if (this.state._alert === undefined) {
+			return Boolean(this.state._touched) && !this.inputHasFocus;
+		}
+		return this.state._alert;
 	}
 
 	@Watch('_accessKey')
@@ -377,7 +395,7 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	}
 
 	@Watch('_msg')
-	public validateMsg(value?: MsgPropType): void {
+	public validateMsg(value?: Stringified<MsgPropType>): void {
 		this.controller.validateMsg(value);
 	}
 
@@ -453,7 +471,6 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	}
 
 	public componentWillLoad(): void {
-		this._alert = this._alert === true;
 		this._touched = this._touched === true;
 		this.controller.componentWillLoad();
 		this.state._hasValue = !!this.state._value;
