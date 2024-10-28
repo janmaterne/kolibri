@@ -9,7 +9,8 @@ import type {
 	IconsPropType,
 	IdPropType,
 	LabelWithExpertSlotPropType,
-	NamePropType, ShortKeyPropType,
+	NamePropType,
+	ShortKeyPropType,
 	StencilUnknown,
 	Stringified,
 	SyncValueBySelectorPropType,
@@ -24,7 +25,9 @@ import { KolButtonWcTag } from '../../core/component-names';
 	styleUrls: {
 		default: './style.scss',
 	},
-	shadow: true,
+	shadow: {
+		delegatesFocus: true,
+	},
 })
 export class KolButtonLink implements ButtonLinkProps, FocusableElement {
 	private buttonWcRef?: HTMLKolButtonWcElement;

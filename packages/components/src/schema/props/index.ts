@@ -1,4 +1,5 @@
 export * from './access-key';
+export * from './accordion-callbacks';
 export * from './active';
 export * from './adjust-height';
 export * from './alert';
@@ -16,6 +17,7 @@ export * from './button-type';
 export * from './button-variant';
 export * from './checked';
 export * from './collapsible';
+export * from './details-callbacks';
 export * from './color';
 export * from './custom-class';
 export * from './disabled';

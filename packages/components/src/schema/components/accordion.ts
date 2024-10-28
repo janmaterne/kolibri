@@ -1,20 +1,11 @@
 import type { Generic } from 'adopted-style-sheets';
-import type { Events } from '../enums';
-import type { HeadingLevel, PropDisabled, PropLabel, PropOpen } from '../props';
-import type { EventValueOrEventCallback } from '../types';
+import type { PropAccordionCallbacks } from '../props';
+import type * as CollapsibleTypes from './collapsible';
 
-export type KoliBriAccordionCallbacks = {
-	[Events.onClick]?: EventValueOrEventCallback<Event, boolean>;
-};
+type RequiredProps = CollapsibleTypes.RequiredProps;
+type OptionalProps = CollapsibleTypes.OptionalProps & PropAccordionCallbacks<boolean>;
 
-type RequiredProps = PropLabel;
-type OptionalProps = {
-	level: HeadingLevel;
-	on: KoliBriAccordionCallbacks;
-} & PropDisabled &
-	PropOpen;
-
-type RequiredStates = RequiredProps & PropLabel;
+type RequiredStates = RequiredProps;
 type OptionalStates = OptionalProps;
 
 export type AccordionProps = Generic.Element.Members<RequiredProps, OptionalProps>;

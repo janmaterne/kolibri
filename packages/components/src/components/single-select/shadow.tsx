@@ -34,7 +34,9 @@ import clsx from 'clsx';
 	styleUrls: {
 		default: './style.scss',
 	},
-	shadow: true,
+	shadow: {
+		delegatesFocus: true,
+	},
 })
 export class KolSingleSelect implements SingleSelectAPI {
 	@Element() private readonly host?: HTMLKolSingleSelectElement;

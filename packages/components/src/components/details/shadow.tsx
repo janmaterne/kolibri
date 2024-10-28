@@ -1,11 +1,10 @@
-import type { DetailsAPI, DetailsStates, DisabledPropType, EventCallbacks, FocusableElement, LabelPropType } from '../../schema';
-import { setState, validateDisabled, validateLabel, validateOpen } from '../../schema';
-import type { JSX } from '@stencil/core';
-import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
-
-import { preventDefaultAndStopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
-import { DetailsAnimationController } from './DetailsAnimationController';
-import { KolIconTag } from '../../core/component-names';
+import { Component, Element, h, Host, Method, Prop, State, Watch, type JSX } from '@stencil/core';
+import type { DetailsCallbacksPropType, DetailsAPI, DetailsStates, DisabledPropType, FocusableElement, HeadingLevel, LabelPropType } from '../../schema';
+import { validateDetailsCallbacks, validateDisabled, validateLabel, validateOpen } from '../../schema';
+import KolCollapsibleFc, { type CollapsibleProps } from '../../functional-components/Collapsible';
+import { nonce } from '../../utils/dev.utils';
+import { watchHeadingLevel } from '../heading/validation';
+import { tryToDispatchKoliBriEvent } from '../../utils/events';
 
 /**
  * @slot - Der Inhalt, der in der Detailbeschreibung angezeigt wird.
@@ -19,16 +18,12 @@ import { KolIconTag } from '../../core/component-names';
 })
 export class KolDetails implements DetailsAPI, FocusableElement {
 	@Element() private readonly host?: HTMLKolDetailsElement;
-	private detailsElement?: HTMLDetailsElement;
-	private summaryElement?: HTMLElement;
-	private contentElement?: HTMLElement;
 
-	private readonly catchDetails = (ref?: HTMLElement) => {
-		this.detailsElement = ref as HTMLDetailsElement;
-	};
+	private readonly nonce = nonce();
+	private buttonWcRef?: HTMLKolButtonWcElement;
 
-	private readonly catchSummary = (ref?: HTMLElement) => {
-		this.summaryElement = ref;
+	private readonly catchRef = (ref?: HTMLKolButtonWcElement) => {
+		this.buttonWcRef = ref;
 	};
 
 	/**
@@ -42,44 +37,62 @@ export class KolDetails implements DetailsAPI, FocusableElement {
 	@Method()
 	// eslint-disable-next-line @typescript-eslint/require-await
 	public async kolFocus() {
-		this.summaryElement?.focus();
+		await this.buttonWcRef?.kolFocus();
 	}
 
-	/**
-	 * Handle disabled, because the toggle event is to late.
-	 */
-	private readonly preventToggleIfDisabled = (event: Event) => {
-		if (this.state._disabled === true) {
-			preventDefaultAndStopPropagation(event);
-		}
+	private toggleTimeout?: ReturnType<typeof setTimeout>;
+
+	private handleOnClick = (event: MouseEvent) => {
+		this._open = !this._open;
+
+		/**
+		 * Der Timeout wird benötigt, damit das Event
+		 * vom Button- auf das Accordion-Event wechselt.
+		 * So ist es dem Anwendenden möglich das _open-
+		 * Attribute abzufragen.
+		 */
+
+		clearTimeout(this.toggleTimeout);
+
+		this.toggleTimeout = setTimeout(() => {
+			tryToDispatchKoliBriEvent('toggle', this.host, this._open);
+
+			this.state._on?.onToggle?.(event, Boolean(this._open));
+		}, 25);
 	};
 
 	public render(): JSX.Element {
+		const { _open, _label, _disabled } = this.state;
+		const _level = 1;
+
+		const rootClass = 'details';
+
+		const props: CollapsibleProps = {
+			id: this.nonce,
+			label: _label,
+			open: _open,
+			disabled: _disabled,
+			level: _level,
+			onClick: this.handleOnClick,
+			class: rootClass,
+			HeadingProps: { class: `${rootClass}__heading` },
+			HeadingButtonProps: {
+				ref: this.catchRef,
+				class: `${rootClass}__heading-button`,
+				_icons: 'codicon codicon-chevron-right',
+			},
+			ContentProps: {
+				class: `${rootClass}__content indented-text`,
+				wrapperClass: `${rootClass}__wrapper`,
+				animationClass: `${rootClass}__wrapper-animation`,
+			},
+		};
+
 		return (
 			<Host class="kol-details">
-				<details
-					ref={this.catchDetails}
-					class={{
-						disabled: this.state._disabled === true,
-						open: this.state._open === true,
-					}}
-					onToggle={this.handleToggle}
-				>
-					{/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-					<summary
-						ref={this.catchSummary}
-						aria-disabled={this.state._disabled ? 'true' : undefined}
-						onClick={this.preventToggleIfDisabled}
-						onKeyPress={this.preventToggleIfDisabled}
-						tabIndex={this.state._disabled ? -1 : undefined}
-					>
-						<KolIconTag _label="" _icons="codicon codicon-chevron-right" class={`icon ${this.state._open ? 'is-open' : ''}`} />
-						<span>{this.state._label}</span>
-					</summary>
-					<div aria-hidden={this.state._open === false ? 'true' : undefined} class="indented-text" ref={(element) => (this.contentElement = element)}>
-						<slot />
-					</div>
-				</details>
+				<KolCollapsibleFc {...props}>
+					<slot />
+				</KolCollapsibleFc>
 			</Host>
 		);
 	}
@@ -95,9 +108,14 @@ export class KolDetails implements DetailsAPI, FocusableElement {
 	@Prop() public _label!: LabelPropType;
 
 	/**
+	 * Defines which H-level from 1-6 the heading has. 0 specifies no heading and is shown as bold text.
+	 */
+	@Prop() public _level?: HeadingLevel = 1;
+
+	/**
 	 * Defines the callback functions for details.
 	 */
-	@Prop() public _on?: EventCallbacks;
+	@Prop() public _on?: DetailsCallbacksPropType<boolean>;
 
 	/**
 	 * If set (to true) opens/expands the element, closes if not set (or set to false).
@@ -107,6 +125,7 @@ export class KolDetails implements DetailsAPI, FocusableElement {
 
 	@State() public state: DetailsStates = {
 		_label: '', // ⚠ required
+		_level: 1,
 		_on: {},
 	};
 
@@ -122,11 +141,14 @@ export class KolDetails implements DetailsAPI, FocusableElement {
 		});
 	}
 
+	@Watch('_level')
+	public validateLevel(value?: HeadingLevel): void {
+		watchHeadingLevel(this, value);
+	}
+
 	@Watch('_on')
-	public validateOn(on?: EventCallbacks) {
-		if (typeof on === 'object' && on !== null && typeof on.onToggle === 'function') {
-			setState<EventCallbacks>(this, '_on', on);
-		}
+	public validateOn(on?: DetailsCallbacksPropType<boolean>) {
+		validateDetailsCallbacks(this, on);
 	}
 
 	@Watch('_open')
@@ -137,37 +159,8 @@ export class KolDetails implements DetailsAPI, FocusableElement {
 	public componentWillLoad(): void {
 		this.validateDisabled(this._disabled);
 		this.validateLabel(this._label);
+		this.validateLevel(this._level);
 		this.validateOn(this._on);
 		this.validateOpen(this._open);
 	}
-
-	public componentDidLoad() {
-		if (this.detailsElement && this.summaryElement && this.contentElement) {
-			const animationController = new DetailsAnimationController(this.detailsElement, this.summaryElement, this.contentElement);
-			if (this.state._open) {
-				animationController.open();
-			}
-		}
-	}
-
-	private toggleTimeout?: ReturnType<typeof setTimeout>;
-
-	private handleToggle = (event: Event) => {
-		clearTimeout(this.toggleTimeout);
-		this.toggleTimeout = setTimeout(() => {
-			const open = Boolean(this.detailsElement?.open);
-			if (open !== this.state._open) {
-				// Update state
-				this._open = Boolean(this.detailsElement?.open);
-
-				// Event handling
-				tryToDispatchKoliBriEvent('toggle', this.host, this._open);
-
-				// Callback
-				if (typeof this.state._on?.onToggle === 'function') {
-					this.state._on?.onToggle(event, this._open);
-				}
-			}
-		}, 25);
-	};
 }

@@ -51,7 +51,7 @@ import { nonce } from '../../utils/dev.utils';
 import { propagateResetEventToForm, propagateSubmitEventToForm } from '../form/controller';
 import { AssociatedInputController } from '../input-adapter-leanup/associated.controller';
 import { KolSpanWcTag, KolTooltipWcTag } from '../../core/component-names';
-import {validateAccessAndShortKey} from "../../schema/validators/access-and-short-key";
+import { validateAccessAndShortKey } from '../../schema/validators/access-and-short-key';
 
 /**
  * @internal
@@ -418,6 +418,5 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 		this.validateValue(this._value);
 		this.validateVariant(this._variant);
 		validateAccessAndShortKey(this._accessKey, this._shortKey);
-
 	}
 }
