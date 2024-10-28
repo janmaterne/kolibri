@@ -141,11 +141,11 @@ Das Eingabefeld für Zeitangaben gibt es in unterschiedlichen Ausprägungen (Dat
 
 Type: `Promise<void>`
 
-### `getValue() => Promise<string | undefined>`
+### `getValue() => Promise<string | Date | undefined>`
 
 #### Returns
 
-Type: `Promise<string | undefined>`
+Type: `Promise<string | Date | undefined>`
 
 ### `kolFocus() => Promise<void>`
 
