@@ -12,7 +12,7 @@
 		height: 100%;
 		background-color: var(--color-light);
 		grid-template-rows: min-content 2fr min-content;
-		box-shadow: 0 0 rem(4) var(--color-subtle);
+		box-shadow: 0 0 4px var(--color-subtle);
 		border-radius: var(--border-radius);
 	}
 
@@ -21,15 +21,15 @@
 	}
 
 	:host div.header {
-		padding: rem(16) rem(16) rem(8) rem(16);
+		padding: 16px 16px 8px 16px;
 	}
 
 	:host div.content {
-		padding: rem(8) rem(16) rem(16);
+		padding: 8px 16px 16px;
 		overflow: hidden;
 	}
 
 	:host div.footer {
-		padding: rem(8) rem(16);
+		padding: 8px 16px;
 	}
 }

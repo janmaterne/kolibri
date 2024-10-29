@@ -3,14 +3,14 @@
 @layer kol-theme-component {
 	a,
 	button {
-		border-radius: rem(32);
+		border-radius: 32px;
 		font-family: var(--font-family-sans);
 		/* text-transform: uppercase; */
 	}
 
 	a > .kol-span-wc,
 	button > .kol-span-wc {
-		border-radius: rem(32);
+		border-radius: 32px;
 		border-style: solid;
 		min-width: rem(44);
 		min-height: rem(44);
@@ -18,12 +18,12 @@
 		font-size: inherit;
 		/*line-height: 1.25em;*/
 		/*padding: calc(4 * var(--spacing));*/
-		padding: 0 rem(16);
+		padding: 0 16px;
 	}
 
 	.button a.hide-label > .kol-span-wc,
 	.button button.hide-label > .kol-span-wc {
-		padding: 0 rem(8);
+		padding: 0 8px;
 	}
 
 	a > .kol-span-wc,

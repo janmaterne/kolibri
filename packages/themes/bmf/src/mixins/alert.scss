@@ -2,9 +2,9 @@
 
 @mixin kol-alert-theme {
 	.kol-alert-wc {
-		border-width: rem(2);
+		border-width: 2px;
 		border-style: solid;
-		border-radius: rem(5);
+		border-radius: 5px;
 		display: flex;
 		width: 100%;
 		overflow: unset;
@@ -174,7 +174,7 @@
 	}
 
 	.card {
-		border-width: rem(2);
+		border-width: 2px;
 		border-style: solid;
 		filter: drop-shadow(0 rem(2) rem(4) rgba(8, 35, 48, 0.24));
 		flex-direction: column;
@@ -186,7 +186,7 @@
 		}
 
 		> .heading {
-			padding: rem(8) rem(16);
+			padding: 8px 16px;
 
 			> div {
 				width: 100%;
@@ -218,7 +218,7 @@
 					outline-color: var(--color-white);
 					outline-offset: rem(-3);
 					outline-style: solid;
-					outline-width: rem(3);
+					outline-width: 3px;
 					transition: outline 0.1s linear;
 				}
 
@@ -238,7 +238,7 @@
 
 		> .content {
 			color: var(--color-black);
-			padding: rem(16);
+			padding: 16px;
 			max-height: rem(152);
 			overflow-y: auto;
 		}
@@ -323,10 +323,10 @@
 		cursor: pointer;
 		border-radius: 1.5em;
 		border-style: solid;
-		border-width: rem(2);
+		border-width: 2px;
 		font-size: rem(16);
 		align-items: center;
-		padding: rem(8);
+		padding: 8px;
 		justify-content: center;
 		font-style: normal;
 		text-align: center;

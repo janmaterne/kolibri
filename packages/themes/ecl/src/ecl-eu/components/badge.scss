@@ -7,7 +7,7 @@
 
 	:host > span {
 		font: normal normal var(--font-weight) rem(14) / 1em var(--font-family);
-		padding: calc(rem(8) - rem(1)) calc(rem(12) - rem(1));
+		padding: calc(8px - 1px) calc(12px - 1px);
 		text-transform: uppercase;
 	}
 }

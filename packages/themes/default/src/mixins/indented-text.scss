@@ -3,7 +3,7 @@
 @mixin indented-text {
 	font-family: var(--font-family);
 	border-left: rem(2) solid var(--color-primary-variant);
-	padding: 0 rem(18) 0 rem(8);
+	padding: 0 18px 0 8px;
 	margin-left: rem(-2);
 	width: 100%;
 }

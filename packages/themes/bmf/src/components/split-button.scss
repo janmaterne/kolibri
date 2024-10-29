@@ -6,7 +6,7 @@
 		font-family: var(--font-family);
 		border-radius: var(--a11y-min-size);
 		border-style: solid;
-		border-width: rem(2);
+		border-width: 2px;
 		border-color: var(--color-midnight);
 	}
 
@@ -16,7 +16,7 @@
 
 	.horizontal-line {
 		background-color: var(--color-midnight);
-		border-radius: rem(2);
+		border-radius: 2px;
 		width: rem(1);
 	}
 
@@ -40,7 +40,7 @@
 	:is(a, button):focus .kol-span-wc {
 		outline-color: var(--color-ocean);
 		outline-style: solid;
-		outline-width: rem(3);
+		outline-width: 3px;
 		outline-offset: rem(2);
 		transition: outline-offset 0.2s linear;
 	}
@@ -51,7 +51,7 @@
 		border-bottom-left-radius: var(--a11y-min-size);
 		min-height: var(--a11y-min-size);
 		min-width: var(--a11y-min-size);
-		padding: rem(8) rem(14);
+		padding: 8px 14px;
 		text-align: center;
 		transition-duration: 0.5s;
 		transition-property: background-color, color, border-color;

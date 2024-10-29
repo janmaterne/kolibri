@@ -2,14 +2,14 @@
 
 @layer kol-theme-component {
 	:host {
-		--kolibri-spacing: #{rem(4)};
+		--kolibri-spacing: 4px;
 		font-family: var(--font-family);
 	}
 
 	a,
 	button {
 		appearance: none;
-		border-radius: rem(4);
+		border-radius: 4px;
 		text-decoration: none;
 	}
 
@@ -22,20 +22,20 @@
 	button > .kol-span-wc {
 		min-height: rem(44);
 		min-width: rem(44);
-		border-radius: rem(4);
+		border-radius: 4px;
 		font:
 			normal normal 400 rem(16) / rem(20) arial,
 			sans-serif;
 		font-weight: 400;
 		margin: 0;
-		padding: rem(12);
+		padding: 12px;
 	}
 
 	a:focus-visible > .kol-span-wc,
 	button:focus-visible > .kol-span-wc {
 		outline-offset: rem(-4);
 		outline-style: solid;
-		outline-width: rem(2);
+		outline-width: 2px;
 	}
 
 	a:active > .kol-span-wc,
@@ -70,12 +70,12 @@
 		background-color: #fff;
 		border: rem(2) solid #0e47cb;
 		color: #0e47cb;
-		padding: calc(rem(12) - rem(2)) calc(rem(16) - rem(2));
+		padding: calc(12px - 2px) calc(16px - 2px);
 	}
 
 	.secondary a:focus-visible > .kol-span-wc,
 	.secondary button:focus-visible > .kol-span-wc {
-		box-shadow: inset 0 0 0 rem(4) #0e47cb;
+		box-shadow: inset 0 0 0 4px #0e47cb;
 		outline-color: #fff;
 	}
 

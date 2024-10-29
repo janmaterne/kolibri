@@ -4,7 +4,7 @@
 @layer kol-theme-global {
 	/* Design Tokens */
 	:host {
-		--border-radius: #{rem(5)};
+		--border-radius: 5px;
 		--color-midnight: #004b76;
 		--color-ocean: #0077b6;
 		--color-sky: #99c9e2;
@@ -102,7 +102,7 @@
 	.kol-tooltip-wc .tooltip-content {
 		border-radius: var(--border-radius);
 		line-height: 1.25;
-		padding: rem(16) rem(12);
+		padding: 16px 12px;
 	}
 
 	.kol-span-wc,

@@ -20,7 +20,7 @@ $visible-options: 5;
 			display: inline-flex;
 			align-items: center;
 			width: 100%;
-			padding: 0 rem(8);
+			padding: 0 8px;
 		}
 
 		&__input {
@@ -55,7 +55,7 @@ $visible-options: 5;
 
 		&__listbox {
 			border-style: solid;
-			border-width: rem(1);
+			border-width: 1px;
 			border-radius: var(--border-radius);
 			border-color: var(--color-subtle);
 			overflow-y: auto;
@@ -70,7 +70,7 @@ $visible-options: 5;
 			align-items: center;
 			min-height: $option-height;
 			line-height: 1;
-			padding: rem(10) rem(12);
+			padding: 10px 12px;
 
 			&:focus {
 				background-color: var(--color-primary-variant);
@@ -115,8 +115,8 @@ $visible-options: 5;
 		border-color: var(--color-subtle);
 		border-radius: var(--border-radius);
 		border-style: solid;
-		border-width: rem(2);
-		padding: 0 rem(8);
+		border-width: 2px;
+		padding: 0 8px;
 	}
 
 	.input > .kol-icon {

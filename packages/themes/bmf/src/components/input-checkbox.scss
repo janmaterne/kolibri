@@ -75,9 +75,9 @@
 		order: 1;
 		width: 100%;
 		border-color: var(--color-grey);
-		border-width: rem(2);
+		border-width: 2px;
 		border-style: solid;
-		border-radius: rem(5);
+		border-radius: 5px;
 		line-height: 1;
 		font-size: rem(16);
 
@@ -337,7 +337,7 @@
 				min-height: rem(34);
 				border: rem(3) solid var(--color-ocean);
 				background-clip: content-box; // emulate outline with offset
-				padding: rem(2);
+				padding: 2px;
 			}
 		}
 

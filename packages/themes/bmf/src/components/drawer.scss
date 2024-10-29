@@ -2,6 +2,6 @@
 
 @layer kol-theme-component {
 	:host .drawer__wrapper {
-		box-shadow: 0 0 rem(4) var(--color-grey);
+		box-shadow: 0 0 4px var(--color-grey);
 	}
 }

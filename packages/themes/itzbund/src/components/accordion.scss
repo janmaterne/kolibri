@@ -13,9 +13,9 @@
 		height: 100%;
 		display: grid;
 		border-color: var(--kolibri-border-color);
-		border-width: rem(1);
+		border-width: 1px;
 		border-style: solid;
-		border-radius: rem(4);
+		border-radius: 4px;
 
 		&__heading-button {
 			@include kol-typography-accordion;
@@ -34,7 +34,7 @@
 				align-items: center;
 				overflow: hidden;
 				background-color: transparent;
-				padding: rem(4);
+				padding: 4px;
 			}
 
 			.kol-icon::part(icon) {
@@ -57,7 +57,7 @@
 		}
 
 		&__content {
-			padding: rem(8);
+			padding: 8px;
 		}
 
 		.open &__heading-button {

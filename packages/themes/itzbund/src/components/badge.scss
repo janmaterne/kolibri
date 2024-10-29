@@ -7,7 +7,7 @@
 	}
 
 	:host > span {
-		border-radius: rem(5);
+		border-radius: 5px;
 		display: inline-flex;
 	}
 
@@ -16,7 +16,7 @@
 	}
 
 	:host > span .kol-span-wc {
-		padding: rem(4) rem(8);
+		padding: 4px 8px;
 	}
 
 	:host > span > .kol-span-wc {

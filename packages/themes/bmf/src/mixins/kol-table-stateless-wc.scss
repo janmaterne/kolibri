@@ -24,7 +24,7 @@
 		.table:has(.focus-element:focus) {
 			outline-color: var(--color-ocean);
 			outline-style: solid;
-			outline-width: rem(3);
+			outline-width: 3px;
 			transition: outline-offset 0.2s linear;
 		}
 
@@ -107,14 +107,14 @@
 					outline-color: var(--color-ocean);
 					outline-style: solid;
 					outline-offset: rem(2);
-					outline-width: rem(3);
+					outline-width: 3px;
 				}
 			}
 
 			// CHECKBOX
 			input[type='checkbox'] {
 				border-color: var(--color-grey);
-				border-radius: rem(5);
+				border-radius: 5px;
 
 				&:checked {
 					background-color: var(--color-midnight);

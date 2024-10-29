@@ -9,7 +9,7 @@
 		outline-color: var(--color-ocean);
 		outline-offset: rem(2);
 		outline-style: solid;
-		outline-width: rem(3);
+		outline-width: 3px;
 		transition: outline-offset 0.2s linear;
 	}
 
@@ -18,10 +18,10 @@
 			font-weight: 700;
 			border-radius: var(--a11y-min-size);
 			border-style: solid;
-			border-width: rem(2);
+			border-width: 2px;
 			min-height: var(--a11y-min-size);
 			min-width: var(--a11y-min-size);
-			padding: rem(8) rem(14);
+			padding: 8px 14px;
 			text-align: center;
 			transition-duration: 0.5s;
 			transition-property: background-color, color, border-color;

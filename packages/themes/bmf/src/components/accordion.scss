@@ -35,7 +35,7 @@
 
 				border-radius: var(--border-radius);
 				min-height: rem(24);
-				padding: rem(10) rem(8);
+				padding: 10px 8px;
 
 				@include kol-typography-accordion;
 				gap: rem(8);
