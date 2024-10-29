@@ -1,5 +1,6 @@
 @import '../../mixins/rem';
-@import '../mixins/alert-wc.scss';
+@import '../mixins/alert-wc';
+@import '../mixins/typography';
 
 @layer kol-theme-component {
 	:host {
@@ -20,8 +21,7 @@
 
 	fieldset .hint {
 		order: 4;
-		font-size: rem(14.4);
-		font-style: italic;
+		@include kol-typography-hint;
 	}
 
 	fieldset .kol-alert-wc {
@@ -35,8 +35,7 @@
 
 	fieldset .kol-input .hint {
 		order: 3;
-		font-size: rem(14.4);
-		font-style: italic;
+		@include kol-typography-hint;
 	}
 
 	.radio-input-wrapper {
@@ -54,8 +53,8 @@
 	}
 
 	input[type='radio'] {
-		outline: 2px solid var(--color-grey-75);
-		outline-offset: 2px;
+		outline: rem(2) solid var(--color-grey-75);
+		outline-offset: rem(2);
 	}
 
 	input[type='radio']:before {
@@ -64,7 +63,7 @@
 
 	input[type='radio']:checked {
 		border-color: var(--color-blue);
-		border-width: 7px;
+		border-width: rem(7);
 	}
 
 	input[type='radio']:focus {
@@ -85,7 +84,7 @@
 	}
 
 	.error input[type='radio'] {
-		border: 2px solid var(--color-red);
+		border: rem(2) solid var(--color-red);
 	}
 
 	.error input[type='radio']:before {
@@ -94,7 +93,7 @@
 
 	.error input[type='radio']:checked {
 		border-color: var(--color-red);
-		border-width: 7px;
+		border-width: rem(7);
 	}
 
 	.error input[type='radio']:not(:disabled):hover {

@@ -1,5 +1,5 @@
-@use '../@shared/input-core.scss';
-@import '../mixins/rem.scss';
+@import '../@shared/input-core';
+@import '../mixins/rem';
 
 @layer kol-theme-component {
 	.input > .kol-icon {
@@ -14,7 +14,7 @@
 		}
 
 		option {
-			margin: 1px 0;
+			margin: rem(1) 0;
 			border-radius: var(--border-radius);
 			cursor: pointer;
 

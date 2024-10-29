@@ -1,9 +1,11 @@
+@import '../mixins/rem';
+
 @layer kol-theme-component {
 	.toolbar {
 		padding: var(--spacing);
 		border-radius: var(--border-radius);
 		background-color: var(--color-ice);
-		border-width: 2px;
+		border-width: rem(2);
 		border-style: solid;
 	}
 }

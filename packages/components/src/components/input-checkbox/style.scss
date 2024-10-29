@@ -1,8 +1,8 @@
 @import '../input';
-@import 'common';
-@import 'button';
-@import 'checkbox';
-@import 'switch';
-@import '../@shared/kol-alert-mixin.scss';
+@import './common';
+@import './button';
+@import './checkbox';
+@import './switch';
+@import '../@shared/kol-alert-mixin';
 
 @include kol-alert-styles;

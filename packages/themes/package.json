@@ -45,6 +45,7 @@
 	],
 	"scripts": {
 		"build": "rollup -c",
+		"build:deps": "pnpm --filter @public-ui/themes^... build",
 		"dev": "rollup -c --watch",
 		"format": "prettier --check src",
 		"lint": "tsc --noemit && eslint src",

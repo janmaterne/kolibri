@@ -1,9 +1,10 @@
-@use '../@shared/input-core.scss';
+@import '../@shared/input-core';
+@import '../mixins/rem';
 
 @layer kol-theme-component {
 	input[type='color'] {
 		border: none;
-		min-height: 40px;
+		min-height: rem(40);
 	}
 
 	input[type='color'] {

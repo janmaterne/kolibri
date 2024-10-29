@@ -1,6 +1,6 @@
-@import '../mixins/alert.scss';
-@import '../mixins/indented-text.scss';
-@import '../mixins/link.scss';
+@import '../mixins/alert';
+@import '../mixins/indented-text';
+@import '../mixins/link';
 
 @layer kol-theme-component {
 	:host {

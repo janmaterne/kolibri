@@ -4,9 +4,10 @@
 	:host {
 		font-family: var(--font-family);
 	}
+
 	:host > span {
 		font: normal normal var(--font-weight) rem(14) / 1em var(--font-family);
-		padding: calc(rem(8) - 1px) calc(rem(12) - 1px);
+		padding: calc(rem(8) - rem(1)) calc(rem(12) - rem(1));
 		text-transform: uppercase;
 	}
 }

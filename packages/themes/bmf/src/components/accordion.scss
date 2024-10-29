@@ -1,6 +1,6 @@
 @import '../mixins/rem';
-@import '../mixins/typography.scss';
-@import '../mixins/focus-outline.scss';
+@import '../mixins/typography';
+@import '../mixins/focus-outline';
 
 @layer kol-theme-component {
 	:host {
@@ -18,13 +18,13 @@
 		}
 
 		&__wrapper {
-			margin-top: 3px;
+			margin-top: rem(3);
 		}
 
 		&__content {
 			padding-left: 2.25em;
-			padding-bottom: 12px;
-			padding-right: 8px;
+			padding-bottom: rem(12);
+			padding-right: rem(8);
 		}
 
 		&__heading-button {
@@ -34,8 +34,8 @@
 				}
 
 				border-radius: var(--border-radius);
-				min-height: 24px;
-				padding: 10px 8px;
+				min-height: rem(24);
+				padding: rem(10) rem(8);
 
 				@include kol-typography-accordion;
 				gap: rem(8);

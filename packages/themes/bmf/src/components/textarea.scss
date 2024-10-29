@@ -1,12 +1,12 @@
-@import '../mixins/input.scss';
+@import '../mixins/input';
 @import '../mixins/rem';
 
 @layer kol-theme-component {
 	textarea {
 		border: none;
 		display: block;
-		padding-top: 12px;
-		padding-bottom: 12px;
+		padding-top: rem(12);
+		padding-bottom: rem(12);
 		overflow: auto;
 
 		&::placeholder {
