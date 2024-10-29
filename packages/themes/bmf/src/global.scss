@@ -4,7 +4,7 @@
 @layer kol-theme-global {
 	/* Design Tokens */
 	:host {
-		--border-radius: rem(5);
+		--border-radius: #{rem(5)};
 		--color-midnight: #004b76;
 		--color-ocean: #0077b6;
 		--color-sky: #99c9e2;
@@ -39,7 +39,7 @@
 		--color-cloud: #f6f7f7;
 		--color-white: #ffffff;
 		--font-family: Verdana, Arial, Calibri, Helvetica, sans-serif;
-		--font-size: rem(16);
+		--font-size: #{rem(16)};
 		--spacing: 0.25em;
 	}
 

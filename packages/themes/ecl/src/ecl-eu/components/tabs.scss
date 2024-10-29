@@ -3,7 +3,7 @@
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
-		--kolibri-spacing: rem(4);
+		--kolibri-spacing: #{rem(4)};
 	}
 
 	.tabs-button-group {

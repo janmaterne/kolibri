@@ -3,7 +3,7 @@
 
 @layer kol-theme-component {
 	:host {
-		--kolibri-spacing: rem(4);
+		--kolibri-spacing: #{rem(4)};
 		font-family: var(--font-family);
 	}
 

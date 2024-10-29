@@ -4,7 +4,7 @@
 @layer kol-theme-global {
 	:host {
 		--border-color: var(--color-anthrazit);
-		--border-radius: rem(2);
+		--border-radius: #{rem(2)};
 		--color-anthrazit: #333;
 		--color-jade: #f3f7fb;
 		--color-weiss: #fff;
@@ -26,7 +26,7 @@
 		--gradient-gelb-citrin: linear-gradient(67deg, var(--color-gelb), var(--color-citrin));
 		--font-family-sans: Verdana;
 		--font-family-serif: 'Times New Roman';
-		--font-size: rem(16);
+		--font-size: #{rem(16)};
 		--spacing: 0.125em;
 		--kolibri-spacing: calc(2 * var(--spacing));
 	}

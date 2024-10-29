@@ -7,7 +7,7 @@
 	}
 
 	.button {
-		--kolibri-spacing: rem(4);
+		--kolibri-spacing: #{rem(4)};
 		border-radius: rem(4);
 
 		&:focus {

@@ -109,20 +109,20 @@
 		--color-white: #fff;
 		--color-black: #000;
 		--font-family: Arial, sans-serif;
-		--font-size: rem(16);
+		--font-size: #{rem(16)};
 		--font-weight-regular: 400;
 		--font-weight-bold: 700;
 		--line-height-regular: 1.5;
 		--line-height-heading: 1.2;
-		--spacing-4xl: rem(64);
-		--spacing-3xl: rem(48);
-		--spacing-2xl: rem(40);
-		--spacing-xl: rem(32);
-		--spacing-l: rem(24);
-		--spacing-m: rem(16);
-		--spacing-s: rem(12);
-		--spacing-xs: rem(8);
-		--spacing-2xs: rem(4);
+		--spacing-4xl: #{rem(64)};
+		--spacing-3xl: #{rem(48)};
+		--spacing-2xl: #{rem(40)};
+		--spacing-xl: #{rem(32)};
+		--spacing-l: #{rem(24)};
+		--spacing-m: #{rem(16)};
+		--spacing-s: #{rem(12)};
+		--spacing-xs: #{rem(8)};
+		--spacing-2xs: #{rem(4)};
 	}
 
 	a,
