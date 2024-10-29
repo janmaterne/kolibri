@@ -1,6 +1,6 @@
 {
 	"name": "@public-ui/themes",
-	"version": "2.1.9-rc.0",
+	"version": "2.1.9",
 	"license": "EUPL-1.2",
 	"homepage": "https://public-ui.github.io",
 	"repository": {
@@ -45,6 +45,7 @@
 	],
 	"scripts": {
 		"build": "rollup -c",
+		"build:deps": "pnpm --filter @public-ui/themes^... build",
 		"dev": "rollup -c --watch",
 		"format": "prettier --check src",
 		"lint": "tsc --noemit && eslint src",

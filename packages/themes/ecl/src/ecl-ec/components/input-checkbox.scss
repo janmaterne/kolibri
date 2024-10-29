@@ -1,5 +1,5 @@
 @import '../../mixins/rem';
-@import '../mixins/alert-wc.scss';
+@import '../mixins/alert-wc';
 
 @layer kol-theme-component {
 	:host {
@@ -17,7 +17,7 @@
 
 	input[type='checkbox'] {
 		background-color: var(--color-white);
-		border-width: 2px;
+		border-width: rem(2);
 		border-style: solid;
 		color: var(--color-grey);
 		line-height: 1.5;
@@ -26,9 +26,9 @@
 
 	input[type='checkbox']:focus {
 		outline-color: var(--color-blue);
-		outline-offset: 2px;
+		outline-offset: rem(2);
 		outline-style: solid;
-		outline-width: 2px;
+		outline-width: rem(2);
 	}
 
 	input[type='checkbox'] {
@@ -144,8 +144,8 @@
 
 	.button:focus-within {
 		outline-color: var(--color-blue);
-		outline-offset: 2px;
+		outline-offset: rem(2);
 		outline-style: solid;
-		outline-width: 2px;
+		outline-width: rem(2);
 	}
 }

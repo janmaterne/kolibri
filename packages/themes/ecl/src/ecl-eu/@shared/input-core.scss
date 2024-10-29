@@ -1,5 +1,5 @@
 @import '../../mixins/rem';
-@import '../mixins/alert-wc.scss';
+@import '../mixins/alert-wc';
 
 @layer kol-theme-component {
 	:host {
@@ -16,21 +16,21 @@
 	select,
 	textarea {
 		border: none;
-		margin: 1px;
+		margin: rem(1);
 		outline: none;
 	}
 
 	input,
 	select:not([multiple]) {
-		height: 44px;
-		min-height: 44px;
+		height: rem(44);
+		min-height: rem(44);
 	}
 
 	input:not([type='range']):focus,
 	select:focus,
 	textarea:focus {
-		border-top: 1px solid var(--color-blue);
-		border-bottom: 1px solid var(--color-blue);
+		border-top: rem(1) solid var(--color-blue);
+		border-bottom: rem(1) solid var(--color-blue);
 	}
 
 	label {
@@ -49,12 +49,12 @@
 	}
 
 	.input {
-		min-height: 44px;
-		border: 1px solid var(--color-grey-75);
+		min-height: rem(44);
+		border: rem(1) solid var(--color-grey-75);
 		color: var(--color-grey);
 		order: 4;
 		align-items: center;
-		padding: 1px 0.5em;
+		padding: rem(1) 0.5em;
 	}
 
 	input::placeholder,
@@ -64,8 +64,8 @@
 
 	.input:focus-within {
 		box-shadow:
-			inset 1px 1px var(--color-blue),
-			inset -1px -1px var(--color-blue);
+			inset rem(1) rem(1) var(--color-blue),
+			inset rem(-1) rem(-1) var(--color-blue);
 		outline: none;
 	}
 

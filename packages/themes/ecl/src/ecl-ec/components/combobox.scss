@@ -20,11 +20,11 @@ $visible-options: 5;
 			min-height: var(--a11y-min-size);
 			text-align: left;
 			width: 100%;
-			min-height: 44px;
+			min-height: rem(44);
 			color: var(--color-grey);
 			order: 4;
 			align-items: center;
-			padding: 1px 0.5em;
+			padding: rem(1) 0.5em;
 		}
 
 		&__input {
@@ -59,13 +59,13 @@ $visible-options: 5;
 
 		&__listbox {
 			border-style: solid;
-			border-width: 1px;
+			border-width: rem(1);
 			border-color: var(--color-blue);
 			overflow-y: auto;
 			overflow-x: hidden;
 			box-sizing: border-box;
 			width: 100%;
-			max-height: calc($option-height * $visible-options + 2px);
+			max-height: calc($option-height * $visible-options + rem(2));
 		}
 
 		&__item {
@@ -98,8 +98,8 @@ $visible-options: 5;
 	input:not([type='range']):focus,
 	select:focus,
 	textarea:focus {
-		border-top: 1px solid var(--color-blue);
-		border-bottom: 1px solid var(--color-blue);
+		border-top: rem(1) solid var(--color-blue);
+		border-bottom: rem(1) solid var(--color-blue);
 	}
 
 	label {
@@ -118,11 +118,11 @@ $visible-options: 5;
 	}
 
 	.input {
-		border: 1px solid var(--color-grey-75);
+		border: rem(1) solid var(--color-grey-75);
 		color: var(--color-grey);
 		order: 4;
 		align-items: center;
-		padding: 1px;
+		padding: rem(1);
 	}
 
 	input::placeholder,
@@ -132,8 +132,8 @@ $visible-options: 5;
 
 	.input:focus-within {
 		box-shadow:
-			inset 1px 1px var(--color-blue),
-			inset -1px -1px var(--color-blue);
+			inset rem(1) rem(1) var(--color-blue),
+			inset rem(-1) rem(-1) var(--color-blue);
 		outline: none;
 	}
 

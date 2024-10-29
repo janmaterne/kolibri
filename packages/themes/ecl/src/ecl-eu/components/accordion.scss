@@ -7,12 +7,12 @@
 	}
 
 	.accordion {
-		border-radius: 8px;
+		border-radius: rem(8);
 		box-shadow:
-			0 2px 4px rgb(9 49 142 / 8%),
-			0 0 10px rgb(9 49 142 / 4%),
-			0 4px 5px rgb(9 49 142 / 4%),
-			0 -4px 4px rgb(9 49 142 / 4%);
+			0 rem(2) rem(4) rgb(9 49 142 / 8%),
+			0 0 rem(10) rgb(9 49 142 / 4%),
+			0 rem(4) rem(5) rgb(9 49 142 / 4%),
+			0 rem(-4) rem(4) rgb(9 49 142 / 4%);
 		margin: 0;
 		overflow: hidden;
 
@@ -22,12 +22,12 @@
 
 		&__heading-button {
 			button {
-				border-radius: 8px;
-				outline-offset: -1px;
+				border-radius: rem(8);
+				outline-offset: rem(-1);
 				border: 0;
 				border-bottom-color: #cfdaf5;
 				border-bottom-style: solid;
-				border-bottom-width: 2px;
+				border-bottom-width: rem(2);
 				color: #171a22;
 				position: relative;
 				display: block;
@@ -45,14 +45,14 @@
 
 				&::before {
 					background-color: #fc0;
-					border-end-end-radius: 2px;
-					border-end-start-radius: 2px;
+					border-end-end-radius: rem(2);
+					border-end-start-radius: rem(2);
 					content: '';
-					height: 4px;
+					height: rem(4);
 					position: absolute;
 					left: rem(24);
 					top: 0;
-					width: 32px;
+					width: 3rem (2);
 				}
 			}
 
@@ -68,10 +68,10 @@
 		}
 
 		&__content {
-			-webkit-border-start: 4px solid #0e47cb;
+			-webkit-border-start: rem(4) solid #0e47cb;
 			-webkit-margin-start: 0;
-			border-bottom: 2px solid #cfdaf5;
-			border-inline-start: 4px solid #0e47cb;
+			border-bottom: rem(2) solid #cfdaf5;
+			border-inline-start: rem(4) solid #0e47cb;
 			color: #515560;
 			font:
 				normal normal 400 rem(16) / rem(24) arial,
@@ -82,8 +82,8 @@
 
 		.open &__heading-button {
 			button {
-				border-start-end-radius: 8px;
-				border-start-start-radius: 8px;
+				border-start-end-radius: rem(8);
+				border-start-start-radius: rem(8);
 			}
 
 			.kol-icon::part(icon)::before {

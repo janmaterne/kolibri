@@ -2,14 +2,16 @@
 
 @layer kol-theme-component {
 	:host {
-		--kolibri-spacing: rem(4);
+		--kolibri-spacing: #{rem(4)};
 	}
+
 	a,
 	button {
 		appearance: none;
 		color: var(--color-blue);
 		text-decoration: underline;
 	}
+
 	a:hover,
 	button:hover {
 		color: var(--color-blue-130);

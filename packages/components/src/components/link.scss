@@ -1,5 +1,5 @@
-@import '@shared/mixins';
-@import 'style';
+@import './@shared/mixins';
+@import './style';
 
 @layer kol-component {
 	:host {
@@ -27,7 +27,7 @@
 	}
 
 	.skip {
-		left: -99999px;
+		left: rem(-99999);
 		overflow: hidden;
 		position: absolute;
 		z-index: 9999999;

@@ -14,8 +14,8 @@
 		}
 
 		&:focus-within {
-			outline: 1px solid;
-			outline-offset: 2px;
+			outline: rem(1) solid;
+			outline-offset: rem(2);
 		}
 	}
 }

@@ -1,4 +1,5 @@
-@import '../mixins/button.scss';
+@import '../mixins/button';
+@import '../mixins/rem';
 
 @layer kol-theme-component {
 	:host {
@@ -12,7 +13,7 @@
 		border-width: var(--border-width);
 		min-height: var(--a11y-min-size);
 		min-width: var(--a11y-min-size);
-		padding: 8px 14px;
+		padding: rem(8) rem(14);
 		text-align: center;
 		transition-duration: 0.5s;
 		transition-property: background-color, color, border-color;

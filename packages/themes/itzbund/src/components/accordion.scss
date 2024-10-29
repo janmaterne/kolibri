@@ -1,5 +1,5 @@
 @import '../mixins/rem';
-@import '../mixins/typography.scss';
+@import '../mixins/typography';
 
 @layer kol-theme-component {
 	:host {
@@ -13,7 +13,7 @@
 		height: 100%;
 		display: grid;
 		border-color: var(--kolibri-border-color);
-		border-width: 1px;
+		border-width: rem(1);
 		border-style: solid;
 		border-radius: rem(4);
 

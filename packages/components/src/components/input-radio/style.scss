@@ -1,12 +1,12 @@
 @import '../@shared/mixins';
 @import '../input';
-@import '../@shared/kol-alert-mixin.scss';
+@import '../@shared/kol-alert-mixin';
 
 @include kol-alert-styles;
 
 @layer kol-component {
 	:host {
-		--border-width: 2px;
+		--border-width: #{rem(2)};
 		--input-size: 1.5em;
 		font-size: rem(16);
 	}

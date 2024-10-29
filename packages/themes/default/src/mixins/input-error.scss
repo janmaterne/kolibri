@@ -1,8 +1,8 @@
-@import '../mixins/rem';
-@import '../mixins/alert-wc.scss';
+@import './rem';
+@import '../mixins/alert-wc';
 
 @mixin input-error {
-	border-left: 3px solid var(--color-danger);
+	border-left: rem(3) solid var(--color-danger);
 	padding-left: rem(16);
 
 	.input:focus-within {
