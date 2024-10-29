@@ -1,8 +1,8 @@
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
-import {
-	buildBadgeText,
+import type {
 	ButtonProps,
+	FocusableElement,
 	HideErrorPropType,
 	IdPropType,
 	InputDateAPI,
@@ -13,6 +13,7 @@ import {
 	Iso8601,
 	KoliBriHorizontalIcons,
 	LabelWithExpertSlotPropType,
+	MsgPropType,
 	NamePropType,
 	ReadOnlyPropType,
 	ShortKeyPropType,
@@ -21,7 +22,7 @@ import {
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { deprecatedHint, type FocusableElement, type MsgPropType, showExpertSlot } from '../../schema';
+import { buildBadgeText, deprecatedHint, showExpertSlot } from '../../schema';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';

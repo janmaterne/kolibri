@@ -1,5 +1,4 @@
-import {
-	buildBadgeText,
+import type {
 	ButtonProps,
 	FocusableElement,
 	HideErrorPropType,
@@ -17,7 +16,7 @@ import {
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { devHint, setState, showExpertSlot } from '../../schema';
+import { buildBadgeText, devHint, setState, showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
