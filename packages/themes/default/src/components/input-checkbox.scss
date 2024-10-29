@@ -111,6 +111,11 @@
 		margin-top: rem(2);
 	}
 
+	.required label > span::after {
+		content: '*';
+		padding-left: 0.125em;
+	}
+
 	.kol-input input[type='checkbox'] {
 		appearance: none;
 		background-color: white;

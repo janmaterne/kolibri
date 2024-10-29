@@ -84,4 +84,9 @@
 	:not(.disabled) .input:hover {
 		border-color: var(--color-primary);
 	}
+
+	.required label > span::after {
+		content: '*';
+		padding-left: 0.125em;
+	}
 }

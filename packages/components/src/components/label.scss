@@ -1,13 +1,8 @@
 @import 'style';
 
 @layer kol-component {
-	.required label > .kol-span-wc > span > .span-label::after,
+	.required label > span::after,
 	.required legend > span::after {
 		content: '*';
-	}
-
-	.kol-span-wc {
-		place-items: unset;
-		width: fit-content;
 	}
 }
