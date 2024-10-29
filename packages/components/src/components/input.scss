@@ -1,6 +1,6 @@
-@import '@shared/mixins';
-@import 'label';
-@import 'host-display-block';
+@import './@shared/mixins';
+@import './label';
+@import './host-display-block';
 
 @layer kol-component {
 	input,

@@ -1,7 +1,7 @@
 @import '../@shared/mixins';
 @import '../style';
-@import 'cycle';
-@import 'dot';
+@import './cycle';
+@import './dot';
 
 @layer kol-component {
 	:host {

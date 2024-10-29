@@ -1,4 +1,4 @@
-@import 'rem';
+@import './rem';
 
 @mixin focus-outline {
 	border-radius: var(--border-radius);

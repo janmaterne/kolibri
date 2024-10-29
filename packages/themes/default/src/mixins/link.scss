@@ -1,4 +1,4 @@
-@import 'rem';
+@import './rem';
 
 @mixin kol-link {
 	:is(a, button) {
