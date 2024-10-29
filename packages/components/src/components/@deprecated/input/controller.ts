@@ -10,6 +10,7 @@ import type {
 	MsgPropType,
 	ShortKeyPropType,
 	StencilUnknown,
+	Stringified,
 	TooltipAlignPropType,
 } from '../../../schema';
 import {
@@ -26,9 +27,9 @@ import {
 	validateLabelWithExpertSlot,
 	validateMsg,
 	validateTabIndex,
+	validateTooltipAlign,
 	watchBoolean,
 	watchString,
-	validateTooltipAlign,
 	validateShortKey,
 } from '../../../schema';
 
@@ -121,7 +122,7 @@ export class InputController extends ControlledInputController implements Watche
 		});
 	}
 
-	public validateMsg(value?: MsgPropType): void {
+	public validateMsg(value?: Stringified<MsgPropType>): void {
 		validateMsg(this.component, value);
 	}
 
@@ -171,7 +172,6 @@ export class InputController extends ControlledInputController implements Watche
 	}
 
 	protected onBlur(event: Event): void {
-		this.component._alert = true;
 		this.component._touched = true;
 
 		// Event handling
@@ -247,8 +247,6 @@ export class InputController extends ControlledInputController implements Watche
 	}
 
 	protected onFocus(event: Event): void {
-		this.component._alert = true;
-
 		// Event handling
 		stopPropagation(event);
 		tryToDispatchKoliBriEvent('focus', this.host);

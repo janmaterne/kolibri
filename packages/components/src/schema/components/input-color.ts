@@ -2,6 +2,7 @@ import type { Generic } from 'adopted-style-sheets';
 
 import type {
 	PropAccessKey,
+	MsgPropType,
 	PropDisabled,
 	PropHideError,
 	PropHideLabel,
@@ -26,6 +27,7 @@ type OptionalProps = {
 	error: string;
 	hint: string;
 	icons: Stringified<KoliBriHorizontalIcons>;
+	msg: Stringified<MsgPropType>;
 	on: InputTypeOnDefault;
 	smartButton: Stringified<ButtonProps>;
 	tabIndex: number;
@@ -34,7 +36,6 @@ type OptionalProps = {
 	PropDisabled &
 	PropHideError &
 	PropHideLabel &
-	PropMsg &
 	PropName &
 	PropShortKey &
 	PropSuggestions &

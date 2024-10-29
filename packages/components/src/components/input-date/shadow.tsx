@@ -1,5 +1,5 @@
 import type { JSX } from '@stencil/core';
-import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 import type {
 	ButtonProps,
 	HideErrorPropType,
@@ -20,13 +20,14 @@ import type {
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { deprecatedHint, type FocusableElement, type MsgPropType } from '../../schema';
+import { deprecatedHint, type FocusableElement, type MsgPropType, showExpertSlot } from '../../schema';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
+import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { InputDateController } from './controller';
-import { KolInputWcTag } from '../../core/component-names';
+import { KolInputTag } from '../../core/component-names';
 
 /**
  * @slot - Die Beschriftung des Eingabefeldes.
@@ -123,15 +124,17 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 	public render(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
 		const hasSuggestions = Array.isArray(this.state._suggestions) && this.state._suggestions.length > 0;
+		const hasExpertSlot = showExpertSlot(this.state._label);
 
 		return (
 			<Host class={{ 'kol-input-date': true, 'has-value': this.state._hasValue }}>
-				<KolInputWcTag
+				<KolInputTag
 					class={{
 						[this.state._type]: true,
 						'hide-label': !!this.state._hideLabel,
 					}}
 					_accessKey={this.state._accessKey}
+					_alert={this.showAsAlert()}
 					_disabled={this.state._disabled}
 					_msg={this.state._msg}
 					_hideError={this.state._hideError}
@@ -148,6 +151,20 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}
 				>
+					<span slot="label">
+						{hasExpertSlot ? (
+							<slot name="expert"></slot>
+						) : typeof this.state._accessKey === 'string' ? (
+							<>
+								<InternalUnderlinedBadgeText badgeText={this.state._accessKey ?? this.state._shortKey} label={this.state._label} />{' '}
+								<span class="access-key-hint" aria-hidden="true">
+									{this.state._accessKey}
+								</span>
+							</>
+						) : (
+							<span>{this.state._label}</span>
+						)}
+					</span>
 					<div slot="input">
 						<input
 							ref={this.catchRef}
@@ -172,11 +189,19 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 							value={this.state._value || undefined}
 							{...this.controller.onFacade}
 							onKeyDown={this.onKeyDown}
+							onBlur={(event) => {
+								this.controller.onFacade.onBlur(event);
+								this.inputHasFocus = false;
+							}}
+							onFocus={(event) => {
+								this.controller.onFacade.onFocus(event);
+								this.inputHasFocus = true;
+							}}
 							onChange={this.onChange}
 							onInput={this.onInput}
 						/>
 					</div>
-				</KolInputWcTag>
+				</KolInputTag>
 			</Host>
 		);
 	}
@@ -190,8 +215,9 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 
 	/**
 	 * Defines whether the screen-readers should read out the notification.
+	 * @deprecated Will be removed in v3. Use automatic behaviour instead.
 	 */
-	@Prop({ mutable: true, reflect: true }) public _alert?: boolean = true;
+	@Prop({ mutable: true, reflect: true }) public _alert?: boolean;
 
 	/**
 	 * Defines whether the input can be auto-completed.
@@ -256,7 +282,7 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 	/**
 	 * Defines the properties for a message rendered as Alert component.
 	 */
-	@Prop() public _msg?: MsgPropType;
+	@Prop() public _msg?: Stringified<MsgPropType>;
 
 	/**
 	 * Defines the technical name of an input field.
@@ -342,8 +368,17 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 		_type: 'datetime-local',
 	};
 
+	@State() private inputHasFocus = false;
+
 	public constructor() {
 		this.controller = new InputDateController(this, 'date', this.host);
+	}
+
+	private showAsAlert(): boolean {
+		if (this.state._alert === undefined) {
+			return Boolean(this.state._touched) && !this.inputHasFocus;
+		}
+		return this.state._alert;
 	}
 
 	@Watch('_accessKey')
@@ -412,7 +447,7 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 	}
 
 	@Watch('_msg')
-	public validateMsg(value?: MsgPropType): void {
+	public validateMsg(value?: Stringified<MsgPropType>): void {
 		this.controller.validateMsg(value);
 	}
 
@@ -487,7 +522,6 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 
 	public componentWillLoad(): void {
 		if (this._value !== undefined) this.setInitialValueType(this._value);
-		this._alert = this._alert === true;
 		this._touched = this._touched === true;
 		this.controller.componentWillLoad();
 

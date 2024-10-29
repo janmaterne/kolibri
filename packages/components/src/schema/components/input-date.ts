@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	MsgPropType,
 	PropAccessKey,
 	PropDisabled,
 	PropHideError,
@@ -16,7 +17,16 @@ import type {
 	PropSyncValueBySelector,
 	PropTouched,
 } from '../props';
-import type { InputDateType, InputTypeOnDefault, InputTypeOnOff, Iso8601, KoliBriHorizontalIcons, OptionalInputProps, W3CInputValue } from '../types';
+import type {
+	InputDateType,
+	InputTypeOnDefault,
+	InputTypeOnOff,
+	Iso8601,
+	KoliBriHorizontalIcons,
+	OptionalInputProps,
+	Stringified,
+	W3CInputValue,
+} from '../types';
 import type { ButtonProps } from './button';
 
 type RequiredProps = PropLabelWithExpertSlot;
@@ -25,11 +35,11 @@ type OptionalProps = {
 	 * @deprecated Will be removed in v3. Use `msg` instead.
 	 */
 	error: string;
+	msg: Stringified<MsgPropType>;
 	type: InputDateType;
 } & OptionalInputProps<Iso8601 | Date> &
 	PropHideError &
-	PropSuggestions &
-	PropMsg;
+	PropSuggestions;
 
 type RequiredStates = {
 	autoComplete: InputTypeOnOff;

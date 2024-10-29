@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	MsgPropType,
 	PropAccessKey,
 	PropDisabled,
 	PropHasCounter,
@@ -32,6 +33,7 @@ type OptionalProps = {
 	hint: string;
 	icons: Stringified<KoliBriHorizontalIcons>;
 	maxLength: number;
+	msg: Stringified<MsgPropType>;
 	on: InputTypeOnDefault;
 	pattern: string;
 	placeholder: string;
@@ -43,7 +45,6 @@ type OptionalProps = {
 	PropHasCounter &
 	PropHideError &
 	PropHideLabel &
-	PropMsg &
 	PropMultiple &
 	PropName &
 	PropReadOnly &

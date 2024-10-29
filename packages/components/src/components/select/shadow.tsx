@@ -20,14 +20,16 @@ import type {
 	TooltipAlignPropType,
 	W3CInputValue,
 } from '../../schema';
+import { showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
-import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
 import { getRenderStates } from '../input/controller';
+import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { SelectController } from './controller';
-import { KolInputWcTag } from '../../core/component-names';
+import { KolInputTag } from '../../core/component-names';
 import { propagateSubmitEventToForm } from '../form/controller';
 
 const isSelected = (valueList: unknown[] | null, optionValue: unknown): boolean => {
@@ -99,15 +101,17 @@ export class KolSelect implements SelectAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
+		const hasExpertSlot = showExpertSlot(this.state._label);
 
 		return (
 			<Host class={{ 'kol-select': true, 'has-value': this.state._hasValue }}>
-				<KolInputWcTag
+				<KolInputTag
 					class={{
 						'hide-label': !!this.state._hideLabel,
 						select: true,
 					}}
 					_accessKey={this.state._accessKey}
+					_alert={this.showAsAlert()}
 					_disabled={this.state._disabled}
 					_hideError={this.state._hideError}
 					_hideLabel={this.state._hideLabel}
@@ -123,6 +127,20 @@ export class KolSelect implements SelectAPI, FocusableElement {
 					onClick={() => this.selectRef?.focus()}
 					role={`presentation` /* Avoid element being read as 'clickable' in NVDA */}
 				>
+					<span slot="label">
+						{hasExpertSlot ? (
+							<slot name="expert"></slot>
+						) : typeof this.state._accessKey === 'string' ? (
+							<>
+								<InternalUnderlinedBadgeText badgeText={this.state._accessKey ?? this.state._shortKey} label={this.state._label} />{' '}
+								<span class="access-key-hint" aria-hidden="true">
+									{this.state._accessKey}
+								</span>
+							</>
+						) : (
+							<span>{this.state._label}</span>
+						)}
+					</span>
 					<div slot="input">
 						<form
 							onSubmit={(event) => {
@@ -152,6 +170,14 @@ export class KolSelect implements SelectAPI, FocusableElement {
 								{...this.controller.onFacade}
 								onInput={this.onInput.bind(this)}
 								onChange={this.onChange.bind(this)}
+								onFocus={(event) => {
+									this.controller.onFacade.onFocus(event);
+									this.inputHasFocus = true;
+								}}
+								onBlur={(event) => {
+									this.controller.onFacade.onBlur(event);
+									this.inputHasFocus = false;
+								}}
 							>
 								{this.state._options.map((option, index) => {
 									/**
@@ -179,7 +205,7 @@ export class KolSelect implements SelectAPI, FocusableElement {
 							</select>
 						</form>
 					</div>
-				</KolInputWcTag>
+				</KolInputTag>
 			</Host>
 		);
 	}
@@ -193,8 +219,9 @@ export class KolSelect implements SelectAPI, FocusableElement {
 
 	/**
 	 * Defines whether the screen-readers should read out the notification.
+	 * @deprecated Will be removed in v3. Use automatic behaviour instead.
 	 */
-	@Prop({ mutable: true, reflect: true }) public _alert?: boolean = true;
+	@Prop({ mutable: true, reflect: true }) public _alert?: boolean;
 
 	/**
 	 * Makes the element not focusable and ignore all events.
@@ -244,7 +271,7 @@ export class KolSelect implements SelectAPI, FocusableElement {
 	/**
 	 * Defines the properties for a message rendered as Alert component.
 	 */
-	@Prop() public _msg?: MsgPropType;
+	@Prop() public _msg?: Stringified<MsgPropType>;
 
 	/**
 	 * Makes the input accept multiple inputs.
@@ -320,8 +347,17 @@ export class KolSelect implements SelectAPI, FocusableElement {
 		_value: [],
 	};
 
+	@State() private inputHasFocus = false;
+
 	public constructor() {
 		this.controller = new SelectController(this, 'select', this.host);
+	}
+
+	private showAsAlert(): boolean {
+		if (this.state._alert === undefined) {
+			return Boolean(this.state._touched) && !this.inputHasFocus;
+		}
+		return this.state._alert;
 	}
 
 	@Watch('_accessKey')
@@ -375,7 +411,7 @@ export class KolSelect implements SelectAPI, FocusableElement {
 	}
 
 	@Watch('_msg')
-	public validateMsg(value?: MsgPropType): void {
+	public validateMsg(value?: Stringified<MsgPropType>): void {
 		this.controller.validateMsg(value);
 	}
 
@@ -435,7 +471,6 @@ export class KolSelect implements SelectAPI, FocusableElement {
 	}
 
 	public componentWillLoad(): void {
-		this._alert = this._alert === true;
 		this._touched = this._touched === true;
 		this.controller.componentWillLoad();
 

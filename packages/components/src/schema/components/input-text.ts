@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	MsgPropType,
 	PropAccessKey,
 	PropDisabled,
 	PropHasCounter,
@@ -38,13 +39,13 @@ type OptionalProps = {
 	tabIndex: number;
 	type: InputTextType;
 	value: string;
+	msg: Stringified<MsgPropType>;
 } & PropAccessKey &
 	PropDisabled &
 	PropHasCounter &
 	PropHideError &
 	PropHideLabel &
 	PropId &
-	PropMsg &
 	PropName &
 	PropReadOnly &
 	PropRequired &

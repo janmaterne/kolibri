@@ -20,7 +20,7 @@ import type {
 	W3CInputValue,
 } from '../../schema';
 import type { Props } from './types';
-import { KolButtonWcTag, KolIconTag, KolSpanWcTag, KolTooltipWcTag } from '../../core/component-names';
+import { KolButtonWcTag, KolIconTag, KolTooltipWcTag } from '../../core/component-names';
 import { KolFormFieldMsgFc } from '../../functional-components';
 
 /**
@@ -66,13 +66,13 @@ export class KolInputWc implements Props {
 					'hidden-error': this._hideError === true,
 				})}
 			>
-				{!this._renderNoLabel && (
-					<label class="input-label" id={!useTooltopInsteadOfLabel ? `${this._id}-label` : undefined} hidden={useTooltopInsteadOfLabel} htmlFor={this._id}>
-						<KolSpanWcTag _badgeText={this._accessKey || this._shortKey} _hideLabel={this._hideLabel} _label={hasExpertSlot ? '' : this._label}>
-							<slot name="expert" slot="expert"></slot>
-						</KolSpanWcTag>
-					</label>
-				)}
+				<label class="input-label" id={!useTooltopInsteadOfLabel ? `${this._id}-label` : undefined} hidden={useTooltopInsteadOfLabel} htmlFor={this._id}>
+					{/* INFO: span is needed for css styling :after content like a star (*) or optional text ! */}
+					<span class="input-label-span">
+						{/* INFO: label comes with any html tag or as plain text! */}
+						<slot name="label"></slot>
+					</span>
+				</label>
 				{hasHint && (
 					<span class="hint" id={`${this._id}-hint`}>
 						{this._hint}

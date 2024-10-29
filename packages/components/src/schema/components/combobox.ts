@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	MsgPropType,
 	PropDisabled,
 	PropHideError,
 	PropHideLabel,
@@ -9,9 +10,9 @@ import type {
 	PropMsg,
 	PropName,
 	PropRequired,
+	PropSuggestions,
 	PropSyncValueBySelector,
 	PropTouched,
-	PropSuggestions,
 	PropAccessKey,
 	PropShortKey,
 } from '../props';
@@ -21,15 +22,15 @@ type RequiredProps = PropLabelWithExpertSlot & PropSuggestions;
 type OptionalProps = {
 	hint: string;
 	icons: Stringified<KoliBriHorizontalIcons>;
+	msg: Stringified<MsgPropType>;
 	on: InputTypeOnDefault;
+	placeholder: string;
 	tabIndex: number;
 	value: string;
-	placeholder: string;
 } & PropAccessKey &
 	PropDisabled &
 	PropHideError &
 	PropHideLabel &
-	PropMsg &
 	PropName &
 	PropRequired &
 	PropShortKey &

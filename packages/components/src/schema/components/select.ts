@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	MsgPropType,
 	PropAccessKey,
 	PropDisabled,
 	PropHideError,
@@ -28,6 +29,7 @@ type OptionalProps = {
 	error: string;
 	hint: string;
 	icons: Stringified<KoliBriHorizontalIcons>;
+	msg: Stringified<MsgPropType>;
 	on: InputTypeOnDefault;
 	tabIndex: number;
 	value: Stringified<W3CInputValue[]>;
@@ -35,7 +37,6 @@ type OptionalProps = {
 	PropDisabled &
 	PropHideError &
 	PropHideLabel &
-	PropMsg &
 	PropMultiple &
 	PropName &
 	PropOptionsWithOptgroup & // PropOptionsWithOptgroup becomes required with 2.0

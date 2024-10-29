@@ -27,7 +27,7 @@ import { tryToDispatchKoliBriEvent } from '../../utils/events';
 import { getRenderStates } from '../input/controller';
 import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { InputCheckboxController } from './controller';
-import { KolIconTag, KolInputWcTag } from '../../core/component-names';
+import { KolIconTag, KolInputTag } from '../../core/component-names';
 import type { FocusableElement } from '../../schema/interfaces/FocusableElement';
 
 /**
@@ -80,7 +80,7 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 
 		return (
 			<Host class="kol-input-checkbox">
-				<KolInputWcTag
+				<KolInputTag
 					class={{
 						checkbox: true,
 						[this.state._variant]: true,
@@ -91,7 +91,7 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 					data-label-align={this.state._labelAlign || 'right'}
 					data-role={this.state._variant === 'button' ? 'button' : undefined}
 					_accessKey={this.state._accessKey}
-					_alert={this.state._alert}
+					_alert={this.showAsAlert()}
 					_disabled={this.state._disabled}
 					_msg={this.state._msg}
 					_hideError={this.state._hideError}
@@ -144,10 +144,18 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 							{...this.controller.onFacade}
 							onInput={this.onInput}
 							onChange={this.onChange}
+							onFocus={(event) => {
+								this.controller.onFacade.onFocus(event);
+								this.inputHasFocus = true;
+							}}
+							onBlur={(event) => {
+								this.controller.onFacade.onBlur(event);
+								this.inputHasFocus = false;
+							}}
 							onClick={undefined} // onClick is not needed since onChange already triggers the correct event
 						/>
 					</label>
-				</KolInputWcTag>
+				</KolInputTag>
 			</Host>
 		);
 	}
@@ -161,8 +169,9 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 
 	/**
 	 * Defines whether the screen-readers should read out the notification.
+	 * @deprecated Will be removed in v3. Use automatic behaviour instead.
 	 */
-	@Prop({ mutable: true, reflect: true }) public _alert?: boolean = true;
+	@Prop({ mutable: true, reflect: true }) public _alert?: boolean;
 
 	/**
 	 * Defines whether the checkbox is checked or not. Can be read and written.
@@ -229,7 +238,7 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 	/**
 	 * Defines the properties for a message rendered as Alert component.
 	 */
-	@Prop() public _msg?: MsgPropType;
+	@Prop() public _msg?: Stringified<MsgPropType>;
 
 	/**
 	 * Defines the technical name of an input field.
@@ -300,8 +309,17 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 		_labelAlign: 'right',
 	};
 
+	@State() private inputHasFocus = false;
+
 	public constructor() {
 		this.controller = new InputCheckboxController(this, 'checkbox', this.host);
+	}
+
+	private showAsAlert(): boolean {
+		if (this.state._alert === undefined) {
+			return Boolean(this.state._touched) && !this.inputHasFocus;
+		}
+		return this.state._alert;
 	}
 
 	@Watch('_accessKey')
@@ -370,7 +388,7 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 	}
 
 	@Watch('_msg')
-	public validateMsg(value?: MsgPropType): void {
+	public validateMsg(value?: Stringified<MsgPropType>): void {
 		this.controller.validateMsg(value);
 	}
 
@@ -420,7 +438,6 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 	}
 
 	public componentWillLoad(): void {
-		this._alert = this._alert === true;
 		this._touched = this._touched === true;
 		this.controller.componentWillLoad();
 	}

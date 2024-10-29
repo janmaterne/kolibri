@@ -17,14 +17,16 @@ import type {
 	TooltipAlignPropType,
 	W3CInputValue,
 } from '../../schema';
+import { showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
-import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
+import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { InputRangeController } from './controller';
-import { KolInputWcTag } from '../../core/component-names';
+import { KolInputTag } from '../../core/component-names';
 
 /**
  * @slot - Die Beschriftung des Eingabeelements.
@@ -119,27 +121,43 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 	public render(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
 		const hasSuggestions = Array.isArray(this.state._suggestions) && this.state._suggestions.length > 0;
+		const hasExpertSlot = showExpertSlot(this.state._label);
 
 		return (
 			<Host class="kol-input-range">
-				<KolInputWcTag
+				<KolInputTag
 					class={{
 						range: true,
 						'hide-label': !!this.state._hideLabel,
 					}}
 					_accessKey={this.state._accessKey}
+					_alert={this.showAsAlert()}
 					_disabled={this.state._disabled}
-					_msg={this.state._msg}
 					_hideError={this.state._hideError}
 					_hideLabel={this.state._hideLabel}
 					_hint={this.state._hint}
 					_icons={this.state._icons}
 					_id={this.state._id}
 					_label={this.state._label}
+					_msg={this.state._msg}
 					_shortKey={this.state._shortKey}
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}
 				>
+					<span slot="label">
+						{hasExpertSlot ? (
+							<slot name="expert"></slot>
+						) : typeof this.state._accessKey === 'string' ? (
+							<>
+								<InternalUnderlinedBadgeText badgeText={this.state._accessKey ?? this.state._shortKey} label={this.state._label} />{' '}
+								<span class="access-key-hint" aria-hidden="true">
+									{this.state._accessKey}
+								</span>
+							</>
+						) : (
+							<span>{this.state._label}</span>
+						)}
+					</span>
 					<div slot="input">
 						<div
 							class="inputs-wrapper"
@@ -169,6 +187,14 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 								value={this.state._value as number}
 								{...this.controller.onFacade}
 								onChange={this.onChange}
+								onFocus={(event) => {
+									this.controller.onFacade.onFocus(event);
+									this.inputHasFocus = true;
+								}}
+								onBlur={(event) => {
+									this.controller.onFacade.onBlur(event);
+									this.inputHasFocus = false;
+								}}
 							/>
 							<input
 								ref={this.catchInputNumberRef}
@@ -191,6 +217,14 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 								{...this.controller.onFacade}
 								onKeyDown={this.onKeyDown}
 								onChange={this.onChange}
+								onFocus={(event) => {
+									this.controller.onFacade.onFocus(event);
+									this.inputHasFocus = true;
+								}}
+								onBlur={(event) => {
+									this.controller.onFacade.onBlur(event);
+									this.inputHasFocus = false;
+								}}
 							/>
 						</div>
 						{hasSuggestions && [
@@ -206,7 +240,7 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 							// </ul>,
 						]}
 					</div>
-				</KolInputWcTag>
+				</KolInputTag>
 			</Host>
 		);
 	}
@@ -220,8 +254,9 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 
 	/**
 	 * Defines whether the screen-readers should read out the notification.
+	 * @deprecated Will be removed in v3. Use automatic behaviour instead.
 	 */
-	@Prop({ mutable: true, reflect: true }) public _alert?: boolean = true;
+	@Prop({ mutable: true, reflect: true }) public _alert?: boolean;
 
 	/**
 	 * Defines whether the input can be auto-completed.
@@ -286,7 +321,7 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 	/**
 	 * Defines the properties for a message rendered as Alert component.
 	 */
-	@Prop() public _msg?: MsgPropType;
+	@Prop() public _msg?: Stringified<MsgPropType>;
 
 	/**
 	 * Defines the technical name of an input field.
@@ -348,8 +383,17 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 		_suggestions: [],
 	};
 
+	@State() private inputHasFocus = false;
+
 	public constructor() {
 		this.controller = new InputRangeController(this, 'range', this.host);
+	}
+
+	private showAsAlert(): boolean {
+		if (this.state._alert === undefined) {
+			return Boolean(this.state._touched) && !this.inputHasFocus;
+		}
+		return this.state._alert;
 	}
 
 	@Watch('_accessKey')
@@ -418,7 +462,7 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 	}
 
 	@Watch('_msg')
-	public validateMsg(value?: MsgPropType): void {
+	public validateMsg(value?: Stringified<MsgPropType>): void {
 		this.controller.validateMsg(value);
 	}
 
@@ -468,7 +512,6 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 	}
 
 	public componentWillLoad(): void {
-		this._alert = this._alert === true;
 		this._touched = this._touched === true;
 		this.controller.componentWillLoad();
 	}
