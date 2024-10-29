@@ -1,11 +1,11 @@
 @import '../mixins/rem';
-@import '../mixins/alert.scss';
+@import '../mixins/alert';
 
 @layer kol-theme-component {
 	:host {
 		top: rem(80);
 		right: rem(32);
-		width: 440px;
+		width: rem(440);
 		max-width: 100%;
 	}
 

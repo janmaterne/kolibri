@@ -1,10 +1,10 @@
 @import './mixins/rem';
-@import './mixins/focus-outline.scss';
+@import './mixins/focus-outline';
 
 @layer kol-theme-global {
 	/* Design Tokens */
 	:host {
-		--border-radius: 5px;
+		--border-radius: rem(5);
 		--color-midnight: #004b76;
 		--color-ocean: #0077b6;
 		--color-sky: #99c9e2;
@@ -86,12 +86,12 @@
 	}
 
 	.kol-tooltip-wc .tooltip-floating {
-		border: 1px solid var(--color-metal);
+		border: rem(1) solid var(--color-metal);
 		border-radius: var(--border-radius);
 	}
 
 	.kol-tooltip-wc .tooltip-arrow {
-		border: 1px solid var(--color-metal);
+		border: rem(1) solid var(--color-metal);
 	}
 
 	.kol-tooltip-wc .tooltip-area {

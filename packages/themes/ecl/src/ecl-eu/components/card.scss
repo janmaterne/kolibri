@@ -1,3 +1,5 @@
+@import '../../mixins/rem';
+
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
@@ -34,6 +36,6 @@
 	}
 
 	:host > div > div.content + div.footer {
-		border-top: 2px solid var(--color-blue);
+		border-top: rem(2) solid var(--color-blue);
 	}
 }

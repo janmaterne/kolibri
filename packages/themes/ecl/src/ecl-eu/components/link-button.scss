@@ -9,7 +9,7 @@
 	a,
 	button {
 		appearance: none;
-		border-radius: 4px;
+		border-radius: rem(4);
 		text-decoration: none;
 	}
 
@@ -20,9 +20,9 @@
 
 	a > .kol-span-wc,
 	button > .kol-span-wc {
-		min-height: 44px;
-		min-width: 44px;
-		border-radius: 4px;
+		min-height: rem(44);
+		min-width: rem(44);
+		border-radius: rem(4);
 		font:
 			normal normal 400 rem(16) / rem(20) arial,
 			sans-serif;
@@ -33,9 +33,9 @@
 
 	a:focus-visible > .kol-span-wc,
 	button:focus-visible > .kol-span-wc {
-		outline-offset: -4px;
+		outline-offset: rem(-4);
 		outline-style: solid;
-		outline-width: 2px;
+		outline-width: rem(2);
 	}
 
 	a:active > .kol-span-wc,
@@ -43,10 +43,10 @@
 	a:hover > .kol-span-wc,
 	button:hover > .kol-span-wc {
 		box-shadow:
-			0 2px 4px rgb(9 49 142 / 8%),
-			0 0 10px rgb(9 49 142 / 4%),
-			0 4px 5px rgb(9 49 142 / 4%),
-			0 -4px 4px rgb(9 49 142 / 4%);
+			0 rem(2) rem(4) rgb(9 49 142 / 8%),
+			0 0 rem(10) rgb(9 49 142 / 4%),
+			0 rem(4) rem(5) rgb(9 49 142 / 4%),
+			0 rem(-4) rem(4) rgb(9 49 142 / 4%);
 	}
 
 	.primary a > .kol-span-wc,
@@ -68,14 +68,14 @@
 	.secondary a > .kol-span-wc,
 	.secondary button > .kol-span-wc {
 		background-color: #fff;
-		border: 2px solid #0e47cb;
+		border: rem(2) solid #0e47cb;
 		color: #0e47cb;
-		padding: calc(rem(12) - 2px) calc(rem(16) - 2px);
+		padding: calc(rem(12) - rem(2)) calc(rem(16) - rem(2));
 	}
 
 	.secondary a:focus-visible > .kol-span-wc,
 	.secondary button:focus-visible > .kol-span-wc {
-		box-shadow: inset 0 0 0 4px #0e47cb;
+		box-shadow: inset 0 0 0 rem(4) #0e47cb;
 		outline-color: #fff;
 	}
 

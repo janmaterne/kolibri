@@ -5,6 +5,7 @@
 		border-radius: rem(32);
 		font-family: var(--font-family-sans);
 	}
+
 	.button-inner {
 		background-color: var(--color-weiss);
 		border-radius: rem(32);
@@ -19,19 +20,23 @@
 		transition-property: background, color, border-color;
 		transition-timing-function: ease-in-out;
 	}
+
 	.hide-label .button-inner {
 		padding: 0 rem(8);
 	}
+
 	.button:not(:disabled):hover .button-inner,
 	.button:focus .button-inner {
 		background-color: var(--color-anthrazit);
 		border-color: var(--color-anthrazit);
 		color: var(--color-weiss);
 	}
+
 	.button:disabled .button-inner {
 		cursor: not-allowed;
 		opacity: 0.5;
 	}
+
 	.selected .button-inner {
 		background-color: var(--color-achat);
 		border-color: var(--color-achat);

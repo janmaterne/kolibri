@@ -1,3 +1,4 @@
+@import '../@shared/mixins';
 @import '../style';
 @import '../host-display-block';
 
@@ -18,7 +19,7 @@
 
 		.close {
 			/* Visible with forced colors */
-			outline: transparent solid 1px;
+			outline: transparent solid rem(1);
 		}
 	}
 }

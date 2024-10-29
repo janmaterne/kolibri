@@ -1,3 +1,5 @@
+@import 'rem';
+
 @mixin kol-link {
 	:is(a, button) {
 		color: var(--color-primary);
@@ -27,7 +29,7 @@
 	}
 
 	.skip {
-		left: -99999px;
+		left: rem(-99999);
 		overflow: hidden;
 		position: absolute;
 		z-index: 9999999;

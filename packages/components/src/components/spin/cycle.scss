@@ -19,9 +19,9 @@
 		content: '';
 		box-sizing: border-box;
 		position: absolute;
-		inset: 0px;
+		inset: 0;
 		border-radius: 50%;
-		border: 5px solid #333;
+		border: rem(5) solid #333;
 		animation: 3s linear infinite prixClipFix;
 	}
 
@@ -36,18 +36,22 @@
 			border-color: #fff;
 			clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
 		}
+
 		25% {
 			border-color: #666;
 			clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
 		}
+
 		50% {
 			border-color: #000;
 			clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
 		}
+
 		75% {
 			border-color: #000;
 			clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
 		}
+
 		100% {
 			border-color: #000;
 			clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);

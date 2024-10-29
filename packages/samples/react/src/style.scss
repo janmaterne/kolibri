@@ -24,9 +24,9 @@ hr {
 .indented-text {
 	p {
 		font-family: var(--font-family);
-		border-left: -2px solid var(--color-primary-variant);
+		border-left: rem(-2) solid var(--color-primary-variant);
 		padding: 0 calc(8rem / var(--kolibri-root-font-size, 16));
-		margin-left: -2px;
+		margin-left: rem(-2);
 	}
 }
 
@@ -40,13 +40,13 @@ hr {
 @media (min-width: 1024px) {
 	.app-container {
 		display: grid;
-		grid-template-columns: 360px calc(100% - 360px);
+		grid-template-columns: rem(360) calc(100% - rem(360));
 		min-height: 100vh;
 		height: 100%;
 	}
 
 	.app-sidebar {
-		border-right: 1px solid gray;
+		border-right: rem(1) solid gray;
 		position: relative;
 
 		& .scrollable-container-wrapper {
@@ -54,7 +54,7 @@ hr {
 			top: 0;
 			bottom: 0;
 			left: 0;
-			width: 330px;
+			width: rem(330);
 			margin: rem(16);
 			flex-direction: column;
 			display: flex;

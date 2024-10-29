@@ -13,8 +13,8 @@
 		padding: rem(4) rem(8);
 		font-size: rem(14);
 		line-height: 1.2;
-		border-radius: 2px;
-		border: 1px solid #626262;
+		border-radius: rem(2);
+		border: rem(1) solid #626262;
 	}
 
 	:host {
@@ -114,15 +114,15 @@
 		--font-weight-bold: 700;
 		--line-height-regular: 1.5;
 		--line-height-heading: 1.2;
-		--spacing-4xl: 64px;
-		--spacing-3xl: 48px;
-		--spacing-2xl: 40px;
-		--spacing-xl: 32px;
-		--spacing-l: 24px;
-		--spacing-m: 16px;
-		--spacing-s: 12px;
-		--spacing-xs: 8px;
-		--spacing-2xs: 4px;
+		--spacing-4xl: rem(64);
+		--spacing-3xl: rem(48);
+		--spacing-2xl: rem(40);
+		--spacing-xl: rem(32);
+		--spacing-l: rem(24);
+		--spacing-m: rem(16);
+		--spacing-s: rem(12);
+		--spacing-xs: rem(8);
+		--spacing-2xs: rem(4);
 	}
 
 	a,

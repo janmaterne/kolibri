@@ -1,3 +1,5 @@
+@import '../mixins/rem';
+
 @layer kol-theme-component {
 	:is(a, button) {
 		color: var(--color-midnight);
@@ -13,7 +15,7 @@
 
 	:is(a, button):focus .kol-span-wc {
 		border-radius: var(--border-radius);
-		outline: 2px solid;
+		outline: rem(2) solid;
 	}
 
 	a:hover:not([aria-disabled]),
@@ -26,7 +28,7 @@
 	}
 
 	.skip {
-		left: -99999px;
+		left: rem(-99999);
 		overflow: hidden;
 		position: absolute;
 		z-index: 9999999;

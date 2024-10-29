@@ -1,4 +1,4 @@
-@import './rem.scss';
+@import './rem';
 
 @mixin kol-link {
 	.kol-link-wc a,
@@ -37,7 +37,7 @@
 	}
 
 	a.skip {
-		left: -99999px;
+		left: rem(-99999);
 		overflow: hidden;
 		position: absolute;
 		z-index: 9999999;
