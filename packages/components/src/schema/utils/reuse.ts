@@ -26,3 +26,14 @@ export const handleSlotContent = (hostRef: HTMLElement, slotRef: HTMLElement, sl
  * @returns  True if the label is an empty string
  */
 export const showExpertSlot = (label: unknown) => label === '';
+
+/**
+ * This function builds the BadgeText. It chooses access key over shortkey or empty string, if both are empty
+ * @param accessKey
+ * @param shortKey
+ * @returns returns badgeText as string
+ */
+export const buildBadgeText = (accessKey?: string, shortKey?: string) => {
+	const badgeText = [accessKey, shortKey].filter((f) => f);
+	return badgeText[0] || '';
+};

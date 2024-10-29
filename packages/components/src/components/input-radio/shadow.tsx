@@ -1,4 +1,4 @@
-import type {
+import {
 	FocusableElement,
 	HideErrorPropType,
 	IdPropType,
@@ -15,6 +15,7 @@ import type {
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 	ShortKeyPropType,
+	buildBadgeText,
 } from '../../schema';
 import { showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
@@ -94,8 +95,8 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 							<span slot="label">
 								{hasExpertSlot ? (
 									<slot name="expert"></slot>
-								) : typeof this._accessKey === 'string' ? (
-									<InternalUnderlinedBadgeText badgeText={this.state._accessKey ?? this.state._shortKey ?? ''} label={this._label} />
+								) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
+									<InternalUnderlinedBadgeText badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)} label={this._label} />
 								) : (
 									this._label
 								)}

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { handleSlotContent, type MsgPropType, type ShortKeyPropType, showExpertSlot } from '../../schema';
+import { buildBadgeText, handleSlotContent, type MsgPropType, type ShortKeyPropType, showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, Host, Prop, h } from '@stencil/core';
 import clsx from 'clsx';
@@ -114,7 +114,7 @@ export class KolInputWc implements Props {
 						 */
 						aria-hidden="true"
 						class="input-tooltip"
-						_badgeText={this._accessKey || this._shortKey}
+						_badgeText={buildBadgeText(this._accessKey, this._shortKey)}
 						_align={this._tooltipAlign}
 						_id={this._hideLabel ? `${this._id}-label` : undefined}
 						_label={this._label}

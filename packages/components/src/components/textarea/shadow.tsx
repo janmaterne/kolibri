@@ -1,5 +1,6 @@
-import type {
+import {
 	AdjustHeightPropType,
+	buildBadgeText,
 	CSSResize,
 	FocusableElement,
 	HasCounterPropType,
@@ -113,11 +114,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 					<span slot="label">
 						{hasExpertSlot ? (
 							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
+						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
 							<>
-								<InternalUnderlinedBadgeText badgeText={this.state._accessKey ?? this.state._shortKey} label={this.state._label} />{' '}
+								<InternalUnderlinedBadgeText badgeText={buildBadgeText(this.state._accessKey || this.state._shortKey)} label={this.state._label} />{' '}
 								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
+									{buildBadgeText(this.state._accessKey || this.state._shortKey)}
 								</span>
 							</>
 						) : (

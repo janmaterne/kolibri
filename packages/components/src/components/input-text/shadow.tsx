@@ -1,6 +1,7 @@
-import type {
+import {
 	AccessKeyPropType,
 	AlertPropType,
+	buildBadgeText,
 	ButtonProps,
 	FocusableElement,
 	HideErrorPropType,
@@ -136,11 +137,11 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 					<span slot="label">
 						{hasExpertSlot ? (
 							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
+						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
 							<>
-								<InternalUnderlinedBadgeText badgeText={this.state._accessKey ?? this.state._shortKey} label={this.state._label} />{' '}
+								<InternalUnderlinedBadgeText badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
 								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
+									{buildBadgeText(this.state._accessKey, this.state._shortKey)}
 								</span>
 							</>
 						) : (

@@ -1,6 +1,7 @@
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
-import type {
+import {
+	buildBadgeText,
 	ButtonProps,
 	HideErrorPropType,
 	IdPropType,
@@ -154,11 +155,11 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 					<span slot="label">
 						{hasExpertSlot ? (
 							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
+						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
 							<>
-								<InternalUnderlinedBadgeText badgeText={this.state._accessKey ?? this.state._shortKey} label={this.state._label} />{' '}
+								<InternalUnderlinedBadgeText badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
 								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
+									{buildBadgeText(this.state._accessKey || this.state._shortKey)}
 								</span>
 							</>
 						) : (
