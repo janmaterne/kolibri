@@ -18,7 +18,7 @@ KoliBri is based directly on the [Web standards](https://www.w3.org/standards/we
 
 ## Roadmap
 
-KoliBri is always actively working on improvements, new features and future-oriented innovations for a major release. In parallel, a selected LTS release is maintained with regard to bug fixes.
+KoliBri is always actively working on improvements, new features and future-oriented innovations for the latest major release. In parallel, a selected LTS release is maintained with regard to bug fixes.
 
 | Version | Release type | Release | Period | End-of-Support |
 | --: | :-: | :-: | :-: | :-: | 
