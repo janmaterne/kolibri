@@ -18,6 +18,8 @@ KoliBri is based directly on the [Web standards](https://www.w3.org/standards/we
 
 ## Roadmap
 
+KoliBri arbeitet stets aktive an Verbesserungen, neuen Features und zukünftsweisenden Innovation an einem Major-Release. Parallel wird stets ein ausgewähltes LTS-Release hinsichtlich Bug-Fixes gemaintaint.
+
 | Version | Release type | Release | Zeitraum | End-of-Support |
 | --: | :-: | :-: | :-: | :-: | 
 | 1.x | LTS | Dez 2021 | 3y | Dez 2024 |
