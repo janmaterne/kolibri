@@ -1,0 +1,9 @@
+dod:
+  - Meaningful title for the release notes
+  - Pull request is linked to an issue
+  - All changes relate to the issue
+  - Code review successfully completed
+  - Manual test performed successfully
+  - Documentation has been updated (if applicable)
+  - No critical or major bugs identified in the changes
+  - No TODOs or commented out code in the final version
