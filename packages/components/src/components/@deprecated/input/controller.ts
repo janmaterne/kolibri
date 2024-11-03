@@ -54,6 +54,7 @@ export class InputController extends ControlledInputController implements Watche
 
 	public validateAccessKey(value?: AccessKeyPropType): void {
 		validateAccessKey(this.component, value);
+		validateAccessAndShortKey(value, this.component._shortKey);
 	}
 
 	public validateAdjustHeight(value?: AdjustHeightPropType): void {
@@ -134,6 +135,7 @@ export class InputController extends ControlledInputController implements Watche
 
 	public validateShortKey(value?: ShortKeyPropType): void {
 		validateShortKey(this.component, value);
+		validateAccessAndShortKey(this.component._accessKey, value);
 	}
 
 	public validateSmartButton(value?: ButtonProps | string): void {

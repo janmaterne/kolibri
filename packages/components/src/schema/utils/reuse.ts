@@ -34,6 +34,5 @@ export const showExpertSlot = (label: unknown) => label === '';
  * @returns returns badgeText as string
  */
 export const buildBadgeText = (accessKey?: string, shortKey?: string) => {
-	const badgeText = [accessKey, shortKey].filter((f) => f);
-	return badgeText[0] || '';
+	return accessKey || shortKey || '';
 };

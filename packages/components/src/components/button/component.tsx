@@ -1,7 +1,8 @@
-import type {
+import {
 	AccessKeyPropType,
 	AlternativeButtonLinkRolePropType,
 	AriaDescriptionPropType,
+	buildBadgeText,
 	ButtonAPI,
 	ButtonCallbacksPropType,
 	ButtonStates,
@@ -137,7 +138,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 				>
 					<KolSpanWcTag
 						class="button-inner"
-						_badgeText={this.state._accessKey || this._shortKey}
+						_badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)}
 						_icons={this.state._icons}
 						_hideLabel={this.state._hideLabel}
 						_label={hasExpertSlot ? '' : this.state._label}
@@ -152,7 +153,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					 */
 					aria-hidden="true"
 					hidden={hasExpertSlot || !this.state._hideLabel}
-					_badgeText={this._accessKey || this._shortKey}
+					_badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)}
 					_align={this.state._tooltipAlign}
 					_label={typeof this.state._label === 'string' ? this.state._label : ''}
 				></KolTooltipWcTag>
@@ -240,7 +241,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 	@Prop() public _role?: AlternativeButtonLinkRolePropType;
 
 	/**
-	 * Defines the elements access key.
+	 * Adds a visual short key hint to the component.
 	 */
 	@Prop() public _shortKey?: ShortKeyPropType;
 
@@ -290,6 +291,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 	@Watch('_accessKey')
 	public validateAccessKey(value?: AccessKeyPropType): void {
 		validateAccessKey(this, value);
+		validateAccessAndShortKey(value, this._shortKey);
 	}
 
 	@Watch('_ariaControls')
@@ -362,6 +364,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 	@Watch('_shortKey')
 	public validateShortKey(value?: ShortKeyPropType): void {
 		validateShortKey(this, value);
+		validateAccessAndShortKey(this._accessKey, value);
 	}
 
 	@Watch('_syncValueBySelector')

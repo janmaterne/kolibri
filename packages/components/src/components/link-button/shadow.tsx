@@ -144,7 +144,7 @@ export class KolLinkButton implements LinkButtonProps, FocusableElement {
 	@Prop() public _role?: AlternativeButtonLinkRolePropType;
 
 	/**
-	 * Defines the elements short key.
+	 * Adds a visual short key hint to the component.
 	 */
 	@Prop() public _shortKey?: ShortKeyPropType;
 

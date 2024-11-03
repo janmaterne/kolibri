@@ -10,7 +10,7 @@ export type BadgeTextPropType = string;
  * Defines the elements badge text.
  */
 export type PropBadgeText = {
-	badgeText: AccessKeyPropType | ShortKeyPropType;
+	badgeText: BadgeTextPropType;
 };
 
 /* validator */

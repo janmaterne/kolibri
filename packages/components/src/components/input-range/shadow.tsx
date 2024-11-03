@@ -334,7 +334,7 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 	@Prop() public _on?: InputTypeOnDefault;
 
 	/**
-	 * Defines the elements short key.
+	 * Adds a visual short key hint to the component.
 	 */
 	@Prop() public _shortKey?: ShortKeyPropType;
 

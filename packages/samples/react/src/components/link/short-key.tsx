@@ -8,7 +8,7 @@ export const LinkShortKey: FC = () => (
 	<>
 		<SampleDescription>
 			<p>
-				<p>This sample shows KolLink with short key. The access keys can be used to trigger the buttons using the keyboard.</p>
+				This sample shows KolButton with short key without functionality. The short key is purely visual. Its functionality needs to be developed separately.{' '}
 			</p>
 		</SampleDescription>
 

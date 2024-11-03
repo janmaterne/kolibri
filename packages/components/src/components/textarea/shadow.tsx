@@ -282,7 +282,7 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	@Prop({ mutable: true, reflect: false }) public _rows?: RowsPropType;
 
 	/**
-	 * Defines the elements short key.
+	 * Adds a visual short key hint to the component.
 	 */
 	@Prop() public _shortKey?: ShortKeyPropType;
 

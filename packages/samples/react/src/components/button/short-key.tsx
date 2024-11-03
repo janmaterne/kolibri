@@ -14,7 +14,9 @@ export const ButtonShortKey: FC = () => {
 	return (
 		<>
 			<SampleDescription>
-				<p>This sample shows KolButton with short key. The access keys can be used to trigger the buttons using the keyboard.</p>
+				<p>
+					This sample shows KolButton with short key without functionality. The short key is purely visual. Its functionality needs to be developed separately.{' '}
+				</p>
 			</SampleDescription>
 
 			<div className="flex flex-wrap gap-4">

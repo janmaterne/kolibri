@@ -448,7 +448,7 @@ export class KolCombobox implements ComboboxAPI {
 	@Prop() public _required?: boolean = false;
 
 	/**
-	 * Defines the elements short key.
+	 * Adds a visual short key hint to the component.
 	 */
 	@Prop() public _shortKey?: ShortKeyPropType;
 

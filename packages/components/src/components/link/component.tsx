@@ -1,10 +1,11 @@
-import type {
+import {
 	AccessKeyPropType,
 	AlternativeButtonLinkRolePropType,
 	AriaCurrentValuePropType,
 	AriaDescriptionPropType,
 	AriaExpandedPropType,
 	AriaOwnsPropType,
+	buildBadgeText,
 	DisabledPropType,
 	DownloadPropType,
 	FocusableElement,
@@ -155,7 +156,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 					tabIndex={this.state._disabled ? -1 : this.state._tabIndex}
 				>
 					<KolSpanWcTag
-						_badgeText={this.state._accessKey || this.state._shortKey}
+						_badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)}
 						_icons={this.state._icons}
 						_hideLabel={this.state._hideLabel}
 						_label={hasExpertSlot ? '' : this.state._label || this.state._href}
@@ -178,7 +179,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 					 */
 					aria-hidden="true"
 					hidden={hasExpertSlot || !this.state._hideLabel}
-					_badgeText={this.state._accessKey || this.state._shortKey}
+					_badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)}
 					_align={this.state._tooltipAlign}
 					_label={this.state._label || this.state._href}
 				></KolTooltipWcTag>
@@ -260,7 +261,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 	@Prop() public _role?: AlternativeButtonLinkRolePropType;
 
 	/**
-	 * Defines the elements short key.
+	 * Adds a visual short key hint to the component.
 	 */
 	@Prop() public _shortKey?: ShortKeyPropType;
 
@@ -288,6 +289,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 	@Watch('_accessKey')
 	public validateAccessKey(value?: AccessKeyPropType): void {
 		validateAccessKey(this, value);
+		validateAccessAndShortKey(value, this._shortKey);
 	}
 
 	@Watch('_ariaCurrentValue')
@@ -355,6 +357,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 	@Watch('_shortKey')
 	public validateShortKey(value?: ShortKeyPropType): void {
 		validateShortKey(this, value);
+		validateAccessAndShortKey(this._accessKey, value);
 	}
 
 	@Watch('_tabIndex')
