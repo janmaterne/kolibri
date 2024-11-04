@@ -7,14 +7,14 @@ Die **Abbr**-Komponente implementiert den HTML-Tag `abbr` um eine Abkürzung dar
 ### Code
 
 ```html
-<p>Ich <KolAbbr _label="zum Beispiel">z. B.</KolAbbr> bin eine Abkürzung mit Label.</p>
-<p>Ich <KolAbbr>z. B.</KolAbbr> bin eine Abkürzung ohne Label.</p>
+<p>Ich <kol-abbr _label="zum Beispiel">z. B.</kol-abbr> bin eine Abkürzung mit Label.</p>
+<p>Ich <kol-abbr>z. B.</kol-abbr> bin eine Abkürzung ohne Label.</p>
 ```
 
 ### Beispiel
 
-<p>Ich <KolAbbr _label="zum Beispiel">z. B.</KolAbbr> bin eine Abkürzung mit Label.</p>
-<p>Ich <KolAbbr>z. B.</KolAbbr> bin eine Abkürzung ohne Label.</p>
+<p>Ich <kol-abbr _label="zum Beispiel">z. B.</kol-abbr> bin eine Abkürzung mit Label.</p>
+<p>Ich <kol-abbr>z. B.</kol-abbr> bin eine Abkürzung ohne Label.</p>
 
 ## Verwendung
 
