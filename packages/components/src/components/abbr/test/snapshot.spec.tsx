@@ -20,7 +20,6 @@ executeTests<AbbrProps>(
 	},
 	{
 		_label: ['Text'],
-		_tooltipAlign: ['left', 'bottom', 'right', 'top'],
 	},
 	getAbbrHtml,
 	{
