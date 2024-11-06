@@ -1,12 +1,10 @@
+import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
+import type { JSX } from '@stencil/core';
 import type { CardAPI, CardStates, HasCloserPropType, HeadingLevel, KoliBriAlertEventCallbacks, KoliBriCardEventCallbacks, LabelPropType } from '../../schema';
 import { setState, validateHasCloser, validateLabel } from '../../schema';
-import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
-
-import { translate } from '../../i18n';
 import { watchHeadingLevel } from '../heading/validation';
+import { KolCardFc } from '../../functional-components';
 
-import type { JSX } from '@stencil/core';
-import { KolButtonWcTag, KolHeadingWcTag } from '../../core/component-names';
 /**
  * @slot - Ermöglicht das Einfügen beliebigen HTML's in den Inhaltsbereich der Card.
  */
@@ -18,41 +16,18 @@ import { KolButtonWcTag, KolHeadingWcTag } from '../../core/component-names';
 	shadow: true,
 })
 export class KolCard implements CardAPI {
-	private readonly close = () => {
-		if (this._on?.onClose !== undefined) {
-			this._on.onClose(new Event('Close'));
-		}
-	};
-
-	private readonly on = {
-		onClick: this.close,
+	private readonly handleCloseClick = () => {
+		this._on?.onClose?.(new Event('Close'));
 	};
 
 	public render(): JSX.Element {
+		const { _label: label, _level: level, _hasCloser: hasCloser } = this.state;
+
 		return (
 			<Host class="kol-card">
-				<div class="card">
-					<div class="header">
-						<KolHeadingWcTag _label={this.state._label} _level={this.state._level}></KolHeadingWcTag>
-					</div>
-					<div class="content">
-						<slot />
-					</div>
-					{this.state._hasCloser && (
-						<KolButtonWcTag
-							class="close"
-							_hideLabel
-							_icons={{
-								left: {
-									icon: 'codicon codicon-close',
-								},
-							}}
-							_label={translate('kol-close')}
-							_on={this.on}
-							_tooltipAlign="left"
-						></KolButtonWcTag>
-					)}
-				</div>
+				<KolCardFc hasCloser={hasCloser} HeadingProps={{ level, label, onClick: this.handleCloseClick }}>
+					<slot />
+				</KolCardFc>
 			</Host>
 		);
 	}

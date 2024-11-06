@@ -5,7 +5,8 @@ import type { InternalAlertProps } from '../../schema';
 import { Log } from '../../schema';
 import { translate } from '../../i18n';
 import AlertIcon from '../AlertIcon';
-import { KolButtonWcTag, KolHeadingWcTag } from '../../core/component-names';
+import { KolButtonWcTag } from '../../core/component-names';
+import KolHeadingFc from '../Heading';
 
 export type KolAlertFcProps = JSXBase.HTMLAttributes<HTMLDivElement> &
 	Partial<Omit<InternalAlertProps, 'on'>> & {
@@ -43,7 +44,7 @@ const KolAlertFc: FC<KolAlertFcProps> = (props, children) => {
 			<div class="heading">
 				<AlertIcon label={label} type={type} />
 				<div class="heading-content">
-					{label ? <KolHeadingWcTag _label={label} _level={level} /> : null}
+					{label ? <KolHeadingFc level={level}>{label}</KolHeadingFc> : null}
 					{variant === 'msg' && <div class="content">{children}</div>}
 				</div>
 				{hasCloser && (
