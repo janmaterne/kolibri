@@ -15,7 +15,6 @@ import { KolCard } from './card/shadow';
 import { KolDetails } from './details/shadow';
 import { KolDrawer } from './drawer/shadow';
 import { KolForm } from './form/shadow';
-import { KolHeadingWc } from './heading/component';
 import { KolHeading } from './heading/shadow';
 import { KolIcon } from './icon/shadow';
 import { KolImage } from './image/shadow';
@@ -83,7 +82,6 @@ export const COMPONENTS = [
 	KolDrawer,
 	KolForm,
 	KolHeading,
-	KolHeadingWc,
 	KolIcon,
 	KolImage,
 	KolIndentedText,
