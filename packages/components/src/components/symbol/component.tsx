@@ -1,6 +1,7 @@
 import type { LabelPropType, SymbolAPI, SymbolStates } from '../../schema';
 import { validateLabel, watchString } from '../../schema';
 import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
+import { KolSymbolFc } from '@fc';
 
 import { translate } from '../../i18n';
 
@@ -13,9 +14,7 @@ export class KolSymbol implements SymbolAPI {
 	public render(): JSX.Element {
 		return (
 			<Host class="kol-symbol">
-				<span aria-label={this.state._label} role="term">
-					{this.state._symbol}
-				</span>
+				<KolSymbolFc label={this.state._label} symbol={this.state._symbol} />
 			</Host>
 		);
 	}

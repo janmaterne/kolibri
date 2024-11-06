@@ -15,7 +15,7 @@ import { KolCard } from './card/shadow';
 import { KolDetails } from './details/shadow';
 import { KolDrawer } from './drawer/shadow';
 import { KolForm } from './form/shadow';
-import { KolHeading } from './heading';
+import { KolHeading } from './heading/shadoww';
 import { KolIcon } from './icon/shadow';
 import { KolImage } from './image/shadow';
 import { KolIndentedText } from './indented-text/shadow';
@@ -47,6 +47,7 @@ import { KolSkipNav } from './skip-nav/shadow';
 import { KolSpin } from './spin/shadow';
 import { KolSingleSelect } from './single-select/shadow';
 import { KolSplitButton } from './split-button/shadow';
+import { KolSymbol } from './symbol/component';
 import { KolTable } from './table/shadow';
 import { KolTabs } from './tabs/shadow';
 import { KolTextarea } from './textarea/shadow';
@@ -111,6 +112,7 @@ export const COMPONENTS = [
 	KolSpin,
 	KolSingleSelect,
 	KolSplitButton,
+	KolSymbol,
 	KolTable,
 	KolTabs,
 	KolTextarea,
