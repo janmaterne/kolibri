@@ -3,3 +3,7 @@ export { default as KolCollapsibleFc } from './Collapsible';
 export { default as KolFormFieldMsgFc } from './FormFieldMsg';
 export { default as KolHeadingFc } from './Heading';
 export { default as KolCardFc } from './Card';
+export { default as KolButtonFc } from './Button';
+export { default as KolIconFc } from './Icon';
+export { default as KolSpanFc } from './Span';
+export { default as InternalUnderlinedAccessKey } from './InternalUnderlinedAccessKey';

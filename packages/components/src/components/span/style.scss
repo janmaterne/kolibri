@@ -1,8 +1,0 @@
-@import '../style';
-@import '../@shared/mixins';
-
-@layer kol-component {
-	:host {
-		font-size: rem(16);
-	}
-}
