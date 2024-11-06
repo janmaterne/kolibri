@@ -1,35 +1,44 @@
-import { executeTests } from 'stencil-awesome-test';
+import { KolInputCheckboxTag } from '@component-names';
+import type { InputCheckboxProps } from '@schema';
+import { executeInputSnapshotTests } from '@testing';
 
-import { h } from '@stencil/core';
-import { newSpecPage } from '@stencil/core/testing';
-
-import { getInputCheckboxHtml } from './html.mock';
-
-import type { SpecPage } from '@stencil/core/testing';
-import type { InputCheckboxProps } from '../../../schema';
 import { KolInputCheckbox } from '../shadow';
 
-executeTests<InputCheckboxProps>(
-	'InputCheckbox',
-	async (props): Promise<SpecPage> => {
-		const page = await newSpecPage({
-			components: [KolInputCheckbox],
-			template: () => <kol-input-checkbox {...props} />,
-		});
-		return page;
-	},
-	{
-		_label: ['Label'],
-		_hideLabel: [true, false],
-		_disabled: [true, false],
-		_alert: [true, false],
-		_required: [true, false],
-		_touched: [true, false],
-		_labelAlign: [undefined, 'left'],
-	},
-	getInputCheckboxHtml,
-	{
-		execMode: 'default', // ready
-		needTimers: true,
-	},
-);
+executeInputSnapshotTests<InputCheckboxProps>(KolInputCheckboxTag, [KolInputCheckbox], {
+	_checked: false,
+	_labelAlign: 'left',
+});
+
+executeInputSnapshotTests<InputCheckboxProps>(KolInputCheckboxTag, [KolInputCheckbox], {
+	_checked: true,
+	_labelAlign: 'left',
+});
+
+executeInputSnapshotTests<InputCheckboxProps>(KolInputCheckboxTag, [KolInputCheckbox], {
+	_checked: true,
+	_labelAlign: 'right',
+});
+
+executeInputSnapshotTests<InputCheckboxProps>(KolInputCheckboxTag, [KolInputCheckbox], {
+	_checked: false,
+	_variant: 'switch',
+});
+
+executeInputSnapshotTests<InputCheckboxProps>(KolInputCheckboxTag, [KolInputCheckbox], {
+	_checked: true,
+	_variant: 'switch',
+});
+
+executeInputSnapshotTests<InputCheckboxProps>(KolInputCheckboxTag, [KolInputCheckbox], {
+	_checked: false,
+	_variant: 'button',
+});
+
+executeInputSnapshotTests<InputCheckboxProps>(KolInputCheckboxTag, [KolInputCheckbox], {
+	_checked: true,
+	_variant: 'button',
+});
+
+executeInputSnapshotTests<InputCheckboxProps>(KolInputCheckboxTag, [KolInputCheckbox], {
+	_indeterminate: true,
+});

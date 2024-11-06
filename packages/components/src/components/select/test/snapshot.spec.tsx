@@ -1,60 +1,30 @@
-import { executeTests } from 'stencil-awesome-test';
+import { KolSelectTag } from '@component-names';
+import type { SelectProps } from '@schema';
+import { executeInputSnapshotTests } from '@testing';
 
-import { h } from '@stencil/core';
-import { newSpecPage } from '@stencil/core/testing';
-
-import { getSelectHtml } from './html.mock';
-
-import type { SelectProps } from '../../../schema';
-import type { SpecPage } from '@stencil/core/testing';
 import { KolSelect } from '../shadow';
 
-executeTests<SelectProps>(
-	'Tabs',
-	async (props): Promise<SpecPage> => {
-		const page = await newSpecPage({
-			components: [KolSelect],
-			template: () => <kol-select {...props} />,
-		});
-		return page;
+const options = [
+	{
+		label: 'Frau',
+		value: 'Frau',
+		disabled: true,
 	},
 	{
-		_hideError: [false, true],
-		_options: [
-			[
-				{
-					label: 'Frau',
-					value: 'Frau',
-					disabled: true,
-				},
-				{
-					label: 'Herr',
-					value: 'Herr',
-				},
-				{
-					label: 'Divers',
-					value: 'Divers',
-				},
-			],
-		],
-		_icons: [
-			{
-				left: {
-					icon: 'codicon codicon-arrow-left',
-				},
-				right: {
-					icon: 'codicon codicon-arrow-right',
-				},
-			},
-		],
-		_multiple: [false, true],
-		_required: [false, true],
-		_touched: [false, true],
-		_label: ['Label'],
+		label: 'Herr',
+		value: 'Herr',
 	},
-	getSelectHtml,
 	{
-		execMode: 'default', // ready
-		needTimers: true,
+		label: 'Divers',
+		value: 'Divers',
 	},
-);
+];
+
+executeInputSnapshotTests<SelectProps>(KolSelectTag, [KolSelect], {
+	_options: options,
+});
+
+executeInputSnapshotTests<SelectProps>(KolSelectTag, [KolSelect], {
+	_options: options,
+	_multiple: true,
+});

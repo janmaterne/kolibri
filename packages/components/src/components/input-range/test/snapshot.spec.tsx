@@ -1,36 +1,20 @@
-import { executeTests } from 'stencil-awesome-test';
+import { KolInputRangeTag } from '@component-names';
+import type { InputRangeProps } from '@schema';
+import { executeInputSnapshotTests } from '@testing';
 
-import { h } from '@stencil/core';
-import { newSpecPage } from '@stencil/core/testing';
-
-import { getInpuRangeHtml } from './html.mock';
-
-import type { SpecPage } from '@stencil/core/testing';
-import type { InputRangeProps } from '../../../schema';
 import { KolInputRange } from '../shadow';
 
-executeTests<InputRangeProps>(
-	'InputText',
-	async (props): Promise<SpecPage> => {
-		const page = await newSpecPage({
-			components: [KolInputRange],
-			template: () => <kol-input-range {...props} />,
-		});
-		return page;
-	},
-	{
-		_label: ['Label'],
-		_disabled: [true, false],
-		_alert: [true, false],
-		_icons: [[{ left: 'codicon codicon-home' }]],
-		_touched: [true, false],
-		_accessKey: ['V'],
-		_max: [10],
-		_min: [10],
-	},
-	getInpuRangeHtml,
-	{
-		execMode: 'default', // ready
-		needTimers: true,
-	},
-);
+executeInputSnapshotTests<InputRangeProps>(KolInputRangeTag, [KolInputRange], {
+	_value: 5,
+	_min: 1,
+	_max: 10,
+	_step: 1,
+});
+
+executeInputSnapshotTests<InputRangeProps>(KolInputRangeTag, [KolInputRange], {
+	_value: 5,
+	_min: 1,
+	_max: 10,
+	_step: 1,
+	_suggestions: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+});
