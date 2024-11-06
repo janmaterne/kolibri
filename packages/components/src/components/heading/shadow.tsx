@@ -6,7 +6,7 @@ import { KolHeadingFc } from '../../functional-components';
 import { watchHeadingLevel } from './validation';
 
 /**
- * @internal
+ *
  * @slot - Inhalt der Überschrift.
  */
 @Component({
