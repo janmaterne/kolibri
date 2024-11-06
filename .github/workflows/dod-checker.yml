@@ -1,7 +1,7 @@
 name: Definition of Done
 on:
   pull_request:
-    types: [opened, edited]
+    types: [opened, edited, synchronize]
 
 concurrency:
   group: ci-{{ github.head_ref || github.ref }}
