@@ -2,7 +2,7 @@ import { KolHeadingTag } from '@component-names';
 import type { HeadingProps } from '@schema';
 import { executeSnapshotTests } from '@testing';
 
-import { KolHeading } from '../shadoww';
+import { KolHeading } from '../shadow';
 
 executeSnapshotTests<HeadingProps>(
 	KolHeadingTag,

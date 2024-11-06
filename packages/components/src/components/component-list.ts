@@ -15,7 +15,7 @@ import { KolCard } from './card/shadow';
 import { KolDetails } from './details/shadow';
 import { KolDrawer } from './drawer/shadow';
 import { KolForm } from './form/shadow';
-import { KolHeading } from './heading/shadoww';
+import { KolHeading } from './heading/shadow';
 import { KolIcon } from './icon/shadow';
 import { KolImage } from './image/shadow';
 import { KolIndentedText } from './indented-text/shadow';
