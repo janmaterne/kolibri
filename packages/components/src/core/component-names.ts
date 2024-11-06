@@ -17,7 +17,6 @@ export let KolDetailsTag = 'kol-details' as const;
 export let KolDrawerTag = 'kol-drawer' as const;
 export let KolFormTag = 'kol-form' as const;
 export let KolHeadingTag = 'kol-heading' as const;
-export let KolHeadingWcTag = 'kol-heading-wc' as const;
 export let KolIconTag = 'kol-icon' as const;
 export let KolImageTag = 'kol-image' as const;
 export let KolIndentedTextTag = 'kol-indented-text' as const;
@@ -86,7 +85,6 @@ export const setCustomTagNames = (transformTagName: (tagName: string) => string)
 	KolDrawerTag = transformTagName(KolDrawerTag as string) as 'kol-drawer';
 	KolFormTag = transformTagName(KolFormTag as string) as 'kol-form';
 	KolHeadingTag = transformTagName(KolHeadingTag as string) as 'kol-heading';
-	KolHeadingWcTag = transformTagName(KolHeadingWcTag as string) as 'kol-heading-wc';
 	KolIconTag = transformTagName(KolIconTag as string) as 'kol-icon';
 	KolImageTag = transformTagName(KolImageTag as string) as 'kol-image';
 	KolIndentedTextTag = transformTagName(KolIndentedTextTag as string) as 'kol-indented-text';
