@@ -79,12 +79,16 @@ Die Table-Komponente unterstützt folgende Funktionalitäten **nicht**:
 ### Code
 
 ```html
-<kol-table-stateful _label="Tabellenbeschreibung" _headers='{"horizontal": [[{"label":"Montag","key":"montag"}]]}' _pagination='[{"page":2}]'></kol-table>
+<kol-table-stateful
+	_label="Tabellenbeschreibung"
+	_headers='{"horizontal": [[{"label":"Montag","key":"montag"}]]}'
+	_pagination='[{"page":2}]'
+></kol-table-stateful>
 ```
 
 ### Beispiel
 
-<kol-table-stateful _label="Nur Vertikal Header, Daten Vertikal, Pagination" _headers='{"horizontal":[[{"label":"Montag","key":"montag"}]]}' _data='[{"montag":"Zelle1"},{"montag":"Zelle2"}]' _pagination='{"page":2}'></kol-table>
+<kol-table-stateful _label="Nur Vertikal Header, Daten Vertikal, Pagination" _headers='{"horizontal":[[{"label":"Montag","key":"montag"}]]}' _data='[{"montag":"Zelle1"},{"montag":"Zelle2"}]' _pagination='{"page":2}'></kol-table-stateful>
 
 ### Footer
 
@@ -92,7 +96,7 @@ Durch die Verwendung des **`_dataFoot_`**-Attribut können zusammenfassende Info
 
 ### Beispiel
 
-<kol-table-stateful _label="Nur Vertikal Header, Daten Vertikal, Pagination, DataFoot" _headers='{"horizontal":[[{"label":"Montag","key":"montag"}]]}' _data='[{"montag":"Zelle1"},{"montag":"Zelle2"}]' _dataFoot='[{"montag":"Ruhetag"}]' _pagination='{"page":2}'></kol-table>
+<kol-table-stateful _label="Nur Vertikal Header, Daten Vertikal, Pagination, DataFoot" _headers='{"horizontal":[[{"label":"Montag","key":"montag"}]]}' _data='[{"montag":"Zelle1"},{"montag":"Zelle2"}]' _dataFoot='[{"montag":"Ruhetag"}]' _pagination='{"page":2}'></kol-table-stateful>
 
 ## Verwendung
 
@@ -104,6 +108,8 @@ Durch die Verwendung des **`_dataFoot_`**-Attribut können zusammenfassende Info
 - Aktuell wird nicht unterstützt, dass bei zweidimensionalen Headern, die Header der jeweils anderen Header-Seite mit sortiert werden. Bei der Anforderung der Sortierung empfehlen wir die Verwendung nur einer Header-Dimension (entweder horizontal oder vertikal).
 
 ### Render Funktion
+
+Render-Funktionen werden als Teil der Tabellen-Header definiert. Siehe Abschnitt "KoliBriTableHeaders". Gibt es sowohl horizontale als auch vertikale Header, muss die Render-Funktion für die _horizontalen_ Header definiert werden. Gibt es nur vertikale Header, können die Render-Funktionen dort definiert werden.
 
 Die `render` Funktion kann auf verschiedene Arten wie folgt verwendet werden.  
 Alle Methoden sind auch in diesem Beispiel demonstriert: [render-cell.tsx](https://github.com/public-ui/kolibri/blob/23ebb42d1ce3c8d1e4c74a5c7972842d5e4203fe/packages/samples/react/src/components/table/render-cell.tsx#L34)
