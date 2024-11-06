@@ -9,10 +9,7 @@ exports[`kol-link should render with _href="https://google.de" _icons="codicon c
         <span class="kol-span-wc">
           <span>
             <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -34,10 +31,7 @@ exports[`kol-link should render with _href="https://google.de" _icons="codicon c
         <span class="kol-span-wc">
           <span>
             <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -59,10 +53,7 @@ exports[`kol-link should render with _href="https://google.de" _icons="codicon c
         <span class="kol-span-wc">
           <span>
             <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -84,7 +75,7 @@ exports[`kol-link should render with _href="https://google.de" _icons="codicon c
         <span class="hide-label kol-span-wc">
           <span>
             <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -106,10 +97,7 @@ exports[`kol-link should render with _href="https://google.de" _icons="codicon c
         <span class="kol-span-wc">
           <span>
             <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -131,10 +119,7 @@ exports[`kol-link should render with _href="https://google.de" _icons="codicon c
         <span class="kol-span-wc">
           <span>
             <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -155,10 +140,7 @@ exports[`kol-link should render with _label="Label" _href="" _download="download
       <a class="external-link" download="download-file.zip" href="javascript:void(0);" rel="noopener" target="blank">
         <span class="kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>

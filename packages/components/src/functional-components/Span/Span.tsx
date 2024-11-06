@@ -2,7 +2,15 @@ import { Fragment, h, type FunctionalComponent as FC } from '@stencil/core';
 import clsx from 'clsx';
 
 import * as Utils from '@utils';
-import type { AccessKeyPropType, HideLabelPropType, IconOrIconClass, KoliBriCustomIcon, KoliBriIconsProp, LabelWithExpertSlotPropType } from '@schema';
+import {
+	showExpertSlot,
+	type AccessKeyPropType,
+	type HideLabelPropType,
+	type IconOrIconClass,
+	type KoliBriCustomIcon,
+	type KoliBriIconsProp,
+	type LabelWithExpertSlotPropType,
+} from '@schema';
 
 import KolIconFc from '../Icon';
 import AccessKey from '../AccessKey';
@@ -18,7 +26,6 @@ export type SpanProps = JSXBase.HTMLAttributes<HTMLSpanElement> & {
 	allowMarkdown?: boolean;
 	icons?: KoliBriIconsProp;
 	hideLabel?: HideLabelPropType;
-	hideExpertSlot?: boolean;
 };
 
 const IconHelper: FC<KoliBriCustomIcon & { class?: string }> = (props) => {
@@ -68,7 +75,7 @@ const SpanCoreHelper: FC<{ label: string; hideLabel?: boolean; accessKey?: strin
 };
 
 const KolSpanFc: FC<SpanProps> = (props, children) => {
-	const { class: classNames, label, hideLabel = false, accessKey, hideExpertSlot, allowMarkdown, icons, ...other } = props;
+	const { class: classNames, label, hideLabel = false, accessKey, allowMarkdown, icons, ...other } = props;
 	let TopIconProps: IconType = null;
 	let LeftIconProps: IconType = null;
 	let RightIconProps: IconType = null;
@@ -84,6 +91,8 @@ const KolSpanFc: FC<SpanProps> = (props, children) => {
 			icon: icons,
 		};
 	}
+
+	const hideExpertSlot = !showExpertSlot(label);
 
 	return (
 		<span class={clsx('kol-span-wc', { 'hide-label': hideLabel }, classNames)} {...other}>

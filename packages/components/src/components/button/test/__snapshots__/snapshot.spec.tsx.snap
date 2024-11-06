@@ -8,10 +8,7 @@ exports[`kol-button should render with _label="Label" _ariaDescription="Aria Des
       <button aria-describedby="nonce" class="button normal" type="button">
         <span class="button-inner kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -34,10 +31,7 @@ exports[`kol-button should render with _label="Label" _disabled=false 1`] = `
       <button class="button normal" type="button">
         <span class="button-inner kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -57,10 +51,7 @@ exports[`kol-button should render with _label="Label" _disabled=true 1`] = `
       <button class="button disabled normal" disabled="" type="button">
         <span class="button-inner kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -80,10 +71,7 @@ exports[`kol-button should render with _label="Label" _value="Hello" 1`] = `
       <button class="button normal" type="button">
         <span class="button-inner kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -103,10 +91,7 @@ exports[`kol-button should render with _label="Label" _variant="danger" 1`] = `
       <button class="button danger" type="button">
         <span class="button-inner kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -126,10 +111,7 @@ exports[`kol-button should render with _label="Label" _variant="ghost" 1`] = `
       <button class="button ghost" type="button">
         <span class="button-inner kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -149,10 +131,7 @@ exports[`kol-button should render with _label="Label" _variant="normal" 1`] = `
       <button class="button normal" type="button">
         <span class="button-inner kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -172,10 +151,7 @@ exports[`kol-button should render with _label="Label" _variant="primary" 1`] = `
       <button class="button primary" type="button">
         <span class="button-inner kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -195,10 +171,7 @@ exports[`kol-button should render with _label="Label" _variant="secondary" 1`] =
       <button class="button secondary" type="button">
         <span class="button-inner kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>
@@ -218,10 +191,7 @@ exports[`kol-button should render with _label="Label" 1`] = `
       <button class="button normal" type="button">
         <span class="button-inner kol-span-wc">
           <span>
-            <span class="span-label">
-              Label
-            </span>
-            <span class="span-label">
+            <span aria-hidden="true" class="span-label" hidden="">
               <slot name="expert" slot="expert"></slot>
             </span>
           </span>

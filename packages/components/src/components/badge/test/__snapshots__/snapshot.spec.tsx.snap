@@ -6,13 +6,7 @@ exports[`kol-badge should render with _label="**Te**xt" 1`] = `
     <span style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
         <span>
-          <span class="md span-label">
-            <strong>
-              Te
-            </strong>
-            xt
-          </span>
-          <span class="span-label"></span>
+          <span aria-hidden="true" class="span-label" hidden=""></span>
         </span>
       </span>
     </span>
@@ -26,10 +20,7 @@ exports[`kol-badge should render with _label="Text" _color="#000000" 1`] = `
     <span style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
         <span>
-          <span class="md span-label">
-            Text
-          </span>
-          <span class="span-label"></span>
+          <span aria-hidden="true" class="span-label" hidden=""></span>
         </span>
       </span>
     </span>
@@ -44,10 +35,7 @@ exports[`kol-badge should render with _label="Text" _icons="codicon codicon-home
       <span class="kol-span-wc">
         <span>
           <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
-          <span class="md span-label">
-            Text
-          </span>
-          <span class="span-label"></span>
+          <span aria-hidden="true" class="span-label" hidden=""></span>
         </span>
       </span>
     </span>
@@ -62,10 +50,7 @@ exports[`kol-badge should render with _label="Text" _icons="codicon codicon-home
       <span class="kol-span-wc">
         <span>
           <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
-          <span class="md span-label">
-            Text
-          </span>
-          <span class="span-label"></span>
+          <span aria-hidden="true" class="span-label" hidden=""></span>
         </span>
       </span>
     </span>
@@ -79,10 +64,7 @@ exports[`kol-badge should render with _label="Text" 1`] = `
     <span style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
         <span>
-          <span class="md span-label">
-            Text
-          </span>
-          <span class="span-label"></span>
+          <span aria-hidden="true" class="span-label" hidden=""></span>
         </span>
       </span>
     </span>
