@@ -60,12 +60,14 @@ const LabelHelper: FC<{ label: string; hideLabel?: boolean; accessKey?: string; 
 };
 
 const SpanCoreHelper: FC<{ label: string; hideLabel?: boolean; accessKey?: string; hideExpertSlot?: boolean; allowMarkdown?: boolean }> = (
-	{ hideLabel, label, accessKey, hideExpertSlot, allowMarkdown },
+	{ hideLabel, label, accessKey, allowMarkdown },
 	children,
 ) => {
+	const hideExpertSlot = !showExpertSlot(label);
+
 	return (
 		<>
-			{!hideExpertSlot && <LabelHelper label={label} hideLabel={hideLabel} accessKey={accessKey} allowMarkdown={allowMarkdown} />}
+			{hideExpertSlot && <LabelHelper label={label} hideLabel={hideLabel} accessKey={accessKey} allowMarkdown={allowMarkdown} />}
 			<span aria-hidden={hideExpertSlot ? 'true' : undefined} class="span-label" hidden={hideExpertSlot}>
 				{children}
 			</span>
@@ -92,14 +94,12 @@ const KolSpanFc: FC<SpanProps> = (props, children) => {
 		};
 	}
 
-	const hideExpertSlot = !showExpertSlot(label);
-
 	return (
 		<span class={clsx('kol-span-wc', { 'hide-label': hideLabel }, classNames)} {...other}>
 			{Utils.isObject(TopIconProps) && <IconHelper class="top" {...TopIconProps} />}
 			<span>
 				{Utils.isObject(LeftIconProps) && <IconHelper class="left" {...LeftIconProps} />}
-				<SpanCoreHelper label={label} hideLabel={hideLabel} allowMarkdown={allowMarkdown} accessKey={accessKey} hideExpertSlot={hideExpertSlot}>
+				<SpanCoreHelper label={label} hideLabel={hideLabel} allowMarkdown={allowMarkdown} accessKey={accessKey}>
 					{children}
 				</SpanCoreHelper>
 				{Utils.isObject(RightIconProps) && <IconHelper class="right" {...RightIconProps} />}

@@ -6,6 +6,9 @@ exports[`kol-tooltip-wc should render with _id="id" _label="Label" _align="botto
     <div class="tooltip-area tooltip-arrow"></div>
     <span class="kol-span-wc tooltip-area tooltip-content" id="id">
       <span>
+        <span class="span-label">
+          Label
+        </span>
         <span aria-hidden="true" class="span-label" hidden=""></span>
       </span>
     </span>
@@ -19,6 +22,9 @@ exports[`kol-tooltip-wc should render with _id="id" _label="Label" _align="left"
     <div class="tooltip-area tooltip-arrow"></div>
     <span class="kol-span-wc tooltip-area tooltip-content" id="id">
       <span>
+        <span class="span-label">
+          Label
+        </span>
         <span aria-hidden="true" class="span-label" hidden=""></span>
       </span>
     </span>
@@ -32,6 +38,9 @@ exports[`kol-tooltip-wc should render with _id="id" _label="Label" _align="right
     <div class="tooltip-area tooltip-arrow"></div>
     <span class="kol-span-wc tooltip-area tooltip-content" id="id">
       <span>
+        <span class="span-label">
+          Label
+        </span>
         <span aria-hidden="true" class="span-label" hidden=""></span>
       </span>
     </span>
@@ -45,6 +54,9 @@ exports[`kol-tooltip-wc should render with _id="id" _label="Label" _align="top" 
     <div class="tooltip-area tooltip-arrow"></div>
     <span class="kol-span-wc tooltip-area tooltip-content" id="id">
       <span>
+        <span class="span-label">
+          Label
+        </span>
         <span aria-hidden="true" class="span-label" hidden=""></span>
       </span>
     </span>
@@ -58,6 +70,9 @@ exports[`kol-tooltip-wc should render with _id="id" _label="Label" 1`] = `
     <div class="tooltip-area tooltip-arrow"></div>
     <span class="kol-span-wc tooltip-area tooltip-content" id="id">
       <span>
+        <span class="span-label">
+          Label
+        </span>
         <span aria-hidden="true" class="span-label" hidden=""></span>
       </span>
     </span>
