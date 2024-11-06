@@ -1,15 +1,10 @@
 import { KolTabsTag } from '@component-names';
-// import type { TabsAPI } from '@schema';
+import type { TabsProps } from '@schema';
 import { executeSnapshotTests } from '@testing';
 
 import { KolTabs } from '../shadow';
 
-/**
- * TODO:  error TS2344: Type 'TabsAPI' does not satisfy the constraint 'Record<string, unknown>'.
- * Index signature for type 'string' is missing in type 'TabsAPI'.
- */
-
-executeSnapshotTests(
+executeSnapshotTests<TabsProps>(
 	KolTabsTag,
 	[KolTabs],
 	[
