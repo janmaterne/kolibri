@@ -24,7 +24,7 @@ import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } fro
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
+import { InternalUnderlinedAccessKey } from '@fc';
 import { InputEmailController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 

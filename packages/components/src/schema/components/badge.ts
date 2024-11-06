@@ -1,11 +1,12 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type { ColorPair, PropColor, PropIcons, PropLabel } from '../props';
-import type { Stringified } from '../types';
+import type { KoliBriIconsProp, Stringified } from '../types';
 import type { ButtonProps } from './button';
 
 type RequiredProps = PropLabel;
 type OptionalProps = {
+	icons: Stringified<KoliBriIconsProp>;
 	color: Stringified<PropColor>;
 	smartButton: Stringified<ButtonProps>;
 } & PropIcons;
@@ -14,6 +15,7 @@ type RequiredStates = {
 	color: ColorPair;
 };
 type OptionalStates = {
+	icons: KoliBriIconsProp;
 	smartButton: ButtonProps;
 };
 
