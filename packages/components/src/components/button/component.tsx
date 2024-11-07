@@ -1,8 +1,7 @@
-import {
+import type {
 	AccessKeyPropType,
 	AlternativeButtonLinkRolePropType,
 	AriaDescriptionPropType,
-	buildBadgeText,
 	ButtonAPI,
 	ButtonCallbacksPropType,
 	ButtonStates,
@@ -20,6 +19,7 @@ import {
 	TooltipAlignPropType,
 } from '../../schema';
 import {
+	buildBadgeText,
 	mapBoolean2String,
 	mapStringOrBoolean2String,
 	setEventTarget,

@@ -1,11 +1,10 @@
-import {
+import type {
 	AccessKeyPropType,
 	AlternativeButtonLinkRolePropType,
 	AriaCurrentValuePropType,
 	AriaDescriptionPropType,
 	AriaExpandedPropType,
 	AriaOwnsPropType,
-	buildBadgeText,
 	DisabledPropType,
 	DownloadPropType,
 	FocusableElement,
@@ -21,6 +20,7 @@ import {
 	TooltipAlignPropType,
 } from '../../schema';
 import {
+	buildBadgeText,
 	devHint,
 	setEventTarget,
 	showExpertSlot,
