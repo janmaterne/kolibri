@@ -35,7 +35,4 @@ executeTests<InputProps>(
 		],
 	},
 	getInputHtml,
-	{
-		execMode: 'default',
-	},
 );
