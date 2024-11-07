@@ -20,7 +20,7 @@ import type {
 	TooltipAlignPropType,
 	W3CInputValue,
 } from '../../schema';
-import { buildBadgeText, showExpertSlot } from '../../schema';
+import { buildBadgeTextString, showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
@@ -132,9 +132,9 @@ export class KolSelect implements SelectAPI, FocusableElement {
 							<slot name="expert"></slot>
 						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
 							<>
-								<InternalUnderlinedBadgeText badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
+								<InternalUnderlinedBadgeText badgeText={buildBadgeTextString(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
 								<span class="access-key-hint" aria-hidden="true">
-									{buildBadgeText(this.state._accessKey, this.state._shortKey)}
+									{buildBadgeTextString(this.state._accessKey, this.state._shortKey)}
 								</span>
 							</>
 						) : (

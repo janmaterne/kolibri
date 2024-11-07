@@ -20,7 +20,6 @@ import type {
 	TooltipAlignPropType,
 } from '../../schema';
 import {
-	buildBadgeText,
 	devHint,
 	setEventTarget,
 	showExpertSlot,
@@ -156,7 +155,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 					tabIndex={this.state._disabled ? -1 : this.state._tabIndex}
 				>
 					<KolSpanWcTag
-						_badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)}
+						_badgeText={this.state._accessKey || this.state._shortKey}
 						_icons={this.state._icons}
 						_hideLabel={this.state._hideLabel}
 						_label={hasExpertSlot ? '' : this.state._label || this.state._href}
@@ -179,7 +178,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 					 */
 					aria-hidden="true"
 					hidden={hasExpertSlot || !this.state._hideLabel}
-					_badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)}
+					_badgeText={this.state._accessKey || this.state._shortKey}
 					_align={this.state._tooltipAlign}
 					_label={this.state._label || this.state._href}
 				></KolTooltipWcTag>

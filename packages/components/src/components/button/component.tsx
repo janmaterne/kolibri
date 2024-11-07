@@ -19,7 +19,6 @@ import type {
 	TooltipAlignPropType,
 } from '../../schema';
 import {
-	buildBadgeText,
 	mapBoolean2String,
 	mapStringOrBoolean2String,
 	setEventTarget,
@@ -138,7 +137,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 				>
 					<KolSpanWcTag
 						class="button-inner"
-						_badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)}
+						_badgeText={this.state._accessKey || this.state._shortKey}
 						_icons={this.state._icons}
 						_hideLabel={this.state._hideLabel}
 						_label={hasExpertSlot ? '' : this.state._label}
@@ -153,7 +152,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					 */
 					aria-hidden="true"
 					hidden={hasExpertSlot || !this.state._hideLabel}
-					_badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)}
+					_badgeText={this.state._accessKey || this.state._shortKey}
 					_align={this.state._tooltipAlign}
 					_label={typeof this.state._label === 'string' ? this.state._label : ''}
 				></KolTooltipWcTag>

@@ -20,7 +20,7 @@ import type {
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { buildBadgeText, setState, showExpertSlot, validateAlert } from '../../schema';
+import { buildBadgeTextString, setState, showExpertSlot, validateAlert } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
@@ -138,9 +138,9 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 							<slot name="expert"></slot>
 						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
 							<>
-								<InternalUnderlinedBadgeText badgeText={buildBadgeText(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
+								<InternalUnderlinedBadgeText badgeText={buildBadgeTextString(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
 								<span class="access-key-hint" aria-hidden="true">
-									{buildBadgeText(this.state._accessKey, this.state._shortKey)}
+									{buildBadgeTextString(this.state._accessKey, this.state._shortKey)}
 								</span>
 							</>
 						) : (

@@ -33,6 +33,6 @@ export const showExpertSlot = (label: unknown) => label === '';
  * @param shortKey
  * @returns returns badgeText as string
  */
-export const buildBadgeText = (accessKey?: string, shortKey?: string) => {
+export const buildBadgeTextString = (accessKey?: string, shortKey?: string) => {
 	return accessKey || shortKey || '';
 };
