@@ -37,7 +37,7 @@ executeTests<ComboboxProps>(
 	},
 	getComboboxHtml,
 	{
-		execMode: 'skip', // ready
+		execMode: 'default', // ready
 		needTimers: true,
 	},
 );

@@ -30,7 +30,7 @@ executeTests<InputRangeProps>(
 	},
 	getInpuRangeHtml,
 	{
-		execMode: 'skip', // ready
+		execMode: 'default', // ready
 		needTimers: true,
 	},
 );

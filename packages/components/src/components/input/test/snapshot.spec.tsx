@@ -36,6 +36,6 @@ executeTests<InputProps>(
 	},
 	getInputHtml,
 	{
-		execMode: 'skip',
+		execMode: 'default',
 	},
 );

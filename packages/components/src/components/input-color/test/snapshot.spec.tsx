@@ -35,7 +35,7 @@ executeTests<InputColorProps>(
 	},
 	getInputColorHtml,
 	{
-		execMode: 'skip', // ready
+		execMode: 'default', // ready
 		needTimers: true,
 	},
 );

@@ -54,7 +54,7 @@ executeTests<SelectProps>(
 	},
 	getSelectHtml,
 	{
-		execMode: 'skip', // ready
+		execMode: 'default', // ready
 		needTimers: true,
 	},
 );

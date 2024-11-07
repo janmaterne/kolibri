@@ -38,7 +38,7 @@ executeTests<InputEmailProps>(
 	},
 	getInputEmailHtml,
 	{
-		execMode: 'skip', // ready
+		execMode: 'default', // ready
 		needTimers: true,
 	},
 );

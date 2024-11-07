@@ -29,7 +29,7 @@ executeTests<InputCheckboxProps>(
 	},
 	getInputCheckboxHtml,
 	{
-		execMode: 'skip', // ready
+		execMode: 'default', // ready
 		needTimers: true,
 	},
 );

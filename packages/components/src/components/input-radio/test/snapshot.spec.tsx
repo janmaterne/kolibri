@@ -34,7 +34,7 @@ executeTests<InputRadioProps>(
 	},
 	getInputRadioHtml,
 	{
-		execMode: 'skip', // ready
+		execMode: 'default', // ready
 		needTimers: true,
 	},
 );
