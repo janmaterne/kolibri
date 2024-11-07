@@ -18,7 +18,8 @@
 		"serve": "cross-env NODE_ENV=development webpack serve --devtool=source-map",
 		"start": "npm run serve -- --open",
 		"unused": "ts-prune -e src",
-		"e2e": "playwright test",
+		"test:e2e": "playwright test",
+		"test": "pnpm test:e2e",
 		"postinstall": "pnpm exec playwright install"
 	},
 	"dependencies": {
