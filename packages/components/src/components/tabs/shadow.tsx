@@ -163,7 +163,7 @@ export class KolTabs implements TabsAPI {
 		return (
 			// Rule is disabled, because KolButtonWc is focusable.
 			// eslint-disable-next-line jsx-a11y/interactive-supports-focus
-			<div aria-label={this.state._label} class="tabs-button-group" role="tablist" onKeyDown={this.onKeyDown} onBlur={this.onBlur}>
+			<div aria-label={this.state._label} class="tabs-button-group kol-button-group-wc" role="tablist" onKeyDown={this.onKeyDown} onBlur={this.onBlur}>
 				{this.state._tabs.map((button: TabButtonProps, index: number) => (
 					<KolButtonWcTag
 						_disabled={button._disabled}
