@@ -1,6 +1,6 @@
-import { KolLinkGroupTag } from '@component-names';
-import type { LinkGroupProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolLinkGroupTag } from '../../../core/component-names';
+import type { LinkGroupProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolLinkGroup } from '../shadow';
 

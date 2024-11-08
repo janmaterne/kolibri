@@ -1,6 +1,6 @@
-import { KolImageTag } from '@component-names';
-import type { ImageProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolImageTag } from '../../../core/component-names';
+import type { ImageProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolImage } from '../shadow';
 

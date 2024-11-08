@@ -1,6 +1,6 @@
-import { KolBadgeTag } from '@component-names';
-import type { BadgeProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolBadgeTag } from '../../../core/component-names';
+import type { BadgeProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolBadge } from '../shadow';
 

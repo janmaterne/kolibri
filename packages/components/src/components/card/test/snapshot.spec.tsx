@@ -1,6 +1,6 @@
-import { KolCardTag } from '@component-names';
-import type { CardProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolCardTag } from '../../../core/component-names';
+import type { CardProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolCard } from '../shadow';
 

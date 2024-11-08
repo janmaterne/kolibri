@@ -1,6 +1,6 @@
-import { KolDrawerTag } from '@component-names';
-import type { DrawerProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolDrawerTag } from '../../../core/component-names';
+import type { DrawerProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolDrawer } from '../shadow';
 

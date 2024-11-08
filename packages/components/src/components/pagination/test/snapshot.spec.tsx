@@ -1,15 +1,8 @@
-import { KolPaginationTag } from '@component-names';
-import type { PaginationProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolPaginationTag } from '../../../core/component-names';
+import type { PaginationProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolPagination } from '../shadow';
-
-// _label: ['Label'],
-// _page: [4, 1],
-// _max: [0, 2],
-// _on: [{}],
-// _siblingCount: [0],
-// _hasButtons: [false],
 
 executeSnapshotTests<PaginationProps>(
 	KolPaginationTag,

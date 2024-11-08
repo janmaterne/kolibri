@@ -1,6 +1,6 @@
-import { KolAlertTag } from '@component-names';
-import type { AlertProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolAlertTag } from '../../../core/component-names';
+import type { AlertProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolAlert } from '../shadow';
 import { KolAlertWc } from '../component';

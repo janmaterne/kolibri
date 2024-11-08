@@ -1,6 +1,6 @@
-import { KolPopoverWcTag } from '@component-names';
-import type { PopoverProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolPopoverWcTag } from '../../../core/component-names';
+import type { PopoverProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolPopover } from '../component';
 

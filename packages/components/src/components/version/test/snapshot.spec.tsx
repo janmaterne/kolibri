@@ -1,6 +1,6 @@
-import { KolVersionTag } from '@component-names';
-import type { VersionProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolVersionTag } from '../../../core/component-names';
+import type { VersionProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolVersion } from '../shadow';
 

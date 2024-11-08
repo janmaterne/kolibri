@@ -1,6 +1,6 @@
-import { KolSymbolTag } from '@component-names';
-import type { SymbolProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolSymbolTag } from '../../../core/component-names';
+import type { SymbolProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolSymbol } from '../component';
 

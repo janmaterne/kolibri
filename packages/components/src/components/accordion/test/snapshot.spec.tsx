@@ -1,13 +1,8 @@
-import { KolAccordionTag } from '@component-names';
-import type { AccordionProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolAccordionTag } from '../../../core/component-names';
+import type { AccordionProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolAccordion } from '../shadow';
-
-// _disabled: [true, false],
-// _label: ['Überschrift'],
-// _level: [1, 2, 3, 4, 5, 6],
-// _open: [true, false],
 
 const baseObject = { _label: 'Überschrift' };
 

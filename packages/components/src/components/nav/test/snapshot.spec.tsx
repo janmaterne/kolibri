@@ -1,6 +1,6 @@
-import { KolNavTag } from '@component-names';
-import type { NavProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolNavTag } from '../../../core/component-names';
+import type { NavProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolNav } from '../shadow';
 
