@@ -19,7 +19,7 @@ export const getTabsHtml = (props: TabsProps): string => {
 		<div class="tabs-align-top">
 	    <div
 	    aria-label="${state._label ? state._label : ''}"
-	    class="tabs-button-group"
+	    class="tabs-button-group kol-button-group-wc"
 	    role="tablist"
 	    >
 
