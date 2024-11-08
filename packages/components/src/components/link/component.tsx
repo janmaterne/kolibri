@@ -46,7 +46,7 @@ import { onLocationChange } from './ariaCurrentService';
 import { preventDefaultAndStopPropagation } from '../../utils/events';
 import { nonce } from '../../utils/dev.utils';
 import { KolIconTag, KolTooltipWcTag } from '../../core/component-names';
-import { KolSpanFc } from '@fc';
+import { KolSpanFc } from '../../functional-components';
 
 import { translate } from '../../i18n';
 

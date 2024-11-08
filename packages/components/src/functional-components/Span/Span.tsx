@@ -1,7 +1,9 @@
 import { Fragment, h, type FunctionalComponent as FC } from '@stencil/core';
+import type { JSXBase } from '@stencil/core/internal';
 import clsx from 'clsx';
 
-import * as Utils from '@utils';
+import { isString, isObject } from 'lodash-es';
+
 import {
 	showExpertSlot,
 	type AccessKeyPropType,
@@ -10,12 +12,12 @@ import {
 	type KoliBriCustomIcon,
 	type KoliBriIconsProp,
 	type LabelWithExpertSlotPropType,
-} from '@schema';
+} from '../../schema';
 
 import KolIconFc from '../Icon';
 import AccessKey from '../AccessKey';
 import InternalUnderlinedAccessKey from '../InternalUnderlinedAccessKey';
-import type { JSXBase } from '@stencil/core/internal';
+import { md } from '../../utils/markdown';
 
 type IconType = IconOrIconClass | undefined | null;
 
@@ -38,14 +40,14 @@ const LabelHelper: FC<{ label: string; hideLabel?: boolean; accessKey?: string; 
 	allowMarkdown,
 	accessKey,
 }) => {
-	if (hideLabel || !Utils.isString(label)) {
+	if (hideLabel || !isString(label)) {
 		return null;
 	}
 
 	const defaultClasses = 'span-label';
 
 	if (allowMarkdown) {
-		return <span class={clsx(defaultClasses, 'md')} innerHTML={Utils.md(label)} />;
+		return <span class={clsx(defaultClasses, 'md')} innerHTML={md(label)} />;
 	}
 
 	if (accessKey) {
@@ -71,7 +73,7 @@ const SpanCoreHelper: FC<{ label: string; hideLabel?: boolean; accessKey?: strin
 			<span aria-hidden={hideExpertSlot ? 'true' : undefined} class="span-label" hidden={hideExpertSlot}>
 				{children}
 			</span>
-			{Utils.isString(accessKey) && <AccessKey accessKey={accessKey} />}
+			{isString(accessKey) && <AccessKey accessKey={accessKey} />}
 		</>
 	);
 };
@@ -83,12 +85,12 @@ const KolSpanFc: FC<SpanProps> = (props, children) => {
 	let RightIconProps: IconType = null;
 	let BottomIconProps: IconType = null;
 
-	if (Utils.isObject(icons)) {
+	if (isObject(icons)) {
 		TopIconProps = icons.top;
 		LeftIconProps = icons.left;
 		RightIconProps = icons.right;
 		BottomIconProps = icons.bottom;
-	} else if (Utils.isString(icons)) {
+	} else if (isString(icons)) {
 		LeftIconProps = {
 			icon: icons,
 		};
@@ -96,15 +98,15 @@ const KolSpanFc: FC<SpanProps> = (props, children) => {
 
 	return (
 		<span class={clsx('kol-span-wc', { 'hide-label': hideLabel }, classNames)} {...other}>
-			{Utils.isObject(TopIconProps) && <IconHelper class="top" {...TopIconProps} />}
+			{isObject(TopIconProps) && <IconHelper class="top" {...TopIconProps} />}
 			<span>
-				{Utils.isObject(LeftIconProps) && <IconHelper class="left" {...LeftIconProps} />}
+				{isObject(LeftIconProps) && <IconHelper class="left" {...LeftIconProps} />}
 				<SpanCoreHelper label={label} hideLabel={hideLabel} allowMarkdown={allowMarkdown} accessKey={accessKey}>
 					{children}
 				</SpanCoreHelper>
-				{Utils.isObject(RightIconProps) && <IconHelper class="right" {...RightIconProps} />}
+				{isObject(RightIconProps) && <IconHelper class="right" {...RightIconProps} />}
 			</span>
-			{Utils.isObject(BottomIconProps) && <IconHelper class="bottom" {...BottomIconProps} />}
+			{isObject(BottomIconProps) && <IconHelper class="bottom" {...BottomIconProps} />}
 		</span>
 	);
 };

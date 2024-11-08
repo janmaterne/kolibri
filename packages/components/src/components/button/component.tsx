@@ -49,7 +49,7 @@ import { nonce } from '../../utils/dev.utils';
 import { propagateResetEventToForm, propagateSubmitEventToForm } from '../form/controller';
 import { AssociatedInputController } from '../input-adapter-leanup/associated.controller';
 import { KolTooltipWcTag } from '../../core/component-names';
-import { KolSpanFc } from '@fc';
+import { KolSpanFc } from '../../functional-components';
 
 /**
  * @internal

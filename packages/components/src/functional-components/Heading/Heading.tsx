@@ -1,7 +1,7 @@
 import { h, type FunctionalComponent as FC } from '@stencil/core';
 import clsx from 'clsx';
 import type { JSXBase, VNode } from '@stencil/core/internal';
-import type { HeadingLevel, HeadingVariantPropType } from '@schema';
+import type { HeadingLevel, HeadingVariantPropType } from '../../schema';
 
 type LevelProps = { level?: HeadingLevel };
 type VariantProps = { variant?: HeadingVariantPropType };

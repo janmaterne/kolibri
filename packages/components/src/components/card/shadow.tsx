@@ -1,8 +1,8 @@
 import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
 import type { JSX } from '@stencil/core';
-import type { CardAPI, CardStates, HasCloserPropType, HeadingLevel, KoliBriAlertEventCallbacks, KoliBriCardEventCallbacks, LabelPropType } from '@schema';
-import { setState, validateHasCloser, validateLabel } from '@schema';
-import { KolCardFc } from '@fc';
+import type { CardAPI, CardStates, HasCloserPropType, HeadingLevel, KoliBriAlertEventCallbacks, KoliBriCardEventCallbacks, LabelPropType } from '../../schema';
+import { setState, validateHasCloser, validateLabel } from '../../schema';
+import { KolCardFc } from '../../functional-components';
 
 import { watchHeadingLevel } from '../heading/validation';
 

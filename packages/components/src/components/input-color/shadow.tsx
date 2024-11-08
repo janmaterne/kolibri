@@ -22,7 +22,7 @@ import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } fro
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedAccessKey } from '@fc';
+import { InternalUnderlinedAccessKey } from '../../functional-components';
 import { InputColorController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 

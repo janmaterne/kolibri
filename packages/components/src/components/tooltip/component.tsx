@@ -6,7 +6,7 @@ import { Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
 
 import { alignFloatingElements } from '../../utils/align-floating-elements';
 import { hideOverlay, showOverlay } from '../../utils/overlay';
-import { KolSpanFc } from '@fc';
+import { KolSpanFc } from '../../functional-components';
 
 /**
  * @internal

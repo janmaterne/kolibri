@@ -2,9 +2,9 @@ import { h, type FunctionalComponent as FC } from '@stencil/core';
 import type { JSXBase } from '@stencil/core/internal';
 import clsx from 'clsx';
 
-import { Log, type InternalAlertProps } from '@schema';
-import { translate } from '@i18n';
-import { KolButtonWcTag } from '@component-names';
+import { Log, type InternalAlertProps } from '../../schema';
+import { translate } from '../../i18n';
+import { KolButtonWcTag } from '../../core/component-names';
 
 import AlertIcon from '../AlertIcon';
 import KolHeadingFc from '../Heading';

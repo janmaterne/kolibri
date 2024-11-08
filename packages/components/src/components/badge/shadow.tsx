@@ -1,7 +1,7 @@
 import type { BadgeAPI, BadgeStates, ButtonProps, KoliBriIconsProp, LabelPropType, PropColor, Stringified } from '../../schema';
 import { featureHint, handleColorChange, objectObjectHandler, parseJson, setState, validateColor, validateIcons } from '../../schema';
 import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
-import { KolSpanFc } from '@fc';
+import { KolSpanFc } from '../../functional-components';
 
 import { nonce } from '../../utils/dev.utils';
 
