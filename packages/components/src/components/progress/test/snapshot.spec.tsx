@@ -11,9 +11,7 @@ const DEFAULT_HTML_PROGRESS_PROPS = `aria-busy="true" max="${DEFAULT_PROPS._max}
 const DEFAULT_HTML_SPAN_PROPS = `aria-live="polite" aria-relevant="removals text"`;
 
 describe('test Progress', () => {
-	beforeAll(() => {
-		jest.useFakeTimers();
-	});
+	beforeAll(() => {});
 
 	beforeEach(() => {
 		jest.clearAllTimers();

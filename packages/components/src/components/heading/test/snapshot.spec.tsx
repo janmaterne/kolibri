@@ -1,6 +1,6 @@
-import { KolHeadingTag } from '@component-names';
-import type { HeadingProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolHeadingTag } from '../../../core/component-names';
+import type { HeadingProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolHeading } from '../shadow';
 

@@ -1,6 +1,6 @@
-import { KolToolbarTag } from '@component-names';
-import type { ToolbarProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolToolbarTag } from '../../../core/component-names';
+import type { ToolbarProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolToolbar } from '../shadow';
 

@@ -1,6 +1,6 @@
-import { KolSpanWcTag } from '@component-names';
-import type { SpanProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolSpanWcTag } from '../../../core/component-names';
+import type { SpanProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolSpanWc } from '../component';
 

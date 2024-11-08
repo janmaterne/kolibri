@@ -1,6 +1,6 @@
-import { KolSpinTag } from '@component-names';
-import type { SpinProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolSpinTag } from '../../../core/component-names';
+import type { SpinProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolSpin } from '../shadow';
 

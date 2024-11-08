@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`kol-breadcrumb should render with _label="Aria-Label" _links=[{"_href":"www.google.de","_label":"Label"}] 1`] = `
+exports[`kol-breadcrumb should render with _label="Aria-Label" _links=[{"_href":"https://example.com","_label":"Label"}] 1`] = `
 <kol-breadcrumb class="kol-breadcrumb">
   <template shadowrootmode="open">
     <nav aria-label="Aria-Label">

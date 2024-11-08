@@ -1,6 +1,6 @@
-import { KolSkipNavTag } from '@component-names';
-import type { SkipNavProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolSkipNavTag } from '../../../core/component-names';
+import type { SkipNavProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolSkipNav } from '../shadow';
 
@@ -11,13 +11,13 @@ executeSnapshotTests<SkipNavProps>(
 		{
 			_label: 'Label',
 			_links: [
-				{ _href: 'www.google.de', _label: 'Zum Anfang' },
+				{ _href: 'https://example.com', _label: 'Zum Anfang' },
 				{
-					_href: 'www.google.de',
+					_href: 'https://example.com',
 					_label: 'Zum Formular',
 				},
 				{
-					_href: 'www.google.de',
+					_href: 'https://example.com',
 					_label: 'Zum Ende',
 				},
 			],

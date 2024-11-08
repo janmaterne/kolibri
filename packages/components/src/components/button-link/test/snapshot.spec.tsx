@@ -1,6 +1,6 @@
-import { KolButtonLinkTag } from '@component-names';
-import type { ButtonLinkProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolButtonLinkTag } from '../../../core/component-names';
+import type { ButtonLinkProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolButtonLink } from '../shadow';
 

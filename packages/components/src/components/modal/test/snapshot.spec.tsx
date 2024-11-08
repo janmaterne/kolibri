@@ -1,6 +1,6 @@
-import { KolModalTag } from '@component-names';
-import type { ModalProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolModalTag } from '../../../core/component-names';
+import type { ModalProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolModal } from '../shadow';
 

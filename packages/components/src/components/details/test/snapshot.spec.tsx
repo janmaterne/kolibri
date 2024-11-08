@@ -1,6 +1,6 @@
-import { KolDetailsTag } from '@component-names';
-import type { DetailsProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolDetailsTag } from '../../../core/component-names';
+import type { DetailsProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolDetails } from '../shadow';
 

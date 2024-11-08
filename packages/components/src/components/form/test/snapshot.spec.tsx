@@ -1,6 +1,6 @@
-import { KolFormTag } from '@component-names';
-import type { FormProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolFormTag } from '../../../core/component-names';
+import type { FormProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolForm } from '../shadow';
 

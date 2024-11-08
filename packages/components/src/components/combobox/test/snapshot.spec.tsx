@@ -1,6 +1,6 @@
-import { KolComboboxTag } from '@component-names';
-import type { ComboboxProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolComboboxTag } from '../../../core/component-names';
+import type { ComboboxProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolCombobox } from '../shadow';
 

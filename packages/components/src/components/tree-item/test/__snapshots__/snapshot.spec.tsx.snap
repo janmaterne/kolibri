@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`kol-tree-item should render with _label="Label" _href="https://google.de" _active=false 1`] = `
+exports[`kol-tree-item should render with _label="Label" _href="https://example.com" _active=false 1`] = `
 <kol-tree-item>
   <template shadowrootmode="open">
     <kol-tree-item-wc class="kol-tree-item kol-tree-item-wc">
       <!---->
       <li class="tree-item" style="--level: 0;">
-        <kol-link-wc _href="https://google.de" _label="" _role="treeitem" _tabindex="-1" class="first-level tree-link">
+        <kol-link-wc _href="https://example.com" _label="" _role="treeitem" _tabindex="-1" class="first-level tree-link">
           <span slot="expert">
             Label
           </span>
@@ -20,13 +20,13 @@ exports[`kol-tree-item should render with _label="Label" _href="https://google.d
 </kol-tree-item>
 `;
 
-exports[`kol-tree-item should render with _label="Label" _href="https://google.de" _active=true 1`] = `
+exports[`kol-tree-item should render with _label="Label" _href="https://example.com" _active=true 1`] = `
 <kol-tree-item>
   <template shadowrootmode="open">
     <kol-tree-item-wc class="kol-tree-item kol-tree-item-wc">
       <!---->
       <li class="tree-item" style="--level: 0;">
-        <kol-link-wc _href="https://google.de" _label="" _role="treeitem" _tabindex="0" class="active first-level tree-link">
+        <kol-link-wc _href="https://example.com" _label="" _role="treeitem" _tabindex="0" class="active first-level tree-link">
           <span slot="expert">
             Label
           </span>
@@ -40,13 +40,13 @@ exports[`kol-tree-item should render with _label="Label" _href="https://google.d
 </kol-tree-item>
 `;
 
-exports[`kol-tree-item should render with _label="Label" _href="https://google.de" _open=false 1`] = `
+exports[`kol-tree-item should render with _label="Label" _href="https://example.com" _open=false 1`] = `
 <kol-tree-item>
   <template shadowrootmode="open">
     <kol-tree-item-wc class="kol-tree-item kol-tree-item-wc">
       <!---->
       <li class="tree-item" style="--level: 0;">
-        <kol-link-wc _href="https://google.de" _label="" _role="treeitem" _tabindex="-1" class="first-level tree-link">
+        <kol-link-wc _href="https://example.com" _label="" _role="treeitem" _tabindex="-1" class="first-level tree-link">
           <span slot="expert">
             Label
           </span>
@@ -60,13 +60,13 @@ exports[`kol-tree-item should render with _label="Label" _href="https://google.d
 </kol-tree-item>
 `;
 
-exports[`kol-tree-item should render with _label="Label" _href="https://google.de" _open=true 1`] = `
+exports[`kol-tree-item should render with _label="Label" _href="https://example.com" _open=true 1`] = `
 <kol-tree-item>
   <template shadowrootmode="open">
     <kol-tree-item-wc class="kol-tree-item kol-tree-item-wc">
       <!---->
       <li class="tree-item" style="--level: 0;">
-        <kol-link-wc _href="https://google.de" _label="" _role="treeitem" _tabindex="-1" class="first-level tree-link">
+        <kol-link-wc _href="https://example.com" _label="" _role="treeitem" _tabindex="-1" class="first-level tree-link">
           <span slot="expert">
             Label
           </span>
@@ -80,13 +80,13 @@ exports[`kol-tree-item should render with _label="Label" _href="https://google.d
 </kol-tree-item>
 `;
 
-exports[`kol-tree-item should render with _label="Label" _href="https://google.de" 1`] = `
+exports[`kol-tree-item should render with _label="Label" _href="https://example.com" 1`] = `
 <kol-tree-item>
   <template shadowrootmode="open">
     <kol-tree-item-wc class="kol-tree-item kol-tree-item-wc">
       <!---->
       <li class="tree-item" style="--level: 0;">
-        <kol-link-wc _href="https://google.de" _label="" _role="treeitem" _tabindex="-1" class="first-level tree-link">
+        <kol-link-wc _href="https://example.com" _label="" _role="treeitem" _tabindex="-1" class="first-level tree-link">
           <span slot="expert">
             Label
           </span>

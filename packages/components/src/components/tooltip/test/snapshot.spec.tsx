@@ -1,6 +1,6 @@
-import { KolTooltipWcTag } from '@component-names';
-import type { TooltipProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolTooltipWcTag } from '../../../core/component-names';
+import type { TooltipProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolTooltipWc } from '../component';
 

@@ -1,11 +1,11 @@
-import { KolLinkTag } from '@component-names';
-import type { LinkProps } from '@schema';
-import { executeSnapshotTests } from '@testing';
+import { KolLinkTag } from '../../../core/component-names';
+import type { LinkProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
 
 import { KolLink } from '../shadow';
 import { KolLinkWc } from '../component';
 
-const baseObj = { _href: 'https://google.de', _icons: 'codicon codicon-home', _label: 'Label', _target: 'self' };
+const baseObj = { _href: 'https://example.com', _icons: 'codicon codicon-home', _label: 'Label', _target: 'self' };
 
 executeSnapshotTests<LinkProps>(
 	KolLinkTag,
