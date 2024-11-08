@@ -99,6 +99,14 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 				this.state._on?.onClick(event, this.state._value);
 			}
 		}
+
+		this.host?.dispatchEvent(new Event('click', { bubbles: true, composed: true }));
+	};
+
+	private readonly onMouseDown = (event: MouseEvent) => {
+		stopPropagation(event);
+		this.state?._on?.onMouseDown?.(event);
+		this.host?.dispatchEvent(new Event('mousedown', { bubbles: true, composed: true }));
 	};
 
 	public render(): JSX.Element {
@@ -126,8 +134,8 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					disabled={this.state._disabled}
 					id={this.state._id}
 					name={this.state._name}
-					{...this.state._on}
 					onClick={this.onClick}
+					onMouseDown={this.onMouseDown}
 					role={this.state._role}
 					tabIndex={this.state._tabIndex}
 					type={this.state._type}

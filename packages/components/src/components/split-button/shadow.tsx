@@ -15,6 +15,7 @@ import type {
 	TooltipAlignPropType,
 } from '../../schema';
 import type { JSX } from '@stencil/core';
+import { Listen } from '@stencil/core';
 import { Component, h, Host, Method, Prop, State } from '@stencil/core';
 
 import { translate } from '../../i18n';
@@ -33,6 +34,12 @@ import { KolButtonWcTag, KolPopoverWcTag } from '../../core/component-names';
 	},
 })
 export class KolSplitButton implements SplitButtonProps /*, SplitButtonAPI*/ {
+	@Listen('click')
+	handleHostClick(event: MouseEvent) {
+		// Stop propagation to avoid the popover being close immediately because of the body click event
+		event.stopPropagation();
+	}
+
 	private readonly clickButtonHandler = {
 		onClick: (e: MouseEvent) => {
 			if (typeof this._on?.onClick === 'function') {

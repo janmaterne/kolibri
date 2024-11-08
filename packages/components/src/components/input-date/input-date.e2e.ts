@@ -204,6 +204,25 @@ test.describe('kol-input-date', () => {
 						expect(getValue).toBe(value);
 					}
 				});
+
+				test(`should reflect the correct _value property as ${label} on the web component`, async ({ page }) => {
+					await page.setContent('<kol-input-date _label="Date input"></kol-input-date>');
+					await page.locator('kol-input-date').evaluate((element: HTMLKolInputDateElement, date) => {
+						element._value = date; // set the initial value
+					}, value);
+
+					const NEW_DATE = '2021-03-03';
+					await page.locator('input').fill(NEW_DATE);
+
+					const valueDomProperty = await page.locator('kol-input-date').evaluate((element: HTMLKolInputDateElement) => element._value);
+
+					if (value instanceof Date) {
+						expect(valueDomProperty).toBeInstanceOf(Date);
+						expect((valueDomProperty as Date).toISOString().split('T')[0]).toBe(new Date(NEW_DATE).toISOString().split('T')[0]);
+					} else {
+						expect(valueDomProperty).toBe(NEW_DATE);
+					}
+				});
 			});
 		});
 	});
@@ -358,6 +377,22 @@ test.describe('kol-input-date', () => {
 				element._value = null;
 			});
 			await expect(page.locator('input')).toHaveValue('');
+		});
+	});
+
+	test.describe('DOM events', () => {
+		['click', 'focus', 'blur', 'input', 'change'].forEach((event) => {
+			test(`should emit ${event} when internal input emits ${event}`, async ({ page }) => {
+				await page.setContent('<kol-input-date _label="Input"></kol-input-date>');
+				const eventPromise = page.locator('kol-input-date').evaluate(async (element, event) => {
+					return new Promise((resolve) => {
+						element.addEventListener(event, resolve);
+					});
+				}, event);
+				await page.waitForChanges();
+				await page.locator('input').dispatchEvent(event);
+				await expect(eventPromise).resolves.toBeTruthy();
+			});
 		});
 	});
 });
