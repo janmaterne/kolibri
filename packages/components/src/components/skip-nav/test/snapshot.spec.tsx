@@ -1,41 +1,26 @@
-import { executeTests } from 'stencil-awesome-test';
-
-import { h } from '@stencil/core';
-import { newSpecPage } from '@stencil/core/testing';
-
-import { getSkipNavHtml } from './html.mock';
-
-import type { SpecPage } from '@stencil/core/testing';
+import { KolSkipNavTag } from '../../../core/component-names';
 import type { SkipNavProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
+
 import { KolSkipNav } from '../shadow';
 
-executeTests<SkipNavProps>(
-	'SkipNav',
-	async (props): Promise<SpecPage> => {
-		const page = await newSpecPage({
-			components: [KolSkipNav],
-			template: () => <kol-skip-nav {...props} />,
-		});
-		return page;
-	},
-	{
-		_label: ['Label', ''],
-		_links: [
-			[
+executeSnapshotTests<SkipNavProps>(
+	KolSkipNavTag,
+	[KolSkipNav],
+	[
+		{
+			_label: 'Label',
+			_links: [
+				{ _href: 'https://example.com', _label: 'Zum Anfang' },
 				{
-					_label: 'Zum Anfang',
-				},
-				{
+					_href: 'https://example.com',
 					_label: 'Zum Formular',
 				},
 				{
+					_href: 'https://example.com',
 					_label: 'Zum Ende',
 				},
 			],
-		],
-	},
-	getSkipNavHtml,
-	{
-		execMode: 'default', // ready
-	},
+		},
+	],
 );
