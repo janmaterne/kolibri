@@ -1,5 +1,7 @@
 @import '../@shared/mixins';
 
+@layer kol-global, kol-component, kol-theme-global, kol-theme-component;
+
 @layer kol-component {
 	:host {
 		font-size: rem(16);
