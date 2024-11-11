@@ -44,6 +44,43 @@ export const LinkIcons: FC = () => (
 				_label="I am a link with all icons"
 				_href="#/back-page"
 			/>
+
+			<KolLink _icons="codicon codicon-home" _href="https://public-ui.github.io/" _label="I am a external link with an icon on the left" _target="_blank" />
+			<KolLink
+				_icons={{
+					right: 'codicon codicon-home',
+				}}
+				_href="https://public-ui.github.io/"
+				_label="I am a external linkwith an icon on the right"
+				_target="_blank"
+			/>
+			<KolLink
+				_icons={{
+					top: 'codicon codicon-home',
+				}}
+				_href="https://public-ui.github.io/"
+				_label="I am a external link with an icon at the top"
+				_target="_blank"
+			/>
+			<KolLink
+				_icons={{
+					bottom: 'codicon codicon-home',
+				}}
+				_href="https://public-ui.github.io/"
+				_label="I am a external link with icon below"
+				_target="_blank"
+			/>
+			<KolLink
+				_href="https://public-ui.github.io/"
+				_label="I am a external link with all icons"
+				_target="_blank"
+				_icons={{
+					top: 'codicon codicon-home',
+					right: 'codicon codicon-home',
+					bottom: 'codicon codicon-home',
+					left: 'codicon codicon-home',
+				}}
+			/>
 		</div>
 	</>
 );
