@@ -80,33 +80,33 @@ const SpanCoreHelper: FC<{ label: string; hideLabel?: boolean; accessKey?: strin
 
 const KolSpanFc: FC<SpanProps> = (props, children) => {
 	const { class: classNames, label, hideLabel = false, accessKey, allowMarkdown, icons, ...other } = props;
-	let TopIconProps: IconType = null;
-	let LeftIconProps: IconType = null;
-	let RightIconProps: IconType = null;
-	let BottomIconProps: IconType = null;
+	let topIconProps: IconType = null;
+	let leftIconProps: IconType = null;
+	let rightIconProps: IconType = null;
+	let bottomIconProps: IconType = null;
 
 	if (isObject(icons)) {
-		TopIconProps = icons.top;
-		LeftIconProps = icons.left;
-		RightIconProps = icons.right;
-		BottomIconProps = icons.bottom;
+		topIconProps = icons.top;
+		leftIconProps = icons.left;
+		rightIconProps = icons.right;
+		bottomIconProps = icons.bottom;
 	} else if (isString(icons)) {
-		LeftIconProps = {
+		leftIconProps = {
 			icon: icons,
 		};
 	}
 
 	return (
 		<span class={clsx('kol-span-wc', { 'hide-label': hideLabel }, classNames)} {...other}>
-			{isObject(TopIconProps) && <IconHelper class="top" {...TopIconProps} />}
+			{isObject(topIconProps) && <IconHelper class="top" {...topIconProps} />}
 			<span>
-				{isObject(LeftIconProps) && <IconHelper class="left" {...LeftIconProps} />}
+				{isObject(leftIconProps) && <IconHelper class="left" {...leftIconProps} />}
 				<SpanCoreHelper label={label} hideLabel={hideLabel} allowMarkdown={allowMarkdown} accessKey={accessKey}>
 					{children}
 				</SpanCoreHelper>
-				{isObject(RightIconProps) && <IconHelper class="right" {...RightIconProps} />}
+				{isObject(rightIconProps) && <IconHelper class="right" {...rightIconProps} />}
 			</span>
-			{isObject(BottomIconProps) && <IconHelper class="bottom" {...BottomIconProps} />}
+			{isObject(bottomIconProps) && <IconHelper class="bottom" {...bottomIconProps} />}
 		</span>
 	);
 };
