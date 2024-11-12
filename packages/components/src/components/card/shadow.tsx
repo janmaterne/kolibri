@@ -1,11 +1,13 @@
-import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
-import type { JSX } from '@stencil/core';
 import type { CardAPI, CardStates, HasCloserPropType, HeadingLevel, KoliBriAlertEventCallbacks, KoliBriCardEventCallbacks, LabelPropType } from '../../schema';
 import { setState, validateHasCloser, validateLabel } from '../../schema';
-import { KolCardFc } from '../../functional-components';
+import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
 
+import { translate } from '../../i18n';
 import { watchHeadingLevel } from '../heading/validation';
 
+import type { JSX } from '@stencil/core';
+import { KolButtonWcTag } from '../../core/component-names';
+import { KolHeadingFc } from '../../functional-components';
 /**
  * @slot - Ermöglicht das Einfügen beliebigen HTML's in den Inhaltsbereich der Card.
  */
@@ -17,18 +19,41 @@ import { watchHeadingLevel } from '../heading/validation';
 	shadow: true,
 })
 export class KolCard implements CardAPI {
-	private readonly handleCloseClick = () => {
-		this._on?.onClose?.(new Event('Close'));
+	private readonly close = () => {
+		if (this._on?.onClose !== undefined) {
+			this._on.onClose(new Event('Close'));
+		}
+	};
+
+	private readonly on = {
+		onClick: this.close,
 	};
 
 	public render(): JSX.Element {
-		const { _label: label, _level: level, _hasCloser: hasCloser } = this.state;
-
 		return (
 			<Host class="kol-card">
-				<KolCardFc hasCloser={hasCloser} onCloseClick={this.handleCloseClick} HeadingProps={{ level, label }}>
-					<slot />
-				</KolCardFc>
+				<div class="card">
+					<div class="header">
+						<KolHeadingFc level={this.state._level}>{this.state._label}</KolHeadingFc>
+					</div>
+					<div class="content">
+						<slot />
+					</div>
+					{this.state._hasCloser && (
+						<KolButtonWcTag
+							class="close"
+							_hideLabel
+							_icons={{
+								left: {
+									icon: 'codicon codicon-close',
+								},
+							}}
+							_label={translate('kol-close')}
+							_on={this.on}
+							_tooltipAlign="left"
+						></KolButtonWcTag>
+					)}
+				</div>
 			</Host>
 		);
 	}
