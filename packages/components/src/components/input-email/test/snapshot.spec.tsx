@@ -8,7 +8,7 @@ executeInputSnapshotTests<InputEmailProps>(
 	KolInputEmailTag,
 	[KolInputEmail],
 	{
-		_value: 'email@test.de',
+		_value: 'email@example.com',
 	},
 	{ hasSmartButton: true },
 );
@@ -17,8 +17,8 @@ executeInputSnapshotTests<InputEmailProps>(
 	KolInputEmailTag,
 	[KolInputEmail],
 	{
-		_value: 'email@test.de',
-		_suggestions: ['email1@test.de', 'email2@test.de', 'email3@test.de'],
+		_value: 'email@example.com',
+		_suggestions: ['email1@example.com', 'email2@example.com', 'email3@example.com'],
 	},
 	{ hasSmartButton: true },
 );
