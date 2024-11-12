@@ -6,6 +6,7 @@ import { ButtonBasic } from './basic';
 import { ButtonIcons } from './icons';
 import { ButtonWidth } from './width';
 import { ButtonShortKey } from './short-key';
+import { ButtonExpertSlot } from './expert-slot';
 
 export const BUTTON_ROUTES: Routes = {
 	button: {
@@ -16,5 +17,6 @@ export const BUTTON_ROUTES: Routes = {
 		'aria-description': ButtonAriaDescription,
 		baselined: ButtonBaselined,
 		'short-key': ButtonShortKey,
+		'expert-slot': ButtonExpertSlot,
 	},
 };
