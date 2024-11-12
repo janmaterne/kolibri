@@ -28,7 +28,7 @@ export class KolHeading implements HeadingAPI {
 	@Prop() public _level?: HeadingLevel = 1;
 
 	/**
-	 * Setzt den Text einer weiteren Überschrift, einen Level kleiner, unter der Ersten.
+	 * Defines the text of the secondary headline.
 	 */
 	@Prop() public _secondaryHeadline?: string;
 
