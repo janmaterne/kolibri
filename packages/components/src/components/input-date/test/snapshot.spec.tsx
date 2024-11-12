@@ -5,6 +5,6 @@ import { executeInputSnapshotTests } from '../../../utils/testing';
 import { KolInputDate } from '../shadow';
 
 executeInputSnapshotTests<InputDateProps>(KolInputDateTag, [KolInputDate], {
-	_value: new Date(2025, 0, 1),
+	_value: '2025-01-01',
 	// _suggestions: [ ]
 });
