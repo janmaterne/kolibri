@@ -6,7 +6,8 @@ import { translate } from '../../i18n';
 import { watchHeadingLevel } from '../heading/validation';
 
 import type { JSX } from '@stencil/core';
-import { KolButtonWcTag, KolHeadingWcTag } from '../../core/component-names';
+import { KolButtonWcTag } from '../../core/component-names';
+import { KolHeadingFc } from '../../functional-components';
 /**
  * @slot - Ermöglicht das Einfügen beliebigen HTML's in den Inhaltsbereich der Card.
  */
@@ -33,7 +34,7 @@ export class KolCard implements CardAPI {
 			<Host class="kol-card">
 				<div class="card">
 					<div class="header">
-						<KolHeadingWcTag _label={this.state._label} _level={this.state._level}></KolHeadingWcTag>
+						<KolHeadingFc level={this.state._level}>{this.state._label}</KolHeadingFc>
 					</div>
 					<div class="content">
 						<slot />
