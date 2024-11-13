@@ -1,13 +1,11 @@
 import { h, type FunctionalComponent as FC } from '@stencil/core';
 import type { JSXBase } from '@stencil/core/internal';
 import clsx from 'clsx';
-
-import { Log, type InternalAlertProps } from '../../schema';
+import type { InternalAlertProps } from '../../schema';
+import { Log } from '../../schema';
 import { translate } from '../../i18n';
-import { KolButtonWcTag } from '../../core/component-names';
-
 import AlertIcon from '../AlertIcon';
-import KolHeadingFc from '../Heading';
+import { KolButtonWcTag, KolHeadingWcTag } from '../../core/component-names';
 
 export type KolAlertFcProps = JSXBase.HTMLAttributes<HTMLDivElement> &
 	Partial<Omit<InternalAlertProps, 'on'>> & {
@@ -45,7 +43,7 @@ const KolAlertFc: FC<KolAlertFcProps> = (props, children) => {
 			<div class="heading">
 				<AlertIcon label={label} type={type} />
 				<div class="heading-content">
-					{label ? <KolHeadingFc level={level}>{label}</KolHeadingFc> : null}
+					{label ? <KolHeadingWcTag _label={label} _level={level} /> : null}
 					{variant === 'msg' && <div class="content">{children}</div>}
 				</div>
 				{hasCloser && (

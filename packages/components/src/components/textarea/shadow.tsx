@@ -23,7 +23,7 @@ import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } fro
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedAccessKey } from '../../functional-components';
+import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
 import { TextareaController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 

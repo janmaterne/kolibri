@@ -1,11 +1,10 @@
-import { Fragment, h, type FunctionalComponent as FC } from '@stencil/core';
+import { Fragment, h } from '@stencil/core';
 
-export type InternalUnderlinedAccessKeyProps = {
+type Props = {
 	accessKey: string;
 	label: string;
 };
-
-const InternalUnderlinedAccessKey: FC<InternalUnderlinedAccessKeyProps> = ({ accessKey, label }) => {
+export const InternalUnderlinedAccessKey = ({ accessKey, label }: Props) => {
 	/* Prefer capitalization as defined in the access key, try uppercase/lowercase when there's no match. */
 	let [first, ...rest] = label.split(accessKey);
 	if (rest.length === 0) {
@@ -16,7 +15,6 @@ const InternalUnderlinedAccessKey: FC<InternalUnderlinedAccessKeyProps> = ({ acc
 		accessKey = accessKey.toLowerCase();
 		[first, ...rest] = label.split(accessKey);
 	}
-
 	return (
 		<>
 			{first}
@@ -29,5 +27,3 @@ const InternalUnderlinedAccessKey: FC<InternalUnderlinedAccessKeyProps> = ({ acc
 		</>
 	);
 };
-
-export default InternalUnderlinedAccessKey;
