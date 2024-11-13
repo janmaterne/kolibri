@@ -24,7 +24,7 @@ import { deprecatedHint, type FocusableElement, type MsgPropType, showExpertSlot
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
+import { InternalUnderlinedAccessKey } from '../../functional-components';
 import { InputDateController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 

@@ -48,7 +48,8 @@ import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
 import { nonce } from '../../utils/dev.utils';
 import { propagateResetEventToForm, propagateSubmitEventToForm } from '../form/controller';
 import { AssociatedInputController } from '../input-adapter-leanup/associated.controller';
-import { KolSpanWcTag, KolTooltipWcTag } from '../../core/component-names';
+import { KolTooltipWcTag } from '../../core/component-names';
+import { KolSpanFc } from '../../functional-components';
 
 /**
  * @internal
@@ -132,15 +133,15 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					tabIndex={this.state._tabIndex}
 					type={this.state._type}
 				>
-					<KolSpanWcTag
+					<KolSpanFc
 						class="button-inner"
-						_accessKey={this.state._accessKey}
-						_icons={this.state._icons}
-						_hideLabel={this.state._hideLabel}
-						_label={hasExpertSlot ? '' : this.state._label}
+						accessKey={this.state._accessKey}
+						icons={this.state._icons}
+						hideLabel={this.state._hideLabel}
+						label={hasExpertSlot ? '' : this.state._label}
 					>
 						<slot name="expert" slot="expert"></slot>
-					</KolSpanWcTag>
+					</KolSpanFc>
 				</button>
 				<KolTooltipWcTag
 					/**
