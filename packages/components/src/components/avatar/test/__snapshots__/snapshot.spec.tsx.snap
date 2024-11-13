@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`kol-avatar should render with _label="Erika Maria Mustermann" _src=undefined 1`] = `
-<kol-avatar class="kol-avatar">
+<kol-avatar>
   <template shadowrootmode="open">
-    <kol-avatar-wc class="kol-avatar-wc">
-      <div aria-label="kol-avatar-alt" class="container" role="img">
-        <span aria-hidden="true" class="initials">
+    <kol-avatar-wc class="kol-avatar">
+      <div aria-label="kol-avatar-alt" class="kol-avatar__container" role="img">
+        <span aria-hidden="true" class="kol-avatar__initials">
           EM
         </span>
       </div>
@@ -15,11 +15,11 @@ exports[`kol-avatar should render with _label="Erika Maria Mustermann" _src=unde
 `;
 
 exports[`kol-avatar should render with _label="Erika" _src="/image.webp" 1`] = `
-<kol-avatar class="kol-avatar">
+<kol-avatar>
   <template shadowrootmode="open">
-    <kol-avatar-wc class="kol-avatar-wc">
-      <div aria-label="kol-avatar-alt" class="container" role="img">
-        <img alt="" aria-hidden="true" class="image" src="/image.webp">
+    <kol-avatar-wc class="kol-avatar">
+      <div aria-label="kol-avatar-alt" class="kol-avatar__container" role="img">
+        <img alt="" aria-hidden="true" class="kol-avatar__image" src="/image.webp">
       </div>
     </kol-avatar-wc>
   </template>
@@ -27,11 +27,11 @@ exports[`kol-avatar should render with _label="Erika" _src="/image.webp" 1`] = `
 `;
 
 exports[`kol-avatar should render with _label="Erika" _src=undefined 1`] = `
-<kol-avatar class="kol-avatar">
+<kol-avatar>
   <template shadowrootmode="open">
-    <kol-avatar-wc class="kol-avatar-wc">
-      <div aria-label="kol-avatar-alt" class="container" role="img">
-        <span aria-hidden="true" class="initials">
+    <kol-avatar-wc class="kol-avatar">
+      <div aria-label="kol-avatar-alt" class="kol-avatar__container" role="img">
+        <span aria-hidden="true" class="kol-avatar__initials">
           E
         </span>
       </div>
