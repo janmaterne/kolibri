@@ -17,12 +17,12 @@ import type { AvatarAPI, AvatarStates, ImageSourcePropType, LabelPropType } from
 export class KolAvatarWc implements AvatarAPI {
 	public render(): JSX.Element {
 		return (
-			<Host class="kol-avatar-wc">
-				<div aria-label={translate('kol-avatar-alt', { placeholders: { name: this.state._label } })} class="container" role="img">
+			<Host class="kol-avatar">
+				<div aria-label={translate('kol-avatar-alt', { placeholders: { name: this.state._label } })} class="kol-avatar__container" role="img">
 					{this.state._src ? (
-						<img alt="" aria-hidden="true" class="image" src={this.state._src} />
+						<img alt="" aria-hidden="true" class="kol-avatar__image" src={this.state._src} />
 					) : (
-						<span aria-hidden="true" class="initials">
+						<span aria-hidden="true" class="kol-avatar__initials">
 							{formatLabelAsInitials(this.state._label.trim())}
 						</span>
 					)}
