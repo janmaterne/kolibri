@@ -4,7 +4,7 @@ import { FastField, type FormikProps, type FastFieldProps } from 'formik';
 import { InputDateControl, type InputDateControlProps } from '../../formik-fields';
 import type { CoreFormFieldProps } from '../_types';
 
-export type InputDateFormFieldProps<V> = InputDateControlProps<V> & CoreFormFieldProps;
+type InputDateFormFieldProps<V> = InputDateControlProps<V> & CoreFormFieldProps;
 
 function InputDateFormField<T extends Record<string, unknown>, V extends Iso8601 | Date>(
 	props: InputDateFormFieldProps<V>,

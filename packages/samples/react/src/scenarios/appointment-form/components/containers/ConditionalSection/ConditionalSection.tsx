@@ -1,7 +1,7 @@
 import type * as React from 'react';
 import { useFormikContext } from 'formik';
 
-export type ConditionalSectionProps = React.PropsWithChildren<{
+type ConditionalSectionProps = React.PropsWithChildren<{
 	name: string;
 	conditionalValue?: unknown;
 }>;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useWizardService } from '../../../providers/WizardProvider';
 
-export type WizardStepProps = {
+type WizardStepProps = {
 	label: string;
 	children: React.ReactElement;
 };

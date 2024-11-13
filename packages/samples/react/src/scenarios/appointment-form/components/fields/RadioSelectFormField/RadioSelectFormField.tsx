@@ -4,7 +4,7 @@ import { RadioSelectControl, type RadioSelectControlProps } from '../../formik-f
 import { OptionQueryController } from '../../data-query';
 import type { CoreFormFieldProps } from '../_types';
 
-export type RadioSelectFormFieldProps<V extends string | number> = RadioSelectControlProps<V> &
+type RadioSelectFormFieldProps<V extends string | number> = RadioSelectControlProps<V> &
 	CoreFormFieldProps & {
 		queryKey?: string;
 	};

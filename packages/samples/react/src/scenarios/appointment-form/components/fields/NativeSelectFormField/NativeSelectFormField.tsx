@@ -4,7 +4,7 @@ import { NativeSelectControl, type NativeSelectControlProps } from '../../formik
 import { OptionQueryController } from '../../data-query';
 import type { CoreFormFieldProps } from '../_types';
 
-export type NativeSelectFormFieldProps<V extends string | number> = NativeSelectControlProps<V> &
+type NativeSelectFormFieldProps<V extends string | number> = NativeSelectControlProps<V> &
 	CoreFormFieldProps & {
 		queryKey?: string;
 	};

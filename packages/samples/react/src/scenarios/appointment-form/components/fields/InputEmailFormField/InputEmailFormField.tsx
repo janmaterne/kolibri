@@ -3,7 +3,7 @@ import { FastField, type FastFieldProps, type FormikProps } from 'formik';
 import { InputEmailControl, type InputEmailControlProps } from '../../formik-fields';
 import type { CoreFormFieldProps } from '../_types';
 
-export type InputEmailFormFieldProps = InputEmailControlProps & CoreFormFieldProps;
+type InputEmailFormFieldProps = InputEmailControlProps & CoreFormFieldProps;
 
 function InputEmailFormField<T extends Record<string, unknown>, V extends string>(
 	props: InputEmailFormFieldProps,

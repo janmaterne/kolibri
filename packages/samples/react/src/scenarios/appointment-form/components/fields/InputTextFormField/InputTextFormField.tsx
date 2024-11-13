@@ -3,7 +3,7 @@ import { Field, type FastFieldProps, type FormikProps } from 'formik';
 import { InputTextControl, type InputTextControlProps } from '../../formik-fields';
 import type { CoreFormFieldProps } from '../_types';
 
-export type InputTextFormFieldProps = InputTextControlProps & CoreFormFieldProps;
+type InputTextFormFieldProps = InputTextControlProps & CoreFormFieldProps;
 
 function InputTextFormField<T extends Record<string, unknown>, V extends string>(
 	props: InputTextFormFieldProps,

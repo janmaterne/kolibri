@@ -12,7 +12,7 @@ export interface FormValues {
 	phone: string;
 }
 
-export const initialValues: FormValues = {
+const initialValues: FormValues = {
 	district: '',
 	date: '' as Iso8601,
 	time: '' as Iso8601,
