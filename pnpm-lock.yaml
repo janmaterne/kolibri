@@ -385,9 +385,6 @@ importers:
       color-rgba:
         specifier: 2.4.0
         version: 2.4.0
-      lodash-es:
-        specifier: 4.17.21
-        version: 4.17.21
       markdown-it:
         specifier: 14.1.0
         version: 14.1.0
@@ -440,9 +437,6 @@ importers:
       '@types/jest':
         specifier: 26.0.24
         version: 26.0.24
-      '@types/lodash-es':
-        specifier: 4.17.12
-        version: 4.17.12
       '@types/markdown-it':
         specifier: 14.1.2
         version: 14.1.2
@@ -4570,12 +4564,6 @@ packages:
 
   '@types/linkify-it@5.0.0':
     resolution: {integrity: sha512-sVDA58zAw4eWAffKOaQH5/5j3XeayukzDk+ewSsnv3p4yJEZHCCzMDiZM8e0OUrRvmpGZ85jf4yDHkHsgBNr9Q==}
-
-  '@types/lodash-es@4.17.12':
-    resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==}
-
-  '@types/lodash@4.17.13':
-    resolution: {integrity: sha512-lfx+dftrEZcdBPczf9d0Qv0x+j/rfNCMuC6OcfXmO8gkfeNAY88PgKUbvG56whcN23gc27yenwF6oJZXGFpYxg==}
 
   '@types/markdown-it@14.1.2':
     resolution: {integrity: sha512-promo4eFwuiW+TfGxhi+0x3czqTYJkG8qB17ZUJiVF10Xm7NLVRSLUsfRTU/6h1e24VvRnXCx+hG7li58lkzog==}
@@ -17479,12 +17467,6 @@ snapshots:
   '@types/junit-report-builder@3.0.2': {}
 
   '@types/linkify-it@5.0.0': {}
-
-  '@types/lodash-es@4.17.12':
-    dependencies:
-      '@types/lodash': 4.17.13
-
-  '@types/lodash@4.17.13': {}
 
   '@types/markdown-it@14.1.2':
     dependencies:

@@ -12,5 +12,3 @@ type OptionalStates = OptionalProps;
 export type IconProps = Generic.Element.Members<RequiredProps, OptionalProps>;
 export type IconStates = Generic.Element.Members<RequiredStates, OptionalStates>;
 export type IconAPI = Generic.Element.ComponentApi<RequiredProps, OptionalProps, RequiredStates, OptionalStates>;
-
-export type InternalIconProps = RequiredProps & OptionalProps;
