@@ -1,4 +1,5 @@
-import { Option } from '@public-ui/components';
+import { Iso8601, Option } from '@public-ui/components';
+import { sleep } from '../utils/sleep';
 
 const getRandomIntInclusive = (min: number, max: number) => {
 	min = Math.ceil(min);
@@ -20,18 +21,24 @@ const getRandomTimes = () => {
 	return [...times].sort((timeA, timeB) => timeA - timeB).flatMap((hours) => [`${padHours(hours)}:00`, `${padHours(hours)}:30`]);
 };
 
-const sleep = (timeout: number) => {
-	return new Promise((resolve) => setTimeout(resolve, timeout));
-};
-export const fetchAvailableTimes = async (): Promise<Option<string>[]> => {
+const cache: Record<Iso8601 | string, Option<string>[]> = {};
+
+export const fetchAvailableTimes = async (queryData: { date: Iso8601 | string }): Promise<Option<string>[]> => {
+	if (!queryData?.date) {
+		return [];
+	}
+
+	if (cache[queryData.date]) {
+		return Promise.resolve(cache[queryData.date]);
+	}
+
 	await sleep(1000);
-	return getRandomTimes().map((time) => ({
+
+	const data = getRandomTimes().map((time) => ({
 		label: time,
 		value: time,
 	}));
-};
 
-export const checkAppointmentAvailability = async (time?: string): Promise<boolean> => {
-	await sleep(500);
-	return time?.endsWith(':30') ?? false;
+	cache[queryData.date] = data;
+	return Promise.resolve(cache[queryData.date]);
 };

@@ -1,5 +1,5 @@
 import { Routes } from '../shares/types';
-import { AppointmentForm } from './appointment-form/AppointmentForm';
+import AppointmentForm from './appointment-form';
 import { CustomTooltipWidth } from './custom-tooltip-width';
 import { DisabledInteractiveElements } from './disabled-interactive-elements';
 import { InputsGetValue } from './inputs-get-value';

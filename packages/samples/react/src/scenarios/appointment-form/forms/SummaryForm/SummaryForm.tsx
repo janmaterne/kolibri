@@ -1,20 +1,16 @@
-import { useFormikContext } from 'formik';
-import React from 'react';
-
+import * as React from 'react';
 import { KolHeading } from '@public-ui/react';
-
-import type { FormValues } from './AppointmentForm';
+import { useValues } from '../../providers/FormDataProvider';
 
 const ValueFallback = () => <i>Nicht angegeben</i>;
 const ValueWithFallback = ({ value }: { value: string }) => (value ? value : <ValueFallback />);
 
-export function Summary() {
-	const { values } = useFormikContext<FormValues>();
+function SummaryForm() {
+	const values = useValues();
 
 	return (
 		<>
-			<KolHeading _level={2} _label="Zusammenfassung"></KolHeading>
-
+			<KolHeading _level={2} _label="Summary" />
 			<dl>
 				<dt>District</dt>
 				<dd>
@@ -55,3 +51,5 @@ export function Summary() {
 		</>
 	);
 }
+
+export default SummaryForm;
