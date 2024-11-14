@@ -1,7 +1,6 @@
 @import '../@shared/mixins';
 @import '../style';
 @import '../input';
-@import '../@shared/kol-alert-mixin';
 
 @include kol-alert-styles;
 
@@ -68,7 +67,7 @@
 	}
 
 	/* required star is on fieldset legend */
-	.required label > span::after {
+	.required label>span::after {
 		content: '';
 	}
 }

@@ -1,9 +1,10 @@
 @import './@shared/mixins';
+@import './@shared/kol-alert-mixin';
 @import './label';
 @import './host-display-block';
-@import './tooltip/style.scss';
 
 @layer kol-component {
+
 	input,
 	textarea {
 		cursor: text;
