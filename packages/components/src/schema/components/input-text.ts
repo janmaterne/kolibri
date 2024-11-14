@@ -49,6 +49,7 @@ type OptionalProps = {
 	PropName &
 	PropReadOnly &
 	PropRequired &
+	PropShortKey &
 	PropSuggestions &
 	PropSyncValueBySelector &
 	PropTouched;
