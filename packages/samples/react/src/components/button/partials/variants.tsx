@@ -2,21 +2,22 @@ import React from 'react';
 
 import { ButtonCases } from './cases';
 import { KolHeading } from '@public-ui/react';
-import type { Components } from '@public-ui/components';
+import type { ButtonSampleProps } from './type';
 
-export const ButtonVariants = function ButtonVariant() {
-	const examples: { label: string; buttonProps: Partial<Components.KolButton> }[] = [
-		{ label: 'Button', buttonProps: {} },
-		{ label: 'Button (disabled)', buttonProps: { _disabled: true } },
-		{ label: 'Button (hideLabel)', buttonProps: { _hideLabel: true } },
-		{ label: 'Button (disabled, hideLabel)', buttonProps: { _disabled: true, _hideLabel: true } },
+export const ButtonVariants: React.FC<ButtonSampleProps> = (props = {}) => {
+	const examples: { label: string; buttonProps: ButtonSampleProps }[] = [
+		{ label: 'Button', buttonProps: props },
+		{ label: 'Button (disabled)', buttonProps: { ...props, _disabled: true } },
+		{ label: 'Button (hideLabel)', buttonProps: { ...props, _hideLabel: true } },
+		{ label: 'Button (disabled, hideLabel)', buttonProps: { ...props, _disabled: true, _hideLabel: true } },
 	];
+
 	return (
 		<div className="grid gap-8">
 			{examples.map(({ label, buttonProps }, index) => (
 				<section key={index} className="grid gap-4">
 					<KolHeading _level={2} _label={label} />
-					<ButtonCases {...buttonProps} />
+					<ButtonCases {...buttonProps}></ButtonCases>
 				</section>
 			))}
 		</div>
