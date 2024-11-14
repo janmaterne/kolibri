@@ -2,12 +2,8 @@
 @import '../style';
 
 @layer kol-component {
-	:host {
-		font-size: rem(16);
-	}
 	.kol-abbr {
-		&__abbr {
-			cursor: help;
-		}
+		font-size: rem(16);
+		cursor: help;
 	}
 }

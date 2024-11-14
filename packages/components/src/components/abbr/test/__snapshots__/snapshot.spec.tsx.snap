@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`kol-abbr should render with _label="Text" _tooltipAlign="bottom" 1`] = `
-<kol-abbr class="kol-abbr">
+<kol-abbr>
   <template shadowrootmode="open">
-    <abbr aria-labelledby="nonce" class="kol-abbr__abbr" role="definition" tabindex="0" title="Text">
+    <abbr aria-labelledby="nonce" class="kol-abbr" role="definition" tabindex="0" title="Text">
       <span>
         <slot></slot>
       </span>
@@ -14,9 +14,9 @@ exports[`kol-abbr should render with _label="Text" _tooltipAlign="bottom" 1`] = 
 `;
 
 exports[`kol-abbr should render with _label="Text" _tooltipAlign="left" 1`] = `
-<kol-abbr class="kol-abbr">
+<kol-abbr>
   <template shadowrootmode="open">
-    <abbr aria-labelledby="nonce" class="kol-abbr__abbr" role="definition" tabindex="0" title="Text">
+    <abbr aria-labelledby="nonce" class="kol-abbr" role="definition" tabindex="0" title="Text">
       <span>
         <slot></slot>
       </span>
@@ -27,9 +27,9 @@ exports[`kol-abbr should render with _label="Text" _tooltipAlign="left" 1`] = `
 `;
 
 exports[`kol-abbr should render with _label="Text" _tooltipAlign="right" 1`] = `
-<kol-abbr class="kol-abbr">
+<kol-abbr>
   <template shadowrootmode="open">
-    <abbr aria-labelledby="nonce" class="kol-abbr__abbr" role="definition" tabindex="0" title="Text">
+    <abbr aria-labelledby="nonce" class="kol-abbr" role="definition" tabindex="0" title="Text">
       <span>
         <slot></slot>
       </span>
@@ -40,9 +40,9 @@ exports[`kol-abbr should render with _label="Text" _tooltipAlign="right" 1`] = `
 `;
 
 exports[`kol-abbr should render with _label="Text" _tooltipAlign="top" 1`] = `
-<kol-abbr class="kol-abbr">
+<kol-abbr>
   <template shadowrootmode="open">
-    <abbr aria-labelledby="nonce" class="kol-abbr__abbr" role="definition" tabindex="0" title="Text">
+    <abbr aria-labelledby="nonce" class="kol-abbr" role="definition" tabindex="0" title="Text">
       <span>
         <slot></slot>
       </span>
@@ -53,9 +53,9 @@ exports[`kol-abbr should render with _label="Text" _tooltipAlign="top" 1`] = `
 `;
 
 exports[`kol-abbr should render with _label="Text" 1`] = `
-<kol-abbr class="kol-abbr">
+<kol-abbr>
   <template shadowrootmode="open">
-    <abbr aria-labelledby="nonce" class="kol-abbr__abbr" role="definition" tabindex="0" title="Text">
+    <abbr aria-labelledby="nonce" class="kol-abbr" role="definition" tabindex="0" title="Text">
       <span>
         <slot></slot>
       </span>

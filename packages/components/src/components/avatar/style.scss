@@ -3,19 +3,15 @@
 @import '../host-display-block';
 
 @layer kol-component {
-	:host {
-		font-size: rem(16);
-	}
 	.kol-avatar {
-		&__container {
-			border-radius: 50%;
-			overflow: hidden;
-			/* Visible with forced colors  */
-			outline: transparent solid rem(1);
-			/*theme?*/
-			width: rem(100);
-			height: rem(100);
-		}
+		font-size: rem(16);
+		border-radius: 50%;
+		overflow: hidden;
+		/* Visible with forced colors  */
+		outline: transparent solid rem(1);
+		/*theme?*/
+		width: rem(100);
+		height: rem(100);
 
 		&__image {
 			width: 100%;
