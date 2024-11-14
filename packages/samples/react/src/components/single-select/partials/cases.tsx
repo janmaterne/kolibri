@@ -34,6 +34,8 @@ export const SingleSelectCases = forwardRef<HTMLKolSingleSelectElement, Componen
 				_placeholder="Placeholder"
 				_required
 			/>
+			<KolSingleSelect {...props} _label="With access key" _options={COUNTRY_OPTIONS as Option<StencilUnknown>[]} _value={'de'} _accessKey="c" />
+			<KolSingleSelect {...props} _label="With short key" _options={COUNTRY_OPTIONS as Option<StencilUnknown>[]} _value={'de'} _shortKey="s" />
 		</div>
 	);
 });

@@ -15,6 +15,7 @@ import type {
 	LinkOnCallbacksPropType,
 	LinkStates,
 	LinkTargetPropType,
+	ShortKeyPropType,
 	Stringified,
 	TooltipAlignPropType,
 } from '../../schema';
@@ -36,6 +37,7 @@ import {
 	validateLabelWithExpertSlot,
 	validateLinkCallbacks,
 	validateLinkTarget,
+	validateShortKey,
 	validateTabIndex,
 	validateTooltipAlign,
 } from '../../schema';
@@ -48,6 +50,7 @@ import { nonce } from '../../utils/dev.utils';
 import { KolIconTag, KolSpanWcTag, KolTooltipWcTag } from '../../core/component-names';
 
 import { translate } from '../../i18n';
+import { validateAccessAndShortKey } from '../../schema/validators/access-and-short-key';
 
 /**
  * @internal
@@ -152,7 +155,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 					tabIndex={this.state._disabled ? -1 : this.state._tabIndex}
 				>
 					<KolSpanWcTag
-						_accessKey={this.state._accessKey}
+						_badgeText={this.state._accessKey || this.state._shortKey}
 						_icons={this.state._icons}
 						_hideLabel={this.state._hideLabel}
 						_label={hasExpertSlot ? '' : this.state._label || this.state._href}
@@ -175,7 +178,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 					 */
 					aria-hidden="true"
 					hidden={hasExpertSlot || !this.state._hideLabel}
-					_accessKey={this.state._accessKey}
+					_badgeText={this.state._accessKey || this.state._shortKey}
 					_align={this.state._tooltipAlign}
 					_label={this.state._label || this.state._href}
 				></KolTooltipWcTag>
@@ -257,6 +260,11 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 	@Prop() public _role?: AlternativeButtonLinkRolePropType;
 
 	/**
+	 * Adds a visual short key hint to the component.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
 	 * Defines which tab-index the primary element of the component has. (https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
 	 */
 	@Prop() public _tabIndex?: number;
@@ -280,6 +288,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 	@Watch('_accessKey')
 	public validateAccessKey(value?: AccessKeyPropType): void {
 		validateAccessKey(this, value);
+		validateAccessAndShortKey(value, this._shortKey);
 	}
 
 	@Watch('_ariaCurrentValue')
@@ -344,6 +353,12 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 		validateAlternativeButtonLinkRole(this, value);
 	}
 
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		validateShortKey(this, value);
+		validateAccessAndShortKey(this._accessKey, value);
+	}
+
 	@Watch('_tabIndex')
 	public validateTabIndex(value?: number): void {
 		validateTabIndex(this, value);
@@ -373,12 +388,14 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 		this.validateLabel(this._label);
 		this.validateOn(this._on);
 		this.validateRole(this._role);
+		this.validateShortKey(this._shortKey);
 		this.validateTabIndex(this._tabIndex);
 		this.validateTarget(this._target);
 		this.validateTooltipAlign(this._tooltipAlign);
 		this.unsubscribeOnLocationChange = onLocationChange((location) => {
 			this.state._ariaCurrent = location === this.state._href ? this.state._ariaCurrentValue : undefined;
 		});
+		validateAccessAndShortKey(this._accessKey, this._shortKey);
 	}
 
 	public disconnectedCallback(): void {

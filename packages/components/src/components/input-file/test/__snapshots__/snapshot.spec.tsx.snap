@@ -171,6 +171,24 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
 </kol-input-file>
 `;
 
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _shortKey="S" 1`] = `
+<kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
+  <template shadowrootmode="open">
+    <kol-input _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" class="file" role="presentation">
+      <span slot="label">
+        Label
+        <span aria-hidden="true" class="access-key-hint">
+          S
+        </span>
+      </span>
+      <div slot="input">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+      </div>
+    </kol-input>
+  </template>
+</kol-input-file>
+`;
+
 exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _smartButton={"_icons":["codicon codicon-eye"],"_hideLabel":true,"_label":"einblenden"} 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
