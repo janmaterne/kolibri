@@ -33,17 +33,17 @@ function WizardContainerInner(props: {
 	children: React.ReactElement[];
 }) {
 	const { label, selectedTabIndex, tabs, _on, children } = props;
-	const [index, setIndex] = React.useState(0);
+	const [tabIndex, setTabIndex] = React.useState(0);
 
 	React.useEffect(() => {
-		setIndex(selectedTabIndex);
+		setTabIndex(selectedTabIndex);
 	}, [selectedTabIndex]);
 
 	return (
-		<KolTabs _label={label} _selected={index} _tabs={tabs} _on={_on}>
+		<KolTabs _label={label} _selected={tabIndex} _tabs={tabs} _on={_on}>
 			{children.map((panel, index) => (
 				<div className="p-2" slot={`tab-${index}`} key={index}>
-					{panel}
+					{tabIndex === index ? panel : null}
 				</div>
 			))}
 		</KolTabs>

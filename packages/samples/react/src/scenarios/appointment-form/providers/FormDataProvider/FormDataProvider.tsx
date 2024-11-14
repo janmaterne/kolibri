@@ -12,9 +12,22 @@ export function useFormDataService(): FormDataService {
 	return context;
 }
 
-export function useValues<T extends FormValues>(): T {
+export function useValues(): FormValues {
 	const ctx = useFormDataService();
-	return ctx.values as T;
+
+	const [values, setValues] = React.useState<FormValues>(ctx.values);
+
+	React.useLayoutEffect(() => {
+		const observer = ctx.values$.subscribe((values) => {
+			setValues(values);
+		});
+
+		return () => {
+			observer.unsubscribe();
+		};
+	});
+
+	return values;
 }
 
 function FormDataProvider({ children, initialValue }: FormDataProviderProps) {
