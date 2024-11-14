@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`kol-span-wc should render with _label="Text" _accessKey="v" 1`] = `
+exports[`kol-span-wc should render with _label="Text" _badgeText="v" 1`] = `
 <kol-span-wc class="kol-span-wc">
   <!---->
   <span>
@@ -8,7 +8,7 @@ exports[`kol-span-wc should render with _label="Text" _accessKey="v" 1`] = `
       Text
     </span>
     <span aria-hidden="true" class="span-label" hidden=""></span>
-    <span aria-hidden="true" class="access-key-hint">
+    <span aria-hidden="true" class="badge-text-hint">
       v
     </span>
   </span>
