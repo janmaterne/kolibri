@@ -1,19 +1,21 @@
 import { Fragment, h } from '@stencil/core';
+import type { BadgeTextPropType } from '../../schema';
 
 type Props = {
-	badgeText: string;
+	badgeText: BadgeTextPropType;
 	label: string;
 };
 export const InternalUnderlinedBadgeText = ({ badgeText, label }: Props) => {
 	/* Prefer capitalization as defined in the badge Text, try uppercase/lowercase when there's no match. */
-	let [first, ...rest] = label.split(badgeText);
+	const badgeTextAsString: string = badgeText;
+	let [first, ...rest] = label.split(badgeTextAsString);
 	if (rest.length === 0) {
-		badgeText = badgeText.toUpperCase();
-		[first, ...rest] = label.split(badgeText);
+		badgeText = badgeTextAsString.toUpperCase();
+		[first, ...rest] = label.split(badgeTextAsString);
 	}
 	if (rest.length === 0) {
-		badgeText = badgeText.toLowerCase();
-		[first, ...rest] = label.split(badgeText);
+		badgeText = badgeTextAsString.toLowerCase();
+		[first, ...rest] = label.split(badgeTextAsString);
 	}
 	return (
 		<>
@@ -21,7 +23,7 @@ export const InternalUnderlinedBadgeText = ({ badgeText, label }: Props) => {
 			{rest.length ? (
 				<>
 					<u>{badgeText}</u>
-					{rest.join(badgeText)}
+					{rest.join(badgeTextAsString)}
 				</>
 			) : null}
 		</>

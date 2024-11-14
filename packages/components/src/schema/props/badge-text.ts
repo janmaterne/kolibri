@@ -4,7 +4,7 @@ import type { AccessKeyPropType } from './access-key';
 import type { ShortKeyPropType } from './short-key';
 
 /* types */
-export type BadgeTextPropType = string;
+export type BadgeTextPropType = AccessKeyPropType | ShortKeyPropType;
 
 /**
  * Defines the elements badge text.
@@ -14,6 +14,6 @@ export type PropBadgeText = {
 };
 
 /* validator */
-export const validateBadgeText = (component: Generic.Element.Component, value?: AccessKeyPropType | ShortKeyPropType): void => {
+export const validateBadgeText = (component: Generic.Element.Component, value?: BadgeTextPropType): void => {
 	watchString(component, '_badgeText', value);
 };
