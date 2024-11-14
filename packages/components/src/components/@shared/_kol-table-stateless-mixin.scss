@@ -1,5 +1,6 @@
 @import '../@shared/mixins';
 @import '../host-display-block';
+@import '../tooltip/style.scss';
 
 @mixin kol-table-stateless-styles {
 	@layer kol-component {

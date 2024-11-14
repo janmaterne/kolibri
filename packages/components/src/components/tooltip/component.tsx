@@ -13,7 +13,6 @@ import { KolSpanWcTag } from '../../core/component-names';
  */
 @Component({
 	tag: 'kol-tooltip-wc',
-	styleUrl: './style.scss',
 	shadow: false,
 })
 export class KolTooltipWc implements TooltipAPI {
