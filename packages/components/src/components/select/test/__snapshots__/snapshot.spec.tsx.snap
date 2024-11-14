@@ -572,6 +572,37 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
 </kol-select>
 `;
 
+exports[`kol-select should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _options=[{"label":"Frau","value":"Frau","disabled":true},{"label":"Herr","value":"Herr"},{"label":"Divers","value":"Divers"}] _multiple=true _shortKey="S" 1`] = `
+<kol-select _placeholder="Hier steht ein Platzhaltertext" class="has-value kol-select">
+  <template shadowrootmode="open">
+    <kol-input _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" class="select" role="presentation">
+      <span slot="label">
+        Label
+        <span aria-hidden="true" class="access-key-hint">
+          S
+        </span>
+      </span>
+      <div slot="input">
+        <form>
+          <input hidden="" type="submit">
+          <select autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field" spellcheck="false">
+            <option disabled="" value="-0">
+              Frau
+            </option>
+            <option value="-1">
+              Herr
+            </option>
+            <option value="-2">
+              Divers
+            </option>
+          </select>
+        </form>
+      </div>
+    </kol-input>
+  </template>
+</kol-select>
+`;
+
 exports[`kol-select should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _options=[{"label":"Frau","value":"Frau","disabled":true},{"label":"Herr","value":"Herr"},{"label":"Divers","value":"Divers"}] _multiple=true _touched=true 1`] = `
 <kol-select _placeholder="Hier steht ein Platzhaltertext" _touched="" class="has-value kol-select">
   <template shadowrootmode="open">
@@ -639,6 +670,37 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
       <span slot="label">
         <span>
           Label
+        </span>
+      </span>
+      <div slot="input">
+        <form>
+          <input hidden="" type="submit">
+          <select autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false">
+            <option disabled="" selected="" value="-0">
+              Frau
+            </option>
+            <option value="-1">
+              Herr
+            </option>
+            <option value="-2">
+              Divers
+            </option>
+          </select>
+        </form>
+      </div>
+    </kol-input>
+  </template>
+</kol-select>
+`;
+
+exports[`kol-select should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _options=[{"label":"Frau","value":"Frau","disabled":true},{"label":"Herr","value":"Herr"},{"label":"Divers","value":"Divers"}] _shortKey="S" 1`] = `
+<kol-select _placeholder="Hier steht ein Platzhaltertext" class="has-value kol-select">
+  <template shadowrootmode="open">
+    <kol-input _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" class="select" role="presentation">
+      <span slot="label">
+        Label
+        <span aria-hidden="true" class="access-key-hint">
+          S
         </span>
       </span>
       <div slot="input">

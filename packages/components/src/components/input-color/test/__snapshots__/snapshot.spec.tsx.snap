@@ -171,6 +171,24 @@ exports[`kol-input-color should render with _label="Label" _name="field" _placeh
 </kol-input-color>
 `;
 
+exports[`kol-input-color should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="#FFF" _shortKey="S" 1`] = `
+<kol-input-color _placeholder="Hier steht ein Platzhaltertext" class="kol-input-color">
+  <template shadowrootmode="open">
+    <kol-input _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" class="color" role="presentation">
+      <span slot="label">
+        Label
+        <span aria-hidden="true" class="access-key-hint">
+          S
+        </span>
+      </span>
+      <div slot="input">
+        <input autocapitalize="off" autocomplete="off" autocorrect="off" id="id-nonce" name="field" slot="input" spellcheck="false" type="color" value="#FFF">
+      </div>
+    </kol-input>
+  </template>
+</kol-input-color>
+`;
+
 exports[`kol-input-color should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="#FFF" _smartButton={"_icons":["codicon codicon-eye"],"_hideLabel":true,"_label":"einblenden"} 1`] = `
 <kol-input-color _placeholder="Hier steht ein Platzhaltertext" class="kol-input-color">
   <template shadowrootmode="open">
@@ -349,6 +367,24 @@ exports[`kol-input-color should render with _label="Label" _name="field" _placeh
       <span slot="label">
         <span>
           Label
+        </span>
+      </span>
+      <div slot="input">
+        <input autocapitalize="off" autocomplete="off" autocorrect="off" id="id-nonce" list="id-nonce-list" name="field" slot="input" spellcheck="false" type="color" value="#FFF">
+      </div>
+    </kol-input>
+  </template>
+</kol-input-color>
+`;
+
+exports[`kol-input-color should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="#FFF" _suggestions=["#F00","#0F0","#00F"] _shortKey="S" 1`] = `
+<kol-input-color _placeholder="Hier steht ein Platzhaltertext" class="kol-input-color">
+  <template shadowrootmode="open">
+    <kol-input _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" class="color" role="presentation">
+      <span slot="label">
+        Label
+        <span aria-hidden="true" class="access-key-hint">
+          S
         </span>
       </span>
       <div slot="input">

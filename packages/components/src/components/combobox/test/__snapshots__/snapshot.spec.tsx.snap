@@ -241,6 +241,31 @@ exports[`kol-combobox should render with _label="Label" _name="field" _placehold
 </kol-combobox>
 `;
 
+exports[`kol-combobox should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="Herr" _suggestions=["Frau","Herr","Divers"] _shortKey="S" 1`] = `
+<kol-combobox class="kol-combobox">
+  <template shadowrootmode="open">
+    <div class="combobox">
+      <kol-input _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" role="presentation">
+        <span slot="label">
+          Label
+          <span aria-hidden="true" class="access-key-hint">
+            S
+          </span>
+        </span>
+        <div slot="input">
+          <div class="combobox__group">
+            <input aria-autocomplete="both" aria-controls="listbox" aria-expanded="false" aria-labelledby="id-nonce" autocapitalize="off" autocorrect="off" class="combobox__input" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" role="combobox" spellcheck="false" type="text" value="Herr">
+            <button class="combobox__icon" tabindex="-1">
+              <kol-icon _icons="codicon codicon-triangle-down" _label="kol-dropdown"></kol-icon>
+            </button>
+          </div>
+        </div>
+      </kol-input>
+    </div>
+  </template>
+</kol-combobox>
+`;
+
 exports[`kol-combobox should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="Herr" _suggestions=["Frau","Herr","Divers"] _touched=true 1`] = `
 <kol-combobox _touched="" class="kol-combobox">
   <template shadowrootmode="open">

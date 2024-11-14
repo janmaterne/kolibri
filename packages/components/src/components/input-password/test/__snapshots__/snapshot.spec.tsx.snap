@@ -171,6 +171,24 @@ exports[`kol-input-password should render with _label="Label" _name="field" _pla
 </kol-input-password>
 `;
 
+exports[`kol-input-password should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="Value" _shortKey="S" 1`] = `
+<kol-input-password class="has-value kol-input-password">
+  <template shadowrootmode="open">
+    <kol-input _currentlength="5" _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" class="password" role="presentation">
+      <span slot="label">
+        Label
+        <span aria-hidden="true" class="access-key-hint">
+          S
+        </span>
+      </span>
+      <div slot="input">
+        <input autocapitalize="off" autocomplete="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" spellcheck="false" type="password" value="Value">
+      </div>
+    </kol-input>
+  </template>
+</kol-input-password>
+`;
+
 exports[`kol-input-password should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="Value" _smartButton={"_icons":["codicon codicon-eye"],"_hideLabel":true,"_label":"einblenden"} 1`] = `
 <kol-input-password class="has-value kol-input-password">
   <template shadowrootmode="open">
