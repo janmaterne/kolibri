@@ -12,7 +12,6 @@ import type { JSX } from '@stencil/core';
  */
 @Component({
 	tag: 'kol-popover-wc',
-	styleUrl: './style.scss',
 	shadow: false,
 })
 export class KolPopover implements PopoverAPI {
