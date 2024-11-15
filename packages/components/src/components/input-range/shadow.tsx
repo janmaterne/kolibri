@@ -10,20 +10,21 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
+	ShortKeyPropType,
 	Stringified,
 	SuggestionsPropType,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 	W3CInputValue,
 } from '../../schema';
-import { showExpertSlot } from '../../schema';
+import { buildBadgeTextString, showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
+import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { InputRangeController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -139,17 +140,18 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 					_id={this.state._id}
 					_label={this.state._label}
 					_msg={this.state._msg}
+					_shortKey={this.state._shortKey}
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}
 				>
 					<span slot="label">
 						{hasExpertSlot ? (
 							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
+						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
 							<>
-								<InternalUnderlinedAccessKey accessKey={this.state._accessKey} label={this.state._label} />{' '}
+								<InternalUnderlinedBadgeText badgeText={buildBadgeTextString(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
 								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
+									{buildBadgeTextString(this.state._accessKey, this.state._shortKey)}
 								</span>
 							</>
 						) : (
@@ -332,6 +334,11 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 	@Prop() public _on?: InputTypeOnDefault;
 
 	/**
+	 * Adds a visual short key hint to the component.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
 	 * Defines the step size for value changes.
 	 */
 	@Prop() public _step?: number;
@@ -467,6 +474,11 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 	@Watch('_on')
 	public validateOn(value?: InputTypeOnDefault): void {
 		this.controller.validateOn(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_step')

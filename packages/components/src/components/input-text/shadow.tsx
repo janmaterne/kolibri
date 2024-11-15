@@ -1,4 +1,5 @@
 import type {
+	AccessKeyPropType,
 	AlertPropType,
 	ButtonProps,
 	FocusableElement,
@@ -13,19 +14,20 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
+	ShortKeyPropType,
 	Stringified,
 	SuggestionsPropType,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { setState, showExpertSlot, validateAlert } from '../../schema';
+import { buildBadgeTextString, setState, showExpertSlot, validateAlert } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
+import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { InputTextController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -123,6 +125,7 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 					_msg={this.state._msg}
 					_readOnly={this.state._readOnly}
 					_required={this.state._required}
+					_shortKey={this.state._shortKey}
 					_smartButton={this.state._smartButton}
 					_suggestions={this.state._suggestions}
 					_tooltipAlign={this._tooltipAlign}
@@ -133,11 +136,11 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 					<span slot="label">
 						{hasExpertSlot ? (
 							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
+						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
 							<>
-								<InternalUnderlinedAccessKey accessKey={this.state._accessKey} label={this.state._label} />{' '}
+								<InternalUnderlinedBadgeText badgeText={buildBadgeTextString(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
 								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
+									{buildBadgeTextString(this.state._accessKey, this.state._shortKey)}
 								</span>
 							</>
 						) : (
@@ -190,7 +193,7 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 	/**
 	 * Defines which key combination can be used to trigger or focus the interactive element of the component.
 	 */
-	@Prop() public _accessKey?: string;
+	@Prop() public _accessKey?: AccessKeyPropType;
 
 	/**
 	 * Defines whether the screen-readers should read out the notification.
@@ -297,6 +300,11 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 	@Prop() public _required?: boolean = false;
 
 	/**
+	 * Adds a visual short key hint to the component.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
 	 * Suggestions to provide for the input.
 	 */
 	@Prop() public _suggestions?: SuggestionsPropType;
@@ -363,7 +371,7 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 	}
 
 	@Watch('_accessKey')
-	public validateAccessKey(value?: string): void {
+	public validateAccessKey(value?: AccessKeyPropType): void {
 		this.controller.validateAccessKey(value);
 	}
 
@@ -460,6 +468,11 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 	@Watch('_required')
 	public validateRequired(value?: boolean): void {
 		this.controller.validateRequired(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_suggestions')

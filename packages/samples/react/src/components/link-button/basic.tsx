@@ -22,6 +22,8 @@ export const LinkButtonBasic: FC = () => (
 				<KolLinkButton _label="Normal" _variant="normal" {...ARGS}></KolLinkButton>
 				<KolLinkButton _label="Danger" _variant="danger" {...ARGS}></KolLinkButton>
 				<KolLinkButton _label="Ghost" _variant="ghost" {...ARGS}></KolLinkButton>
+				<KolLinkButton _label="Access Key" _variant="primary" _accessKey="c" {...ARGS}></KolLinkButton>
+				<KolLinkButton _label="Short Key" _variant="primary" _shortKey="s" {...ARGS}></KolLinkButton>
 			</div>
 		</div>
 	</>

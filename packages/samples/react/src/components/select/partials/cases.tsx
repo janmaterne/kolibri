@@ -57,6 +57,8 @@ export const SelectCases = forwardRef<HTMLKolSelectElement, Components.KolSelect
 				_msg={{ _type: 'error', _description: ERROR_MSG }}
 				_touched
 			/>
+			<KolSelect {...props} _options={SALUTATION_OPTIONS} _label="With access key" _accessKey="c" />
+			<KolSelect {...props} _options={SALUTATION_OPTIONS} _label="With short key" _shortKey="s" />
 		</div>
 	);
 });

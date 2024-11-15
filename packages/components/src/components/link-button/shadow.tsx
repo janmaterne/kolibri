@@ -13,6 +13,7 @@ import type {
 	LinkButtonProps,
 	LinkOnCallbacksPropType,
 	LinkTargetPropType,
+	ShortKeyPropType,
 	TooltipAlignPropType,
 } from '../../schema';
 import type { JSX } from '@stencil/core';
@@ -69,6 +70,7 @@ export class KolLinkButton implements LinkButtonProps, FocusableElement {
 					_label={this._label}
 					_on={this._on}
 					_role="button"
+					_shortKey={this._shortKey}
 					_tabIndex={this._tabIndex}
 					_target={this._target}
 					_tooltipAlign={this._tooltipAlign}
@@ -140,6 +142,11 @@ export class KolLinkButton implements LinkButtonProps, FocusableElement {
 	 * Defines the role of the components primary element.
 	 */
 	@Prop() public _role?: AlternativeButtonLinkRolePropType;
+
+	/**
+	 * Adds a visual short key hint to the component.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
 
 	/**
 	 * Defines which tab-index the primary element of the component has. (https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)

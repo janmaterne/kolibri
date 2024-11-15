@@ -1,42 +1,14 @@
-import { executeTests } from 'stencil-awesome-test';
-
-import { h } from '@stencil/core';
-import { newSpecPage } from '@stencil/core/testing';
-
-import { getInputFileHtml } from './html.mock';
-
-import type { SpecPage } from '@stencil/core/testing';
+import { KolInputFileTag } from '../../../core/component-names';
 import type { InputFileProps } from '../../../schema';
+import { executeInputSnapshotTests } from '../../../utils/testing';
+
 import { KolInputFile } from '../shadow';
 
-executeTests<InputFileProps>(
-	'InputFile',
-	async (props): Promise<SpecPage> => {
-		const page = await newSpecPage({
-			components: [KolInputFile],
-			template: () => <kol-input-file {...props} />,
-		});
-		return page;
-	},
+executeInputSnapshotTests<InputFileProps>(
+	KolInputFileTag,
+	[KolInputFile],
 	{
-		_label: ['Label'],
-		_hideLabel: [true, false],
-		_disabled: [true, false],
-		_alert: [true, false],
-		_msg: [{ _type: 'error', _description: 'Error message' }],
-		_required: [true, false],
-		_touched: [true, false],
-		_smartButton: [
-			{
-				_icons: ['codicon codicon-eye'],
-				_hideLabel: true,
-				_label: 'einblenden',
-			},
-		],
+		_value: 'File',
 	},
-	getInputFileHtml,
-	{
-		execMode: 'default', // ready
-		needTimers: true,
-	},
+	{ hasSmartButton: true },
 );
