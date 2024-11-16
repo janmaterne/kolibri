@@ -73,7 +73,7 @@
 	},
 	"dependencies": {
 		"@floating-ui/dom": "1.6.11",
-		"adopted-style-sheets": "1.1.5-rc.4",
+		"adopted-style-sheets": "1.1.6-rc.6",
 		"clsx": "2.1.1",
 		"color-convert": "2.0.1",
 		"color-rgba": "2.4.0",
@@ -128,7 +128,7 @@
 		"typescript": "5.6.3"
 	},
 	"peerDependencies": {
-		"adopted-style-sheets": "1.1.5-rc.4"
+		"adopted-style-sheets": "1.1.5-rc.6"
 	},
 	"files": [
 		"assets",
