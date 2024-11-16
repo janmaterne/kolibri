@@ -1,28 +1,28 @@
 @import '../../mixins/rem';
 
 @layer kol-theme-component {
-	:host {
+	.kol-breadcrumb {
 		font:
 			normal normal 400 rem(14) / rem(16) arial,
 			sans-serif;
 		font-weight: var(--font-weight-bold);
-	}
 
-	.kol-icon::part(icon separator)::before {
-		color: var(--color-blue);
-	}
+		.kol-icon::part(icon separator)::before {
+			color: var(--color-blue);
+		}
 
-	li:last-child {
-		color: var(--color-grey-75);
-	}
+		li:last-child {
+			color: var(--color-grey-75);
+		}
 
-	.kol-icon[exportparts*='separator'] {
-		margin-inline-end: rem(8);
-		margin-inline-start: rem(8);
-		padding: 0;
-	}
+		.kol-icon[exportparts*='separator'] {
+			margin-inline-end: rem(8);
+			margin-inline-start: rem(8);
+			padding: 0;
+		}
 
-	.kol-link {
-		font-family: var(--font-family);
+		.kol-link {
+			font-family: var(--font-family);
+		}
 	}
 }

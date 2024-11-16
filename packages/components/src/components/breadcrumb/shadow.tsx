@@ -1,6 +1,6 @@
 import type { BreadcrumbAPI, BreadcrumbLinkProps, BreadcrumbStates, LabelPropType, LinkProps, Stringified } from '../../schema';
 import { a11yHintLabelingLandmarks, validateLabel } from '../../schema';
-import { Component, Fragment, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, Fragment, h, Prop, State, Watch } from '@stencil/core';
 
 import { addNavLabel, removeNavLabel } from '../../utils/unique-nav-labels';
 import { watchNavLinks } from '../nav/validation';
@@ -38,18 +38,16 @@ export class KolBreadcrumb implements BreadcrumbAPI {
 
 	public render(): JSX.Element {
 		return (
-			<Host class="kol-breadcrumb">
-				<nav aria-label={this.state._label}>
-					<ul>
-						{this.state._links.length === 0 && (
-							<li>
-								<KolIconTag _label="" _icons="codicon codicon-home" />…
-							</li>
-						)}
-						{this.state._links.map(this.renderLink)}
-					</ul>
-				</nav>
-			</Host>
+			<nav class="kol-breadcrumb" aria-label={this.state._label}>
+				<ul>
+					{this.state._links.length === 0 && (
+						<li>
+							<KolIconTag _label="" _icons="codicon codicon-home" />…
+						</li>
+					)}
+					{this.state._links.map(this.renderLink)}
+				</ul>
+			</nav>
 		);
 	}
 
