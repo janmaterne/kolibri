@@ -15,14 +15,25 @@ on:
           - dev
           - next
           - latest
+          - lts
       version: # see https://github.com/lerna/lerna/tree/main/libs/commands/version#semver-bump
         type: choice
-        description: Semver keyword for version bump
+        description: SemVer keyword for version bump
         options:
-          - patch
-          - minor
-          - major
           - prerelease
+          - prepatch
+          - patch
+          - preminor
+          - minor
+          - premajor
+          - major
+      label: # see https://github.com/lerna/lerna/tree/main/libs/commands/version#--preid
+        type: choice
+        description: SemVer pre release label
+        options:
+          - rc
+          - beta
+          - alpha
 
 jobs:
   publish:
@@ -84,7 +95,7 @@ jobs:
           git config --local user.name "${{ steps.app-token.outputs.app-slug }}[bot]"
 
       - name: Bump Versions
-        run: 'HUSKY=0 npx lerna version ${{github.event.inputs.version}} --preid=rc --no-private --tag-version-prefix="" -m "chore: release %v" -y --force-publish'
+        run: 'HUSKY=0 npx lerna version ${{github.event.inputs.version}} --preid=${{github.event.inputs.label}} --no-private --tag-version-prefix="" -m "chore: release %v" -y --force-publish'
 
       - name: Build
         run: pnpm -r build

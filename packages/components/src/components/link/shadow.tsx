@@ -11,6 +11,7 @@ import type {
 	LinkOnCallbacksPropType,
 	LinkProps,
 	LinkTargetPropType,
+	ShortKeyPropType,
 	Stringified,
 	TooltipAlignPropType,
 } from '../../schema';
@@ -63,6 +64,7 @@ export class KolLink implements LinkProps, FocusableElement {
 					_label={this._label}
 					_on={this._on}
 					_role={this._role}
+					_shortKey={this._shortKey}
 					_tabIndex={this._tabIndex}
 					_target={this._target}
 					_tooltipAlign={this._tooltipAlign}
@@ -133,6 +135,11 @@ export class KolLink implements LinkProps, FocusableElement {
 	 * Defines the role of the components primary element.
 	 */
 	@Prop() public _role?: AlternativeButtonLinkRolePropType;
+
+	/**
+	 * Defines the elements access key.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
 
 	/**
 	 * Defines which tab-index the primary element of the component has. (https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)

@@ -1,27 +1,8 @@
-import { executeTests } from 'stencil-awesome-test';
-
-import { h } from '@stencil/core';
-import { newSpecPage } from '@stencil/core/testing';
-
-import { getIndentedTextHtml } from './html.mock';
-
-import type { SpecPage } from '@stencil/core/testing';
+import { KolIndentedTextTag } from '../../../core/component-names';
 import type { IndentedTextProps } from '../../../schema';
+import { executeSnapshotTests } from '../../../utils/testing';
+
 import { KolIndentedText } from '../shadow';
 import { KolIndentedTextWc } from '../component';
 
-executeTests<IndentedTextProps>(
-	'Heading',
-	async (props): Promise<SpecPage> => {
-		const page = await newSpecPage({
-			components: [KolIndentedText, KolIndentedTextWc],
-			template: () => <kol-indented-text {...props} />,
-		});
-		return page;
-	},
-	{},
-	getIndentedTextHtml,
-	{
-		execMode: 'default', // ready
-	},
-);
+executeSnapshotTests<IndentedTextProps>(KolIndentedTextTag, [KolIndentedText, KolIndentedTextWc], [{}]);
