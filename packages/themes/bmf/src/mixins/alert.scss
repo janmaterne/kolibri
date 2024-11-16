@@ -1,7 +1,7 @@
 @import './rem';
 
 @mixin kol-alert-theme {
-	.kol-alert-wc {
+	.kol-alert {
 		border-width: rem(2);
 		border-style: solid;
 		border-radius: rem(5);
@@ -11,19 +11,19 @@
 		border-color: transparent;
 		background-color: white;
 
-		> .heading {
+		&__heading {
 			display: flex;
 			gap: 0.5em;
 			place-items: center;
-
-			.heading-icon {
-				padding: 0;
-			}
 
 			> div {
 				display: grid;
 				gap: 0;
 			}
+		}
+
+		&__heading-icon {
+			padding: 0;
 		}
 	}
 
@@ -32,14 +32,14 @@
 		align-items: start;
 		border-width: 0;
 
-		> .heading {
+		> .kol-alert__heading {
 			place-items: flex-start;
 
 			> .kol-icon {
 				place-self: baseline;
 			}
 
-			> .heading-icon {
+			> .kol-alert__heading-icon {
 				padding-top: 0;
 				place-items: baseline;
 
@@ -67,7 +67,7 @@
 				color: var(--color-grey);
 			}
 
-			.heading > div > .kol-heading-wc {
+			.kol-alert__heading > div > .kol-heading-wc {
 				color: var(--color-grey);
 			}
 		}
@@ -77,7 +77,7 @@
 				color: var(--color-red);
 			}
 
-			.heading > div > .kol-heading-wc {
+			.kol-alert__heading > div > .kol-heading-wc {
 				color: var(--color-red);
 			}
 		}
@@ -87,7 +87,7 @@
 				color: var(--color-midnight);
 			}
 
-			.heading > div > .kol-heading-wc {
+			.kol-alert__heading > div > .kol-heading-wc {
 				color: var(--color-midnight);
 			}
 		}
@@ -97,7 +97,7 @@
 				color: var(--color-green);
 			}
 
-			.heading > div > .kol-heading-wc {
+			.kol-alert__heading > div > .kol-heading-wc {
 				color: var(--color-green);
 			}
 		}
@@ -107,7 +107,7 @@
 				color: var(--color-orange);
 			}
 
-			.heading > div > .kol-heading-wc {
+			.kol-alert__heading > div > .kol-heading-wc {
 				color: var(--color-orange);
 			}
 		}
@@ -116,7 +116,7 @@
 	.default {
 		border-color: var(--color-grey);
 
-		&.msg .heading-icon {
+		&.msg .kol-alert__heading-icon {
 			color: var(--color-grey);
 		}
 	}
@@ -124,11 +124,11 @@
 	.error {
 		border-color: var(--color-red);
 
-		&.msg .heading-icon {
+		&.msg .kol-alert__heading-icon {
 			color: var(--color-red);
 		}
 
-		.heading-icon::part(icon)::before {
+		.kol-alert__heading-icon::part(icon)::before {
 			content: 'error';
 		}
 	}
@@ -136,11 +136,11 @@
 	.info {
 		border-color: var(--color-midnight);
 
-		&.msg .heading-icon {
+		&.msg .kol-alert__heading-icon {
 			color: var(--color-midnight);
 		}
 
-		.heading-icon::part(icon)::before {
+		.kol-alert__heading-icon::part(icon)::before {
 			content: 'info';
 		}
 	}
@@ -148,11 +148,11 @@
 	.success {
 		border-color: var(--color-green);
 
-		&.msg .heading-icon {
+		&.msg .kol-alert__heading-icon {
 			color: var(--color-green);
 		}
 
-		.heading-icon::part(icon)::before {
+		.kol-alert__heading-icon::part(icon)::before {
 			content: 'check_circle';
 		}
 	}
@@ -160,16 +160,16 @@
 	.warning {
 		border-color: var(--color-orange);
 
-		&.msg .heading-icon {
+		&.msg .kol-alert__heading-icon {
 			color: var(--color-orange);
 		}
 
-		.heading-icon::part(icon)::before {
+		.kol-alert__heading-icon::part(icon)::before {
 			content: 'warning';
 		}
 	}
 
-	.heading-icon {
+	.kol-alert__heading-icon {
 		color: white;
 	}
 
@@ -179,13 +179,13 @@
 		filter: drop-shadow(0 rem(2) rem(4) rgba(8, 35, 48, 0.24));
 		flex-direction: column;
 
-		&.hasCloser > .heading {
+		&.hasCloser > .kol-alert__heading {
 			padding-top: 0;
 			padding-bottom: 0;
 			padding-right: 0;
 		}
 
-		> .heading {
+		> .kol-alert__heading {
 			padding: rem(8) rem(16);
 
 			> div {
@@ -236,14 +236,14 @@
 			}
 		}
 
-		> .content {
+		> .kol-alert__content {
 			color: var(--color-black);
 			padding: rem(16);
 			max-height: rem(152);
 			overflow-y: auto;
 		}
 
-		> div > .content {
+		> div > .kol-alert__content {
 			grid-row: 2;
 			grid-column: 1 / span 2;
 		}
@@ -259,35 +259,35 @@
 		}
 
 		&.default {
-			> .heading,
+			> .kol-alert__heading,
 			.close {
 				background-color: var(--color-grey);
 			}
 		}
 
 		&.error {
-			> .heading,
+			> .kol-alert__heading,
 			.close {
 				background-color: var(--color-red);
 			}
 		}
 
 		&.info {
-			> .heading,
+			> .kol-alert__heading,
 			.close {
 				background-color: var(--color-midnight);
 			}
 		}
 
 		&.success {
-			> .heading,
+			> .kol-alert__heading,
 			.close {
 				background-color: var(--color-green);
 			}
 		}
 
 		&.warning {
-			> .heading,
+			> .kol-alert__heading,
 			.close {
 				background-color: var(--color-orange);
 			}
@@ -298,7 +298,7 @@
 	.info,
 	.success,
 	.warning {
-		.heading-icon {
+		.kol-alert__heading-icon {
 			font-size: rem(20);
 
 			&::part(icon) {

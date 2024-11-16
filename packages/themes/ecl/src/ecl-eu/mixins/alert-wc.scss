@@ -22,12 +22,12 @@
 		border: none;
 	}
 
-	.msg .heading .kol-icon {
+	.msg .kol-alert__heading .kol-icon {
 		font-size: 1.5em;
 		margin: var(--spacing-2xs);
 	}
 
-	.msg .heading > div {
+	.msg .kol-alert__heading > div {
 		padding: var(--spacing-2xs);
 	}
 
@@ -38,15 +38,15 @@
 		padding-top: rem(24);
 	}
 
-	.card .heading {
+	.card .kol-alert__heading {
 		gap: rem(8);
 	}
 
-	.card .content {
+	.card .kol-alert__content {
 		margin-left: rem(40);
 	}
 
-	.card .heading .kol-icon {
+	.card .kol-alert__heading .kol-icon {
 		font-size: rem(32);
 	}
 
@@ -54,7 +54,7 @@
 		border-color: var(--color-grey);
 	}
 
-	.default .heading kol-icon {
+	.default .kol-alert__heading .kol-icon {
 		color: var(--color-grey);
 	}
 
@@ -62,7 +62,7 @@
 		border-color: var(--color-red);
 	}
 
-	.error .heading .kol-icon {
+	.error .kol-alert__heading .kol-icon {
 		color: var(--color-red);
 	}
 
@@ -70,7 +70,7 @@
 		border-color: var(--color-blue);
 	}
 
-	.info .heading .kol-icon {
+	.info .kol-alert__heading .kol-icon {
 		color: var(--color-blue);
 	}
 
@@ -78,7 +78,7 @@
 		border-color: var(--color-green);
 	}
 
-	.success .heading .kol-icon {
+	.success .kol-alert__heading .kol-icon {
 		color: var(--color-green);
 	}
 
@@ -86,7 +86,7 @@
 		border-color: var(--color-orange);
 	}
 
-	.warning .heading .kol-icon {
+	.warning .kol-alert__heading .kol-icon {
 		color: var(--color-orange);
 	}
 }
