@@ -2,19 +2,17 @@
 @import '../style';
 
 @layer kol-component {
-	/* :host implicitly inherits font-size, e.g. for usage in headlines */
-	:host {
-		font-size: rem(16);
-	}
-
-	:host > span {
+	.kol-badge {
 		display: inline-flex;
 		place-items: center;
 		/* Visible with forced colors  */
 		outline: transparent solid rem(1);
-	}
+		font-size: rem(16);
 
-	:host > span > .kol-button-wc button {
-		color: inherit;
+		.kol-button-wc {
+			button {
+				color: inherit;
+			}
+		}
 	}
 }

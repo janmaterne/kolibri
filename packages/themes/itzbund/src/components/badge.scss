@@ -1,36 +1,28 @@
 @import '../mixins/rem';
 
 @layer kol-theme-component {
-	:host {
-		display: inline-block;
-		font-family: inherit;
-	}
-
-	:host > span {
-		border-radius: rem(5);
+	.kol-badge {
 		display: inline-flex;
-	}
+		font-family: inherit;
+		border-radius: rem(5);
 
-	:host > span .kol-button-wc {
-		border-left: rem(1) solid rgba(0, 0, 0, 0.25);
-	}
+		.kol-button-wc {
+			border-left: rem(1) solid rgba(0, 0, 0, 0.25);
+		}
+		.kol-span-wc {
+			align-items: center;
+			font-style: normal;
+			gap: rem(8);
+			padding: rem(4) rem(8);
 
-	:host > span .kol-span-wc {
-		padding: rem(4) rem(8);
-	}
+			span {
+				display: flex;
+				gap: rem(4);
+			}
+		}
 
-	:host > span > .kol-span-wc {
-		align-items: center;
-		font-style: normal;
-		gap: rem(8);
-	}
-
-	:host > span > .kol-span-wc > span {
-		display: flex;
-		gap: rem(4);
-	}
-
-	:host button {
-		border-radius: 0 var(--spacing) var(--spacing) 0;
+		button {
+			border-radius: 0 var(--spacing) var(--spacing) 0;
+		}
 	}
 }
