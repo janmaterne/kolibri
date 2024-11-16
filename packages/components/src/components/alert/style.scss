@@ -3,7 +3,7 @@
 @import '../style';
 
 @layer kol-component {
-	:host {
+	.kol-alert {
 		font-size: rem(16);
 	}
 }

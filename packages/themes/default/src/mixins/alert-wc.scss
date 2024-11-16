@@ -1,6 +1,6 @@
 @import './rem';
 
-@mixin kol-alert-wc {
+@mixin kol-alert {
 	display: block;
 	width: 100%;
 }
@@ -15,7 +15,7 @@
 		border-width: 0;
 	}
 
-	.kol-alert-wc {
+	.kol-alert {
 		border-width: var(--border-width);
 		border-style: solid;
 		border-radius: var(--border-radius);
@@ -28,25 +28,24 @@
 		&.msg {
 			border-width: 0;
 		}
-	}
 
-	.kol-alert-wc > .heading {
-		display: flex;
-		gap: 0.5em;
-		place-items: center;
-	}
+		&__heading {
+			display: flex;
+			gap: 0.5em;
+			place-items: center;
 
-	.kol-alert-wc > .heading > div {
-		display: grid;
-		gap: rem(4);
-	}
+			div {
+				display: grid;
+				gap: rem(4);
+			}
 
-	.msg > .heading > .kol-icon {
+			.kol-button-wc.close {
+				place-self: center;
+			}
+		}
+	}
+	.msg > .kol-alert__heading > .kol-icon {
 		place-self: baseline;
-	}
-
-	.kol-alert-wc > .heading > .kol-button-wc.close {
-		place-self: center;
 	}
 
 	.msg {
@@ -57,7 +56,7 @@
 		border-color: var(--color-subtle);
 	}
 
-	.default.msg .heading-icon {
+	.default.msg .kol-alert__heading-icon {
 		color: var(--color-subtle);
 	}
 
@@ -65,7 +64,7 @@
 		border-color: var(--color-danger);
 	}
 
-	.error.msg .heading-icon {
+	.error.msg .kol-alert__heading-icon {
 		color: var(--color-danger);
 	}
 
@@ -73,7 +72,7 @@
 		border-color: var(--color-primary);
 	}
 
-	.info.msg .heading-icon {
+	.info.msg .kol-alert__heading-icon {
 		color: var(--color-primary);
 	}
 
@@ -81,7 +80,7 @@
 		border-color: var(--color-success);
 	}
 
-	.success.msg .heading-icon {
+	.success.msg .kol-alert__heading-icon {
 		color: var(--color-success);
 	}
 
@@ -89,44 +88,44 @@
 		border-color: var(--color-warning);
 	}
 
-	.warning.msg .heading-icon {
+	.warning.msg .kol-alert__heading-icon {
 		color: var(--color-warning);
 	}
 
-	.heading-icon {
+	.kol-alert__heading-icon {
 		color: var(--color-light);
 	}
 
-	.kol-alert-wc .heading .heading-icon {
+	.kol-alert .kol-alert__heading .kol-alert__heading-icon {
 		padding: 0;
 	}
 
-	.msg > .heading > .heading-icon {
+	.msg > .kol-alert__heading > .kol-alert__heading-icon {
 		padding-top: 0;
 		place-items: baseline;
 	}
 
-	.msg > .heading > div > .kol-heading-wc {
+	.msg > .kol-alert__heading > div > .kol-heading-wc {
 		padding-top: calc(--var-spacing / 2);
 	}
 
-	.msg.default .heading > div > .kol-heading-wc {
+	.msg.default .kol-alert__heading > div > .kol-heading-wc {
 		color: var(--color-subtle);
 	}
 
-	.msg.error .heading > div > .kol-heading-wc {
+	.msg.error .kol-alert__heading > div > .kol-heading-wc {
 		color: var(--color-danger);
 	}
 
-	.msg.info .heading > div > .kol-heading-wc {
+	.msg.info .kol-alert__heading > div > .kol-heading-wc {
 		color: var(--color-primary);
 	}
 
-	.msg.success .heading > div > .kol-heading-wc {
+	.msg.success .kol-alert__heading > div > .kol-heading-wc {
 		color: var(--color-success);
 	}
 
-	.msg.warning .heading > div > .kol-heading-wc {
+	.msg.warning .kol-alert__heading > div > .kol-heading-wc {
 		color: var(--color-warning);
 	}
 
@@ -157,27 +156,27 @@
 		flex-direction: column;
 	}
 
-	.card > .heading {
+	.card > .kol-alert__heading {
 		padding: rem(8) rem(16);
 	}
 
-	.card[_has-closer] > .heading {
+	.card[_has-closer] > .kol-alert__heading {
 		padding-top: 0;
 		padding-bottom: 0;
 		padding-right: 0;
 	}
 
-	.card > .heading > div {
+	.card > .kol-alert__heading > div {
 		width: 100%;
 		min-height: rem(20);
 	}
 
-	.card > .heading .heading-icon {
+	.card > .kol-alert__heading .heading-icon {
 		justify-self: right;
 		margin-top: rem(-4);
 	}
 
-	.card > .heading .kol-heading-wc {
+	.card > .kol-alert__heading .kol-heading-wc {
 		width: 100%;
 		color: var(--color-light);
 		display: flex;
@@ -185,39 +184,39 @@
 		line-height: 1;
 	}
 
-	.card > .heading .kol-heading-wc > * {
+	.card > .kol-alert__heading .kol-heading-wc > * {
 		margin: auto 0;
 	}
 
-	.card > .content {
+	.card > .kol-alert__content {
 		padding: rem(16);
 	}
 
-	.card.default > .heading {
+	.card.default > .kol-alert__heading {
 		background-color: var(--color-subtle);
 	}
 
-	.card.error > .heading {
+	.card.error > .kol-alert__heading {
 		background-color: var(--color-danger);
 	}
 
-	.card.info > .heading {
+	.card.info > .kol-alert__heading {
 		background-color: var(--color-primary);
 	}
 
-	.card.success > .heading {
+	.card.success > .kol-alert__heading {
 		background-color: var(--color-success);
 	}
 
-	.card.warning > .heading {
+	.card.warning > .kol-alert__heading {
 		background-color: var(--color-warning);
 	}
 
-	:is(.error, .info, .success, .warning) .heading-icon {
+	:is(.error, .info, .success, .warning) .kol-alert__heading-icon {
 		font-size: rem(20);
 	}
 
-	.card > div > .content {
+	.card > div > .kol-alert__content {
 		grid-row: 2;
 		grid-column: 1 / span 2;
 	}

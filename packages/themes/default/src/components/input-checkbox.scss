@@ -62,7 +62,7 @@
 		cursor: not-allowed;
 	}
 
-	.kol-input > .kol-alert-wc.error {
+	.kol-input > .kol-alert.error {
 		order: 1;
 		padding-top: calc(var(--spacing) / 2);
 		grid-column: span 2 / auto;
@@ -102,8 +102,8 @@
 		box-shadow: none;
 	}
 
-	.kol-alert-wc {
-		@include kol-alert-wc;
+	.kol-alert {
+		@include kol-alert;
 	}
 
 	/* CHECKBOX */

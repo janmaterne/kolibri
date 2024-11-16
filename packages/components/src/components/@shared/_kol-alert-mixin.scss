@@ -4,17 +4,18 @@
 
 @mixin kol-alert-styles {
 	@layer kol-component {
-		.kol-alert-wc {
+		.kol-alert {
 			display: grid;
 		}
 
-		.kol-alert-wc .heading {
-			display: flex;
-			place-items: center;
-		}
-
-		.kol-alert-wc .heading > div {
-			flex-grow: 1;
+		.kol-alert {
+			&__heading {
+				place-items: center;
+				display: flex;
+				div {
+					flex-grow: 1;
+				}
+			}
 		}
 
 		.close {
