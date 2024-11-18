@@ -10,6 +10,7 @@ describe('KolHeadingFc', () => {
 		expect(page.root).toMatchSnapshot();
 		expect(page.root?.tagName).toBe('H1');
 		expect(page.root?.textContent).toContain('Default Heading');
+		expect(page.root?.classList.contains('kol-heading-wc')).toBe(true);
 	});
 
 	it('should render with a specific level', async () => {
@@ -19,6 +20,7 @@ describe('KolHeadingFc', () => {
 		expect(page.root).toMatchSnapshot();
 		expect(page.root?.tagName).toBe('H3');
 		expect(page.root?.textContent).toContain('Level 3 Heading');
+		expect(page.root?.classList.contains('kol-heading-wc')).toBe(true);
 	});
 
 	it('should render with a secondary headline', async () => {
@@ -32,6 +34,9 @@ describe('KolHeadingFc', () => {
 		expect(page.root?.querySelector('h2')).not.toBeNull();
 		expect(page.root?.textContent).toContain('Main Heading');
 		expect(page.root?.textContent).toContain('Secondary Headline');
+		expect(page.root?.classList.contains('kol-heading-wc')).toBe(true);
+		expect(page.root?.querySelector('h1')?.classList.contains('kol-heading-wc')).toBe(false);
+		expect(page.root?.querySelector('h2')?.classList.contains('kol-heading-wc')).toBe(false);
 	});
 
 	it('should apply custom class names', async () => {
@@ -41,6 +46,7 @@ describe('KolHeadingFc', () => {
 		expect(page.root).toMatchSnapshot();
 		expect(page.root?.tagName).toBe('H1');
 		expect(page.root?.classList.contains('custom-class')).toBe(true);
+		expect(page.root?.classList.contains('kol-heading-wc')).toBe(true);
 		expect(page.root?.textContent).toContain('Custom Class Heading');
 	});
 });

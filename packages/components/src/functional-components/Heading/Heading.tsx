@@ -3,6 +3,8 @@ import clsx from 'clsx';
 import type { JSXBase } from '@stencil/core/internal';
 import type { HeadingLevel, HeadingVariantPropType } from '../../schema';
 
+type HGroupProps = JSXBase.HTMLAttributes<HTMLElement>;
+
 // Define a base type for common props
 type BaseProps = JSXBase.HTMLAttributes<HTMLHeadingElement | HTMLElement> & {
 	level?: HeadingLevel;
@@ -19,7 +21,7 @@ type SecondaryHeadlineProps = BaseProps;
 // Define a type for the main Heading component props
 export type HeadingProps = HeadlineProps & {
 	secondaryHeadline?: string;
-	HeadingGroupProps?: JSXBase.HTMLAttributes<HTMLElement>;
+	HeadingGroupProps?: HGroupProps;
 	SecondaryHeadlineProps?: JSXBase.HTMLAttributes<HTMLHeadingElement | HTMLElement>;
 };
 
@@ -107,18 +109,29 @@ const KolHeadingFc: FC<HeadingProps> = (
 	const deprecatedClassName = 'kol-heading-wc';
 
 	const headlineProps: HeadlineProps = {
-		class: clsx(deprecatedClassName, classNames),
 		level,
 		...other,
 	};
 
 	if (!secondaryHeadline) {
-		return <KolHeadlineFc {...headlineProps}>{children}</KolHeadlineFc>;
+		return (
+			<KolHeadlineFc class={clsx(deprecatedClassName, classNames)} {...headlineProps}>
+				{children}
+			</KolHeadlineFc>
+		);
 	}
 
+	const { class: groupClassNames, ...groupOthers } = HeadingGroupProps;
+	const headlineGroupProps: HGroupProps = {
+		class: clsx(deprecatedClassName, groupClassNames),
+		...groupOthers,
+	};
+
 	return (
-		<hgroup {...HeadingGroupProps}>
-			<KolHeadlineFc {...headlineProps}>{children}</KolHeadlineFc>
+		<hgroup {...headlineGroupProps}>
+			<KolHeadlineFc class={classNames} {...headlineProps}>
+				{children}
+			</KolHeadlineFc>
 			<KolSecondaryHeadlineFc level={level} {...SecondaryHeadlineProps}>
 				{secondaryHeadline}
 			</KolSecondaryHeadlineFc>
