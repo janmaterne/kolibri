@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormErrorListFc should render with error list and translated label 1`] = `
+<div class="alert card error kol-alert-wc">
+  <div class="heading">
+    <kol-icon _icons="codicon codicon-error" _label="kol-error" class="heading-icon"></kol-icon>
+    <div class="heading-content">
+      <kol-heading-wc _label="Fehlerübersicht"></kol-heading-wc>
+    </div>
+  </div>
+  <div class="content">
+    <nav aria-label="Liste der Fehler">
+      <ul>
+        <li>
+          <kol-link-wc _href="#field1" _label="Fehler 1"></kol-link-wc>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
