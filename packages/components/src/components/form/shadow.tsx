@@ -5,8 +5,8 @@ import { Component, h, Host, Prop, State, Watch, Method } from '@stencil/core';
 import { translate } from '../../i18n';
 
 import type { ErrorListPropType, FormAPI, FormStates, KoliBriFormCallbacks, Stringified } from '../../schema';
-import { KolLinkWcTag } from '../../core/component-names';
-import KolAlertFc from '../../functional-components/Alert';
+import { KolFormErrorListFc } from '../../functional-components';
+import { focusFirstChild } from '../../utils/focus-first-child';
 
 /**
  * @slot - Inhalt der Form.
@@ -38,42 +38,6 @@ export class KolForm implements FormAPI {
 		}
 	};
 
-	private readonly handleLinkClick = (event: Event) => {
-		const href = (event.target as HTMLAnchorElement | undefined)?.href;
-		if (href) {
-			const hrefUrl = new URL(href);
-
-			const targetElement = document.querySelector<HTMLElement>(hrefUrl.hash);
-			if (targetElement && typeof targetElement.focus === 'function') {
-				targetElement.scrollIntoView({ behavior: 'smooth' });
-				targetElement.focus();
-			}
-		}
-	};
-
-	private renderErrorList(errorList?: ErrorListPropType[]): JSX.Element {
-		return (
-			<KolAlertFc type="error" variant="card" label={translate('kol-error-list-message')}>
-				<nav aria-label={translate('kol-error-list')}>
-					<ul>
-						{errorList?.map((error, index) => (
-							<li key={index}>
-								<KolLinkWcTag
-									_href={error.selector}
-									_label={error.message}
-									_on={{ onClick: this.handleLinkClick }}
-									ref={(el) => {
-										if (index === 0) this.errorListElement = el;
-									}}
-								/>
-							</li>
-						))}
-					</ul>
-				</nav>
-			</KolAlertFc>
-		);
-	}
-
 	private renderFormElement(): JSX.Element {
 		return (
 			<form method="post" onSubmit={this.onSubmit} onReset={this.onReset} autoComplete="off" noValidate>
@@ -96,7 +60,7 @@ export class KolForm implements FormAPI {
 
 		return (
 			<Host class="kol-form">
-				{hasErrorList && this.renderErrorList(this._errorList)}
+				{hasErrorList && <KolFormErrorListFc ref={(el) => (this.errorListElement = el)} errorList={this._errorList} />}
 				{this.renderFormElement()}
 			</Host>
 		);
@@ -104,9 +68,10 @@ export class KolForm implements FormAPI {
 
 	@Method()
 	async focusErrorList(): Promise<void> {
-		if (this._errorList && this._errorList.length > 0) {
-			this.errorListElement?.focus();
+		if (this._errorList && this._errorList.length > 0 && this.errorListElement) {
+			focusFirstChild(this.errorListElement, { link: true });
 		}
+
 		return Promise.resolve();
 	}
 
