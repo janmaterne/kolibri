@@ -1,49 +1,88 @@
 import { h, type FunctionalComponent as FC } from '@stencil/core';
 import clsx from 'clsx';
-import type { JSXBase, VNode } from '@stencil/core/internal';
+import type { JSXBase } from '@stencil/core/internal';
 import type { HeadingLevel, HeadingVariantPropType } from '../../schema';
 
-type LevelProps = { level?: HeadingLevel };
-type VariantProps = { variant?: HeadingVariantPropType };
+// Define a base type for common props
+type BaseProps = JSXBase.HTMLAttributes<HTMLHeadingElement | HTMLElement> & {
+	level?: HeadingLevel;
+};
 
-type BaseProps = JSXBase.HTMLAttributes<HTMLHeadingElement> & LevelProps;
-type HeadlineProps = BaseProps & VariantProps;
+// Define a type for the main headline props
+type HeadlineProps = BaseProps & {
+	variant?: HeadingVariantPropType;
+};
+
+// Define a type for the secondary headline props
 type SecondaryHeadlineProps = BaseProps;
 
-export type HeadingProps = BaseProps &
-	VariantProps & {
-		secondaryHeadline?: string;
-	};
+// Define a type for the main Heading component props
+export type HeadingProps = HeadlineProps & {
+	secondaryHeadline?: string;
+	HeadingGroupProps?: JSXBase.HTMLAttributes<HTMLElement>;
+	SecondaryHeadlineProps?: JSXBase.HTMLAttributes<HTMLHeadingElement | HTMLElement>;
+};
 
-function getHeadlineTag(level: HeadingLevel | number): string {
-	const validHeadline = level > 0 && level <= 6;
-	return validHeadline ? `h${level}` : 'strong';
+const MIN_HEADING_LEVEL = 1;
+const MAX_HEADING_LEVEL = 6;
+
+// Define a union type for valid headline tags
+type HeadlineTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'strong';
+type SubHeadlineTag = 'span' | HeadlineTag;
+
+/**
+ * Checks if the given level is a valid heading level.
+ * @param level - The heading level to check.
+ * @returns True if the level is valid, false otherwise.
+ */
+function isValidHeadingLevel(level: number): boolean {
+	return level >= MIN_HEADING_LEVEL && level <= MAX_HEADING_LEVEL;
 }
 
-function getSubHeadlineTag(level: HeadingLevel | number): string {
-	if (level === 1) {
-		return 'span';
-	}
-
-	return getHeadlineTag(level);
+/**
+ * Returns the appropriate headline tag based on the level.
+ * If the level is invalid, returns 'strong'.
+ * @param level - The heading level.
+ * @returns The corresponding headline tag.
+ */
+export function getHeadlineTag(level: HeadingLevel | number): HeadlineTag {
+	return isValidHeadingLevel(level) ? (`h${level}` as HeadlineTag) : 'strong';
 }
 
-const KolHeadlineFc: FC<HeadlineProps> = (props, children) => {
-	const { class: classNames, level = 1, variant: defaultVariant, ...other } = props;
+/**
+ * Returns the appropriate sub-headline tag based on the level.
+ * If the level is 1, returns 'span', otherwise returns the headline tag.
+ * @param level - The heading level.
+ * @returns The corresponding sub-headline tag.
+ */
+export function getSubHeadlineTag(level: HeadingLevel | number): SubHeadlineTag {
+	return level === 1 ? 'span' : getHeadlineTag(level);
+}
 
+/**
+ * Functional component for rendering a headline.
+ * @param props - The properties for the headline component.
+ * @param children - The children to render inside the headline.
+ * @returns A VNode representing the headline.
+ */
+const KolHeadlineFc: FC<HeadlineProps> = ({ class: classNames, level = MIN_HEADING_LEVEL, variant, ...other }, children) => {
 	const HeadlineTag = getHeadlineTag(level);
-	const variant = defaultVariant || HeadlineTag;
+	const finalVariant = variant || HeadlineTag;
 
 	return (
-		<HeadlineTag class={clsx('headline', `headline-${variant}`, classNames)} {...other}>
+		<HeadlineTag class={clsx('headline', `headline-${finalVariant}`, classNames)} {...other}>
 			{children}
 		</HeadlineTag>
 	);
 };
 
-const KolSecondaryHeadlineFc: FC<SecondaryHeadlineProps> = (props, children) => {
-	const { class: classNames, level = 1, ...other } = props;
-
+/**
+ * Functional component for rendering a secondary headline.
+ * @param props - The properties for the secondary headline component.
+ * @param children - The children to render inside the secondary headline.
+ * @returns A VNode representing the secondary headline.
+ */
+const KolSecondaryHeadlineFc: FC<SecondaryHeadlineProps> = ({ class: classNames, level = MIN_HEADING_LEVEL, ...other }, children) => {
 	const HeadlineTag = getSubHeadlineTag(level + 1);
 
 	return (
@@ -53,25 +92,38 @@ const KolSecondaryHeadlineFc: FC<SecondaryHeadlineProps> = (props, children) => 
 	);
 };
 
-const KolHeadingFc: FC<HeadingProps> = (props, children) => {
-	const { ref, secondaryHeadline, level = 1, class: classNames, ...other } = props;
+/**
+ * Functional component for rendering a heading with an optional secondary headline.
+ * @param props - The properties for the heading component.
+ * @param children - The children to render inside the heading.
+ * @returns A VNode representing the heading.
+ */
+const KolHeadingFc: FC<HeadingProps> = (
+	{ secondaryHeadline, level = MIN_HEADING_LEVEL, class: classNames, HeadingGroupProps = {}, SecondaryHeadlineProps = {}, ...other },
+	children,
+) => {
+	// The 'kol-heading-wc' class is retained for backward compatibility.
+	// It must remain here until the SCSS/themes are updated accordingly.
+	const deprecatedClassName = 'kol-heading-wc';
 
-	let result: unknown = (
-		<KolHeadlineFc ref={ref} level={level} {...other}>
-			{children}
-		</KolHeadlineFc>
-	);
+	const headlineProps: HeadlineProps = {
+		class: clsx(deprecatedClassName, classNames),
+		level,
+		...other,
+	};
 
-	if (secondaryHeadline) {
-		result = (
-			<hgroup>
-				{result}
-				<KolSecondaryHeadlineFc level={level}>{secondaryHeadline}</KolSecondaryHeadlineFc>
-			</hgroup>
-		);
+	if (!secondaryHeadline) {
+		return <KolHeadlineFc {...headlineProps}>{children}</KolHeadlineFc>;
 	}
 
-	return <section class={clsx('kol-heading-wc', classNames)}>{result as VNode}</section>;
+	return (
+		<hgroup {...HeadingGroupProps}>
+			<KolHeadlineFc {...headlineProps}>{children}</KolHeadlineFc>
+			<KolSecondaryHeadlineFc level={level} {...SecondaryHeadlineProps}>
+				{secondaryHeadline}
+			</KolSecondaryHeadlineFc>
+		</hgroup>
+	);
 };
 
 export default KolHeadingFc;

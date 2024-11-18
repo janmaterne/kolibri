@@ -20,7 +20,7 @@ export type CollapsibleProps = Omit<JSXBase.HTMLAttributes<HTMLElement>, 'id'> &
 	label: string;
 
 	HeadingProps?: {
-		ref?: ((elm?: HTMLHeadingElement | undefined) => void) | undefined;
+		ref?: ((elm?: HTMLElement | undefined) => void) | undefined;
 		class?: ClassType;
 	};
 
