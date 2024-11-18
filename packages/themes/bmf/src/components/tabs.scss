@@ -171,8 +171,8 @@
 		display: grid;
 	}
 
-	:host > div.tabs-align-left .tabs-button-group > div > div .kol-button-wc,
-	:host > div.tabs-align-right .tabs-button-group > div > div .kol-button-wc {
+	:host > div.tabs-align-left .tabs-button-group > div > div .kol-button,
+	:host > div.tabs-align-right .tabs-button-group > div > div .kol-button {
 		width: 100%;
 	}
 

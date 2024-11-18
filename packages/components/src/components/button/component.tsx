@@ -109,7 +109,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 		const hasAriaDescription = Boolean(this.state._ariaDescription?.trim()?.length);
 
 		return (
-			<Host class="kol-button-wc">
+			<Host class="kol-button">
 				<button
 					ref={this.catchRef}
 					accessKey={this.state._accessKey || undefined}
