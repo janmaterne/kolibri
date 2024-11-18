@@ -171,6 +171,24 @@ exports[`kol-input-email should render with _label="Label" _name="field" _placeh
 </kol-input-email>
 `;
 
+exports[`kol-input-email should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="email@example.com" _shortKey="S" 1`] = `
+<kol-input-email class="has-value kol-input-email">
+  <template shadowrootmode="open">
+    <kol-input _currentlength="17" _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" class="email" role="presentation">
+      <span slot="label">
+        Label
+        <span aria-hidden="true" class="access-key-hint">
+          S
+        </span>
+      </span>
+      <div slot="input">
+        <input autocapitalize="off" autocomplete="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" spellcheck="false" type="email" value="email@example.com">
+      </div>
+    </kol-input>
+  </template>
+</kol-input-email>
+`;
+
 exports[`kol-input-email should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="email@example.com" _smartButton={"_icons":["codicon codicon-eye"],"_hideLabel":true,"_label":"einblenden"} 1`] = `
 <kol-input-email class="has-value kol-input-email">
   <template shadowrootmode="open">
@@ -353,6 +371,24 @@ exports[`kol-input-email should render with _label="Label" _name="field" _placeh
       </span>
       <div slot="input">
         <input autocapitalize="off" autocomplete="off" autocorrect="off" id="id-nonce" list="id-nonce-list" name="field" placeholder="Hier steht ein Platzhaltertext" readonly="" spellcheck="false" type="email" value="email@example.com">
+      </div>
+    </kol-input>
+  </template>
+</kol-input-email>
+`;
+
+exports[`kol-input-email should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="email@example.com" _suggestions=["email1@example.com","email2@example.com","email3@example.com"] _shortKey="S" 1`] = `
+<kol-input-email class="has-value kol-input-email">
+  <template shadowrootmode="open">
+    <kol-input _currentlength="17" _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" class="email" role="presentation">
+      <span slot="label">
+        Label
+        <span aria-hidden="true" class="access-key-hint">
+          S
+        </span>
+      </span>
+      <div slot="input">
+        <input autocapitalize="off" autocomplete="off" autocorrect="off" id="id-nonce" list="id-nonce-list" name="field" placeholder="Hier steht ein Platzhaltertext" spellcheck="false" type="email" value="email@example.com">
       </div>
     </kol-input>
   </template>

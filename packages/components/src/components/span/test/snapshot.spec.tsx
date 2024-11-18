@@ -7,5 +7,5 @@ import { KolSpanWc } from '../component';
 executeSnapshotTests<SpanProps>(
 	KolSpanWcTag,
 	[KolSpanWc],
-	[{ _label: 'Text' }, { _label: 'Text', _accessKey: 'v' }, { _label: 'Text', _hideLabel: true }, { _label: 'Text', _icons: 'codicon codicon-home' }],
+	[{ _label: 'Text' }, { _label: 'Text', _badgeText: 'v' }, { _label: 'Text', _hideLabel: true }, { _label: 'Text', _icons: 'codicon codicon-home' }],
 );

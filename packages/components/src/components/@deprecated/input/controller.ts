@@ -1,12 +1,14 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	AccessKeyPropType,
 	AdjustHeightPropType,
 	ButtonProps,
 	HideErrorPropType,
 	InputTypeOnDefault,
 	LabelWithExpertSlotPropType,
 	MsgPropType,
+	ShortKeyPropType,
 	StencilUnknown,
 	Stringified,
 	TooltipAlignPropType,
@@ -18,6 +20,7 @@ import {
 	objectObjectHandler,
 	parseJson,
 	setState,
+	validateAccessKey,
 	validateAdjustHeight,
 	validateHideError,
 	validateHideLabel,
@@ -27,6 +30,7 @@ import {
 	validateTooltipAlign,
 	watchBoolean,
 	watchString,
+	validateShortKey,
 } from '../../../schema';
 
 import { stopPropagation, tryToDispatchKoliBriEvent } from '../../../utils/events';
@@ -34,6 +38,7 @@ import { ControlledInputController } from '../../input-adapter-leanup/controller
 
 import type { Props as AdapterProps } from '../../input-adapter-leanup/types';
 import type { Props, Watches } from './types';
+import { validateAccessAndShortKey } from '../../../schema/validators/access-and-short-key';
 
 type ValueChangeListener = (value: StencilUnknown) => void;
 
@@ -47,8 +52,9 @@ export class InputController extends ControlledInputController implements Watche
 		this.component = component;
 	}
 
-	public validateAccessKey(value?: string): void {
-		watchString(this.component, '_accessKey', value);
+	public validateAccessKey(value?: AccessKeyPropType): void {
+		validateAccessKey(this.component, value);
+		validateAccessAndShortKey(value, this.component._shortKey);
 	}
 
 	public validateAdjustHeight(value?: AdjustHeightPropType): void {
@@ -127,6 +133,11 @@ export class InputController extends ControlledInputController implements Watche
 		}
 	}
 
+	public validateShortKey(value?: ShortKeyPropType): void {
+		validateShortKey(this.component, value);
+		validateAccessAndShortKey(this.component._accessKey, value);
+	}
+
 	public validateSmartButton(value?: ButtonProps | string): void {
 		objectObjectHandler(value, () => {
 			try {
@@ -155,9 +166,11 @@ export class InputController extends ControlledInputController implements Watche
 		this.validateHint(this.component._hint);
 		this.validateId(this.component._id);
 		this.validateLabel(this.component._label);
+		this.validateShortKey(this.component._shortKey);
 		this.validateSmartButton(this.component._smartButton);
 		this.validateOn(this.component._on);
 		this.validateTabIndex(this.component._tabIndex);
+		validateAccessAndShortKey(this.component._accessKey, this.component._shortKey);
 	}
 
 	protected onBlur(event: Event): void {

@@ -1,8 +1,9 @@
+@import '../@shared/mixins';
+@import '../style';
 @import '../input';
 @import './common';
 @import './button';
 @import './checkbox';
 @import './switch';
-@import '../@shared/kol-alert-mixin';
 
 @include kol-alert-styles;
