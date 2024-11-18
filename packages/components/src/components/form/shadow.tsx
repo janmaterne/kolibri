@@ -1,11 +1,8 @@
 import type { JSX } from '@stencil/core';
-import { validateErrorList, watchBoolean, watchString } from '../../schema';
 import { Component, h, Host, Prop, State, Watch, Method } from '@stencil/core';
-
-import { translate } from '../../i18n';
-
+import { validateErrorList, watchBoolean, watchString } from '../../schema';
 import type { ErrorListPropType, FormAPI, FormStates, KoliBriFormCallbacks, Stringified } from '../../schema';
-import { KolFormErrorListFc } from '../../functional-components';
+import { KolFormErrorListFc, KolFormMandatoryFieldsHintFc } from '../../functional-components';
 import { focusFirstChild } from '../../utils/focus-first-child';
 
 /**
@@ -41,15 +38,7 @@ export class KolForm implements FormAPI {
 	private renderFormElement(): JSX.Element {
 		return (
 			<form method="post" onSubmit={this.onSubmit} onReset={this.onReset} autoComplete="off" noValidate>
-				{this.state._requiredText === true ? (
-					<p>
-						<div class="mandatory-fields-hint">{translate('kol-form-description')}</div>
-					</p>
-				) : typeof this.state._requiredText === 'string' && this.state._requiredText.length > 0 ? (
-					<p>
-						<div class="mandatory-fields-hint">{this.state._requiredText}</div>
-					</p>
-				) : null}
+				<KolFormMandatoryFieldsHintFc requiredText={this.state._requiredText} />
 				<slot />
 			</form>
 		);

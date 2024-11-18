@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormMandatoryFieldsHintFc sollte leeren String als requiredText ignorieren 1`] = `null`;
+
+exports[`FormMandatoryFieldsHintFc sollte mit custom requiredText den benutzerdefinierten Text rendern 1`] = `
+<p>
+  <div class="mandatory-fields-hint">
+    Benutzerdefinierter Hinweistext
+  </div>
+</p>
+`;
+
+exports[`FormMandatoryFieldsHintFc sollte mit requiredText={true} den übersetzten Text rendern 1`] = `
+<p>
+  <div class="mandatory-fields-hint">
+    Pflichtfelder sind markiert
+  </div>
+</p>
+`;
+
+exports[`FormMandatoryFieldsHintFc sollte mit zusätzlichen Klassen korrekt rendern 1`] = `
+<p>
+  <div class="custom-class mandatory-fields-hint">
+    Test
+  </div>
+</p>
+`;
+
+exports[`FormMandatoryFieldsHintFc sollte ohne Props null rendern 1`] = `null`;
