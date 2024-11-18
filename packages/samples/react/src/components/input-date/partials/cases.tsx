@@ -27,6 +27,8 @@ export const InputDateCases = forwardRef<HTMLKolInputDateElement, Components.Kol
 			<KolInputDate {...props} _step={1} _type="time" _label="Time (with seconds)" _required />
 			<KolInputDate {...props} _readOnly _label="Date input (read-only)" _required />
 			<KolInputDate {...props} _disabled _label="Date input (Disabled)" _required />
+			<KolInputDate {...props} _label="With access key" _accessKey="s" />
+			<KolInputDate {...props} _label="With short key" _shortKey="s" />
 		</div>
 	);
 });

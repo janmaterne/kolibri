@@ -127,6 +127,18 @@ exports[`kol-input should render with _label="Label" _name="field" _placeholder=
 </kol-input>
 `;
 
+exports[`kol-input should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _shortKey="S" 1`] = `
+<kol-input _name="field" _placeholder="Hier steht ein Platzhaltertext" class="kol-input">
+  <!---->
+  <label class="input-label" id="undefined-label">
+    <span class="input-label-span"></span>
+  </label>
+  <div class="input">
+    <div class="input-slot" id="input"></div>
+  </div>
+</kol-input>
+`;
+
 exports[`kol-input should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _smartButton={"_icons":["codicon codicon-eye"],"_hideLabel":true,"_label":"einblenden"} 1`] = `
 <kol-input _name="field" _placeholder="Hier steht ein Platzhaltertext" class="kol-input">
   <!---->

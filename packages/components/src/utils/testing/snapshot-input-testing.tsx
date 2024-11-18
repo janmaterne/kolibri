@@ -17,6 +17,7 @@ export function executeInputSnapshotTests<Props extends Record<string, unknown>>
 	const propVariants: Props[] = [
 		{ ...(baseObj as Props) },
 		{ ...(baseObj as Props), _accessKey: 'V' },
+		{ ...(baseObj as Props), _shortKey: 'S' },
 		{ ...(baseObj as Props), _alert: true },
 		{ ...(baseObj as Props), _readOnly: true },
 		{ ...(baseObj as Props), _disabled: true },

@@ -34,6 +34,8 @@ export const InputFileCases = forwardRef<HTMLKolInputFileElement, Components.Kol
 			/>
 			<KolInputFile {...props} ref={ref} _accessKey="h" _multiple _msg={{ _type: 'error', _description: ERROR_MSG }} _label="Upload file (Multiple)" />
 			<KolInputFile {...props} _disabled _label="Upload file (Disabled)" />
+			<KolInputFile {...props} _label="With access key" _accessKey="c" />
+			<KolInputFile {...props} _label="With short key" _shortKey="s" />
 		</div>
 	);
 });

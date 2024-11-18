@@ -1,6 +1,5 @@
 import { KoliBri } from '@public-ui/components';
 import globalCss from './global.scss';
-import abbrCss from './components/abbr.scss';
 import accordionCss from './components/accordion.scss';
 import alertCss from './components/alert.scss';
 import avatarCss from './components/avatar.scss';
@@ -83,7 +82,6 @@ export const BMF = KoliBri.createTheme('bmf', {
 	'KOL-INPUT-RANGE': inputRangeCss,
 	'KOL-LINK-BUTTON': linkButtonCss,
 	'KOL-BUTTON-LINK': buttonLinkCss,
-	'KOL-ABBR': abbrCss,
 	'KOL-BREADCRUMB': breadcrumbCss,
 	'KOL-ICON': iconCss,
 	'KOL-SKIP-NAV': skipNavCss,

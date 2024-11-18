@@ -28,6 +28,8 @@ export const InputColorCases = forwardRef<HTMLKolInputColorElement, Components.K
 			/>
 			<KolInputColor {...props} ref={ref} _accessKey="C" _hint="Hint text" _label="Color with hint" _value="#f08080" />
 			<KolInputColor {...props} _disabled _label="Color (Disabled)" _value="#f08080" />
+			<KolInputColor {...props} _label="With access key" _accessKey="c"></KolInputColor>
+			<KolInputColor {...props} _label="With short key" _shortKey="s"></KolInputColor>
 		</div>
 	);
 });

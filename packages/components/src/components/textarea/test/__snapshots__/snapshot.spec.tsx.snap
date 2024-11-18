@@ -161,6 +161,23 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
 </kol-textarea>
 `;
 
+exports[`kol-textarea should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _rows=5 _value="Value" _shortKey="S" 1`] = `
+<kol-textarea class="has-value kol-textarea">
+  <template shadowrootmode="open">
+    <kol-input _currentlength="5" _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" class="textarea" role="presentation">
+      <span slot="label">
+        Label
+        <span aria-hidden="true" class="access-key-hint">
+          S
+        </span>
+      </span>
+      <div slot="input"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" spellcheck="false" value="Value" style="resize: vertical;"></textarea>
+      </div>
+    </kol-input>
+  </template>
+</kol-textarea>
+`;
+
 exports[`kol-textarea should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _rows=5 _value="Value" _touched=true 1`] = `
 <kol-textarea _touched="" class="has-value kol-textarea">
   <template shadowrootmode="open">
