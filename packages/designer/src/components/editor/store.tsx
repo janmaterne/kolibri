@@ -174,32 +174,10 @@ export const components: Record<string, Component> = {
 	'KOL-ABBR': () => (
 		<div class="grid gap-6">
 			<p>
-				Ich bin eine{' '}
-				<KolAbbr _label="Ausführliche Beschreibung" _tooltipAlign="top">
-					ABB
-				</KolAbbr>{' '}
-				mit Tooltip oben
+				Ich <KolAbbr _label="zum Beispiel">z. B.</KolAbbr> bin eine Abkürzung mit Label.
 			</p>
 			<p>
-				Ich bin eine{' '}
-				<KolAbbr _label="Ausführliche Beschreibung" _tooltipAlign="right">
-					ABB
-				</KolAbbr>{' '}
-				mit Tooltip rechts
-			</p>
-			<p>
-				Ich bin eine{' '}
-				<KolAbbr _label="Ausführliche Beschreibung" _tooltipAlign="bottom">
-					ABB
-				</KolAbbr>{' '}
-				mit Tooltip unten
-			</p>
-			<p>
-				Ich bin eine{' '}
-				<KolAbbr _label="Ausführliche Beschreibung" _tooltipAlign="left">
-					ABB
-				</KolAbbr>{' '}
-				mit Tooltip links
+				Ich <KolAbbr>z. B.</KolAbbr> bin eine Abkürzung ohne Label.
 			</p>
 		</div>
 	),

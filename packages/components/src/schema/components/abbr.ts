@@ -1,8 +1,8 @@
 import type { Generic } from 'adopted-style-sheets';
-import type { PropLabel, PropTooltipAlign } from '../props';
+import type { PropLabel } from '../props';
 
-type RequiredProps = PropLabel;
-type OptionalProps = PropTooltipAlign;
+type RequiredProps = NonNullable<unknown>;
+type OptionalProps = PropLabel;
 
 type RequiredStates = RequiredProps & OptionalProps;
 type OptionalStates = NonNullable<unknown>;
