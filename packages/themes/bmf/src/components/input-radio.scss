@@ -77,7 +77,7 @@
 			}
 		}
 
-		.kol-alert-wc {
+		.kol-alert {
 			order: 3;
 			padding-bottom: 0.25em;
 		}
@@ -115,7 +115,7 @@
 				outline-color: var(--color-red);
 			}
 
-			.kol-alert-wc.error {
+			.kol-alert.error {
 				margin-left: -0.25em;
 				color: var(--color-red);
 				font-weight: 700;

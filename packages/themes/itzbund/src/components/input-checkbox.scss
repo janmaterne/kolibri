@@ -81,7 +81,7 @@
 		padding-left: calc(2 * 2 * var(--spacing));
 	}
 
-	.kol-input > .kol-alert-wc.error {
+	.kol-input > .kol-alert.error {
 		order: 3;
 		padding-top: 0.25em;
 		grid-column: span 2 / auto;
