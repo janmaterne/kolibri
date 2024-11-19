@@ -38,6 +38,8 @@ export const InputRangeCases = forwardRef<HTMLKolInputRangeElement, Components.K
 				_touched
 			/>
 			<KolInputRange {...props} _disabled _min={0} _max={50} _label="Slider (disabled)" />
+			<KolInputRange {...props} _min={0} _max={50} _label="With access key" _accessKey="c" />
+			<KolInputRange {...props} _min={0} _max={50} _label="With short key" _shortKey="s" />
 		</div>
 	);
 });

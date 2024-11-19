@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	MsgPropType,
 	PropDisabled,
 	PropHideError,
 	PropHideLabel,
@@ -12,13 +13,13 @@ import type {
 	PropSyncValueBySelector,
 	PropTouched,
 	PropOptions,
-	MsgPropType,
+	PropShortKey,
+	PropAccessKey,
 } from '../props';
 import type { InputTypeOnDefault, KoliBriHorizontalIcons, Option, StencilUnknown, Stringified } from '../types';
 
 type RequiredProps = PropLabelWithExpertSlot & PropOptions;
 type OptionalProps = {
-	accessKey: string;
 	hint: string;
 	icons: Stringified<KoliBriHorizontalIcons>;
 	msg: Stringified<MsgPropType>;
@@ -26,12 +27,14 @@ type OptionalProps = {
 	placeholder: string;
 	tabIndex: number;
 	value: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideError &
 	PropHideLabel &
 	PropName &
 	PropRequired &
 	PropSyncValueBySelector &
+	PropShortKey &
 	PropTouched;
 
 type RequiredStates = {
@@ -40,7 +43,6 @@ type RequiredStates = {
 	PropHideError &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	hint: string;
 	value: string;
@@ -48,12 +50,14 @@ type OptionalStates = {
 	on: InputTypeOnDefault;
 	tabIndex: number;
 	placeholder: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideLabel &
 	PropId &
 	PropName &
 	PropRequired &
 	PropMsg &
+	PropShortKey &
 	PropTouched;
 
 export type SingleSelectProps = Generic.Element.Members<RequiredProps, OptionalProps>;

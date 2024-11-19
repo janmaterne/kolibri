@@ -11,18 +11,19 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
+	ShortKeyPropType,
 	Stringified,
 	SuggestionsPropType,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { showExpertSlot } from '../../schema';
+import { buildBadgeTextString, showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
+import { InternalUnderlinedBadgeText } from '../../functional-components';
 import { InputColorController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -88,6 +89,7 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 					_hideError={this.state._hideError}
 					_id={this.state._id}
 					_label={this.state._label}
+					_shortKey={this.state._shortKey}
 					_suggestions={this.state._suggestions}
 					_smartButton={this.state._smartButton}
 					_tooltipAlign={this._tooltipAlign}
@@ -98,11 +100,11 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 					<span slot="label">
 						{hasExpertSlot ? (
 							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
+						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
 							<>
-								<InternalUnderlinedAccessKey accessKey={this.state._accessKey} label={this.state._label} />{' '}
+								<InternalUnderlinedBadgeText badgeText={buildBadgeTextString(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
 								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
+									{buildBadgeTextString(this.state._accessKey, this.state._shortKey)}
 								</span>
 							</>
 						) : (
@@ -220,6 +222,11 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 	 * Gibt die EventCallback-Funktionen für das Input-Event an.
 	 */
 	@Prop() public _on?: InputTypeOnDefault;
+
+	/**
+	 * Adds a visual short key hint to the component.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
 
 	/**
 	 * Allows to add a button with an arbitrary action within the element (_hide-label only).
@@ -347,6 +354,11 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 	@Watch('_on')
 	public validateOn(value?: InputTypeOnDefault): void {
 		this.controller.validateOn(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_smartButton')

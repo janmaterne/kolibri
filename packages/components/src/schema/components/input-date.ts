@@ -2,6 +2,7 @@ import type { Generic } from 'adopted-style-sheets';
 
 import type {
 	MsgPropType,
+	PropAccessKey,
 	PropDisabled,
 	PropHideError,
 	PropHideLabel,
@@ -11,6 +12,7 @@ import type {
 	PropName,
 	PropReadOnly,
 	PropRequired,
+	PropShortKey,
 	PropSuggestions,
 	PropSyncValueBySelector,
 	PropTouched,
@@ -49,7 +51,6 @@ type RequiredStates = {
 	PropId;
 
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	hint: string;
 	icons: KoliBriHorizontalIcons;
@@ -61,13 +62,15 @@ type OptionalStates = {
 	step: number;
 	tabIndex: number;
 	value: Iso8601 | null;
-} & PropSyncValueBySelector &
+} & PropAccessKey &
+	PropSyncValueBySelector &
 	PropDisabled &
 	PropHideLabel &
 	PropMsg &
 	PropName &
 	PropReadOnly &
 	PropRequired &
+	PropShortKey &
 	PropTouched;
 
 export type InputDateProps = Generic.Element.Members<RequiredProps, OptionalProps>;

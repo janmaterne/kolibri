@@ -2,6 +2,7 @@ import type { Generic } from 'adopted-style-sheets';
 
 import type {
 	MsgPropType,
+	PropAccessKey,
 	PropDisabled,
 	PropHasCounter,
 	PropHideError,
@@ -12,6 +13,7 @@ import type {
 	PropName,
 	PropReadOnly,
 	PropRequired,
+	PropShortKey,
 	PropSyncValueBySelector,
 	PropTouched,
 } from '../props';
@@ -21,7 +23,6 @@ import type { PropPasswordVariant } from '../props/variant/password-variant';
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {
-	accessKey: string;
 	alert: boolean;
 	autoComplete: InputTypeOnOff;
 	/**
@@ -38,7 +39,8 @@ type OptionalProps = {
 	tabIndex: number;
 	value: string;
 	msg: Stringified<MsgPropType>;
-} & PropPasswordVariant &
+} & PropAccessKey &
+	PropPasswordVariant &
 	PropDisabled &
 	PropHasCounter &
 	PropHideError &
@@ -46,6 +48,7 @@ type OptionalProps = {
 	PropName &
 	PropReadOnly &
 	PropRequired &
+	PropShortKey &
 	PropSyncValueBySelector &
 	PropTouched;
 
@@ -56,7 +59,6 @@ type RequiredStates = {
 	PropHideError &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	currentLength: number;
 	hint: string;
@@ -68,7 +70,8 @@ type OptionalStates = {
 	smartButton: ButtonProps;
 	tabIndex: number;
 	value: string | null;
-} & PropPasswordVariant &
+} & PropAccessKey &
+	PropPasswordVariant &
 	PropDisabled &
 	PropHasCounter &
 	PropHideLabel &
@@ -76,6 +79,7 @@ type OptionalStates = {
 	PropName &
 	PropReadOnly &
 	PropRequired &
+	PropShortKey &
 	PropTouched;
 
 export type InputPasswordProps = Generic.Element.Members<RequiredProps, OptionalProps>;

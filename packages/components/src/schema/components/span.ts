@@ -1,6 +1,6 @@
 import type { Generic } from 'adopted-style-sheets';
 
-import type { PropAccessKey, PropHideLabel, PropLabelWithExpertSlot } from '../props';
+import type { PropHideLabel, PropLabelWithExpertSlot, PropBadgeText } from '../props';
 import type { KoliBriCustomIcon, KoliBriIconsProp, Stringified } from '../types';
 
 type RequiredProps = PropLabelWithExpertSlot;
@@ -8,7 +8,7 @@ type OptionalProps = {
 	allowMarkdown: boolean;
 	icons: Stringified<KoliBriIconsProp>;
 } & PropHideLabel &
-	PropAccessKey;
+	PropBadgeText;
 
 type RequiredStates = {
 	allowMarkdown: boolean;
@@ -19,7 +19,7 @@ type RequiredStates = {
 		left?: KoliBriCustomIcon;
 	};
 } & PropLabelWithExpertSlot;
-type OptionalStates = PropHideLabel & PropAccessKey;
+type OptionalStates = PropHideLabel & PropBadgeText;
 
 export type SpanProps = Generic.Element.Members<RequiredProps, OptionalProps>;
 export type SpanStates = Generic.Element.Members<RequiredStates, OptionalStates>;

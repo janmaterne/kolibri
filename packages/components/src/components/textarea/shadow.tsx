@@ -11,19 +11,20 @@ import type {
 	MsgPropType,
 	NamePropType,
 	RowsPropType,
+	ShortKeyPropType,
 	Stringified,
 	SyncValueBySelectorPropType,
 	TextareaAPI,
 	TextareaStates,
 	TooltipAlignPropType,
 } from '../../schema';
-import { devWarning, setState, showExpertSlot } from '../../schema';
+import { buildBadgeTextString, devWarning, setState, showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
+import { InternalUnderlinedBadgeText } from '../../functional-components';
 import { TextareaController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -103,6 +104,7 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 					_msg={this.state._msg}
 					_readOnly={this.state._readOnly}
 					_required={this.state._required}
+					_shortKey={this.state._shortKey}
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}
 					onClick={() => this.textareaRef?.focus()}
@@ -111,11 +113,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 					<span slot="label">
 						{hasExpertSlot ? (
 							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
+						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
 							<>
-								<InternalUnderlinedAccessKey accessKey={this.state._accessKey} label={this.state._label} />{' '}
+								<InternalUnderlinedBadgeText badgeText={buildBadgeTextString(this.state._accessKey || this.state._shortKey)} label={this.state._label} />{' '}
 								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
+									{buildBadgeTextString(this.state._accessKey || this.state._shortKey)}
 								</span>
 							</>
 						) : (
@@ -280,6 +282,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	@Prop({ mutable: true, reflect: false }) public _rows?: RowsPropType;
 
 	/**
+	 * Adds a visual short key hint to the component.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
 	 * Selector for synchronizing the value with another input element.
 	 * @internal
 	 */
@@ -437,6 +444,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	@Watch('_rows')
 	public validateRows(value?: RowsPropType): void {
 		this.controller.validateRows(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_syncValueBySelector')

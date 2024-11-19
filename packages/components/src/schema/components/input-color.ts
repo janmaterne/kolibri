@@ -1,6 +1,7 @@
 import type { Generic } from 'adopted-style-sheets';
 
 import type {
+	PropAccessKey,
 	MsgPropType,
 	PropDisabled,
 	PropHideError,
@@ -8,6 +9,7 @@ import type {
 	PropLabelWithExpertSlot,
 	PropMsg,
 	PropName,
+	PropShortKey,
 	PropSuggestions,
 	PropSyncValueBySelector,
 	PropTouched,
@@ -17,7 +19,6 @@ import type { ButtonProps } from './button';
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {
-	accessKey: string;
 	alert: boolean;
 	autoComplete: InputTypeOnOff;
 	/**
@@ -31,10 +32,12 @@ type OptionalProps = {
 	smartButton: Stringified<ButtonProps>;
 	tabIndex: number;
 	value: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideError &
 	PropHideLabel &
 	PropName &
+	PropShortKey &
 	PropSuggestions &
 	PropSyncValueBySelector &
 	PropTouched;
@@ -46,7 +49,6 @@ type RequiredStates = {
 } & PropHideError &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	hint: string;
 	icons: KoliBriHorizontalIcons;
@@ -54,10 +56,12 @@ type OptionalStates = {
 	smartButton: ButtonProps;
 	tabIndex: number;
 	value: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHideLabel &
 	PropMsg &
 	PropName &
+	PropShortKey &
 	PropTouched;
 
 export type InputColorProps = Generic.Element.Members<RequiredProps, OptionalProps>;

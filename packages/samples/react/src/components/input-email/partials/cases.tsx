@@ -31,6 +31,8 @@ export const InputEmailCases = forwardRef<HTMLKolInputEmailElement, Components.K
 			/>
 			<KolInputEmail {...props} _disabled _value="test@mail.de" _label="E-Mail (Disabled)" />
 			<KolInputEmail {...props} _readOnly _value="test@mail.de" _label="E-Mail (Readonly)" />
+			<KolInputEmail {...props} _value="test@mail.de" _label="With access key" _accessKey="c" />
+			<KolInputEmail {...props} _value="test@mail.de" _label="With short key" _shortKey="s" />
 		</div>
 	);
 });

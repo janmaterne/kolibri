@@ -20,6 +20,8 @@ export const ComboboxCases = (props: Partial<Components.KolCombobox>) => {
 				_placeholder="Placeholder"
 				_required
 			/>
+			<KolCombobox {...props} _label="With access key" _suggestions={COUNTRY_SUGGESTIONS} _value={'Deutschland'} _accessKey="c" />
+			<KolCombobox {...props} _label="With short key" _suggestions={COUNTRY_SUGGESTIONS} _value={'Deutschland'} _shortKey="s" />
 		</div>
 	);
 };
