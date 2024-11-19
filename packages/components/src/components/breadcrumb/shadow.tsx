@@ -19,18 +19,22 @@ export class KolBreadcrumb implements BreadcrumbAPI {
 	private readonly renderLink = (link: BreadcrumbLinkProps, index: number): JSX.Element => {
 		const lastIndex = this.state._links.length - 1;
 		return (
-			<li key={index}>
-				{index !== 0 && <KolIconTag _label="" _icons="codicon codicon-chevron-right" />}
+			<li class="kol-breadcrumb__list-element" key={index}>
+				{index !== 0 && <KolIconTag class="kol-breadcrumb__icon" _label="" _icons="codicon codicon-chevron-right" />}
 				{index === lastIndex ? (
-					<span>
+					<span class="kol-breadcrumb__list-element-span">
 						{link._hideLabel ? (
-							<KolIconTag _label={link._label} _icons={typeof link._icons === 'string' ? link._icons : 'codicon codicon-symbol-event'} />
+							<KolIconTag
+								class="kol-breadcrumb__icon"
+								_label={link._label}
+								_icons={typeof link._icons === 'string' ? link._icons : 'codicon codicon-symbol-event'}
+							/>
 						) : (
 							<>{link._label}</>
 						)}
 					</span>
 				) : (
-					<KolLinkTag {...link}></KolLinkTag>
+					<KolLinkTag class="kol-breadcrumb__link" {...link}></KolLinkTag>
 				)}
 			</li>
 		);
@@ -39,10 +43,10 @@ export class KolBreadcrumb implements BreadcrumbAPI {
 	public render(): JSX.Element {
 		return (
 			<nav class="kol-breadcrumb" aria-label={this.state._label}>
-				<ul>
+				<ul class="kol-breadcrumb__list">
 					{this.state._links.length === 0 && (
 						<li>
-							<KolIconTag _label="" _icons="codicon codicon-home" />…
+							<KolIconTag class="kol-breadcrumb_icon" _label="" _icons="codicon codicon-home" />…
 						</li>
 					)}
 					{this.state._links.map(this.renderLink)}

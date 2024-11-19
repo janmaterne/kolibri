@@ -5,8 +5,8 @@
 	.kol-breadcrumb {
 		font-size: rem(16);
 
-		li,
-		ul {
+		&__list,
+		&__list-element {
 			margin: 0;
 			padding: 0;
 			list-style: none;
@@ -16,14 +16,16 @@
 			place-items: center;
 		}
 
-		.kol-icon::part(separator) {
-			font-weight: 900;
-			font-size: 0.7em;
-		}
+		&__icon {
+			&::part(separator) {
+				font-weight: 900;
+				font-size: 0.7em;
+			}
 
-		.kol-icon::part(separator):before {
-			content: '\f054';
-			font-family: 'Font Awesome 6 Free';
+			&::part(separator):before {
+				content: '\f054';
+				font-family: 'Font Awesome 6 Free';
+			}
 		}
 	}
 }
