@@ -1,5 +1,5 @@
 @layer kol-theme-component {
-	.kol-button-group {
+	:host > .kol-button-group-wc {
 		gap: var(--spacing-2xs);
 	}
 }

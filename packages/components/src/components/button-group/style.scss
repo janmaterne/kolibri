@@ -2,8 +2,11 @@
 @import '../style';
 
 @layer kol-component {
-	.kol-button-group {
+	:host {
 		font-size: rem(16);
+	}
+
+	:host > .kol-button-group-wc {
 		display: flex;
 		flex-wrap: wrap;
 	}
