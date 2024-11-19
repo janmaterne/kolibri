@@ -11,10 +11,6 @@
 }
 
 @mixin kol-alert-theme {
-	.msg {
-		border-width: 0;
-	}
-
 	.kol-alert {
 		border-width: var(--border-width);
 		border-style: solid;
@@ -34,7 +30,7 @@
 			gap: 0.5em;
 			place-items: center;
 
-			div {
+			> div {
 				display: grid;
 				gap: rem(4);
 			}
