@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`kol-badge should render with _label="**Te**xt" 1`] = `
-<kol-badge class="kol-badge">
+<kol-badge>
   <template shadowrootmode="open">
-    <span style="background-color: #000; color: #959595;">
+    <span class="kol-badge" style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
         <span>
           <span class="md span-label">
@@ -21,9 +21,9 @@ exports[`kol-badge should render with _label="**Te**xt" 1`] = `
 `;
 
 exports[`kol-badge should render with _label="Text" _color="#000000" 1`] = `
-<kol-badge class="kol-badge">
+<kol-badge>
   <template shadowrootmode="open">
-    <span style="background-color: #000; color: #959595;">
+    <span class="kol-badge" style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
         <span>
           <span class="md span-label">
@@ -38,9 +38,9 @@ exports[`kol-badge should render with _label="Text" _color="#000000" 1`] = `
 `;
 
 exports[`kol-badge should render with _label="Text" _icons="codicon codicon-home" _color="#000000" 1`] = `
-<kol-badge class="kol-badge">
+<kol-badge>
   <template shadowrootmode="open">
-    <span style="background-color: #000; color: #959595;">
+    <span class="kol-badge" style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
         <span>
           <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
@@ -56,9 +56,9 @@ exports[`kol-badge should render with _label="Text" _icons="codicon codicon-home
 `;
 
 exports[`kol-badge should render with _label="Text" _icons="codicon codicon-home" 1`] = `
-<kol-badge class="kol-badge">
+<kol-badge>
   <template shadowrootmode="open">
-    <span style="background-color: #000; color: #959595;">
+    <span class="kol-badge" style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
         <span>
           <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
@@ -74,9 +74,9 @@ exports[`kol-badge should render with _label="Text" _icons="codicon codicon-home
 `;
 
 exports[`kol-badge should render with _label="Text" 1`] = `
-<kol-badge class="kol-badge">
+<kol-badge>
   <template shadowrootmode="open">
-    <span style="background-color: #000; color: #959595;">
+    <span class="kol-badge" style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
         <span>
           <span class="md span-label">
