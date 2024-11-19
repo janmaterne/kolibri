@@ -7,14 +7,22 @@
 		display: inline-flex;
 		font-style: normal;
 
-		&__smart-button {
+		&--has-smart-button {
 			align-items: center;
+		}
 
+		&__smart-button {
 			.button {
 				color: inherit;
 				border-top-right-radius: var(--border-radius);
 				border-bottom-right-radius: var(--border-radius);
 				padding: rem(3.2);
+
+				.kol-span-wc {
+					align-items: center;
+					font-style: normal;
+					padding: rem(4) rem(12);
+				}
 			}
 			&:hover {
 				.button {
@@ -30,7 +38,7 @@
 			font-style: normal;
 			gap: rem(8);
 
-			span {
+			> span {
 				display: flex;
 				gap: rem(4);
 			}

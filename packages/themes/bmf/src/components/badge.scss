@@ -11,7 +11,7 @@
 			color: inherit;
 		}
 
-		.kol-badge_label {
+		&__label {
 			padding: rem(4) rem(12);
 			align-items: center;
 			font-style: normal;
@@ -26,10 +26,10 @@
 
 		&--has-smart-button {
 			align-items: center;
+		}
 
-			.kol-badge_label {
-				padding: rem(4) rem(8) rem(4) rem(12);
-			}
+		&__label {
+			padding: rem(4) rem(8) rem(4) rem(12);
 		}
 
 		&__smart-button {
