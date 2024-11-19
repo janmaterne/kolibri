@@ -11,11 +11,8 @@
 			color: inherit;
 		}
 
-		.kol-span-wc {
+		.kol-badge_label {
 			padding: rem(4) rem(12);
-		}
-
-		> .kol-span-wc {
 			align-items: center;
 			font-style: normal;
 			gap: rem(8);
@@ -27,15 +24,15 @@
 			}
 		}
 
-		&.smart-button {
+		&--has-smart-button {
 			align-items: center;
 
-			.kol-span-wc {
+			.kol-badge_label {
 				padding: rem(4) rem(8) rem(4) rem(12);
 			}
 		}
 
-		.kol-button-wc {
+		&__smart-button {
 			height: rem(32);
 			width: rem(32);
 			position: relative;
@@ -45,7 +42,7 @@
 				color: var(--color-white);
 			}
 
-			> button {
+			> .button {
 				color: inherit;
 				font-size: rem(16);
 				position: absolute;

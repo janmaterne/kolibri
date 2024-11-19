@@ -25,6 +25,7 @@ export class KolBadge implements BadgeAPI {
 	private renderSmartButton(props: ButtonProps): JSX.Element {
 		return (
 			<KolButtonWcTag
+				class="kol-badge__smart-button"
 				_ariaControls={this.id}
 				_customClass={props._customClass}
 				_disabled={props._disabled}
@@ -45,14 +46,14 @@ export class KolBadge implements BadgeAPI {
 		return (
 			<span
 				class={clsx('kol-badge', {
-					'smart-button': typeof this.state._smartButton === 'object' && this.state._smartButton !== null,
+					'kol-badge--has-smart-button': typeof this.state._smartButton === 'object' && this.state._smartButton !== null,
 				})}
 				style={{
 					backgroundColor: this.bgColorStr,
 					color: this.colorStr,
 				}}
 			>
-				<KolSpanFc id={hasSmartButton ? this.id : undefined} allowMarkdown icons={this.state._icons} label={this._label} />
+				<KolSpanFc class="kol-badge__label" id={hasSmartButton ? this.id : undefined} allowMarkdown icons={this.state._icons} label={this._label} />
 				{hasSmartButton && this.renderSmartButton(this.state._smartButton as ButtonProps)}
 			</span>
 		);
