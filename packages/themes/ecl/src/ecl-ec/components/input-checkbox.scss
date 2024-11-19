@@ -135,7 +135,7 @@
 	}
 
 	.kol-alert {
-		@include kol-alert(--color-red);
+		@include kol-alert-wc(--color-red);
 	}
 
 	.hint {
