@@ -12,3 +12,12 @@ For more information, see the [KoliBri Maintenance and Support Strategy](https:/
 
 - Visually, the tooltip has been replaced by a simple label shown in parentheses after the abbreviation.
 - The property `_tooltipAlign` has been removed.
+
+## Themes
+
+### BMF-Theme (Bundesministerium der Finanzen)
+
+- The theme has been removed.
+- It will be maintained as a separate repository.
+- The maintenance is done by the [DESYBRI](https://www.itzbund.de/desybri)-Team.
+- We moved our last code revision to the following repository: https://github.com/public-ui/kolibri-theme-bmf-starter
