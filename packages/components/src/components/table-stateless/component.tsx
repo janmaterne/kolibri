@@ -398,6 +398,14 @@ export class KolTableStateless implements TableStatelessAPI {
 				dataField[0].push(emptyCell);
 			}
 		}
+
+		dataField.forEach((row, rowIndex) => {
+			if (row.length > maxCols) {
+				row = row.slice(0, maxCols);
+				dataField[rowIndex] = row;
+			}
+		});
+
 		return dataField;
 	}
 
