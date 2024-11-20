@@ -6,21 +6,19 @@
 	@layer kol-component {
 		.kol-alert {
 			display: grid;
-		}
 
-		.kol-alert {
-			&__heading {
+			&__container {
 				place-items: center;
 				display: flex;
-				div {
-					flex-grow: 1;
-				}
 			}
-		}
+			&__container-content {
+				flex-grow: 1;
+			}
 
-		.close {
-			/* Visible with forced colors */
-			outline: transparent solid rem(1);
+			&__close-button {
+				/* Visible with forced colors */
+				outline: transparent solid rem(1);
+			}
 		}
 	}
 }

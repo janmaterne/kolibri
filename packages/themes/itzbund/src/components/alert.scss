@@ -2,51 +2,51 @@
 @import '../mixins/rem';
 
 @layer kol-theme-component {
-	.default {
-		border-color: var(--color-anthrazit);
-	}
-
 	.kol-alert {
-		&__heading {
+		&__container {
 			display: flex;
 			place-items: center;
 			gap: rem(8);
 		}
-	}
 
-	.default .kol-alert__heading-icon {
-		background-color: var(--color-anthrazit);
-	}
+		&--default {
+			border-color: var(--color-anthrazit);
 
-	.error {
-		border-color: var(--color-rotton);
-	}
+			.kol-alert__heading-icon {
+				background-color: var(--color-anthrazit);
+			}
+		}
 
-	.error .kol-alert__heading-icon {
-		background-color: var(--color-rotton);
-	}
+		&--error {
+			border-color: var(--color-rotton);
 
-	.info {
-		border-color: var(--color-petrol);
-	}
+			.kol-alert__heading-icon {
+				background-color: var(--color-rotton);
+			}
+		}
 
-	.info .kol-alert__heading-icon {
-		background-color: var(--color-petrol);
-	}
+		&--info {
+			border-color: var(--color-petrol);
 
-	.success {
-		border-color: var(--color-gras);
-	}
+			.kol-alert__heading-icon {
+				background-color: var(--color-petrol);
+			}
+		}
 
-	.success .kol-alert__heading-icon {
-		background-color: var(--color-gras);
-	}
+		&--success {
+			border-color: var(--color-gras);
 
-	.warning {
-		border-color: var(--color-warn);
-	}
+			.kol-alert__heading-icon {
+				background-color: var(--color-gras);
+			}
+		}
 
-	.warning .kol-alert__heading-icon {
-		background-color: var(--color-warn);
+		&--warning {
+			border-color: var(--color-warn);
+
+			.kol-alert__heading-icon {
+				background-color: var(--color-warn);
+			}
+		}
 	}
 }

@@ -5,11 +5,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h1 class="headline headline-h1 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h1 class="headline headline-h1 kol-alert__heading kol-heading-wc">
               Überschrift
             </h1>
             <div class="kol-alert__content">
@@ -28,11 +28,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h1 class="headline headline-h1 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h1 class="headline headline-h1 kol-alert__heading kol-heading-wc">
               Überschrift
             </h1>
             <div class="kol-alert__content">
@@ -51,11 +51,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h1 class="headline headline-h1 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h1 class="headline headline-h1 kol-alert__heading kol-heading-wc">
               Überschrift
             </h1>
             <div class="kol-alert__content">
@@ -74,11 +74,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h1 class="headline headline-h1 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h1 class="headline headline-h1 kol-alert__heading kol-heading-wc">
               Überschrift
             </h1>
             <div class="kol-alert__content">
@@ -97,11 +97,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h1 class="headline headline-h1 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h1 class="headline headline-h1 kol-alert__heading kol-heading-wc">
               Überschrift
             </h1>
             <div class="kol-alert__content">
@@ -120,11 +120,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h2 class="headline headline-h2 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h2 class="headline headline-h2 kol-alert__heading kol-heading-wc">
               Überschrift
             </h2>
             <div class="kol-alert__content">
@@ -143,11 +143,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h2 class="headline headline-h2 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h2 class="headline headline-h2 kol-alert__heading kol-heading-wc">
               Überschrift
             </h2>
             <div class="kol-alert__content">
@@ -166,11 +166,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h2 class="headline headline-h2 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h2 class="headline headline-h2 kol-alert__heading kol-heading-wc">
               Überschrift
             </h2>
             <div class="kol-alert__content">
@@ -189,11 +189,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h2 class="headline headline-h2 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h2 class="headline headline-h2 kol-alert__heading kol-heading-wc">
               Überschrift
             </h2>
             <div class="kol-alert__content">
@@ -212,11 +212,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h2 class="headline headline-h2 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h2 class="headline headline-h2 kol-alert__heading kol-heading-wc">
               Überschrift
             </h2>
             <div class="kol-alert__content">
@@ -235,11 +235,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h3 class="headline headline-h3 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h3 class="headline headline-h3 kol-alert__heading kol-heading-wc">
               Überschrift
             </h3>
             <div class="kol-alert__content">
@@ -258,11 +258,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h3 class="headline headline-h3 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h3 class="headline headline-h3 kol-alert__heading kol-heading-wc">
               Überschrift
             </h3>
             <div class="kol-alert__content">
@@ -281,11 +281,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h3 class="headline headline-h3 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h3 class="headline headline-h3 kol-alert__heading kol-heading-wc">
               Überschrift
             </h3>
             <div class="kol-alert__content">
@@ -304,11 +304,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h3 class="headline headline-h3 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h3 class="headline headline-h3 kol-alert__heading kol-heading-wc">
               Überschrift
             </h3>
             <div class="kol-alert__content">
@@ -327,11 +327,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h3 class="headline headline-h3 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h3 class="headline headline-h3 kol-alert__heading kol-heading-wc">
               Überschrift
             </h3>
             <div class="kol-alert__content">
@@ -350,11 +350,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h4 class="headline headline-h4 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h4 class="headline headline-h4 kol-alert__heading kol-heading-wc">
               Überschrift
             </h4>
             <div class="kol-alert__content">
@@ -373,11 +373,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h4 class="headline headline-h4 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h4 class="headline headline-h4 kol-alert__heading kol-heading-wc">
               Überschrift
             </h4>
             <div class="kol-alert__content">
@@ -396,11 +396,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h4 class="headline headline-h4 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h4 class="headline headline-h4 kol-alert__heading kol-heading-wc">
               Überschrift
             </h4>
             <div class="kol-alert__content">
@@ -419,11 +419,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h4 class="headline headline-h4 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h4 class="headline headline-h4 kol-alert__heading kol-heading-wc">
               Überschrift
             </h4>
             <div class="kol-alert__content">
@@ -442,11 +442,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h4 class="headline headline-h4 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h4 class="headline headline-h4 kol-alert__heading kol-heading-wc">
               Überschrift
             </h4>
             <div class="kol-alert__content">
@@ -465,11 +465,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h5 class="headline headline-h5 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h5 class="headline headline-h5 kol-alert__heading kol-heading-wc">
               Überschrift
             </h5>
             <div class="kol-alert__content">
@@ -488,11 +488,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h5 class="headline headline-h5 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h5 class="headline headline-h5 kol-alert__heading kol-heading-wc">
               Überschrift
             </h5>
             <div class="kol-alert__content">
@@ -511,11 +511,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h5 class="headline headline-h5 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h5 class="headline headline-h5 kol-alert__heading kol-heading-wc">
               Überschrift
             </h5>
             <div class="kol-alert__content">
@@ -534,11 +534,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h5 class="headline headline-h5 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h5 class="headline headline-h5 kol-alert__heading kol-heading-wc">
               Überschrift
             </h5>
             <div class="kol-alert__content">
@@ -557,11 +557,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h5 class="headline headline-h5 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h5 class="headline headline-h5 kol-alert__heading kol-heading-wc">
               Überschrift
             </h5>
             <div class="kol-alert__content">
@@ -580,11 +580,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h6 class="headline headline-h6 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h6 class="headline headline-h6 kol-alert__heading kol-heading-wc">
               Überschrift
             </h6>
             <div class="kol-alert__content">
@@ -603,11 +603,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h6 class="headline headline-h6 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h6 class="headline headline-h6 kol-alert__heading kol-heading-wc">
               Überschrift
             </h6>
             <div class="kol-alert__content">
@@ -626,11 +626,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h6 class="headline headline-h6 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h6 class="headline headline-h6 kol-alert__heading kol-heading-wc">
               Überschrift
             </h6>
             <div class="kol-alert__content">
@@ -649,11 +649,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h6 class="headline headline-h6 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h6 class="headline headline-h6 kol-alert__heading kol-heading-wc">
               Überschrift
             </h6>
             <div class="kol-alert__content">
@@ -672,11 +672,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=false _level=
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h6 class="headline headline-h6 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h6 class="headline headline-h6 kol-alert__heading kol-heading-wc">
               Überschrift
             </h6>
             <div class="kol-alert__content">
@@ -695,11 +695,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=1
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h1 class="headline headline-h1 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h1 class="headline headline-h1 kol-alert__heading kol-heading-wc">
               Überschrift
             </h1>
             <div class="kol-alert__content">
@@ -718,11 +718,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=1
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h1 class="headline headline-h1 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h1 class="headline headline-h1 kol-alert__heading kol-heading-wc">
               Überschrift
             </h1>
             <div class="kol-alert__content">
@@ -741,11 +741,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=1
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h1 class="headline headline-h1 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h1 class="headline headline-h1 kol-alert__heading kol-heading-wc">
               Überschrift
             </h1>
             <div class="kol-alert__content">
@@ -764,11 +764,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=1
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h1 class="headline headline-h1 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h1 class="headline headline-h1 kol-alert__heading kol-heading-wc">
               Überschrift
             </h1>
             <div class="kol-alert__content">
@@ -787,11 +787,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=1
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h1 class="headline headline-h1 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h1 class="headline headline-h1 kol-alert__heading kol-heading-wc">
               Überschrift
             </h1>
             <div class="kol-alert__content">
@@ -810,11 +810,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=2
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h2 class="headline headline-h2 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h2 class="headline headline-h2 kol-alert__heading kol-heading-wc">
               Überschrift
             </h2>
             <div class="kol-alert__content">
@@ -833,11 +833,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=2
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h2 class="headline headline-h2 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h2 class="headline headline-h2 kol-alert__heading kol-heading-wc">
               Überschrift
             </h2>
             <div class="kol-alert__content">
@@ -856,11 +856,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=2
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h2 class="headline headline-h2 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h2 class="headline headline-h2 kol-alert__heading kol-heading-wc">
               Überschrift
             </h2>
             <div class="kol-alert__content">
@@ -879,11 +879,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=2
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h2 class="headline headline-h2 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h2 class="headline headline-h2 kol-alert__heading kol-heading-wc">
               Überschrift
             </h2>
             <div class="kol-alert__content">
@@ -902,11 +902,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=2
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h2 class="headline headline-h2 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h2 class="headline headline-h2 kol-alert__heading kol-heading-wc">
               Überschrift
             </h2>
             <div class="kol-alert__content">
@@ -925,11 +925,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=3
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h3 class="headline headline-h3 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h3 class="headline headline-h3 kol-alert__heading kol-heading-wc">
               Überschrift
             </h3>
             <div class="kol-alert__content">
@@ -948,11 +948,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=3
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h3 class="headline headline-h3 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h3 class="headline headline-h3 kol-alert__heading kol-heading-wc">
               Überschrift
             </h3>
             <div class="kol-alert__content">
@@ -971,11 +971,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=3
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h3 class="headline headline-h3 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h3 class="headline headline-h3 kol-alert__heading kol-heading-wc">
               Überschrift
             </h3>
             <div class="kol-alert__content">
@@ -994,11 +994,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=3
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h3 class="headline headline-h3 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h3 class="headline headline-h3 kol-alert__heading kol-heading-wc">
               Überschrift
             </h3>
             <div class="kol-alert__content">
@@ -1017,11 +1017,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=3
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h3 class="headline headline-h3 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h3 class="headline headline-h3 kol-alert__heading kol-heading-wc">
               Überschrift
             </h3>
             <div class="kol-alert__content">
@@ -1040,11 +1040,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=4
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h4 class="headline headline-h4 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h4 class="headline headline-h4 kol-alert__heading kol-heading-wc">
               Überschrift
             </h4>
             <div class="kol-alert__content">
@@ -1063,11 +1063,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=4
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h4 class="headline headline-h4 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h4 class="headline headline-h4 kol-alert__heading kol-heading-wc">
               Überschrift
             </h4>
             <div class="kol-alert__content">
@@ -1086,11 +1086,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=4
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h4 class="headline headline-h4 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h4 class="headline headline-h4 kol-alert__heading kol-heading-wc">
               Überschrift
             </h4>
             <div class="kol-alert__content">
@@ -1109,11 +1109,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=4
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h4 class="headline headline-h4 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h4 class="headline headline-h4 kol-alert__heading kol-heading-wc">
               Überschrift
             </h4>
             <div class="kol-alert__content">
@@ -1132,11 +1132,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=4
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h4 class="headline headline-h4 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h4 class="headline headline-h4 kol-alert__heading kol-heading-wc">
               Überschrift
             </h4>
             <div class="kol-alert__content">
@@ -1155,11 +1155,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=5
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h5 class="headline headline-h5 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h5 class="headline headline-h5 kol-alert__heading kol-heading-wc">
               Überschrift
             </h5>
             <div class="kol-alert__content">
@@ -1178,11 +1178,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=5
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h5 class="headline headline-h5 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h5 class="headline headline-h5 kol-alert__heading kol-heading-wc">
               Überschrift
             </h5>
             <div class="kol-alert__content">
@@ -1201,11 +1201,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=5
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h5 class="headline headline-h5 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h5 class="headline headline-h5 kol-alert__heading kol-heading-wc">
               Überschrift
             </h5>
             <div class="kol-alert__content">
@@ -1224,11 +1224,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=5
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h5 class="headline headline-h5 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h5 class="headline headline-h5 kol-alert__heading kol-heading-wc">
               Überschrift
             </h5>
             <div class="kol-alert__content">
@@ -1247,11 +1247,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=5
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h5 class="headline headline-h5 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h5 class="headline headline-h5 kol-alert__heading kol-heading-wc">
               Überschrift
             </h5>
             <div class="kol-alert__content">
@@ -1270,11 +1270,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=6
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert default kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--default kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-comment" _label="kol-message" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h6 class="headline headline-h6 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h6 class="headline headline-h6 kol-alert__heading kol-heading-wc">
               Überschrift
             </h6>
             <div class="kol-alert__content">
@@ -1293,11 +1293,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=6
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert error kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--error kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-error" _label="kol-error" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h6 class="headline headline-h6 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h6 class="headline headline-h6 kol-alert__heading kol-heading-wc">
               Überschrift
             </h6>
             <div class="kol-alert__content">
@@ -1316,11 +1316,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=6
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert info kol-alert msg" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--info kol-alert--msg" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-info" _label="kol-info" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h6 class="headline headline-h6 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h6 class="headline headline-h6 kol-alert__heading kol-heading-wc">
               Überschrift
             </h6>
             <div class="kol-alert__content">
@@ -1339,11 +1339,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=6
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg success" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--success" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-pass" _label="kol-success" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h6 class="headline headline-h6 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h6 class="headline headline-h6 kol-alert__heading kol-heading-wc">
               Überschrift
             </h6>
             <div class="kol-alert__content">
@@ -1362,11 +1362,11 @@ exports[`kol-alert should render with _label="Überschrift" _alert=true _level=6
   <template shadowrootmode="open">
     <kol-alert-wc>
       <!---->
-      <div class="alert kol-alert msg warning" role="alert">
-        <div class="kol-alert__heading">
+      <div class="kol-alert kol-alert--msg kol-alert--warning" role="alert">
+        <div class="kol-alert__container">
           <kol-icon _icons="codicon codicon-warning" _label="kol-warning" class="kol-alert__heading-icon"></kol-icon>
-          <div class="kol-alert__heading-content">
-            <h6 class="headline headline-h6 kol-heading-wc">
+          <div class="kol-alert__container-content">
+            <h6 class="headline headline-h6 kol-alert__heading kol-heading-wc">
               Überschrift
             </h6>
             <div class="kol-alert__content">

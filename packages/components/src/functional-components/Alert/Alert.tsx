@@ -35,22 +35,26 @@ const KolAlertFc: FC<KolAlertFcProps> = (props, children) => {
 	}
 
 	const rootProps: Partial<JSXBase.HTMLAttributes<HTMLDivElement>> = {
-		class: clsx('kol-alert', 'alert', type, variant, { hasCloser: !!hasCloser }, classNames),
+		class: clsx('kol-alert', `kol-alert--${type}`, `kol-alert--${variant}`, { 'kol-alert--hasCloser': !!hasCloser }, classNames),
 		role: alert ? 'alert' : undefined,
 		...other,
 	};
 
 	return (
 		<div {...rootProps}>
-			<div class="kol-alert__heading">
+			<div class="kol-alert__container">
 				<AlertIcon label={label} type={type} />
-				<div class="kol-alert__heading-content">
-					{label ? <KolHeadingFc level={level}>{label}</KolHeadingFc> : null}
+				<div class="kol-alert__container-content">
+					{label ? (
+						<KolHeadingFc class="kol-alert__heading" level={level}>
+							{label}
+						</KolHeadingFc>
+					) : null}
 					{variant === 'msg' && <div class="kol-alert__content">{children}</div>}
 				</div>
 				{hasCloser && (
 					<KolButtonWcTag
-						class="close"
+						class="kol-alert__close-button close"
 						_ariaDescription={label?.trim() || ''}
 						_hideLabel
 						_icons={{

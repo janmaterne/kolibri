@@ -11,193 +11,192 @@
 		border-color: transparent;
 		background-color: white;
 
-		&__heading {
+		&__container {
 			display: flex;
 			gap: 0.5em;
 			place-items: center;
+		}
 
-			> div {
-				display: grid;
-				gap: 0;
-			}
+		&__container-content {
+			display: grid;
+			gap: 0;
 		}
 
 		&__heading-icon {
 			padding: 0;
 		}
-	}
 
-	.msg {
-		background-color: transparent;
-		align-items: start;
-		border-width: 0;
+		&--msg {
+			background-color: transparent;
+			align-items: start;
+			border-width: 0;
 
-		> .kol-alert__heading {
-			place-items: flex-start;
+			.kol-alert__container {
+				place-items: flex-start;
 
-			> .kol-icon {
-				place-self: baseline;
-			}
+				> .kol-icon {
+					place-self: baseline;
+				}
 
-			> .kol-alert__heading-icon {
-				padding-top: 0;
-				place-items: baseline;
+				.kol-alert__heading-icon {
+					padding-top: 0;
+					place-items: baseline;
 
-				&::part(icon) {
-					line-height: 1.375;
+					&::part(icon) {
+						line-height: 1.375;
+					}
+				}
+
+				> .kol-alert__container-content {
+					display: grid;
+
+					> .kol-alert__heading {
+						line-height: rem(20);
+						padding-top: rem(2);
+					}
+				}
+
+				.kol-alert__close-button.close {
+					place-self: center;
 				}
 			}
 
-			> div {
-				display: grid;
+			&.kol-alert--default {
+				.kol-alert__close-button .icon {
+					color: var(--color-grey);
+				}
 
-				> .kol-heading-wc {
-					line-height: rem(20);
-					padding-top: rem(2);
+				.kol-alert__heading {
+					color: var(--color-grey);
 				}
 			}
 
-			.kol-button-wc.close {
-				place-self: center;
+			&.kol-alert--error {
+				.kol-alert__close-button .icon {
+					color: var(--color-red);
+				}
+
+				.kol-alert__heading {
+					color: var(--color-red);
+				}
+			}
+
+			&.kol-alert--info {
+				.kol-alert__close-button .icon {
+					color: var(--color-midnight);
+				}
+
+				.kol-alert__heading {
+					color: var(--color-midnight);
+				}
+			}
+
+			&.kol-alert--success {
+				.kol-alert__close-button .icon {
+					color: var(--color-green);
+				}
+
+				.kol-alert__heading {
+					color: var(--color-green);
+				}
+			}
+
+			&.kol-alert--warning {
+				.kol-alert__close-button .icon {
+					color: var(--color-orange);
+				}
+
+				.kol-alert__heading {
+					color: var(--color-orange);
+				}
 			}
 		}
 
-		&.default {
-			.close .icon {
-				color: var(--color-grey);
-			}
+		&--default {
+			border-color: var(--color-grey);
 
-			.kol-alert__heading > div > .kol-heading-wc {
+			&.msg .kol-alert__heading-icon {
 				color: var(--color-grey);
 			}
 		}
 
-		&.error {
-			.close .icon {
+		&--error {
+			border-color: var(--color-red);
+
+			&.kol-alert--msg .kol-alert__heading-icon {
 				color: var(--color-red);
 			}
 
-			.kol-alert__heading > div > .kol-heading-wc {
-				color: var(--color-red);
+			.kol-alert__heading-icon::part(icon)::before {
+				content: 'error';
 			}
 		}
 
-		&.info {
-			.close .icon {
+		&--info {
+			border-color: var(--color-midnight);
+
+			&.kol-alert--msg .kol-alert__heading-icon {
 				color: var(--color-midnight);
 			}
 
-			.kol-alert__heading > div > .kol-heading-wc {
-				color: var(--color-midnight);
+			.kol-alert__heading-icon::part(icon)::before {
+				content: 'info';
 			}
 		}
 
-		&.success {
-			.close .icon {
+		&--success {
+			border-color: var(--color-green);
+
+			&.kol-alert--msg .kol-alert__heading-icon {
 				color: var(--color-green);
 			}
 
-			.kol-alert__heading > div > .kol-heading-wc {
-				color: var(--color-green);
+			.kol-alert__heading-icon::part(icon)::before {
+				content: 'check_circle';
 			}
 		}
 
-		&.warning {
-			.close .icon {
+		&--warning {
+			border-color: var(--color-orange);
+
+			&.kol-alert--msg .kol-alert__heading-icon {
 				color: var(--color-orange);
 			}
 
-			.kol-alert__heading > div > .kol-heading-wc {
-				color: var(--color-orange);
+			.kol-alert__heading-icon::part(icon)::before {
+				content: 'warning';
 			}
 		}
-	}
 
-	.default {
-		border-color: var(--color-grey);
+		&--card {
+			border-width: rem(2);
+			border-style: solid;
+			filter: drop-shadow(0 rem(2) rem(4) rgba(8, 35, 48, 0.24));
+			flex-direction: column;
 
-		&.msg .kol-alert__heading-icon {
-			color: var(--color-grey);
-		}
-	}
-
-	.error {
-		border-color: var(--color-red);
-
-		&.msg .kol-alert__heading-icon {
-			color: var(--color-red);
-		}
-
-		.kol-alert__heading-icon::part(icon)::before {
-			content: 'error';
-		}
-	}
-
-	.info {
-		border-color: var(--color-midnight);
-
-		&.msg .kol-alert__heading-icon {
-			color: var(--color-midnight);
-		}
-
-		.kol-alert__heading-icon::part(icon)::before {
-			content: 'info';
-		}
-	}
-
-	.success {
-		border-color: var(--color-green);
-
-		&.msg .kol-alert__heading-icon {
-			color: var(--color-green);
-		}
-
-		.kol-alert__heading-icon::part(icon)::before {
-			content: 'check_circle';
-		}
-	}
-
-	.warning {
-		border-color: var(--color-orange);
-
-		&.msg .kol-alert__heading-icon {
-			color: var(--color-orange);
-		}
-
-		.kol-alert__heading-icon::part(icon)::before {
-			content: 'warning';
-		}
-	}
-
-	.kol-alert__heading-icon {
-		color: white;
-	}
-
-	.card {
-		border-width: rem(2);
-		border-style: solid;
-		filter: drop-shadow(0 rem(2) rem(4) rgba(8, 35, 48, 0.24));
-		flex-direction: column;
-
-		&.hasCloser > .kol-alert__heading {
-			padding-top: 0;
-			padding-bottom: 0;
-			padding-right: 0;
-		}
-
-		> .kol-alert__heading {
-			padding: rem(8) rem(16);
-
-			> div {
-				width: 100%;
-				min-height: rem(20);
-			}
-
-			.heading-icon {
+			.kol-alert__heading-icon {
 				justify-self: right;
+				color: white;
 			}
 
-			.kol-heading-wc {
+			.kol-alert__container {
+				padding: rem(8) rem(16);
+
+				.kol-alert__container-content {
+					width: 100%;
+					min-height: rem(20);
+				}
+			}
+
+			&.kol-alert--hasCloser {
+				.kol-alert__container {
+					padding-top: 0;
+					padding-bottom: 0;
+					padding-right: 0;
+				}
+			}
+
+			.kol-alert__heading {
 				width: 100%;
 				color: white;
 				display: flex;
@@ -212,8 +211,7 @@
 					font-size: rem(16);
 				}
 			}
-
-			.kol-button-wc button {
+			.kol-alert__close-button > .button {
 				&:focus {
 					outline-color: var(--color-white);
 					outline-offset: rem(-3);
@@ -234,125 +232,125 @@
 					background-color: rgba(32, 32, 32, 0.1);
 				}
 			}
-		}
 
-		> .kol-alert__content {
-			color: var(--color-black);
-			padding: rem(16);
-			max-height: rem(152);
-			overflow-y: auto;
-		}
+			.kol-alert__content {
+				color: var(--color-black);
+				padding: rem(16);
+				max-height: rem(152);
+				overflow-y: auto;
+			}
 
-		> div > .kol-alert__content {
-			grid-row: 2;
-			grid-column: 1 / span 2;
-		}
+			.kol-alert__content {
+				grid-row: 2;
+				grid-column: 1 / span 2;
+			}
 
-		&.default,
-		&.error,
-		&.info,
-		&.success,
-		&.warning {
-			.close .icon {
-				color: var(--color-white);
+			&.kol-alert--default,
+			&.kol-alert--error,
+			&.kol-alert--info,
+			&.kol-alert--success,
+			&.kol-alert--warning {
+				.kol-alert__close-button .icon {
+					color: var(--color-white);
+				}
+			}
+
+			&.kol-alert--default {
+				.kol-alert__container,
+				.kol-alert__close-button {
+					background-color: var(--color-grey);
+				}
+			}
+
+			&.kol-alert--error {
+				.kol-alert__container,
+				.kol-alert__close-button {
+					background-color: var(--color-red);
+				}
+			}
+
+			&.kol-alert--info {
+				.kol-alert__container,
+				.kol-alert__close-button {
+					background-color: var(--color-midnight);
+				}
+			}
+
+			&.kol-alert--success {
+				.kol-alert__container,
+				.kol-alert__close-button {
+					background-color: var(--color-green);
+				}
+			}
+
+			&.kol-alert--warning {
+				.kol-alert__container,
+				.kol-alert__close-button {
+					background-color: var(--color-orange);
+				}
 			}
 		}
 
-		&.default {
-			> .kol-alert__heading,
-			.close {
-				background-color: var(--color-grey);
+		&.kol-alert--error,
+		&.kol-alert--info,
+		&.kol-alert--success,
+		&.kol-alert--warning {
+			.kol-alert__heading-icon {
+				font-size: rem(20);
+
+				&::part(icon) {
+					font-family: 'Material Symbols Rounded';
+					font-weight: 900;
+					font-variation-settings: 'FILL' 1;
+					height: 1.25;
+					width: 1.25;
+				}
 			}
 		}
 
-		&.error {
-			> .kol-alert__heading,
-			.close {
-				background-color: var(--color-red);
-			}
-		}
-
-		&.info {
-			> .kol-alert__heading,
-			.close {
-				background-color: var(--color-midnight);
-			}
-		}
-
-		&.success {
-			> .kol-alert__heading,
-			.close {
-				background-color: var(--color-green);
-			}
-		}
-
-		&.warning {
-			> .kol-alert__heading,
-			.close {
-				background-color: var(--color-orange);
-			}
-		}
-	}
-
-	.error,
-	.info,
-	.success,
-	.warning {
-		.kol-alert__heading-icon {
-			font-size: rem(20);
-
-			&::part(icon) {
-				font-family: 'Material Symbols Rounded';
-				font-weight: 900;
-				font-variation-settings: 'FILL' 1;
-				height: 1.25;
-				width: 1.25;
-			}
-		}
-	}
-
-	.close > button {
-		min-width: rem(44);
-		color: var(--color-white);
-		min-height: rem(44);
-		display: grid;
-		gap: 0.25em;
-		line-height: rem(24);
-		font-family: var(--font-family);
-		font-weight: 700;
-		cursor: pointer;
-		border-radius: 1.5em;
-		border-style: solid;
-		border-width: rem(2);
-		font-size: rem(16);
-		align-items: center;
-		padding: rem(8);
-		justify-content: center;
-		font-style: normal;
-		text-align: center;
-		width: inherit;
-		transition-duration: 0.5s;
-		transition-property: background-color, color, border-color;
-		background-color: rgba(0, 0, 0, 0);
-		border-color: rgba(0, 0, 0, 0);
-
-		&:active {
-			box-shadow: none;
-			outline: none;
-		}
-
-		.kol-icon {
-			display: flex;
-			width: 1em;
-			height: 1em;
+		.kol-alert__close-button > .button {
+			min-width: rem(44);
+			color: var(--color-white);
+			min-height: rem(44);
+			display: grid;
+			gap: 0.25em;
+			line-height: rem(24);
+			font-family: var(--font-family);
+			font-weight: 700;
+			cursor: pointer;
+			border-radius: 1.5em;
+			border-style: solid;
+			border-width: rem(2);
 			font-size: rem(16);
+			align-items: center;
+			padding: rem(8);
+			justify-content: center;
+			font-style: normal;
+			text-align: center;
+			width: inherit;
+			transition-duration: 0.5s;
+			transition-property: background-color, color, border-color;
+			background-color: rgba(0, 0, 0, 0);
+			border-color: rgba(0, 0, 0, 0);
 
-			&::part(icon) {
-				font-family: 'Material Symbols Rounded';
-				font-weight: 900;
+			&:active {
+				box-shadow: none;
+				outline: none;
+			}
 
-				&::before {
-					content: 'close';
+			.kol-icon {
+				display: flex;
+				width: 1em;
+				height: 1em;
+				font-size: rem(16);
+
+				&::part(icon) {
+					font-family: 'Material Symbols Rounded';
+					font-weight: 900;
+
+					&::before {
+						content: 'close';
+					}
 				}
 			}
 		}
