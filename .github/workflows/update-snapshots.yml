@@ -59,7 +59,7 @@ jobs:
         run: pnpm -r build
 
       - name: Purge existing snapshots
-        run: rm packages/**/**/snapshots/**/*.png
+        run: (shopt -s globstar; rm packages/**/snapshots/**/*.png)
 
       - name: Display git status (before test-update)
         run: git status
