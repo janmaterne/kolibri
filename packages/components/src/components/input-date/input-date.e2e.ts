@@ -380,6 +380,40 @@ test.describe('kol-input-date', () => {
 		});
 	});
 
+	test.describe('Callbacks', () => {
+		[
+			['click', 'onClick'],
+			['focus', 'onFocus'],
+			['blur', 'onBlur'],
+			['input', 'onInput', '2024-11-19'],
+			['change', 'onChange', '2024-11-19'],
+		].forEach(([eventName, callbackName, testValue]) => {
+			test(`should call ${callbackName} when internal input emits`, async ({ page }) => {
+				await page.setContent('<kol-input-date _label="Input"></kol-input-date>');
+				const kolInputDate = page.locator('kol-input-date');
+				const input = page.locator('input');
+
+				const eventPromise = kolInputDate.evaluate((element: HTMLKolInputDateElement, callbackName) => {
+					return new Promise<void | Date | Iso8601>((resolve) => {
+						element._on = {
+							[callbackName]: (_event: InputEvent, value?: Date | Iso8601) => {
+								resolve(value);
+							},
+						};
+					});
+				}, callbackName);
+				await page.waitForChanges();
+
+				if (testValue) {
+					await input.fill(testValue);
+				}
+				await input.dispatchEvent(eventName);
+
+				await expect(eventPromise).resolves.toBe(testValue);
+			});
+		});
+	});
+
 	test.describe('DOM events', () => {
 		['click', 'focus', 'blur', 'input', 'change'].forEach((event) => {
 			test(`should emit ${event} when internal input emits ${event}`, async ({ page }) => {

@@ -31,6 +31,40 @@ test.describe('kol-input-text', () => {
 		expect(valueDomProperty).toBe(NEW_INPUT);
 	});
 
+	test.describe('Callbacks', () => {
+		[
+			['click', 'onClick'],
+			['focus', 'onFocus'],
+			['blur', 'onBlur'],
+			['input', 'onInput', 'Test Input'],
+			['change', 'onChange', 'Test Input'],
+		].forEach(([eventName, callbackName, testValue]) => {
+			test(`should call ${callbackName} when internal input emits`, async ({ page }) => {
+				await page.setContent('<kol-input-text _label="Input"></kol-input-text>');
+				const kolInputText = page.locator('kol-input-text');
+				const input = page.locator('input');
+
+				const eventPromise = kolInputText.evaluate((element: HTMLKolInputTextElement, callbackName) => {
+					return new Promise<void | string>((resolve) => {
+						element._on = {
+							[callbackName]: (_event: InputEvent, value?: string) => {
+								resolve(value);
+							},
+						};
+					});
+				}, callbackName);
+				await page.waitForChanges();
+
+				if (testValue) {
+					await input.fill(testValue);
+				}
+				await input.dispatchEvent(eventName);
+
+				await expect(eventPromise).resolves.toBe(testValue);
+			});
+		});
+	});
+
 	test.describe('DOM events', () => {
 		['click', 'focus', 'blur', 'input', 'change'].forEach((event) => {
 			test(`should emit ${event} when internal input emits ${event}`, async ({ page }) => {
