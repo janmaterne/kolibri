@@ -112,7 +112,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 		const badgeText = this.state._accessKey || this.state._shortKey;
 
 		return (
-			<Host class="kol-button">
+			<Host>
 				<button
 					ref={this.catchRef}
 					accessKey={this.state._accessKey || undefined}
@@ -121,7 +121,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					aria-expanded={mapBoolean2String(this.state._ariaExpanded)}
 					aria-label={this.state._hideLabel && typeof this.state._label === 'string' ? this.state._label : undefined}
 					aria-selected={mapStringOrBoolean2String(this.state._ariaSelected)}
-					class={clsx('kol-button-button', {
+					class={clsx('kol-button__element', {
 						'kol-button--disabled': this.state._disabled === true,
 						[`kol-button--${this.state._variant as string}`]: this.state._variant !== 'custom',
 						'kol-button--hide-label': this.state._hideLabel === true,
@@ -138,7 +138,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					type={this.state._type}
 				>
 					<KolSpanFc
-						class="kol-button-text button-inner"
+						class="kol-button__text button-inner"
 						badgeText={badgeText}
 						icons={this.state._icons}
 						hideLabel={this.state._hideLabel}
@@ -154,13 +154,13 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					 */
 					aria-hidden="true"
 					hidden={hasExpertSlot || !this.state._hideLabel}
-					class="kol-button-tooltip"
+					class="kol-button__tooltip"
 					_badgeText={badgeText}
 					_align={this.state._tooltipAlign}
 					_label={typeof this.state._label === 'string' ? this.state._label : ''}
 				></KolTooltipWcTag>
 				{hasAriaDescription && (
-					<span class="kol-button--visually-hidden" id={this.internalDescriptionById}>
+					<span class="visually-hidden" id={this.internalDescriptionById}>
 						{this.state._ariaDescription}
 					</span>
 				)}
