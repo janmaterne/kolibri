@@ -53,6 +53,7 @@ import { AssociatedInputController } from '../input-adapter-leanup/associated.co
 import { KolTooltipWcTag } from '../../core/component-names';
 import { validateAccessAndShortKey } from '../../schema/validators/access-and-short-key';
 import { KolSpanFc } from '../../functional-components';
+import clsx from 'clsx';
 
 /**
  * @internal
@@ -120,14 +121,13 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					aria-expanded={mapBoolean2String(this.state._ariaExpanded)}
 					aria-label={this.state._hideLabel && typeof this.state._label === 'string' ? this.state._label : undefined}
 					aria-selected={mapStringOrBoolean2String(this.state._ariaSelected)}
-					class={{
-						button: true,
-						disabled: this.state._disabled === true,
-						[this.state._variant as string]: this.state._variant !== 'custom',
+					class={clsx('kol-button-button', {
+						'kol-button--disabled': this.state._disabled === true,
+						[`kol-button--${this.state._variant as string}`]: this.state._variant !== 'custom',
+						'kol-button--hide-label': this.state._hideLabel === true,
 						[this.state._customClass as string]:
 							this.state._variant === 'custom' && typeof this.state._customClass === 'string' && this.state._customClass.length > 0,
-						'hide-label': this.state._hideLabel === true,
-					}}
+					})}
 					disabled={this.state._disabled}
 					id={this.state._id}
 					name={this.state._name}
@@ -138,7 +138,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					type={this.state._type}
 				>
 					<KolSpanFc
-						class="button-inner"
+						class="kol-button-text button-inner"
 						badgeText={badgeText}
 						icons={this.state._icons}
 						hideLabel={this.state._hideLabel}
@@ -154,12 +154,13 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					 */
 					aria-hidden="true"
 					hidden={hasExpertSlot || !this.state._hideLabel}
+					class="kol-button-tooltip"
 					_badgeText={badgeText}
 					_align={this.state._tooltipAlign}
 					_label={typeof this.state._label === 'string' ? this.state._label : ''}
 				></KolTooltipWcTag>
 				{hasAriaDescription && (
-					<span class="visually-hidden" id={this.internalDescriptionById}>
+					<span class="kol-button--visually-hidden" id={this.internalDescriptionById}>
 						{this.state._ariaDescription}
 					</span>
 				)}
