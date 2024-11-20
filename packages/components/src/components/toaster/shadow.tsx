@@ -3,10 +3,10 @@ import { Component, h, Host, Method, State } from '@stencil/core';
 
 import { translate } from '../../i18n';
 import { nonce } from '../../utils/dev.utils';
-import { InternalToast } from './InternalToast';
 
 import type { Toast, ToasterAPI, ToasterStates, ToastRenderFunction, ToastState } from '../../schema';
 import { KolButtonTag } from '../../core/component-names';
+import { KolToastItemFc } from '../../functional-components';
 
 const TRANSITION_TIMEOUT = 300;
 
@@ -127,11 +127,12 @@ export class KolToastContainer implements ToasterAPI {
 					></KolButtonTag>
 				)}
 				{this.state._toastStates.map((toastState) => (
-					<InternalToast
+					<KolToastItemFc
 						key={toastState.id}
 						onClose={() => this.handleClose(toastState)}
-						onRef={(element) => this.handleToastRef(toastState, element)}
-						toastState={toastState}
+						ref={(element?: HTMLDivElement) => this.handleToastRef(toastState, element)}
+						toast={toastState.toast}
+						status={toastState.status}
 					/>
 				))}
 			</Host>
