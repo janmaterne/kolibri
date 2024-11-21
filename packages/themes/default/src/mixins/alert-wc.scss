@@ -32,29 +32,30 @@
 			gap: rem(4);
 		}
 
-		&__close-button.close {
+		&__close-button {
 			place-self: center;
 		}
 
-		&.kol-alert--default {
+		&--default {
 			border-color: var(--color-subtle);
 		}
 
-		&.kol-alert--error {
+		&--error {
 			border-color: var(--color-danger);
 		}
 
-		&.kol-alert--info {
+		&--info {
 			border-color: var(--color-primary);
 		}
 
-		&.kol-alert--success {
+		&--success {
 			border-color: var(--color-success);
 		}
 
-		&.kol-alert--warning {
+		&--warning {
 			border-color: var(--color-warning);
 		}
+
 		&--msg {
 			align-items: start;
 			border-width: 0;
@@ -141,7 +142,7 @@
 			}
 		}
 
-		.kol-alert__heading-icon {
+		&__heading-icon {
 			padding: 0;
 			color: var(--color-light);
 		}
@@ -245,7 +246,7 @@
 			}
 		}
 
-		.kol-alert__close-button {
+		&__close-button {
 			> .button {
 				border-radius: 50%;
 				/* visible on focus */

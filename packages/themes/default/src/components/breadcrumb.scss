@@ -4,26 +4,19 @@
 	.kol-breadcrumb {
 		font-family: var(--font-family);
 
-		&__list-element {
-			&:has(:is(.kol-breadcrumb__icon + .kol-breadcrumb__link, .kol-breadcrumb__icon + .kol-breadcrumb__list-element-span)) {
-				.kol-breadcrumb__icon {
-					font-size: rem(12);
-					color: var(--color-subtle);
-				}
-			}
-
-			&:last-child {
-				.kol-breadcrumb__list-element-span {
-					color: var(--color-subtle);
-				}
-			}
+		&__list-element-span {
+			color: var(--color-subtle);
 		}
 
 		&__link {
-			font-family: var(--font-family);
 			&::part(icon) {
 				font-size: rem(20);
 			}
+		}
+
+		&__icon {
+			font-size: rem(12);
+			color: var(--color-subtle);
 		}
 	}
 }
