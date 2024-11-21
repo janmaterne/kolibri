@@ -251,32 +251,11 @@ export const HandoutBasic: FC = () => {
 				<KolCard className="col-span-6 sm:col-span-6 md:col-span-3 xl:col-span-2" _label="Abbreviation and Progress" _level={2}>
 					<div slot="" className="grid gap-2 p-2">
 						<p>
-							I am a{' '}
-							<KolAbbr _label="Detailed description" _tooltipAlign="top">
-								ABB
-							</KolAbbr>{' '}
-							with tooltip at the top
+							I am <KolAbbr _label="as an example">e.g.</KolAbbr> an abbreviation.
 						</p>
+
 						<p>
-							I am a{' '}
-							<KolAbbr _label="Detailed description" _tooltipAlign="right">
-								ABB
-							</KolAbbr>{' '}
-							with tooltip on the right
-						</p>
-						<p>
-							I am a{' '}
-							<KolAbbr _label="Detailed description" _tooltipAlign="bottom">
-								ABB
-							</KolAbbr>{' '}
-							with tooltip at the bottom
-						</p>
-						<p>
-							I am a{' '}
-							<KolAbbr _label="Detailed description" _tooltipAlign="left">
-								ABB
-							</KolAbbr>{' '}
-							with tooltip on the left
+							I am <KolAbbr>e.g.</KolAbbr> an abbreviation without label.
 						</p>
 						<div className="grid grid-cols-2 items-center">
 							<KolProgress _variant="bar" _max={100} _value={33} _label="Progress" />
