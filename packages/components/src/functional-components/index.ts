@@ -5,3 +5,4 @@ export { default as KolHeadingFc } from './Heading';
 export { default as KolIconFc } from './Icon';
 export { default as KolSpanFc } from './Span';
 export { default as InternalUnderlinedBadgeText } from './InternalUnderlinedBadgeText';
+export { default as KolToastItemFc } from './ToastItem';

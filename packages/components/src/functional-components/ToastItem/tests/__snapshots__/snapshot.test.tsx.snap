@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToastItemFc should render with basic props and status 1`] = `
+<div class="settled toast">
+  <div class="alert card hasCloser info kol-alert-wc" role="alert">
+    <div class="heading">
+      <kol-icon _icons="codicon codicon-info" _label="kol-info" class="heading-icon"></kol-icon>
+      <div class="heading-content">
+        <strong class="headline headline-strong kol-heading-wc">
+          Test Toast
+        </strong>
+      </div>
+      <kol-button-wc _ariadescription="Test Toast" _hidelabel="" _label="kol-close-alert" _tooltipalign="left" class="close"></kol-button-wc>
+    </div>
+    <div class="content">
+      <div>
+        Test Description
+      </div>
+    </div>
+  </div>
+</div>
+`;
