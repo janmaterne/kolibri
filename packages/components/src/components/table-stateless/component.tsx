@@ -301,7 +301,13 @@ export class KolTableStateless implements TableStatelessAPI {
 			rowCount[index] = 0;
 			rowSpans[index] = [];
 		});
-		if (Array.isArray(headers.vertical) && headers.vertical.length > 0 && Array.isArray(headers.horizontal) && headers.horizontal[0][0]?.label !== '') {
+		if (
+			Array.isArray(headers.vertical) &&
+			headers.vertical.length > 0 &&
+			Array.isArray(headers.horizontal) &&
+			headers.horizontal.length > 0 &&
+			headers.horizontal[0][0]?.label !== ''
+		) {
 			headers.horizontal[0].unshift({
 				label: '',
 				asTd: true,
