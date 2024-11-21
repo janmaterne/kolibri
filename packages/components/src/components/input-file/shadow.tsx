@@ -1,3 +1,7 @@
+import type { JSX } from '@stencil/core';
+import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import clsx from 'clsx';
+
 import type {
 	ButtonProps,
 	FocusableElement,
@@ -16,12 +20,12 @@ import type {
 	TooltipAlignPropType,
 } from '../../schema';
 import { buildBadgeTextString, showExpertSlot } from '../../schema';
-import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../../functional-components';
+import { InternalUnderlinedBadgeText, KolInputContainerFc } from '../../functional-components';
+import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
 import { InputFileController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -65,7 +69,51 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 		this.inputRef?.focus();
 	}
 
+	private getFormFieldProps(): FormFieldStateWrapperProps {
+		return {
+			state: this.state,
+			class: clsx('kol-input-file', 'file', {
+				// 'has-value': this.state._hasValue,
+			}),
+			tooltipAlign: this._tooltipAlign,
+			inputHasFocus: this.inputHasFocus,
+			onClick: () => this.inputRef?.focus(),
+		};
+	}
+
+	private getInputProps(): InputStateWrapperProps {
+		return {
+			ref: this.catchRef,
+			state: this.state,
+			type: 'file',
+			...this.controller.onFacade,
+			onChange: this.onChange,
+			onInput: this.onInput,
+			// onKeyDown: this.onKeyDown,
+			onFocus: (event: Event) => {
+				this.controller.onFacade.onFocus(event);
+				this.inputHasFocus = true;
+			},
+			onBlur: (event: Event) => {
+				this.controller.onFacade.onBlur(event);
+				this.inputHasFocus = false;
+			},
+		};
+	}
+
 	public render(): JSX.Element {
+		return (
+			<Host>
+				<KolFormFieldFc {...this.getFormFieldProps()}>
+					<KolInputContainerFc>
+						<KolInputFc {...this.getInputProps()} />
+					</KolInputContainerFc>
+				</KolFormFieldFc>
+			</Host>
+		);
+	}
+
+	public render2(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
 		const hasExpertSlot = showExpertSlot(this.state._label);
 

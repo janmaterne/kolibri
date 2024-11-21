@@ -1,5 +1,7 @@
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import clsx from 'clsx';
+
 import type {
 	ButtonProps,
 	FocusableElement,
@@ -27,7 +29,9 @@ import { buildBadgeTextString, deprecatedHint, showExpertSlot } from '../../sche
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../../functional-components';
+import { InternalUnderlinedBadgeText, KolInputContainerFc } from '../../functional-components';
+import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
 import { InputDateController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -123,7 +127,50 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 		}
 	};
 
+	private getFormFieldProps(): FormFieldStateWrapperProps {
+		return {
+			state: this.state,
+			class: clsx('kol-input-date', this.state._type as string, {
+				'has-value': this.state._hasValue,
+			}),
+			tooltipAlign: this._tooltipAlign,
+			inputHasFocus: this.inputHasFocus,
+			onClick: () => this.inputRef?.focus(),
+		};
+	}
+
+	private getInputProps(): InputStateWrapperProps {
+		return {
+			ref: this.catchRef,
+			state: this.state,
+			...this.controller.onFacade,
+			onChange: this.onChange,
+			onInput: this.onInput,
+			onKeyDown: this.onKeyDown,
+			onFocus: (event: Event) => {
+				this.controller.onFacade.onFocus(event);
+				this.inputHasFocus = true;
+			},
+			onBlur: (event: Event) => {
+				this.controller.onFacade.onBlur(event);
+				this.inputHasFocus = false;
+			},
+		};
+	}
+
 	public render(): JSX.Element {
+		return (
+			<Host>
+				<KolFormFieldFc {...this.getFormFieldProps()}>
+					<KolInputContainerFc>
+						<KolInputFc {...this.getInputProps()} />
+					</KolInputContainerFc>
+				</KolFormFieldFc>
+			</Host>
+		);
+	}
+
+	public render2(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
 		const hasSuggestions = Array.isArray(this.state._suggestions) && this.state._suggestions.length > 0;
 		const hasExpertSlot = showExpertSlot(this.state._label);

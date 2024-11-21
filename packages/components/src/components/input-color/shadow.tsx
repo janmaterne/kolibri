@@ -23,7 +23,9 @@ import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } fro
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../../functional-components';
+import { InternalUnderlinedBadgeText, KolInputContainerFc } from '../../functional-components';
+import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
 import { InputColorController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -67,7 +69,47 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 		this.inputRef?.focus();
 	}
 
+	private getFormFieldProps(): FormFieldStateWrapperProps {
+		return {
+			state: this.state,
+			class: 'kol-input-color color',
+			tooltipAlign: this._tooltipAlign,
+			inputHasFocus: this.inputHasFocus,
+			onClick: () => this.inputRef?.focus(),
+		};
+	}
+
+	private getInputProps(): InputStateWrapperProps {
+		return {
+			ref: this.catchRef,
+			type: 'color',
+			slot: 'input',
+			state: this.state,
+			...this.controller.onFacade,
+			onFocus: (event: Event) => {
+				this.controller.onFacade.onFocus(event);
+				this.inputHasFocus = true;
+			},
+			onBlur: (event: Event) => {
+				this.controller.onFacade.onBlur(event);
+				this.inputHasFocus = false;
+			},
+		};
+	}
+
 	public render(): JSX.Element {
+		return (
+			<Host>
+				<KolFormFieldFc {...this.getFormFieldProps()}>
+					<KolInputContainerFc>
+						<KolInputFc {...this.getInputProps()} />
+					</KolInputContainerFc>
+				</KolFormFieldFc>
+			</Host>
+		);
+	}
+
+	public render2(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
 		const hasSuggestions = Array.isArray(this.state._suggestions) && this.state._suggestions.length > 0;
 		const hasExpertSlot = showExpertSlot(this.state._label);
