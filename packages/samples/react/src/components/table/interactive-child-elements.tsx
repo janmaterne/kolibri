@@ -49,7 +49,6 @@ export const InteractiveChildElements: FC = () => (
 				_headerCells={{
 					horizontal: [
 						[
-							{ label: '', asTd: true, width: '20ex' },
 							getButtonHeaderCell('primary'),
 							getButtonHeaderCell('secondary'),
 							getButtonHeaderCell('normal'),

@@ -300,16 +300,15 @@ export class KolTableStateless implements TableStatelessAPI {
 		headers.vertical.forEach((_row, index) => {
 			rowCount[index] = 0;
 			rowSpans[index] = [];
-			Array.isArray(headers.horizontal) &&
-				headers.horizontal.forEach((row) => {
-					row.unshift({
-						label: '',
-						asTd: true,
-						colSpan: 1,
-						rowSpan: 1,
-					});
-				});
 		});
+		if (Array.isArray(headers.vertical) && headers.vertical.length > 0 && Array.isArray(headers.horizontal) && headers.horizontal[0][0]?.label !== '') {
+			headers.horizontal[0].unshift({
+				label: '',
+				asTd: true,
+				colSpan: 1,
+				rowSpan: 1,
+			});
+		}
 
 		for (let i = startRow; i < maxRows; i++) {
 			const dataRow: KoliBriTableHeaderCellWithLogic[] = [];
