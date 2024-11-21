@@ -301,8 +301,8 @@ export class KolTableStateless implements TableStatelessAPI {
 			rowCount[index] = 0;
 			rowSpans[index] = [];
 			Array.isArray(headers.horizontal) &&
-				headers.horizontal.forEach((verticalRow) => {
-					verticalRow.unshift({
+				headers.horizontal.forEach((row) => {
+					row.unshift({
 						label: '',
 						asTd: true,
 						colSpan: 1,
@@ -381,7 +381,6 @@ export class KolTableStateless implements TableStatelessAPI {
 			}
 			dataField.push(dataRow);
 		}
-
 		if (data.length === 0) {
 			let colspan = 0;
 			let rowspan = 0;
@@ -409,7 +408,6 @@ export class KolTableStateless implements TableStatelessAPI {
 				dataField[0].push(emptyCell);
 			}
 		}
-
 		return dataField;
 	}
 
