@@ -3,14 +3,39 @@
 
 @mixin kol-button {
 	.kol-button {
-		:is(.kol-button__element):focus {
-			outline: none;
-			.kol-button__text {
-				@include focus-outline;
-			}
-		}
+		--text-background-color: unset;
+		--text-border-color: unset;
+		--text-color: unset;
 
-		:is(.kol-button__element) {
+		--text-hover-background-color: unset;
+		--text-hover-border-color: unset;
+		--text-hover-color: unset;
+
+		&__element {
+			&:disabled:hover {
+				.kol-button__text {
+					background-color: var(--text-background-color);
+					border-color: var(--text-border-color);
+					color: var(--text-color);
+					box-shadow: none;
+				}
+			}
+
+			&:focus {
+				outline: none;
+				.kol-button__text {
+					@include focus-outline;
+				}
+			}
+
+			.loading {
+				.kol-button__text {
+					.kol-icon {
+						animation: spin 5s infinite linear;
+					}
+				}
+			}
+
 			&.kol-button--hide-label {
 				.kol-button__text {
 					padding: rem(12.8);
@@ -22,64 +47,56 @@
 			}
 		}
 
-		:is(.kol-button__element):hover,
-		:is(.kol-button__element):active {
-			.kol-button__text {
+		&__text {
+			background-color: var(--text-background-color);
+			border-color: var(--text-border-color);
+			color: var(--text-color);
+
+			&:hover,
+			&:active {
+				box-shadow: 0 rem(2) rem(8) rem(2) rgba(8, 35, 48, 0.24);
+				background-color: var(--text-hover-background-color);
+				border-color: var(--text-hover-border-color);
+				color: var(--text-hover-color);
+			}
+
+			&:active {
+				box-shadow: none;
+				outline: none;
+			}
+
+			&:disabled:hover {
+				background-color: var(--text-background-color);
+				border-color: var(--text-border-color);
+				color: var(--text-color);
 				box-shadow: none;
 			}
 		}
 
-		:is(.kol-button__element).loading {
-			.kol-button__text {
-				.kol-icon {
-					animation: spin 5s infinite linear;
-				}
-			}
-		}
 		&--primary {
-			&:is(.kol-button__element) {
-				.kol-button__text,
-				&:disabled:hover > .kol-button__text {
-					background-color: var(--color-primary);
-					border-color: var(--color-primary);
-					color: var(--color-light);
-				}
-			}
+			--text-background-color: var(--color-primary);
+			--text-border-color: var(--color-primary);
+			--text-color: var(--color-light);
 		}
 
 		&--secondary,
 		&--normal {
-			&:is(.kol-button__element) {
-				.kol-button__text,
-				&:disabled:hover > .kol-button__text {
-					background-color: var(--color-light);
-					border-color: var(--color-primary);
-					color: var(--color-primary);
-				}
-			}
+			--text-background-color: var(--color-light);
+			--text-border-color: var(--color-primary);
+			--text-color: var(--color-primary);
 		}
 
 		&--danger {
-			&:is(.kol-button__element) {
-				.kol-button__text,
-				&:disabled:hover > .kol-button__text {
-					background-color: var(--color-danger);
-					border-color: var(--color-danger);
-					color: var(--color-light);
-				}
-			}
+			--text-background-color: var(--color-danger);
+			--text-border-color: var(--color-danger);
+			--text-color: var(--color-light);
 		}
 
 		&--ghost {
-			&:is(.kol-button__element) {
-				.kol-button__text,
-				&:disabled:hover > .kol-button__text {
-					border-color: var(--color-light);
-					background-color: var(--color-light);
-					box-shadow: none;
-					color: var(--color-primary);
-				}
-			}
+			--text-background-color: var(--color-light);
+			--text-border-color: var(--color-light);
+			--text-color: var(--color-primary);
+			--text-box-shadow: none;
 		}
 
 		/*-----------*/
@@ -88,51 +105,26 @@
 		&--normal,
 		&--danger,
 		&--ghost {
-			&:is(.kol-button__element):hover,
-			&:is(.kol-button__element):active {
-				.kol-button__text {
-					background-color: var(--color-primary-variant);
-					border-color: var(--color-primary-variant);
-					box-shadow: 0 rem(2) rem(8) rem(2) rgba(8, 35, 48, 0.24);
-					color: var(--color-light);
-				}
-			}
+			--text-hover-background-color: var(--color-primary-variant);
+			--text-hover-border-color: var(--color-primary-variant);
+			--text-hover-color: var(--color-light);
 		}
 
 		&--danger {
-			&:is(.kol-button__element):hover,
-			&:is(.kol-button__element):active {
-				.kol-button__text {
-					background-color: var(--color-danger);
-					border-color: var(--color-danger);
-				}
-			}
-		}
-		&--primary,
-		&--secondary,
-		&--normal,
-		&--danger,
-		&--ghost {
-			&:is(.kol-button__element):active {
-				.kol-button__text {
-					border-color: var(--color-light);
-					box-shadow: none;
-					outline: none;
-				}
-			}
+			--text-hover-background-color: var(--color-danger);
+			--text-hover-border-color: var(--color-danger);
 		}
 
-		/** small ghost button */
-
+		//!** small ghost button *!*/
 		&--ghost {
-			&:is(.kol-button__element) {
+			&.kol-button__element {
 				.small {
 					.kol-button__text {
 						border: none;
 						background-color: transparent;
 						box-shadow: none;
 
-						span {
+						> span {
 							border-radius: 1.5em;
 							border-style: solid;
 							border-width: var(--border-width);
@@ -143,27 +135,10 @@
 				}
 			}
 		}
-		&--ghost {
-			&:is(.kol-button__element) {
-				.small {
-					&:active > .kol-span-wc > span,
-					&:hover,
-					&.transparent:active,
-					&.transparent:hover {
-						.kol-button__text > span {
-							background-color: var(--color-primary-variant);
-							border-color: var(--color-primary-variant);
-							box-shadow: 0 rem(2) rem(8) rem(2) rgba(8, 35, 48, 0.24);
-							color: var(--color-light);
-						}
-					}
-				}
-			}
-		}
 
 		/** :is(a,button) with transparent background */
-		:is(a, button),
-		.ghost :is(a, button).small {
+		.kol-button__element,
+		.ghost .kol-button__element.small {
 			&.transparent {
 				.kol-button__text,
 				.kol-button__text > span {
