@@ -6,7 +6,6 @@
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
-		@include kol-alert-theme;
 	}
 
 	label {
@@ -165,4 +164,6 @@
 	.radio-input-wrapper label {
 		padding-left: 0;
 	}
+
+	@include kol-alert-theme;
 }

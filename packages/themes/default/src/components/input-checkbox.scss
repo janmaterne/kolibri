@@ -7,7 +7,6 @@
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
-		@include kol-alert-theme;
 	}
 
 	.kol-input {
@@ -293,4 +292,6 @@
 			border-width: rem(1) 0 rem(1) rem(1);
 		}
 	}
+
+	@include kol-alert-theme;
 }
