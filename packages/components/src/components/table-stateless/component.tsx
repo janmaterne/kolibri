@@ -300,6 +300,15 @@ export class KolTableStateless implements TableStatelessAPI {
 		headers.vertical.forEach((_row, index) => {
 			rowCount[index] = 0;
 			rowSpans[index] = [];
+			Array.isArray(headers.horizontal) &&
+				headers.horizontal.forEach((verticalRow) => {
+					verticalRow.unshift({
+						label: '',
+						asTd: true,
+						colSpan: 1,
+						rowSpan: 1,
+					});
+				});
 		});
 
 		for (let i = startRow; i < maxRows; i++) {
@@ -372,6 +381,7 @@ export class KolTableStateless implements TableStatelessAPI {
 			}
 			dataField.push(dataRow);
 		}
+
 		if (data.length === 0) {
 			let colspan = 0;
 			let rowspan = 0;
@@ -380,6 +390,7 @@ export class KolTableStateless implements TableStatelessAPI {
 					colspan += col.colSpan || 1;
 				});
 			}
+
 			if (Array.isArray(headers.vertical) && headers.vertical.length > 0) {
 				colspan -= headers.vertical.length;
 				headers.vertical[0].forEach((row) => {
@@ -398,13 +409,6 @@ export class KolTableStateless implements TableStatelessAPI {
 				dataField[0].push(emptyCell);
 			}
 		}
-
-		dataField.forEach((row, rowIndex) => {
-			if (row.length > maxCols) {
-				row = row.slice(0, maxCols);
-				dataField[rowIndex] = row;
-			}
-		});
 
 		return dataField;
 	}
