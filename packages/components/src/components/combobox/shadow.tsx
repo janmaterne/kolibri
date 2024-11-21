@@ -245,7 +245,7 @@ export class KolCombobox implements ComboboxAPI {
 												data-index={index}
 												tabIndex={-1}
 												role="option"
-												aria-selected={this.state._value === option ? 'true' : 'false'}
+												aria-selected={this.state._value === option ? 'true' : undefined}
 												onClick={(e) => {
 													this.selectOption(e, option as string);
 													this.toggleListbox();
