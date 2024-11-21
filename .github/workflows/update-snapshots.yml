@@ -59,7 +59,7 @@ jobs:
         run: pnpm -r build
 
       - name: Purge existing snapshots
-        run: rm packages/**/snapshots/**/*.png
+        run: find packages -name '*.png' -path '*/snapshots/*' | grep -v 'node_modules' | xargs rm # Remove any existing snapshots, except those in node_modules
 
       - name: Display git status (before test-update)
         run: git status
