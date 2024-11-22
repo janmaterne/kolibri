@@ -23,9 +23,10 @@ import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } fro
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText, KolInputContainerFc } from '../../functional-components';
+import { InternalUnderlinedBadgeText } from '../../functional-components';
 import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
 import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
+import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 import { InputColorController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -101,7 +102,7 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 		return (
 			<Host>
 				<KolFormFieldFc {...this.getFormFieldProps()}>
-					<KolInputContainerFc>
+					<KolInputContainerFc state={this.state}>
 						<KolInputFc {...this.getInputProps()} />
 					</KolInputContainerFc>
 				</KolFormFieldFc>

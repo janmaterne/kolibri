@@ -23,9 +23,10 @@ import { buildBadgeTextString, showExpertSlot } from '../../schema';
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText, KolInputContainerFc } from '../../functional-components';
+import { InternalUnderlinedBadgeText } from '../../functional-components';
 import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
 import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
+import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 import { InputFileController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -86,10 +87,11 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 			ref: this.catchRef,
 			state: this.state,
 			type: 'file',
+			accept: this.state._accept,
+			multiple: this.state._multiple,
 			...this.controller.onFacade,
 			onChange: this.onChange,
 			onInput: this.onInput,
-			// onKeyDown: this.onKeyDown,
 			onFocus: (event: Event) => {
 				this.controller.onFacade.onFocus(event);
 				this.inputHasFocus = true;
@@ -105,7 +107,7 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 		return (
 			<Host>
 				<KolFormFieldFc {...this.getFormFieldProps()}>
-					<KolInputContainerFc>
+					<KolInputContainerFc state={this.state}>
 						<KolInputFc {...this.getInputProps()} />
 					</KolInputContainerFc>
 				</KolFormFieldFc>

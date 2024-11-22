@@ -1,3 +1,7 @@
+import type { JSX } from '@stencil/core';
+import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import clsx from 'clsx';
+
 import type {
 	FocusableElement,
 	HideErrorPropType,
@@ -18,15 +22,17 @@ import type {
 	W3CInputValue,
 } from '../../schema';
 import { buildBadgeTextString, showExpertSlot } from '../../schema';
-import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
 import { InternalUnderlinedBadgeText } from '../../functional-components';
+import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
+import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 import { InputRangeController } from './controller';
 import { KolInputTag } from '../../core/component-names';
+import KolSuggestionsFc from '../../functional-components/Suggestions';
 
 /**
  * @slot - Die Beschriftung des Eingabeelements.
@@ -118,7 +124,86 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 		}
 	}
 
+	private getFormFieldProps(): FormFieldStateWrapperProps {
+		return {
+			state: this.state,
+			class: clsx('kol-input-range', 'range', {
+				// 'has-value': this.state._hasValue,
+			}),
+			tooltipAlign: this._tooltipAlign,
+			inputHasFocus: this.inputHasFocus,
+			// onClick: () => this.catchInputRangeRef?.focus(),
+		};
+	}
+
+	private getGenericInputProps() {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		const { _suggestions, ...other } = this.state;
+
+		return {
+			state: { ...other, _suggestions: [] },
+			...this.controller.onFacade,
+			onChange: this.onChange,
+			onFocus: (event: Event) => {
+				this.controller.onFacade.onFocus(event);
+				this.inputHasFocus = true;
+			},
+			onBlur: (event: Event) => {
+				this.controller.onFacade.onBlur(event);
+				this.inputHasFocus = false;
+			},
+		};
+	}
+
+	private get hasSuggestions(): boolean {
+		return Array.isArray(this.state._suggestions) && this.state._suggestions.length > 0;
+	}
+
+	private getInputRangeProps(): InputStateWrapperProps {
+		return {
+			...this.getGenericInputProps(),
+			name: this.state._name ? `${this.state._name}-range` : undefined,
+			list: this.hasSuggestions ? `${this.state._id}-list` : undefined,
+			type: 'range',
+			tabIndex: -1,
+			ref: this.catchInputRangeRef,
+		};
+	}
+
+	private getInputNumberProps(): InputStateWrapperProps {
+		return {
+			...this.getGenericInputProps(),
+			name: this.state._name ? `${this.state._name}-number` : undefined,
+			list: this.hasSuggestions ? `${this.state._id}-list` : undefined,
+			type: 'number',
+			ref: this.catchInputNumberRef,
+			onKeyDown: this.onKeyDown,
+		};
+	}
+
 	public render(): JSX.Element {
+		const inputsWrapperStyle = {
+			'--kolibri-input-range--input-number--width': `${this.state._max}`.length + 0.5 + 'em',
+		};
+
+		return (
+			<Host>
+				<KolFormFieldFc {...this.getFormFieldProps()}>
+					<KolInputContainerFc state={this.state}>
+						<div id="input" class="input-slot">
+							<div class="inputs-wrapper" style={inputsWrapperStyle}>
+								<KolInputFc {...this.getInputRangeProps()} />
+								<KolInputFc {...this.getInputNumberProps()} />
+							</div>
+							{this.hasSuggestions && <KolSuggestionsFc id={this.state._id} suggestions={this.state._suggestions} />}
+						</div>
+					</KolInputContainerFc>
+				</KolFormFieldFc>
+			</Host>
+		);
+	}
+
+	public render2(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
 		const hasSuggestions = Array.isArray(this.state._suggestions) && this.state._suggestions.length > 0;
 		const hasExpertSlot = showExpertSlot(this.state._label);

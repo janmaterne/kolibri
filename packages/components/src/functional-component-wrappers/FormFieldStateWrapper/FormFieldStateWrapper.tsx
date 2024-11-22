@@ -31,6 +31,7 @@ function getFormFieldProps(state: InputState, inputHasFocus?: boolean): FormFiel
 		hint: state._hint,
 		label: state._label,
 		hideLabel: state._hideLabel,
+		hideError: state._hideError,
 		touched: state._touched,
 		accessKey: state._accessKey,
 		shortKey: state._shortKey,
@@ -41,8 +42,11 @@ function getFormFieldProps(state: InputState, inputHasFocus?: boolean): FormFiel
 		props.readOnly = state._readOnly;
 	}
 
-	if ('_hasCounter' in state && '_currentLength' in state && '_maxLength' in state) {
-		props.counter = state._hasCounter ? { currentLength: state._currentLength, maxLength: state._maxLength } : undefined;
+	if ('_hasCounter' in state && '_currentLength' in state) {
+		props.counter = state._hasCounter ? { currentLength: state._currentLength } : undefined;
+		if (props.counter && '_maxLength' in state) {
+			props.counter.maxLength = state._maxLength;
+		}
 	}
 
 	return props;

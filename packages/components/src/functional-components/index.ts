@@ -8,5 +8,6 @@ export { default as InternalUnderlinedBadgeText } from './InternalUnderlinedBadg
 export { default as KolFormFieldFc } from './FormField';
 export { default as KolInputContainerFc } from './InputContainer';
 export { default as KolToastItemFc } from './ToastItem';
-export { default as KolInputFc } from './Input';
+export { default as KolInputFc } from './inputs/Input';
+export { default as KolTextareaFc } from './inputs/TextArea';
 export { default as KolSuggestionsFc } from './Suggestions';

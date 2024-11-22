@@ -1,6 +1,6 @@
 import type { VNode } from '@stencil/core';
 import { h, type FunctionalComponent as FC } from '@stencil/core';
-import KolInputFc, { type InputProps } from '../../functional-components/Input';
+import KolInputFc, { type InputProps } from '../../functional-components/inputs/Input';
 
 import type {
 	InputColorStates,
@@ -11,7 +11,7 @@ import type {
 	InputRangeStates,
 	InputTextStates,
 } from '../../schema';
-import { getRenderStates } from './helpers/getRenderStates';
+import { getRenderStates } from '../_helpers/getRenderStates';
 import SuggestionsFc from '../../functional-components/Suggestions';
 
 type InputState = InputTextStates | InputEmailStates | InputPasswordStates | InputNumberStates | InputColorStates | InputFileStates | InputRangeStates;
@@ -45,6 +45,7 @@ function getInputProps(state: InputState): InputProps {
 	if ('_min' in state) props.min = state._min;
 	if ('_max' in state) props.max = state._max;
 	if ('_step' in state) props.step = state._step;
+	if ('_multiple' in state) props.multiple = state._multiple;
 
 	if ('_suggestions' in state) {
 		const hasSuggestions = Array.isArray(state._suggestions) && state._suggestions.length > 0;

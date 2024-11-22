@@ -6,7 +6,7 @@ import InputAdornment from '../InputAdornment';
 type InputAdornmentType = VNode | VNode[];
 type ReturnRenderAdornmentType = VNode | VNode[] | null;
 
-type InputContainerProps = JSXBase.HTMLAttributes & {
+export type InputContainerProps = JSXBase.HTMLAttributes & {
 	startAdornment?: InputAdornmentType;
 	endAdornment?: InputAdornmentType;
 };

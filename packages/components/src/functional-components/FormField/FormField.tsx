@@ -38,24 +38,47 @@ export type FormFieldProps = Omit<JSXBase.HTMLAttributes<HTMLDivElement>, 'id'> 
 	hint?: string;
 	label: string;
 	hideLabel?: boolean;
+	hideError?: boolean;
 	accessKey?: string;
 	shortKey?: string;
 	counter?: { currentLength?: number; maxLength?: number };
 	readOnly?: boolean;
 	touched?: boolean;
+	required?: boolean;
 };
 
 const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
-	const { id, alert, disabled, class: classNames, msg, hideLabel, label, hint, accessKey, shortKey, tooltipAlign, counter, readOnly, touched } = props;
+	const {
+		id,
+		required,
+		alert,
+		disabled,
+		class: classNames,
+		msg,
+		hideError,
+		hideLabel,
+		label,
+		hint,
+		accessKey,
+		shortKey,
+		tooltipAlign,
+		counter,
+		readOnly,
+		touched,
+	} = props;
 	const hasExpertSlot = showExpertSlot(label);
 	const hasError = checkHasError(msg, touched, readOnly);
 	const showFormFieldMsg = Boolean(hasError || (msg?._type !== 'error' && msg?._description));
 	const badgeText = buildBadgeTextString(accessKey, shortKey);
 
 	const stateCssClasses = {
-		disabled,
+		disabled: Boolean(disabled),
+		required: Boolean(required),
+		touched: Boolean(touched),
 		error: hasError,
-		'hide-label': !!hideLabel,
+		'hide-label': Boolean(hideLabel),
+		'read-only': Boolean(readOnly),
+		'hidden-error': Boolean(hideError),
 	};
 
 	return (
@@ -67,7 +90,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 			<KolFormFieldHintFc id={id} hint={hint} />
 			{children}
 			<KolFormFieldTooltipFc id={id} label={label} hideLabel={hideLabel} hasExpertSlot={hasExpertSlot} align={tooltipAlign} badgeText={badgeText} />
-			{showFormFieldMsg && <KolFormFieldMsgFc id={id} alert={alert} msg={msg} />}
+			{showFormFieldMsg && <KolFormFieldMsgFc id={id} alert={alert} msg={msg} hideError={hideError} />}
 			{counter ? <KolFormFieldCounterFc {...counter} /> : null}
 		</div>
 	);

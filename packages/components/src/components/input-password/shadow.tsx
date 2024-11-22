@@ -1,3 +1,7 @@
+import type { JSX } from '@stencil/core';
+import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import clsx from 'clsx';
+
 import type {
 	ButtonProps,
 	FocusableElement,
@@ -17,13 +21,14 @@ import type {
 	TooltipAlignPropType,
 } from '../../schema';
 import { buildBadgeTextString, devHint, setState, showExpertSlot } from '../../schema';
-import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
 import { InternalUnderlinedBadgeText } from '../../functional-components';
+import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
+import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 import { InputPasswordController } from './controller';
 import { KolButtonWcTag, KolInputTag } from '../../core/component-names';
 import { translate } from '../../i18n';
@@ -83,7 +88,51 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 		this.controller.onFacade.onInput(event);
 	};
 
+	private getFormFieldProps(): FormFieldStateWrapperProps {
+		return {
+			state: this.state,
+			class: clsx('kol-input-password', 'password', {
+				'has-value': this.state._hasValue,
+			}),
+			tooltipAlign: this._tooltipAlign,
+			inputHasFocus: this.inputHasFocus,
+			onClick: () => this.inputRef?.focus(),
+		};
+	}
+
+	private getInputProps(): InputStateWrapperProps {
+		return {
+			ref: this.catchRef,
+			type: this._passwordVisible ? 'text' : 'password',
+			state: this.state,
+			...this.controller.onFacade,
+			// onChange: this.onChange,
+			onInput: this.onInput,
+			onKeyDown: this.onKeyDown,
+			onFocus: (event: Event) => {
+				this.controller.onFacade.onFocus(event);
+				this.inputHasFocus = true;
+			},
+			onBlur: (event: Event) => {
+				this.controller.onFacade.onBlur(event);
+				this.inputHasFocus = false;
+			},
+		};
+	}
+
 	public render(): JSX.Element {
+		return (
+			<Host>
+				<KolFormFieldFc {...this.getFormFieldProps()}>
+					<KolInputContainerFc state={this.state}>
+						<KolInputFc {...this.getInputProps()} />
+					</KolInputContainerFc>
+				</KolFormFieldFc>
+			</Host>
+		);
+	}
+
+	public render2(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
 		const hasExpertSlot = showExpertSlot(this.state._label);
 

@@ -1,3 +1,7 @@
+import type { JSX } from '@stencil/core';
+import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import clsx from 'clsx';
+
 import type {
 	AdjustHeightPropType,
 	CSSResize,
@@ -19,12 +23,13 @@ import type {
 	TooltipAlignPropType,
 } from '../../schema';
 import { buildBadgeTextString, devWarning, setState, showExpertSlot } from '../../schema';
-import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
 import { InternalUnderlinedBadgeText } from '../../functional-components';
+import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolTextAreaFc, { type TextAreaStateWrapperProps } from '../../functional-component-wrappers/TextAreaStateWrapper';
+import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 import { TextareaController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -81,7 +86,49 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 		this.textareaRef?.focus();
 	}
 
+	private getFormFieldProps(): FormFieldStateWrapperProps {
+		return {
+			state: this.state,
+			class: clsx('kol-textarea', 'textarea', {
+				'has-value': this.state._hasValue,
+				'has-counter': !!this.state._hasCounter,
+			}),
+			tooltipAlign: this._tooltipAlign,
+			inputHasFocus: this.inputHasFocus,
+			onClick: () => this.textareaRef?.focus(),
+		};
+	}
+
+	private getTextAreaProps(): TextAreaStateWrapperProps {
+		return {
+			ref: this.catchRef,
+			state: this.state,
+			...this.controller.onFacade,
+			onInput: this.onInput,
+			onFocus: (event: Event) => {
+				this.controller.onFacade.onFocus(event);
+				this.inputHasFocus = true;
+			},
+			onBlur: (event: Event) => {
+				this.controller.onFacade.onBlur(event);
+				this.inputHasFocus = false;
+			},
+		};
+	}
+
 	public render(): JSX.Element {
+		return (
+			<Host>
+				<KolFormFieldFc {...this.getFormFieldProps()}>
+					<KolInputContainerFc state={this.state}>
+						<KolTextAreaFc {...this.getTextAreaProps()} />
+					</KolInputContainerFc>
+				</KolFormFieldFc>
+			</Host>
+		);
+	}
+
+	public render2(): JSX.Element {
 		const { ariaDescribedBy } = getRenderStates(this.state);
 		const hasExpertSlot = showExpertSlot(this.state._label);
 
