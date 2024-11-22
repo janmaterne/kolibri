@@ -19,12 +19,20 @@
 		gap: rem(6.4);
 	}
 
+	.checkbox-container {
+		justify-content: flex-start;
+	}
+
 	.kol-input.default {
-		grid-template-columns: rem(24) auto;
+		grid-template-columns: rem(36) auto;
 	}
 
 	.kol-input.default[data-label-align='left']:not(.hide-label) {
-		grid-template-columns: auto rem(24);
+		grid-template-columns: auto rem(36);
+
+		.checkbox-container {
+			justify-content: center;
+		}
 	}
 
 	.kol-input.switch {
@@ -37,10 +45,6 @@
 
 	.kol-input.button {
 		gap: rem(6.4) rem(1);
-	}
-
-	.checkbox-container {
-		justify-content: flex-start;
 	}
 
 	.kol-input > div.input {

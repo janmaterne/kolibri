@@ -45,6 +45,8 @@ export type FormFieldProps = Omit<JSXBase.HTMLAttributes<HTMLDivElement>, 'id'> 
 	readOnly?: boolean;
 	touched?: boolean;
 	required?: boolean;
+} & {
+	[key: `data-${string}`]: unknown;
 };
 
 const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
@@ -65,6 +67,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		counter,
 		readOnly,
 		touched,
+		...other
 	} = props;
 	const hasExpertSlot = showExpertSlot(label);
 	const hasError = checkHasError(msg, touched, readOnly);
@@ -85,6 +88,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		<div
 			class={clsx('kol-input', getModifierClassNameByMsgType(msg), stateCssClasses, classNames)}
 			role={`presentation` /* Avoid element being read as 'clickable' in NVDA */}
+			{...other}
 		>
 			<KolFormFieldLabelFc id={id} hasExpertSlot={hasExpertSlot} hideLabel={hideLabel} label={label} accessKey={accessKey} shortKey={shortKey} />
 			<KolFormFieldHintFc id={id} hint={hint} />

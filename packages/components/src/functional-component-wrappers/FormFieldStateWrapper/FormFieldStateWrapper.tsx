@@ -8,9 +8,18 @@ import type {
 	InputPasswordStates,
 	InputRangeStates,
 	InputTextStates,
+	InputCheckboxStates,
 } from '../../schema';
 
-type InputState = InputTextStates | InputEmailStates | InputPasswordStates | InputNumberStates | InputColorStates | InputFileStates | InputRangeStates;
+type InputState =
+	| InputTextStates
+	| InputEmailStates
+	| InputPasswordStates
+	| InputNumberStates
+	| InputColorStates
+	| InputFileStates
+	| InputRangeStates
+	| InputCheckboxStates;
 
 export type FormFieldStateWrapperProps = Partial<FormFieldProps> & {
 	state: InputState;

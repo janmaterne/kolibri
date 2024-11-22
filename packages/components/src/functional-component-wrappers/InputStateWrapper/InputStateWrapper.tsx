@@ -10,11 +10,20 @@ import type {
 	InputPasswordStates,
 	InputRangeStates,
 	InputTextStates,
+	InputCheckboxStates,
 } from '../../schema';
 import { getRenderStates } from '../_helpers/getRenderStates';
 import SuggestionsFc from '../../functional-components/Suggestions';
 
-type InputState = InputTextStates | InputEmailStates | InputPasswordStates | InputNumberStates | InputColorStates | InputFileStates | InputRangeStates;
+type InputState =
+	| InputTextStates
+	| InputEmailStates
+	| InputPasswordStates
+	| InputNumberStates
+	| InputColorStates
+	| InputFileStates
+	| InputRangeStates
+	| InputCheckboxStates;
 
 export type InputStateWrapperProps = Partial<InputProps> & {
 	state: InputState;
@@ -46,6 +55,8 @@ function getInputProps(state: InputState): InputProps {
 	if ('_max' in state) props.max = state._max;
 	if ('_step' in state) props.step = state._step;
 	if ('_multiple' in state) props.multiple = state._multiple;
+	if ('_checked' in state) props.checked = state._checked;
+	if ('_indeterminate' in state) props.indeterminate = state._indeterminate;
 
 	if ('_suggestions' in state) {
 		const hasSuggestions = Array.isArray(state._suggestions) && state._suggestions.length > 0;
