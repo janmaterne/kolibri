@@ -1,6 +1,7 @@
 import { expect } from '@playwright/test';
 import { test } from '@stencil/playwright';
 import type { Iso8601 } from '../../schema';
+import { testInputDomEvents } from '../../e2e';
 
 test.describe('kol-input-date', () => {
 	test.describe('when value is Date object', () => {
@@ -320,19 +321,5 @@ test.describe('kol-input-date', () => {
 		});
 	});
 
-	test.describe('DOM events', () => {
-		['click', 'focus', 'blur', 'input', 'change'].forEach((event) => {
-			test(`should emit ${event} when internal input emits ${event}`, async ({ page }) => {
-				await page.setContent('<kol-input-date _label="Input"></kol-input-date>');
-				const eventPromise = page.locator('kol-input-date').evaluate(async (element, event) => {
-					return new Promise((resolve) => {
-						element.addEventListener(event, resolve);
-					});
-				}, event);
-				await page.waitForChanges();
-				await page.locator('input').dispatchEvent(event);
-				await expect(eventPromise).resolves.toBeTruthy();
-			});
-		});
-	});
+	testInputDomEvents('kol-input-date');
 });
