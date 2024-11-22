@@ -73,3 +73,17 @@ Notably, this issue does not occur with Windows Narrator, which handles empty da
 There is a Bug Report for this Issue:
 
 [VoiceOver reads negative percent values for month, day, and year steppers in `<input type="date">`](https://issuetracker.google.com/issues/361250561?pli=1)
+
+## Firefox Accessibility Issue with `aria-label`
+
+Issue: https://github.com/public-ui/kolibri/issues/7076
+
+The use of `aria-label` or `aria-labelledby` on `<kol-icon>` or its nested elements does not work reliably in Firefox. Even applying these attributes directly to `<kol-icon>` has no effect, which points to a browser-specific issue with ARIA support in custom elements or shadow DOM contexts.
+
+### Key Points:
+- The issue lies in Firefox's handling of ARIA attributes on custom web components or deeply nested elements.
+- This is not related to dynamic announcements (`aria-live`) but specifically to the inability of Firefox to process `aria-label` or `aria-labelledby` correctly in these cases.
+- The issue is browser-specific and does not consistently occur in Chrome, Edge, or Safari.
+
+### Conclusion:
+This is a limitation in Firefox’s ARIA implementation. Until it is resolved, alternative strategies like visually hidden text near the element or redundant error messages should be used to ensure accessibility.
