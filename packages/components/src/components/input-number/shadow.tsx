@@ -1,5 +1,5 @@
 import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 import clsx from 'clsx';
 
 import type {
@@ -22,17 +22,13 @@ import type {
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { buildBadgeTextString, showExpertSlot } from '../../schema';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
-import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../../functional-components';
 import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
 import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
 import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 import { InputNumberController } from './controller';
-import { KolInputTag } from '../../core/component-names';
 
 /**
  * @slot - Die Beschriftung des Eingabefeldes.
@@ -123,95 +119,6 @@ export class KolInputNumber implements InputNumberAPI, FocusableElement {
 						<KolInputFc {...this.getInputProps()} />
 					</KolInputContainerFc>
 				</KolFormFieldFc>
-			</Host>
-		);
-	}
-
-	public render2(): JSX.Element {
-		const { ariaDescribedBy } = getRenderStates(this.state);
-		const hasSuggestions = Array.isArray(this.state._suggestions) && this.state._suggestions.length > 0;
-		const hasExpertSlot = showExpertSlot(this.state._label);
-
-		return (
-			<Host
-				class={{
-					'kol-input-number': true,
-					'has-value': this.state._hasValue,
-				}}
-			>
-				<KolInputTag
-					class={{
-						number: true,
-						'hide-label': !!this.state._hideLabel,
-					}}
-					_accessKey={this.state._accessKey}
-					_alert={this.showAsAlert()}
-					_disabled={this.state._disabled}
-					_msg={this.state._msg}
-					_hideError={this.state._hideError}
-					_hideLabel={this.state._hideLabel}
-					_hint={this.state._hint}
-					_icons={this.state._icons}
-					_id={this.state._id}
-					_label={this.state._label}
-					_suggestions={this.state._suggestions}
-					_readOnly={this.state._readOnly}
-					_required={this.state._required}
-					_shortKey={this.state._shortKey}
-					_smartButton={this.state._smartButton}
-					_tooltipAlign={this._tooltipAlign}
-					_touched={this.state._touched}
-				>
-					<span slot="label">
-						{hasExpertSlot ? (
-							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
-							<>
-								<InternalUnderlinedBadgeText badgeText={buildBadgeTextString(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
-								<span class="access-key-hint" aria-hidden="true">
-									{buildBadgeTextString(this.state._accessKey, this.state._shortKey)}
-								</span>
-							</>
-						) : (
-							<span>{this.state._label}</span>
-						)}
-					</span>
-					<div slot="input">
-						<input
-							ref={this.catchRef}
-							title=""
-							accessKey={this.state._accessKey}
-							aria-describedby={ariaDescribedBy.length > 0 ? ariaDescribedBy.join(' ') : undefined}
-							aria-label={this.state._hideLabel && typeof this.state._label === 'string' ? this.state._label : undefined}
-							autoCapitalize="off"
-							autoComplete={this.state._autoComplete}
-							autoCorrect="off"
-							disabled={this.state._disabled}
-							id={this.state._id}
-							list={hasSuggestions ? `${this.state._id}-list` : undefined}
-							max={this.state._max}
-							min={this.state._min}
-							name={this.state._name}
-							readOnly={this.state._readOnly}
-							required={this.state._required}
-							placeholder={this.state._placeholder}
-							step={this.state._step}
-							spellcheck="false"
-							type="number"
-							value={this.state._value as string}
-							{...this.controller.onFacade}
-							onKeyDown={this.onKeyDown}
-							onFocus={(event) => {
-								this.controller.onFacade.onFocus(event);
-								this.inputHasFocus = true;
-							}}
-							onBlur={(event) => {
-								this.controller.onFacade.onBlur(event);
-								this.inputHasFocus = false;
-							}}
-						/>
-					</div>
-				</KolInputTag>
 			</Host>
 		);
 	}
@@ -381,13 +288,6 @@ export class KolInputNumber implements InputNumberAPI, FocusableElement {
 
 	public constructor() {
 		this.controller = new InputNumberController(this, 'number', this.host);
-	}
-
-	private showAsAlert(): boolean {
-		if (this.state._alert === undefined) {
-			return Boolean(this.state._touched) && !this.inputHasFocus;
-		}
-		return this.state._alert;
 	}
 
 	@Watch('_accessKey')
