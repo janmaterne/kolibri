@@ -102,23 +102,12 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 		return this._initialValueType === 'Date' ? new Date(newValue) : (newValue as Iso8601);
 	}
 
-	private emitEvent(type: string): void {
-		this.host?.dispatchEvent(new Event(type, { bubbles: true, composed: true }));
-	}
-
 	private readonly onBlur = (event: Event) => {
-		this.emitEvent('blur');
 		this.controller.onFacade.onBlur(event);
 		this.inputHasFocus = false;
 	};
 
-	private readonly onClick = (event: Event) => {
-		this.emitEvent('click');
-		this.controller.onFacade.onClick(event);
-	};
-
 	private readonly onFocus = (event: Event) => {
-		this.emitEvent('focus');
 		this.controller.onFacade.onFocus(event);
 		this.inputHasFocus = true;
 	};
@@ -126,7 +115,6 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 	private readonly onChange = (event: Event) => {
 		const newValue = (event.target as HTMLInputElement).value;
 		const remappedValue = this.remapValue(newValue);
-		this.emitEvent('change');
 		this.controller.onFacade.onChange(event, remappedValue);
 	};
 
@@ -134,7 +122,6 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 		const newValue = (event.target as HTMLInputElement).value;
 		const remappedValue = this.remapValue(newValue);
 		this._value = remappedValue;
-		this.emitEvent('input');
 		this.controller.onFacade.onInput(event, true, remappedValue);
 	};
 
@@ -213,8 +200,8 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 							spellcheck="false"
 							type={this.state._type}
 							value={this.state._value || undefined}
+							{...this.controller.onFacade}
 							onBlur={this.onBlur}
-							onClick={this.onClick}
 							onFocus={this.onFocus}
 							onKeyDown={this.onKeyDown}
 							onChange={this.onChange}

@@ -26,14 +26,14 @@ import {
 	validateHideLabel,
 	validateLabelWithExpertSlot,
 	validateMsg,
+	validateShortKey,
 	validateTabIndex,
 	validateTooltipAlign,
 	watchBoolean,
 	watchString,
-	validateShortKey,
 } from '../../../schema';
 
-import { stopPropagation, tryToDispatchKoliBriEvent } from '../../../utils/events';
+import { stopPropagation } from '../../../utils/events';
 import { ControlledInputController } from '../../input-adapter-leanup/controller';
 
 import type { Props as AdapterProps } from '../../input-adapter-leanup/types';
@@ -173,12 +173,16 @@ export class InputController extends ControlledInputController implements Watche
 		validateAccessAndShortKey(this.component._accessKey, this.component._shortKey);
 	}
 
+	private emitEvent(type: string): void {
+		this.host?.dispatchEvent(new Event(type, { bubbles: true, composed: true }));
+	}
+
 	protected onBlur(event: Event): void {
 		this.component._touched = true;
 
 		// Event handling
+		this.emitEvent('blur');
 		stopPropagation(event);
-		tryToDispatchKoliBriEvent('blur', this.host);
 
 		// Callback
 		if (typeof this.component._on?.onBlur === 'function') {
@@ -194,7 +198,7 @@ export class InputController extends ControlledInputController implements Watche
 		value = value ?? (event.target as HTMLInputElement).value;
 
 		// Event handling
-		tryToDispatchKoliBriEvent('change', this.host, value);
+		this.emitEvent('change');
 
 		// Callback
 		if (typeof this.component._on?.onChange === 'function') {
@@ -223,8 +227,8 @@ export class InputController extends ControlledInputController implements Watche
 		value = value ?? (event.target as HTMLInputElement).value;
 
 		// Event handling
+		this.emitEvent('input');
 		stopPropagation(event);
-		tryToDispatchKoliBriEvent('input', this.host, value);
 
 		// Static form handling
 		if (shouldSetFormAssociatedValue) {
@@ -239,8 +243,8 @@ export class InputController extends ControlledInputController implements Watche
 
 	protected onClick(event: Event): void {
 		// Event handling
+		this.emitEvent('click');
 		stopPropagation(event);
-		tryToDispatchKoliBriEvent('click', this.host);
 
 		// Callback
 		if (typeof this.component._on?.onClick === 'function') {
@@ -250,8 +254,8 @@ export class InputController extends ControlledInputController implements Watche
 
 	protected onFocus(event: Event): void {
 		// Event handling
+		this.emitEvent('focus');
 		stopPropagation(event);
-		tryToDispatchKoliBriEvent('focus', this.host);
 
 		// Callback
 		if (typeof this.component._on?.onFocus === 'function') {

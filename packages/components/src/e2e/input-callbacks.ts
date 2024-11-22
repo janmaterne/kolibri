@@ -1,14 +1,14 @@
 import { test } from '@stencil/playwright';
 import { expect } from '@playwright/test';
 
-const testInputCallbacks = (componentName: string) => {
+const testInputCallbacks = (componentName: string, testValue: string = 'Test Input') => {
 	test.describe('Callbacks', () => {
 		[
 			['click', 'onClick'],
 			['focus', 'onFocus'],
 			['blur', 'onBlur'],
-			['input', 'onInput', 'Test Input'],
-			['change', 'onChange', 'Test Input'],
+			['input', 'onInput', testValue],
+			['change', 'onChange', testValue],
 		].forEach(([eventName, callbackName, testValue]) => {
 			test(`should call ${callbackName} when internal input emits`, async ({ page }) => {
 				await page.setContent(`<${componentName} _label="Input"></${componentName}>`);

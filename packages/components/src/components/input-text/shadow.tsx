@@ -48,16 +48,11 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 	private inputRef?: HTMLInputElement;
 	private oldValue?: string;
 
-	private emitEvent(type: string): void {
-		this.host?.dispatchEvent(new Event(type, { bubbles: true, composed: true }));
-	}
-
 	private readonly catchRef = (ref?: HTMLInputElement) => {
 		this.inputRef = ref;
 	};
 
 	private readonly onBlur = (event: FocusEvent) => {
-		this.emitEvent('blur');
 		this.controller.onFacade.onBlur(event);
 		this.inputHasFocus = false;
 	};
@@ -69,17 +64,10 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 			this.oldValue = value;
 		}
 
-		this.emitEvent('change');
 		this.controller.onFacade.onChange(event);
 	};
 
-	private readonly onClick = (event: MouseEvent) => {
-		this.emitEvent('click');
-		this.controller.onFacade.onClick(event);
-	};
-
 	private readonly onFocus = (event: FocusEvent) => {
-		this.emitEvent('focus');
 		this.controller.onFacade.onFocus(event);
 		this.inputHasFocus = true;
 	};
@@ -89,7 +77,6 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 		setState(this, '_currentLength', value.length);
 
 		this._value = value;
-		this.emitEvent('input');
 
 		this.controller.onFacade.onInput(event);
 	};
@@ -199,9 +186,9 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 							spellcheck="false"
 							type={this.state._type}
 							value={this.state._value as string}
+							{...this.controller.onFacade}
 							onBlur={this.onBlur}
 							onChange={this.onChange}
-							onClick={this.onClick}
 							onFocus={this.onFocus}
 							onInput={this.onInput}
 							onKeyDown={this.onKeyDown}
