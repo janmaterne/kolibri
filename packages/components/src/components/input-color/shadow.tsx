@@ -18,7 +18,7 @@ import type {
 	TooltipAlignPropType,
 } from '../../schema';
 import type { JSX } from '@stencil/core';
-import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
@@ -96,13 +96,11 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		return (
-			<Host>
-				<KolFormFieldFc {...this.getFormFieldProps()}>
-					<KolInputContainerFc state={this.state}>
-						<KolInputFc {...this.getInputProps()} />
-					</KolInputContainerFc>
-				</KolFormFieldFc>
-			</Host>
+			<KolFormFieldFc {...this.getFormFieldProps()}>
+				<KolInputContainerFc state={this.state}>
+					<KolInputFc {...this.getInputProps()} />
+				</KolInputContainerFc>
+			</KolFormFieldFc>
 		);
 	}
 

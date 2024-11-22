@@ -1,5 +1,5 @@
 import type { JSX } from '@stencil/core';
-import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Method, Prop, State, Watch } from '@stencil/core';
 import clsx from 'clsx';
 
 import type {
@@ -182,19 +182,17 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 		};
 
 		return (
-			<Host>
-				<KolFormFieldFc {...this.getFormFieldProps()}>
-					<KolInputContainerFc state={this.state}>
-						<div id="input" class="input-slot">
-							<div class="inputs-wrapper" style={inputsWrapperStyle}>
-								<KolInputFc {...this.getInputRangeProps()} />
-								<KolInputFc {...this.getInputNumberProps()} />
-							</div>
-							{this.hasSuggestions && <KolSuggestionsFc id={this.state._id} suggestions={this.state._suggestions} />}
+			<KolFormFieldFc {...this.getFormFieldProps()}>
+				<KolInputContainerFc state={this.state}>
+					<div id="input" class="input-slot">
+						<div class="inputs-wrapper" style={inputsWrapperStyle}>
+							<KolInputFc {...this.getInputRangeProps()} />
+							<KolInputFc {...this.getInputNumberProps()} />
 						</div>
-					</KolInputContainerFc>
-				</KolFormFieldFc>
-			</Host>
+						{this.hasSuggestions && <KolSuggestionsFc id={this.state._id} suggestions={this.state._suggestions} />}
+					</div>
+				</KolInputContainerFc>
+			</KolFormFieldFc>
 		);
 	}
 

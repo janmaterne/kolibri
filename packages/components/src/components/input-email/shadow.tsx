@@ -1,5 +1,5 @@
 import type { JSX } from '@stencil/core';
-import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Method, Prop, State, Watch } from '@stencil/core';
 import clsx from 'clsx';
 
 import type {
@@ -119,13 +119,11 @@ export class KolInputEmail implements InputEmailAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		return (
-			<Host>
-				<KolFormFieldFc {...this.getFormFieldProps()}>
-					<KolInputContainerFc state={this.state}>
-						<KolInputFc {...this.getInputProps()} />
-					</KolInputContainerFc>
-				</KolFormFieldFc>
-			</Host>
+			<KolFormFieldFc {...this.getFormFieldProps()}>
+				<KolInputContainerFc state={this.state}>
+					<KolInputFc {...this.getInputProps()} />
+				</KolInputContainerFc>
+			</KolFormFieldFc>
 		);
 	}
 

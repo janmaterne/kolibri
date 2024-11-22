@@ -1,5 +1,5 @@
 import type { JSX } from '@stencil/core';
-import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Method, Prop, State, Watch } from '@stencil/core';
 import clsx from 'clsx';
 
 import type {
@@ -118,13 +118,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		return (
-			<Host>
-				<KolFormFieldFc {...this.getFormFieldProps()}>
-					<KolInputContainerFc state={this.state}>
-						<KolTextAreaFc {...this.getTextAreaProps()} />
-					</KolInputContainerFc>
-				</KolFormFieldFc>
-			</Host>
+			<KolFormFieldFc {...this.getFormFieldProps()}>
+				<KolInputContainerFc state={this.state}>
+					<KolTextAreaFc {...this.getTextAreaProps()} />
+				</KolInputContainerFc>
+			</KolFormFieldFc>
 		);
 	}
 

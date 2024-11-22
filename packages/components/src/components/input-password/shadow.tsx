@@ -1,5 +1,5 @@
 import type { JSX, VNode } from '@stencil/core';
-import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Method, Prop, State, Watch } from '@stencil/core';
 import clsx from 'clsx';
 
 import type {
@@ -140,13 +140,11 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		return (
-			<Host>
-				<KolFormFieldFc {...this.getFormFieldProps()}>
-					<KolInputContainerFc state={this.state} endAdornment={this.getShowPasswordButton()}>
-						<KolInputFc {...this.getInputProps()} />
-					</KolInputContainerFc>
-				</KolFormFieldFc>
-			</Host>
+			<KolFormFieldFc {...this.getFormFieldProps()}>
+				<KolInputContainerFc state={this.state} endAdornment={this.getShowPasswordButton()}>
+					<KolInputFc {...this.getInputProps()} />
+				</KolInputContainerFc>
+			</KolFormFieldFc>
 		);
 	}
 
