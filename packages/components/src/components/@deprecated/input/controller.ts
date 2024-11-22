@@ -124,6 +124,9 @@ export class InputController extends ControlledInputController implements Watche
 	}
 
 	public validateMsg(value?: Stringified<MsgPropType>): void {
+		if (value === undefined) {
+			value = { _description: '', _type: 'error' };
+		}
 		validateMsg(this.component, value);
 	}
 

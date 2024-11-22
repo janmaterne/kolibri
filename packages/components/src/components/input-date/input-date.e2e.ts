@@ -360,4 +360,21 @@ test.describe('kol-input-date', () => {
 			await expect(page.locator('input')).toHaveValue('');
 		});
 	});
+	test.describe('when _msg is set', () => {
+		test('should display and hide error message based on _msg value', async ({ page }) => {
+			await page.setContent(`<kol-input-date
+				_label="Date input"
+				_touched
+				 _msg="{'_description': 'An error message', '_type': 'error'}"
+				 > </kol-input-date>`);
+
+			await expect(page.locator('.kol-alert-wc')).toHaveAttribute('role', 'alert');
+			const inputDate = page.locator('kol-input-date');
+
+			await inputDate.evaluate((element: HTMLKolInputDateElement) => {
+				element._msg = undefined;
+			});
+			await expect(page.locator('.kol-alert-wc')).not.toBeVisible();
+		});
+	});
 });
