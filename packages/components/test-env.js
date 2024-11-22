@@ -10,3 +10,11 @@ class MutationObserver {
 }
 
 global.MutationObserver = MutationObserver;
+
+class ResizeObserverMock {
+	observe() {}
+	unobserve() {}
+	disconnect() {}
+}
+
+global.ResizeObserver = ResizeObserverMock;

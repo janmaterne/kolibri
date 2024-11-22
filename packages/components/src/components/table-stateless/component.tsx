@@ -230,7 +230,7 @@ export class KolTableStateless implements TableStatelessAPI {
 		let max = 0;
 		horizontalHeaders.forEach((row) => {
 			let count = 0;
-			row.forEach((col) => (count += col.colSpan ?? 1));
+			Array.isArray(row) && row.forEach((col) => (count += col.colSpan ?? 1));
 			if (max < count) {
 				max = count;
 			}
@@ -245,7 +245,7 @@ export class KolTableStateless implements TableStatelessAPI {
 		let max = 0;
 		verticalHeaders.forEach((col) => {
 			let count = 0;
-			col.forEach((row) => (count += row.rowSpan ?? 1));
+			Array.isArray(col) && col.forEach((row) => (count += row.rowSpan ?? 1));
 			if (max < count) {
 				max = count;
 			}
@@ -261,11 +261,12 @@ export class KolTableStateless implements TableStatelessAPI {
 	private filterHeaderKeys(headers: KoliBriTableHeaderCell[][]): KoliBriTableHeaderCell[] {
 		const primaryHeader: KoliBriTableHeaderCell[] = [];
 		headers.forEach((cells) => {
-			cells.forEach((cell) => {
-				if (typeof cell.key === 'string') {
-					primaryHeader.push(cell);
-				}
-			});
+			Array.isArray(cells) &&
+				cells.forEach((cell) => {
+					if (typeof cell.key === 'string') {
+						primaryHeader.push(cell);
+					}
+				});
 		});
 		return primaryHeader;
 	}
@@ -308,12 +309,13 @@ export class KolTableStateless implements TableStatelessAPI {
 			headers.horizontal.length > 0 &&
 			headers.horizontal[0][0]?.label !== ''
 		) {
-			headers.horizontal[0].unshift({
-				label: '',
-				asTd: true,
-				colSpan: 1,
-				rowSpan: 1,
-			});
+			Array.isArray(headers.horizontal[0]) &&
+				headers.horizontal[0].unshift({
+					label: '',
+					asTd: true,
+					colSpan: undefined,
+					rowSpan: undefined,
+				});
 		}
 
 		for (let i = startRow; i < maxRows; i++) {
@@ -676,7 +678,7 @@ export class KolTableStateless implements TableStatelessAPI {
 	}
 
 	private renderSpacer(variant: 'foot' | 'head', cellDefs: KoliBriTableHeaderCell[][] | KoliBriTableCell[][]): JSX.Element {
-		const colspan = cellDefs?.[0]?.reduce((acc, row) => acc + (row.colSpan || 1), 0);
+		const colspan = Array.isArray(cellDefs?.[0]) ? cellDefs?.[0]?.reduce((acc, row) => acc + (row.colSpan || 1), 0) : 1;
 
 		return (
 			<tr class={`${variant}-spacer`} aria-hidden="true">
@@ -735,35 +737,36 @@ export class KolTableStateless implements TableStatelessAPI {
 									this.state._headerCells.horizontal.map((cols, rowIndex) => (
 										<tr key={`thead-${rowIndex}`}>
 											{this.state._selection && this.renderHeadingSelectionCell()}
-											{cols.map((cell, colIndex) => {
-												if (cell.asTd === true) {
-													return (
-														<td
-															key={`thead-${rowIndex}-${colIndex}-${cell.label}`}
-															class={{
-																[cell.textAlign as string]: typeof cell.textAlign === 'string' && cell.textAlign.length > 0,
-															}}
-															colSpan={cell.colSpan}
-															rowSpan={cell.rowSpan}
-															style={{
-																textAlign: cell.textAlign,
-																width: cell.width,
-															}}
-															ref={
-																typeof cell.render === 'function'
-																	? (el) => {
-																			this.cellRender(cell, el);
-																		}
-																	: undefined
-															}
-														>
-															{typeof cell.render !== 'function' ? cell.label : ''}
-														</td>
-													);
-												} else {
-													return this.renderHeadingCell(cell, rowIndex, colIndex, false);
-												}
-											})}
+											{Array.isArray(cols) &&
+												cols.map((cell, colIndex) => {
+													if (cell.asTd === true) {
+														return (
+															<td
+																key={`thead-${rowIndex}-${colIndex}-${cell.label}`}
+																class={{
+																	[cell.textAlign as string]: typeof cell.textAlign === 'string' && cell.textAlign.length > 0,
+																}}
+																colSpan={cell.colSpan}
+																rowSpan={cell.rowSpan}
+																style={{
+																	textAlign: cell.textAlign,
+																	width: cell.width,
+																}}
+																ref={
+																	typeof cell.render === 'function'
+																		? (el) => {
+																				this.cellRender(cell, el);
+																			}
+																		: undefined
+																}
+															>
+																{typeof cell.render !== 'function' ? cell.label : ''}
+															</td>
+														);
+													} else {
+														return this.renderHeadingCell(cell, rowIndex, colIndex, false);
+													}
+												})}
 										</tr>
 									)),
 									this.renderSpacer('head', this.state._headerCells.horizontal),
