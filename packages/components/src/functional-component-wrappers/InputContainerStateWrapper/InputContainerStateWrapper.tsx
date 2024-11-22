@@ -47,7 +47,7 @@ function getInputContainerProps(state: InputState): { icons: KoliBriHorizontalIc
 	return { icons, smartButton };
 }
 
-const InputContainerStateWrappeFc: FC<InputContainerStateWrapperProps> = ({ state }, children) => {
+const InputContainerStateWrappeFc: FC<InputContainerStateWrapperProps> = ({ state, endAdornment: defaultEndAdornment }, children) => {
 	const { icons, smartButton } = getInputContainerProps(state);
 
 	let leftIconProps: IconOrIconClass | undefined = icons?.left;
@@ -62,6 +62,14 @@ const InputContainerStateWrappeFc: FC<InputContainerStateWrapperProps> = ({ stat
 
 	const startAdornment = [];
 	const endAdornment = [];
+
+	if (defaultEndAdornment) {
+		if (Array.isArray(defaultEndAdornment)) {
+			endAdornment.push(...defaultEndAdornment);
+		} else {
+			endAdornment.push(defaultEndAdornment);
+		}
+	}
 
 	if (leftIconProps) {
 		startAdornment.push(<KolIconButtonFc componentName="icon" {...(isObject(leftIconProps) ? leftIconProps : {})} />);

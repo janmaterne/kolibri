@@ -1,4 +1,4 @@
-import type { JSX } from '@stencil/core';
+import type { JSX, VNode } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 import clsx from 'clsx';
 
@@ -33,6 +33,7 @@ import { InputPasswordController } from './controller';
 import { KolButtonWcTag, KolInputTag } from '../../core/component-names';
 import { translate } from '../../i18n';
 import type { PasswordVariantPropType } from '../../schema/props/variant/password-variant';
+import KolIconButtonFc from '../../functional-components/IconButton';
 
 /**
  * @slot - Die Beschriftung des Eingabefeldes.
@@ -120,11 +121,31 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 		};
 	}
 
+	private getShowPasswordButton(): VNode | null {
+		if (this._variant !== 'visibility-toggle') {
+			return null;
+		}
+
+		return (
+			<KolIconButtonFc
+				componentName="button"
+				class="password-toggle-button2"
+				label={this._passwordVisible ? translate('kol-hide-password') : translate('kol-show-password')}
+				variant="ghost"
+				onClick={(): void => {
+					this._passwordVisible = !this._passwordVisible;
+					this.inputRef?.focus();
+				}}
+				icon={`codicon codicon-eye-${this._passwordVisible ? 'closed' : 'watch'}`}
+			/>
+		);
+	}
+
 	public render(): JSX.Element {
 		return (
 			<Host>
 				<KolFormFieldFc {...this.getFormFieldProps()}>
-					<KolInputContainerFc state={this.state}>
+					<KolInputContainerFc state={this.state} endAdornment={this.getShowPasswordButton()}>
 						<KolInputFc {...this.getInputProps()} />
 					</KolInputContainerFc>
 				</KolFormFieldFc>

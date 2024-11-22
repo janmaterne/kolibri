@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import type { JSXBase, VNode } from '@stencil/core/internal';
 import InputAdornment from '../InputAdornment';
 
-type InputAdornmentType = VNode | VNode[];
+type InputAdornmentType = VNode | VNode[] | null;
 type ReturnRenderAdornmentType = VNode | VNode[] | null;
 
 export type InputContainerProps = JSXBase.HTMLAttributes & {

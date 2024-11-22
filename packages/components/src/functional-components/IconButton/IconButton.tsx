@@ -25,7 +25,7 @@ const KolIconButtonFc: FC<IconButtonProps> = (props) => {
 	const { componentName = 'button', label, icon, onClick, ...other } = props;
 	const Component = componentName === 'button' ? KolButtonFc : KolIconFc;
 
-	return <Component label={label || ''} icons={`codicon codicon-${icon}`} onClick={onClick} {...other} />;
+	return <Component label={label || ''} hideLabel icons={`codicon codicon-${icon}`} onClick={onClick} {...other} />;
 };
 
 export default KolIconButtonFc;
