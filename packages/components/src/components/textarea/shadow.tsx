@@ -1,5 +1,5 @@
 import type { JSX } from '@stencil/core';
-import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 import clsx from 'clsx';
 
 import type {
@@ -22,16 +22,13 @@ import type {
 	TextareaStates,
 	TooltipAlignPropType,
 } from '../../schema';
-import { buildBadgeTextString, devWarning, setState, showExpertSlot } from '../../schema';
+import { devWarning, setState } from '../../schema';
 
 import { nonce } from '../../utils/dev.utils';
-import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../../functional-components';
 import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
 import KolTextAreaFc, { type TextAreaStateWrapperProps } from '../../functional-component-wrappers/TextAreaStateWrapper';
 import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 import { TextareaController } from './controller';
-import { KolInputTag } from '../../core/component-names';
 
 /**
  * https://stackoverflow.com/questions/17772260/textarea-auto-height
@@ -103,6 +100,9 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 		return {
 			ref: this.catchRef,
 			state: this.state,
+			style: {
+				resize: this.state._resize,
+			},
 			...this.controller.onFacade,
 			onInput: this.onInput,
 			onFocus: (event: Event) => {
@@ -124,88 +124,6 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 						<KolTextAreaFc {...this.getTextAreaProps()} />
 					</KolInputContainerFc>
 				</KolFormFieldFc>
-			</Host>
-		);
-	}
-
-	public render2(): JSX.Element {
-		const { ariaDescribedBy } = getRenderStates(this.state);
-		const hasExpertSlot = showExpertSlot(this.state._label);
-
-		return (
-			<Host class={{ 'kol-textarea': true, 'has-value': this.state._hasValue }}>
-				<KolInputTag
-					class={{ textarea: true, 'hide-label': !!this.state._hideLabel, 'has-counter': !!this.state._hasCounter }}
-					_accessKey={this.state._accessKey}
-					_alert={this.showAsAlert()}
-					_currentLength={this.state._currentLength}
-					_disabled={this.state._disabled}
-					_hideError={this.state._hideError}
-					_hasCounter={this.state._hasCounter}
-					_hideLabel={this.state._hideLabel}
-					_hint={this.state._hint}
-					_icons={this.state._icons}
-					_id={this.state._id}
-					_label={this.state._label}
-					_maxLength={this.state._maxLength}
-					_msg={this.state._msg}
-					_readOnly={this.state._readOnly}
-					_required={this.state._required}
-					_shortKey={this.state._shortKey}
-					_tooltipAlign={this._tooltipAlign}
-					_touched={this.state._touched}
-					onClick={() => this.textareaRef?.focus()}
-					role={`presentation` /* Avoid element being read as 'clickable' in NVDA */}
-				>
-					<span slot="label">
-						{hasExpertSlot ? (
-							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
-							<>
-								<InternalUnderlinedBadgeText badgeText={buildBadgeTextString(this.state._accessKey || this.state._shortKey)} label={this.state._label} />{' '}
-								<span class="access-key-hint" aria-hidden="true">
-									{buildBadgeTextString(this.state._accessKey || this.state._shortKey)}
-								</span>
-							</>
-						) : (
-							<span>{this.state._label}</span>
-						)}
-					</span>
-					<div slot="input">
-						<textarea
-							ref={this.catchRef}
-							title=""
-							accessKey={this.state._accessKey}
-							aria-describedby={ariaDescribedBy.length > 0 ? ariaDescribedBy.join(' ') : undefined}
-							aria-label={this.state._hideLabel && typeof this.state._label === 'string' ? this.state._label : undefined}
-							autoCapitalize="off"
-							autoCorrect="off"
-							disabled={this.state._disabled}
-							id={this.state._id}
-							maxlength={this.state._maxLength}
-							name={this.state._name}
-							readOnly={this.state._readOnly}
-							required={this.state._required}
-							rows={this.state._rows}
-							placeholder={this.state._placeholder}
-							spellcheck="false"
-							{...this.controller.onFacade}
-							onInput={this.onInput}
-							onFocus={(event) => {
-								this.controller.onFacade.onFocus(event);
-								this.inputHasFocus = true;
-							}}
-							onBlur={(event) => {
-								this.controller.onFacade.onBlur(event);
-								this.inputHasFocus = false;
-							}}
-							style={{
-								resize: this.state._resize,
-							}}
-							value={this.state._value}
-						/>
-					</div>
-				</KolInputTag>
 			</Host>
 		);
 	}
@@ -374,13 +292,6 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 
 	public constructor() {
 		this.controller = new TextareaController(this, 'textarea', this.host);
-	}
-
-	private showAsAlert(): boolean {
-		if (this.state._alert === undefined) {
-			return Boolean(this.state._touched) && !this.inputHasFocus;
-		}
-		return this.state._alert;
 	}
 
 	@Watch('_accessKey')
