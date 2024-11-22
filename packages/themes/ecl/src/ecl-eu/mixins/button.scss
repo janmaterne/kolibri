@@ -6,7 +6,7 @@
 		--text-border-color: unset;
 		--text-color: unset;
 
-		--text-focus-outline-color: unset;
+		--text-focus-outline-color: var(--color-white);
 
 		&__element {
 			appearance: none;
