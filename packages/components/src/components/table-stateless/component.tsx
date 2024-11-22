@@ -313,8 +313,6 @@ export class KolTableStateless implements TableStatelessAPI {
 				headers.horizontal[0].unshift({
 					label: '',
 					asTd: true,
-					colSpan: undefined,
-					rowSpan: undefined,
 				});
 		}
 
