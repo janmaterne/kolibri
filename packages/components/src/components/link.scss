@@ -1,5 +1,5 @@
 @import './@shared/mixins';
-@import './style';
+@import '../tooltip/style.scss';
 
 @layer kol-component {
 	:host {
@@ -43,5 +43,6 @@
 
 	.kol-icon.external-link-icon {
 		display: inline-flex;
+		margin-left: rem(8);
 	}
 }

@@ -40,9 +40,15 @@
 		outline: none;
 	}
 
-	.selected .button-inner {
-		background-color: var(--color-mute-variant);
-		border-radius: var(--a11y-min-size);
-		border: 0;
+	.selected {
+		button {
+			opacity: 1;
+		}
+
+		.button-inner {
+			background-color: var(--color-primary);
+			color: var(--color-light);
+			border: 0;
+		}
 	}
 }

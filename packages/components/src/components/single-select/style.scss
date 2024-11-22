@@ -1,4 +1,5 @@
 @import '../@shared/mixins';
+@import '../style';
 @import '../input-line';
 
 @layer kol-component {
@@ -45,6 +46,7 @@
 			&.highlighted {
 				background-color: #f0f0f0;
 			}
+
 			.single-select__listbox--cursor-hidden & {
 				cursor: none !important;
 			}

@@ -1,6 +1,6 @@
 @import '../@shared/mixins';
-@import '../style';
 @import '../host-display-block';
+@import '../tooltip/style.scss';
 
 @mixin kol-alert-styles {
 	@layer kol-component {

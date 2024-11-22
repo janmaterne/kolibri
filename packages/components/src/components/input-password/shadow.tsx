@@ -11,18 +11,19 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
+	ShortKeyPropType,
 	Stringified,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
 } from '../../schema';
-import { devHint, setState, showExpertSlot } from '../../schema';
+import { buildBadgeTextString, devHint, setState, showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedAccessKey } from '../span/InternalUnderlinedAccessKey';
+import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
 import { InputPasswordController } from './controller';
 import { KolButtonWcTag, KolInputTag } from '../../core/component-names';
 import { translate } from '../../i18n';
@@ -113,6 +114,7 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 					_maxLength={this.state._maxLength}
 					_readOnly={this.state._readOnly}
 					_required={this.state._required}
+					_shortKey={this.state._shortKey}
 					_smartButton={this.state._smartButton}
 					_tooltipAlign={this._tooltipAlign}
 					_touched={this.state._touched}
@@ -122,11 +124,11 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 					<span slot="label">
 						{hasExpertSlot ? (
 							<slot name="expert"></slot>
-						) : typeof this.state._accessKey === 'string' ? (
+						) : typeof this.state._accessKey === 'string' || typeof this.state._shortKey === 'string' ? (
 							<>
-								<InternalUnderlinedAccessKey accessKey={this.state._accessKey} label={this.state._label} />{' '}
+								<InternalUnderlinedBadgeText badgeText={buildBadgeTextString(this.state._accessKey, this.state._shortKey)} label={this.state._label} />{' '}
 								<span class="access-key-hint" aria-hidden="true">
-									{this.state._accessKey}
+									{buildBadgeTextString(this.state._accessKey, this.state._shortKey)}
 								</span>
 							</>
 						) : (
@@ -166,11 +168,12 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 								this.inputHasFocus = false;
 							}}
 						/>
-						{this._variant === 'visibility-toggle' && this.inputRef && this.inputRef.value?.length > 0 ? (
+						{this._variant === 'visibility-toggle' ? (
 							<KolButtonWcTag
 								class="password-toggle-button"
 								_label={this._passwordVisible ? translate('kol-hide-password') : translate('kol-show-password')}
 								_variant="ghost"
+								_disabled={this._disabled}
 								_on={{
 									onClick: (): void => {
 										this._passwordVisible = !this._passwordVisible;
@@ -179,9 +182,7 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 								_hideLabel
 								_icons={this._passwordVisible ? 'codicon codicon-eye-closed' : 'codicon codicon-eye-watch'}
 							/>
-						) : (
-							''
-						)}
+						) : null}
 					</div>
 				</KolInputTag>
 			</Host>
@@ -298,6 +299,11 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 	 * @TODO: Change type back to `RequiredPropType` after Stencil#4663 has been resolved.
 	 */
 	@Prop() public _required?: boolean = false;
+
+	/**
+	 * Adds a visual short key hint to the component.
+	 */
+	@Prop() public _shortKey?: ShortKeyPropType;
 
 	/**
 	 * Allows to add a button with an arbitrary action within the element (_hide-label only).
@@ -464,6 +470,11 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 	@Watch('_required')
 	public validateRequired(value?: boolean): void {
 		this.controller.validateRequired(value);
+	}
+
+	@Watch('_shortKey')
+	public validateShortKey(value?: ShortKeyPropType): void {
+		this.controller.validateShortKey(value);
 	}
 
 	@Watch('_smartButton')

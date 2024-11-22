@@ -2,6 +2,7 @@ import type { Generic } from 'adopted-style-sheets';
 
 import type {
 	MsgPropType,
+	PropAccessKey,
 	PropDisabled,
 	PropHasCounter,
 	PropHideError,
@@ -12,6 +13,7 @@ import type {
 	PropName,
 	PropReadOnly,
 	PropRequired,
+	PropShortKey,
 	PropSuggestions,
 	PropSyncValueBySelector,
 	PropTouched,
@@ -21,7 +23,6 @@ import type { ButtonProps } from './button';
 
 type RequiredProps = PropLabelWithExpertSlot;
 type OptionalProps = {
-	accessKey: string;
 	alert: boolean;
 	autoComplete: InputTypeOnOff;
 	/**
@@ -39,7 +40,8 @@ type OptionalProps = {
 	type: InputTextType;
 	value: string;
 	msg: Stringified<MsgPropType>;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHasCounter &
 	PropHideError &
 	PropHideLabel &
@@ -47,6 +49,7 @@ type OptionalProps = {
 	PropName &
 	PropReadOnly &
 	PropRequired &
+	PropShortKey &
 	PropSuggestions &
 	PropSyncValueBySelector &
 	PropTouched;
@@ -60,7 +63,6 @@ type RequiredStates = {
 	PropHideError &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
-	accessKey: string;
 	alert: boolean;
 	currentLength: number;
 	hint: string;
@@ -72,13 +74,15 @@ type OptionalStates = {
 	smartButton: ButtonProps;
 	tabIndex: number;
 	value: string;
-} & PropDisabled &
+} & PropAccessKey &
+	PropDisabled &
 	PropHasCounter &
 	PropHideLabel &
 	PropMsg &
 	PropName &
 	PropReadOnly &
 	PropRequired &
+	PropShortKey &
 	PropTouched;
 
 export type InputTextProps = Generic.Element.Members<RequiredProps, OptionalProps>;
