@@ -19,6 +19,14 @@ export const InputPasswordShowPassword: FC = () => {
 			<KolForm className="w-full">
 				<KolInputPassword _placeholder="With 'Show password' button" _label="Password" ref={passwordRef} className="block" _variant="visibility-toggle" />
 				<KolInputPassword
+					_placeholder="With 'Show password' button"
+					_label="Password"
+					ref={passwordRef}
+					className="block"
+					_variant="visibility-toggle"
+					_value="Password"
+				/>
+				<KolInputPassword
 					_placeholder="With 'Show password' button and disabled"
 					_label="Password"
 					ref={passwordRef}
