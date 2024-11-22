@@ -128,6 +128,7 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 			tooltipAlign: this._tooltipAlign,
 			inputHasFocus: this.inputHasFocus,
 			// onClick: () => this.catchInputRangeRef?.focus(),
+			alert: this.showAsAlert(),
 		};
 	}
 
@@ -338,6 +339,13 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 
 	public constructor() {
 		this.controller = new InputRangeController(this, 'range', this.host);
+	}
+
+	private showAsAlert(): boolean {
+		if (this.state._alert === undefined) {
+			return Boolean(this.state._touched) && !this.inputHasFocus;
+		}
+		return this.state._alert;
 	}
 
 	@Watch('_accessKey')

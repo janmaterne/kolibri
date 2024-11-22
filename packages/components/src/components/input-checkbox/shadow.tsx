@@ -89,6 +89,7 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 			inputHasFocus: this.inputHasFocus,
 			'data-label-align': this.state._labelAlign || 'right',
 			'data-role': this.state._variant === 'button' ? 'button' : undefined,
+			alert: this.showAsAlert(),
 		};
 	}
 
@@ -296,6 +297,13 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 
 	public constructor() {
 		this.controller = new InputCheckboxController(this, 'checkbox', this.host);
+	}
+
+	private showAsAlert(): boolean {
+		if (this.state._alert === undefined) {
+			return Boolean(this.state._touched) && !this.inputHasFocus;
+		}
+		return this.state._alert;
 	}
 
 	@Watch('_accessKey')

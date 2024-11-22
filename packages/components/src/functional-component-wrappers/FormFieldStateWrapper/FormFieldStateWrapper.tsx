@@ -27,14 +27,7 @@ export type FormFieldStateWrapperProps = Partial<FormFieldProps> & {
 	state: InputState;
 };
 
-function showAsAlert(state: InputState, inputHasFocus?: boolean): boolean {
-	if (state._alert === undefined) {
-		return Boolean(state._touched) && !inputHasFocus;
-	}
-	return state._alert;
-}
-
-function getFormFieldProps(state: InputState, inputHasFocus?: boolean): FormFieldProps {
+function getFormFieldProps(state: InputState): FormFieldProps {
 	const props: FormFieldProps = {
 		id: state._id,
 		disabled: state._disabled,
@@ -46,7 +39,6 @@ function getFormFieldProps(state: InputState, inputHasFocus?: boolean): FormFiel
 		touched: state._touched,
 		accessKey: state._accessKey,
 		shortKey: state._shortKey,
-		alert: showAsAlert(state, inputHasFocus),
 	};
 
 	if ('_readOnly' in state) {

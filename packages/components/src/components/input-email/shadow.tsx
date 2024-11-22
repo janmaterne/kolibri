@@ -94,6 +94,7 @@ export class KolInputEmail implements InputEmailAPI, FocusableElement {
 			tooltipAlign: this._tooltipAlign,
 			inputHasFocus: this.inputHasFocus,
 			onClick: () => this.inputRef?.focus(),
+			alert: this.showAsAlert(),
 		};
 	}
 
@@ -299,6 +300,13 @@ export class KolInputEmail implements InputEmailAPI, FocusableElement {
 
 	public constructor() {
 		this.controller = new InputEmailController(this, 'email', this.host);
+	}
+
+	private showAsAlert(): boolean {
+		if (this.state._alert === undefined) {
+			return Boolean(this.state._touched) && !this.inputHasFocus;
+		}
+		return this.state._alert;
 	}
 
 	@Watch('_accessKey')
