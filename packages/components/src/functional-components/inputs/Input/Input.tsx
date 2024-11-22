@@ -12,7 +12,7 @@ export type InputProps = DefaultInputProps<JSXBase.InputHTMLAttributes<HTMLInput
 };
 
 const InputFc: FC<InputProps> = (props) => {
-	const { ariaDescribedBy, hideLabel, label, suggestions, ...other } = props;
+	const { ariaDescribedBy, hideLabel, label, suggestions, value, ...other } = props;
 
 	const inputProps: JSXBase.InputHTMLAttributes<HTMLInputElement> & AriaProps = {
 		type: 'text',
@@ -23,7 +23,7 @@ const InputFc: FC<InputProps> = (props) => {
 
 	return (
 		<>
-			<input {...inputProps} />
+			<input {...inputProps} value={value} />
 			{suggestions}
 		</>
 	);
