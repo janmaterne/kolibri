@@ -1,3 +1,4 @@
+import type { JSX } from '@stencil/core';
 import { h, type FunctionalComponent as FC } from '@stencil/core';
 import KolFormFieldMsgFc from '../FormFieldMsg2';
 import KolFormFieldLabelFc from '../FormFieldLabel';
@@ -28,7 +29,8 @@ function checkHasError(msg?: MsgPropType, touched?: boolean, readOnly?: boolean)
 	return hasError;
 }
 
-export type FormFieldProps = Omit<JSXBase.HTMLAttributes<HTMLDivElement>, 'id'> & {
+export type FormFieldProps = Omit<JSXBase.HTMLAttributes<HTMLElement>, 'id'> & {
+	component?: 'div' | 'fieldset';
 	id: string;
 	alert?: boolean;
 	inputHasFocus?: boolean;
@@ -45,12 +47,25 @@ export type FormFieldProps = Omit<JSXBase.HTMLAttributes<HTMLDivElement>, 'id'> 
 	readOnly?: boolean;
 	touched?: boolean;
 	required?: boolean;
+	renderNoLabel?: boolean;
+	renderNoHint?: boolean;
+	anotherChildren?: JSX.Element | JSX.Element[];
+
+	FormFieldLabelProps?: JSXBase.HTMLAttributes<Omit<HTMLLabelElement | HTMLLegendElement, 'id' | 'hidden' | 'htmlFor'>> & { component?: 'label' | 'legend' };
+	FormFieldHintProps?: JSXBase.HTMLAttributes<HTMLElement>;
+	FormFieldTooltipProps?: Pick<JSXBase.HTMLAttributes<HTMLElement>, 'class'>;
+	FormFieldMsgProps?: JSXBase.HTMLAttributes<HTMLDivElement>;
+	FormFieldCounterProps?: JSXBase.HTMLAttributes<HTMLSpanElement>;
 } & {
 	[key: `data-${string}`]: unknown;
 };
 
 const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 	const {
+		component: Component = 'div',
+		renderNoLabel,
+		renderNoHint,
+		anotherChildren,
 		id,
 		required,
 		alert,
@@ -67,6 +82,11 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		counter,
 		readOnly,
 		touched,
+		FormFieldLabelProps,
+		FormFieldHintProps,
+		FormFieldTooltipProps,
+		FormFieldMsgProps,
+		FormFieldCounterProps,
 		...other
 	} = props;
 	const hasExpertSlot = showExpertSlot(label);
@@ -85,18 +105,37 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 	};
 
 	return (
-		<div
+		<Component
 			class={clsx('kol-input', getModifierClassNameByMsgType(msg), stateCssClasses, classNames)}
 			role={`presentation` /* Avoid element being read as 'clickable' in NVDA */}
 			{...other}
 		>
-			<KolFormFieldLabelFc id={id} hasExpertSlot={hasExpertSlot} hideLabel={hideLabel} label={label} accessKey={accessKey} shortKey={shortKey} />
-			<KolFormFieldHintFc id={id} hint={hint} />
+			{!renderNoLabel && (
+				<KolFormFieldLabelFc
+					{...(FormFieldLabelProps || {})}
+					id={id}
+					hasExpertSlot={hasExpertSlot}
+					hideLabel={hideLabel}
+					label={label}
+					accessKey={accessKey}
+					shortKey={shortKey}
+				/>
+			)}
+			{!renderNoHint && <KolFormFieldHintFc {...(FormFieldHintProps || {})} id={id} hint={hint} />}
 			{children}
-			<KolFormFieldTooltipFc id={id} label={label} hideLabel={hideLabel} hasExpertSlot={hasExpertSlot} align={tooltipAlign} badgeText={badgeText} />
-			{showFormFieldMsg && <KolFormFieldMsgFc id={id} alert={alert} msg={msg} hideError={hideError} />}
-			{counter ? <KolFormFieldCounterFc {...counter} /> : null}
-		</div>
+			<KolFormFieldTooltipFc
+				{...(FormFieldTooltipProps || {})}
+				id={id}
+				label={label}
+				hideLabel={hideLabel}
+				hasExpertSlot={hasExpertSlot}
+				align={tooltipAlign}
+				badgeText={badgeText}
+			/>
+			{showFormFieldMsg && <KolFormFieldMsgFc {...(FormFieldMsgProps || {})} id={id} alert={alert} msg={msg} hideError={hideError} />}
+			{counter ? <KolFormFieldCounterFc {...(FormFieldCounterProps || {})} {...counter} /> : null}
+			{anotherChildren}
+		</Component>
 	);
 };
 

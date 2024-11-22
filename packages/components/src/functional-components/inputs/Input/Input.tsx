@@ -6,6 +6,9 @@ import type { DefaultInputProps, AriaProps } from '../_types';
 export type InputProps = DefaultInputProps<JSXBase.InputHTMLAttributes<HTMLInputElement>> & {
 	value: string | number | string[];
 	suggestions?: VNode;
+} & {
+	[key: `data-${string}`]: unknown;
+	[key: `aria-${string}`]: unknown;
 };
 
 const InputFc: FC<InputProps> = (props) => {

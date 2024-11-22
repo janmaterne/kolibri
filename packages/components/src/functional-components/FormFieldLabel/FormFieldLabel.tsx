@@ -12,7 +12,8 @@ type LabelProps = {
 	hasExpertSlot?: boolean;
 };
 
-type FormFieldLabelProps = JSXBase.HTMLAttributes<Omit<HTMLLabelElement, 'id' | 'hidden' | 'htmlFor'>> & {
+type FormFieldLabelProps = JSXBase.HTMLAttributes<Omit<HTMLLabelElement | HTMLLegendElement, 'id' | 'hidden' | 'htmlFor'>> & {
+	component?: 'label' | 'legend';
 	id: string;
 	hideLabel?: boolean;
 } & LabelProps;
@@ -41,11 +42,21 @@ const LabelFc: FC<LabelProps> = ({ hasExpertSlot, accessKey, shortKey, label }) 
 	);
 };
 
-const KolFormFieldLabelFc: FC<FormFieldLabelProps> = ({ id, class: classNames, accessKey, shortKey, label, hideLabel, hasExpertSlot, ...other }) => {
+const KolFormFieldLabelFc: FC<FormFieldLabelProps> = ({
+	component: Component = 'label',
+	id,
+	class: classNames,
+	accessKey,
+	shortKey,
+	label,
+	hideLabel,
+	hasExpertSlot,
+	...other
+}) => {
 	const useTooltopInsteadOfLabel = !hasExpertSlot && hideLabel;
 
 	return (
-		<label
+		<Component
 			{...other}
 			class={clsx('input-label', classNames)}
 			id={!useTooltopInsteadOfLabel ? `${id}-label` : undefined}
@@ -57,7 +68,7 @@ const KolFormFieldLabelFc: FC<FormFieldLabelProps> = ({ id, class: classNames, a
 				{/* INFO: label comes with any html tag or as plain text! */}
 				<LabelFc hasExpertSlot={hasExpertSlot} accessKey={accessKey} shortKey={shortKey} label={label} />
 			</span>
-		</label>
+		</Component>
 	);
 };
 

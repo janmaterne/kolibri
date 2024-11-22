@@ -11,6 +11,7 @@ import type {
 	InputRangeStates,
 	InputTextStates,
 	InputCheckboxStates,
+	InputRadioStates,
 } from '../../schema';
 import { getRenderStates } from '../_helpers/getRenderStates';
 import SuggestionsFc from '../../functional-components/Suggestions';
@@ -23,7 +24,8 @@ type InputState =
 	| InputColorStates
 	| InputFileStates
 	| InputRangeStates
-	| InputCheckboxStates;
+	| InputCheckboxStates
+	| InputRadioStates;
 
 export type InputStateWrapperProps = Partial<InputProps> & {
 	state: InputState;

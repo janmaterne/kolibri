@@ -3,15 +3,16 @@ import type { AlertPropType, HideErrorPropType, IdPropType, MsgPropType } from '
 import type { FunctionalComponent } from '@stencil/core';
 import { h } from '@stencil/core';
 import KolAlertFc from '../Alert';
+import type { JSXBase } from '@stencil/core/internal';
 
-type FormFieldMsgProps = {
+type FormFieldMsgProps = JSXBase.HTMLAttributes<HTMLDivElement> & {
 	alert?: AlertPropType;
 	msg?: MsgPropType;
 	hideError?: HideErrorPropType;
 	id: IdPropType;
 };
 
-const FormFieldMsgFc: FunctionalComponent<FormFieldMsgProps> = ({ alert, msg, hideError, id }) => (
+const FormFieldMsgFc: FunctionalComponent<FormFieldMsgProps> = ({ alert, msg, hideError, id, ...other }) => (
 	<KolAlertFc
 		/**
 		 * This message is read out by screen readers if the input field
@@ -28,6 +29,7 @@ const FormFieldMsgFc: FunctionalComponent<FormFieldMsgProps> = ({ alert, msg, hi
 			'visually-hidden': hideError === true,
 		})}
 		{...msg}
+		{...other}
 	>
 		{msg?._description || undefined}
 	</KolAlertFc>

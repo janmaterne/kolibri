@@ -9,6 +9,7 @@ import type {
 	InputRangeStates,
 	InputTextStates,
 	InputCheckboxStates,
+	InputRadioStates,
 } from '../../schema';
 
 type InputState =
@@ -19,7 +20,8 @@ type InputState =
 	| InputColorStates
 	| InputFileStates
 	| InputRangeStates
-	| InputCheckboxStates;
+	| InputCheckboxStates
+	| InputRadioStates;
 
 export type FormFieldStateWrapperProps = Partial<FormFieldProps> & {
 	state: InputState;
