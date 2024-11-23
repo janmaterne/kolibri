@@ -1,4 +1,4 @@
-import type { CSSResize, HasCounterPropType, RowsPropType, TextareaProps, TextareaWatches } from '../../schema';
+import type { CSSResize, HasCounterPropType, RowsPropType, SpellCheckPropType, TextareaProps, TextareaWatches } from '../../schema';
 import { validateHasCounter } from '../../schema';
 import { cssResizeOptions, validateRows, watchBoolean, watchNumber, watchString, watchValidator } from '../../schema';
 
@@ -62,13 +62,17 @@ export class TextareaController extends InputIconController implements TextareaW
 		validateRows(this.component, value);
 	}
 
+	public validateSpellCheck(value?: SpellCheckPropType): void {
+		watchBoolean(this.component, '_spellCheck', value);
+	}
+
 	public validateValue(value?: string): void {
 		watchString(this.component, '_value', value, {
 			hooks: {
 				afterPatch: this.afterSyncCharCounter,
 			},
 		});
-		this.setFormAssociatedValue(this.component._value as string);
+		this.setFormAssociatedValue(this.component._value);
 	}
 
 	public componentWillLoad(): void {
@@ -80,6 +84,7 @@ export class TextareaController extends InputIconController implements TextareaW
 		this.validateResize(this.component._resize);
 		this.validateRequired(this.component._required);
 		this.validateRows(this.component._rows);
+		this.validateSpellCheck(this.component._spellCheck);
 		this.validateValue(this.component._value);
 	}
 }

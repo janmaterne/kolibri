@@ -14,6 +14,7 @@ import type {
 	PropReadOnly,
 	PropRequired,
 	PropShortKey,
+	PropSpellCheck,
 	PropSuggestions,
 	PropSyncValueBySelector,
 	PropTouched,
@@ -32,6 +33,7 @@ type OptionalProps = {
 	hint: string;
 	icons: Stringified<KoliBriHorizontalIcons>;
 	maxLength: number;
+	msg: Stringified<MsgPropType>;
 	on: InputTypeOnDefault;
 	pattern: string;
 	placeholder: string;
@@ -39,7 +41,6 @@ type OptionalProps = {
 	tabIndex: number;
 	type: InputTextType;
 	value: string;
-	msg: Stringified<MsgPropType>;
 } & PropAccessKey &
 	PropDisabled &
 	PropHasCounter &
@@ -50,6 +51,7 @@ type OptionalProps = {
 	PropReadOnly &
 	PropRequired &
 	PropShortKey &
+	PropSpellCheck &
 	PropSuggestions &
 	PropSyncValueBySelector &
 	PropTouched;
@@ -59,8 +61,8 @@ type RequiredStates = {
 	hasValue: boolean;
 	suggestions: W3CInputValue[];
 	type: InputTextType;
-} & PropId &
-	PropHideError &
+} & PropHideError &
+	PropId &
 	PropLabelWithExpertSlot;
 type OptionalStates = {
 	alert: boolean;
@@ -83,6 +85,7 @@ type OptionalStates = {
 	PropReadOnly &
 	PropRequired &
 	PropShortKey &
+	PropSpellCheck &
 	PropTouched;
 
 export type InputTextProps = Generic.Element.Members<RequiredProps, OptionalProps>;
