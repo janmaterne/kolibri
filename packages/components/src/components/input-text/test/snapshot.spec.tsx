@@ -8,6 +8,7 @@ executeInputSnapshotTests<InputTextProps>(
 	KolInputTextTag,
 	[KolInputText],
 	{
+		_spellCheck: true,
 		_value: 'Value',
 	},
 	{ hasSmartButton: true },

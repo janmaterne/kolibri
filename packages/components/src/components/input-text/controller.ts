@@ -1,5 +1,13 @@
-import type { InputTextProps, InputTextType, InputTextWatches, PropLabelWithExpertSlot, PropSuggestions, SuggestionsPropType } from '../../schema';
-import { inputTextTypeOptions, validateSuggestions, watchValidator } from '../../schema';
+import type {
+	InputTextProps,
+	InputTextType,
+	InputTextWatches,
+	PropLabelWithExpertSlot,
+	PropSuggestions,
+	SpellCheckPropType,
+	SuggestionsPropType,
+} from '../../schema';
+import { inputTextTypeOptions, validateSuggestions, watchBoolean, watchValidator } from '../../schema';
 
 import { InputPasswordController } from '../input-password/controller';
 
@@ -40,6 +48,10 @@ export class InputTextController extends InputTextEmailController implements Inp
 		this.component = component;
 	}
 
+	public validateSpellCheck(value?: SpellCheckPropType): void {
+		watchBoolean(this.component, '_spellCheck', value);
+	}
+
 	public validateType(value?: InputTextType): void {
 		watchValidator(
 			this.component,
@@ -52,7 +64,7 @@ export class InputTextController extends InputTextEmailController implements Inp
 
 	public componentWillLoad(): void {
 		super.componentWillLoad();
+		this.validateSpellCheck(this.component._spellCheck);
 		this.validateType(this.component._type);
-		this.validateHasCounter(this.component._hasCounter);
 	}
 }
