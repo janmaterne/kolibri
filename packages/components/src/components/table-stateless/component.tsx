@@ -1,6 +1,9 @@
 import type { JSX } from '@stencil/core';
 import { Component, Element, h, Host, Listen, Prop, State, Watch } from '@stencil/core';
 
+import { KolButtonWcTag, KolIconTag, KolTooltipWcTag } from '../../core/component-names';
+import type { TranslationKey } from '../../i18n';
+import { translate } from '../../i18n';
 import type {
 	KoliBriTableCell,
 	KoliBriTableDataType,
@@ -18,6 +21,7 @@ import type {
 	TableStatelessStates,
 } from '../../schema';
 import {
+	devHint,
 	validateLabel,
 	validateTableCallbacks,
 	validateTableData,
@@ -26,12 +30,9 @@ import {
 	validateTableSelection,
 	watchString,
 } from '../../schema';
-import { KolButtonWcTag, KolIconTag, KolTooltipWcTag } from '../../core/component-names';
-import type { TranslationKey } from '../../i18n';
-import { translate } from '../../i18n';
-import { tryToDispatchKoliBriEvent } from '../../utils/events';
 import { Events } from '../../schema/enums';
 import { nonce } from '../../utils/dev.utils';
+import { tryToDispatchKoliBriEvent } from '../../utils/events';
 
 /**
  * @internal
@@ -258,35 +259,49 @@ export class KolTableStateless implements TableStatelessAPI {
 		return max;
 	}
 
-	private filterHeaderKeys(headers: KoliBriTableHeaderCell[][]): KoliBriTableHeaderCell[] {
-		const primaryHeader: KoliBriTableHeaderCell[] = [];
-		headers.forEach((cells) => {
-			Array.isArray(cells) &&
-				cells.forEach((cell) => {
-					if (typeof cell.key === 'string') {
-						primaryHeader.push(cell);
-					}
-				});
+	/**
+	 * Header keys are only the keys that are in the last header line,
+	 * because the columns are divided into the most granular form in this line.
+	 */
+	private getThePrimaryHeadersWithKeysIfExists(headers: KoliBriTableHeaderCell[][]): KoliBriTableHeaderCell[] {
+		const primaryHeadersWithKeys: KoliBriTableHeaderCell[] = [];
+		const lastIdx = headers.length - 1;
+		const lastRow = headers[lastIdx];
+		if (!Array.isArray(lastRow)) {
+			devHint('The header is not an array.');
+			return primaryHeadersWithKeys;
+		}
+		lastRow.forEach((cell, idx) => {
+			if (typeof cell.key === 'string') {
+				/**
+				 * Interessting cases
+				 * - An empty key should also work.
+				 * - The key property is duplicated in the header cell.
+				 */
+				primaryHeadersWithKeys.push(cell);
+			} else {
+				devHint(`The key property is missing in the header cell (${idx}).`);
+			}
 		});
-		return primaryHeader;
+		return primaryHeadersWithKeys;
 	}
 
-	private getPrimaryHeader(headers: KoliBriTableHeaders): KoliBriTableHeaderCell[] {
-		let primaryHeader: KoliBriTableHeaderCell[] = this.filterHeaderKeys(headers.horizontal ?? []);
+	private getPrimaryHeaders(headers: KoliBriTableHeaders): KoliBriTableHeaderCell[] {
+		let primaryHeadersWithKeys: KoliBriTableHeaderCell[] = this.getThePrimaryHeadersWithKeysIfExists(headers.horizontal ?? []);
 		this.horizontal = true;
-		if (primaryHeader.length === 0) {
-			primaryHeader = this.filterHeaderKeys(headers.vertical ?? []);
-			if (primaryHeader.length > 0) {
+		if (primaryHeadersWithKeys.length === 0) {
+			primaryHeadersWithKeys = this.getThePrimaryHeadersWithKeysIfExists(headers.vertical ?? []);
+			if (primaryHeadersWithKeys.length > 0) {
 				this.horizontal = false;
 			}
 		}
-		return primaryHeader;
+		return primaryHeadersWithKeys;
 	}
 
 	private createDataField(data: KoliBriTableDataType[], headers: KoliBriTableHeaders, isFoot?: boolean): (KoliBriTableCell & KoliBriTableDataType)[][] {
 		headers.horizontal = Array.isArray(headers?.horizontal) ? headers.horizontal : [];
 		headers.vertical = Array.isArray(headers?.vertical) ? headers.vertical : [];
-		const primaryHeader = this.getPrimaryHeader(headers);
+		const primaryHeader = this.getPrimaryHeaders(headers);
 		const maxCols = this.getNumberOfCols(headers.horizontal, data);
 		let maxRows = this.getNumberOfRows(headers.vertical, data);
 		let startRow = 0;
@@ -302,15 +317,6 @@ export class KolTableStateless implements TableStatelessAPI {
 			rowCount[index] = 0;
 			rowSpans[index] = [];
 		});
-		if (Array.isArray(headers.vertical) && headers.vertical.length > 0 && Array.isArray(headers.horizontal) && headers.horizontal.length > 0) {
-			Array.isArray(headers.horizontal[0]) &&
-				headers.horizontal[0].unshift({
-					asTd: true,
-					colSpan: headers.vertical.length,
-					label: '',
-					rowSpan: headers.horizontal.length,
-				});
-		}
 
 		for (let i = startRow; i < maxRows; i++) {
 			const dataRow: KoliBriTableHeaderCellWithLogic[] = [];
@@ -323,8 +329,7 @@ export class KolTableStateless implements TableStatelessAPI {
 						dataRow.push({
 							...rows,
 							asTd: false,
-							// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-							data: {} as KoliBriTableDataType,
+							data: {},
 						});
 						let rowSpan = 1;
 						if (typeof rows.rowSpan === 'number' && rows.rowSpan > 1) {
@@ -353,9 +358,7 @@ export class KolTableStateless implements TableStatelessAPI {
 						dataRow.push({
 							...primaryHeader[j],
 							colSpan: undefined,
-							// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 							data: row,
-							// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 							label: row[primaryHeader[j].key as unknown as string] as string,
 							rowSpan: undefined,
 						});
@@ -371,9 +374,7 @@ export class KolTableStateless implements TableStatelessAPI {
 						dataRow.push({
 							...primaryHeader[i],
 							colSpan: undefined,
-							// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 							data: data[j],
-							// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 							label: data[j][primaryHeader[i].key as unknown as number] as string,
 							rowSpan: undefined,
 						});
@@ -672,11 +673,12 @@ export class KolTableStateless implements TableStatelessAPI {
 	}
 
 	private renderSpacer(variant: 'foot' | 'head', cellDefs: KoliBriTableHeaderCell[][] | KoliBriTableCell[][]): JSX.Element {
+		const verticalHeaderColpan = this.state._headerCells.vertical?.length || 0;
 		const colspan = cellDefs?.[0]?.reduce((acc, row) => acc + (row.colSpan || 1), 0);
 
 		return (
 			<tr class={`${variant}-spacer`} aria-hidden="true">
-				<td colSpan={colspan}></td>
+				<td colSpan={verticalHeaderColpan + colspan}></td>
 			</tr>
 		);
 	}
@@ -731,6 +733,12 @@ export class KolTableStateless implements TableStatelessAPI {
 									this.state._headerCells.horizontal.map((cols, rowIndex) => (
 										<tr key={`thead-${rowIndex}`}>
 											{this.state._selection && this.renderHeadingSelectionCell()}
+											{rowIndex === 0 &&
+												Array.isArray(this.state._headerCells.vertical) &&
+												this.state._headerCells.vertical.length > 0 &&
+												Array.isArray(this.state._headerCells.horizontal) && (
+													<td colSpan={this.state._headerCells.vertical.length} rowSpan={this.state._headerCells.horizontal.length}></td>
+												)}
 											{Array.isArray(cols) &&
 												cols.map((cell, colIndex) => {
 													if (cell.asTd === true) {

@@ -53,12 +53,12 @@ executeSnapshotTests<TableStatelessProps>(
 			_headerCells: {
 				horizontal: [
 					[
-						{ key: 'header1', label: 'Header 1', textAlign: 'left' },
-						{ key: 'header2', label: 'Header 2', textAlign: 'center' },
+						{ label: 'Header 1', textAlign: 'left' },
+						{ label: 'Header 2', textAlign: 'center' },
 					],
 					[
-						{ key: 'sub-header1', label: 'Sub Header 1', textAlign: 'left' },
-						{ key: 'sub-header2', label: 'Sub Header 2', textAlign: 'center' },
+						{ key: 'header1', label: 'Sub Header 1', textAlign: 'left' },
+						{ key: 'header2', label: 'Sub Header 2', textAlign: 'center' },
 					],
 				],
 				vertical: [
@@ -79,15 +79,15 @@ executeSnapshotTests<TableStatelessProps>(
 				horizontal: [
 					[{ label: 'H-Header', colSpan: 2 }],
 					[
-						{ key: 'leadHeader1', label: 'Sub H-Header 1' },
-						{ key: 'leadHeader2', label: 'Sub H-Header 2' },
+						{ key: 'header1', label: 'Sub H-Header 1' },
+						{ key: 'header2', label: 'Sub H-Header 2' },
 					],
 				],
 				vertical: [[{ label: 'V-Header', rowSpan: 2 }], [{ label: 'Sub V-Header 1' }, { label: 'Sub V-Header 2' }]],
 			},
 			_data: [
-				{ leadHeader1: 'Cell 1.1', leadHeader2: 'Cell 1.2' },
-				{ leadHeader1: 'Cell 2.1', leadHeader2: 'Cell 2.2' },
+				{ header1: 'Cell 1.1', header2: 'Cell 1.2' },
+				{ header1: 'Cell 2.1', header2: 'Cell 2.2' },
 			],
 		},
 	],
