@@ -360,15 +360,30 @@ test.describe('kol-input-date', () => {
 			await expect(page.locator('input')).toHaveValue('');
 		});
 	});
-	test.describe('when _msg is set', () => {
+	test.describe('when _error or _msg is set', () => {
+		test('should display and hide error message based on _error value', async ({ page }) => {
+			await page.setContent(`<kol-input-date
+				_error="An error message"
+				_label="Date input"
+				_touched
+			></kol-input-date>`);
+
+			await expect(page.locator('.kol-alert-wc')).not.toBeVisible();
+			const inputDate = page.locator('kol-input-date');
+
+			await inputDate.evaluate((element: HTMLKolInputDateElement) => {
+				element._error = undefined;
+			});
+			await expect(page.locator('.kol-alert-wc')).not.toBeVisible();
+		});
 		test('should display and hide error message based on _msg value', async ({ page }) => {
 			await page.setContent(`<kol-input-date
 				_label="Date input"
+				_msg="{'_description': 'An error message', '_type': 'error'}"
 				_touched
-				 _msg="{'_description': 'An error message', '_type': 'error'}"
-				 > </kol-input-date>`);
+			> </kol-input-date>`);
 
-			await expect(page.locator('.kol-alert-wc')).toHaveAttribute('role', 'alert');
+			await expect(page.locator('.kol-alert-wc')).toBeVisible();
 			const inputDate = page.locator('kol-input-date');
 
 			await inputDate.evaluate((element: HTMLKolInputDateElement) => {

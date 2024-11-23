@@ -75,11 +75,14 @@ export class InputController extends ControlledInputController implements Watche
 	 * @deprecated
 	 */
 	public validateError(value?: string): void {
-		const message: MsgPropType = {
-			_description: value || '',
-			_type: 'error',
-		};
-		this.validateMsg(message);
+		if (typeof value === 'string' && value.length > 0) {
+			this.validateMsg({
+				_description: value,
+				_type: 'error',
+			});
+		} else {
+			this.validateMsg();
+		}
 	}
 
 	public validateHideError(value?: HideErrorPropType): void {
@@ -125,7 +128,10 @@ export class InputController extends ControlledInputController implements Watche
 
 	public validateMsg(value?: Stringified<MsgPropType>): void {
 		if (value === undefined) {
-			value = { _description: '', _type: 'error' };
+			value = {
+				_description: '',
+				_type: 'error',
+			};
 		}
 		validateMsg(this.component, value);
 	}
