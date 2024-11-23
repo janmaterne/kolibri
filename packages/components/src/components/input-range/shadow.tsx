@@ -180,7 +180,6 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 								max={this.state._max}
 								min={this.state._min}
 								name={this.state._name ? `${this.state._name}-range` : undefined}
-								spellcheck="false"
 								step={this.state._step}
 								tabIndex={-1}
 								type="range"

@@ -11,7 +11,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input accesskey="V" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input accesskey="V" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -28,7 +28,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -45,7 +45,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" disabled="" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" disabled="" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -62,7 +62,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -79,7 +79,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -96,7 +96,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -113,7 +113,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -130,7 +130,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -147,7 +147,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -164,7 +164,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -182,7 +182,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -199,7 +199,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -216,7 +216,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>
@@ -233,7 +233,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </kol-input>
   </template>

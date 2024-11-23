@@ -126,7 +126,6 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 							list={hasSuggestions ? `${this.state._id}-list` : undefined}
 							name={this.state._name}
 							slot="input"
-							spellcheck="false"
 							type="color"
 							value={this.state._value as string}
 							{...this.controller.onFacade}

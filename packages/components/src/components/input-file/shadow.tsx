@@ -123,7 +123,6 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 							multiple={this.state._multiple}
 							name={this.state._name}
 							required={this.state._required}
-							spellcheck="false"
 							type="file"
 							value={this.state._value as string}
 							{...this.controller.onFacade}

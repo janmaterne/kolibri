@@ -153,7 +153,6 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 							placeholder={this.state._placeholder}
 							readOnly={this.state._readOnly}
 							required={this.state._required}
-							spellcheck="false"
 							type={this._passwordVisible ? 'text' : 'password'}
 							value={this.state._value as string}
 							{...this.controller.onFacade}
