@@ -154,7 +154,6 @@ export class KolInputEmail implements InputEmailAPI, FocusableElement {
 							placeholder={this.state._placeholder}
 							readOnly={this.state._readOnly}
 							required={this.state._required}
-							spellcheck="false"
 							type="email"
 							value={this.state._value as string}
 							{...this.controller.onFacade}
