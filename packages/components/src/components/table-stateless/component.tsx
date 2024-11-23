@@ -302,17 +302,13 @@ export class KolTableStateless implements TableStatelessAPI {
 			rowCount[index] = 0;
 			rowSpans[index] = [];
 		});
-		if (
-			Array.isArray(headers.vertical) &&
-			headers.vertical.length > 0 &&
-			Array.isArray(headers.horizontal) &&
-			headers.horizontal.length > 0 &&
-			headers.horizontal[0][0]?.label !== ''
-		) {
+		if (Array.isArray(headers.vertical) && headers.vertical.length > 0 && Array.isArray(headers.horizontal) && headers.horizontal.length > 0) {
 			Array.isArray(headers.horizontal[0]) &&
 				headers.horizontal[0].unshift({
-					label: '',
 					asTd: true,
+					colSpan: headers.vertical.length,
+					label: '',
+					rowSpan: headers.horizontal.length,
 				});
 		}
 
@@ -676,7 +672,7 @@ export class KolTableStateless implements TableStatelessAPI {
 	}
 
 	private renderSpacer(variant: 'foot' | 'head', cellDefs: KoliBriTableHeaderCell[][] | KoliBriTableCell[][]): JSX.Element {
-		const colspan = Array.isArray(cellDefs?.[0]) ? cellDefs?.[0]?.reduce((acc, row) => acc + (row.colSpan || 1), 0) : 1;
+		const colspan = cellDefs?.[0]?.reduce((acc, row) => acc + (row.colSpan || 1), 0);
 
 		return (
 			<tr class={`${variant}-spacer`} aria-hidden="true">

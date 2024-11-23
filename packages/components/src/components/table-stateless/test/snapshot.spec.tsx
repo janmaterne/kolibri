@@ -73,5 +73,22 @@ executeSnapshotTests<TableStatelessProps>(
 				{ header1: 'Cell 2.1', header2: 'Cell 2.2' },
 			],
 		},
+		{
+			_label: 'Table with two spanned horizontal and vertical headers',
+			_headerCells: {
+				horizontal: [
+					[{ label: 'H-Header', colSpan: 2 }],
+					[
+						{ key: 'leadHeader1', label: 'Sub H-Header 1' },
+						{ key: 'leadHeader2', label: 'Sub H-Header 2' },
+					],
+				],
+				vertical: [[{ label: 'V-Header', rowSpan: 2 }], [{ label: 'Sub V-Header 1' }, { label: 'Sub V-Header 2' }]],
+			},
+			_data: [
+				{ leadHeader1: 'Cell 1.1', leadHeader2: 'Cell 1.2' },
+				{ leadHeader1: 'Cell 2.1', leadHeader2: 'Cell 2.2' },
+			],
+		},
 	],
 );

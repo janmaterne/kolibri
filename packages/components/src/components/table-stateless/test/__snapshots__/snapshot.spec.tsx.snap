@@ -10,7 +10,7 @@ exports[`kol-table-stateless-wc should render with _label="Table with horizontal
       </caption>
       <thead>
         <tr>
-          <td></td>
+          <td colspan="1" rowspan="1"></td>
           <th class="align-left" data-sort="sort-undefined" scope="col">
             Header1
           </th>
@@ -128,7 +128,7 @@ exports[`kol-table-stateless-wc should render with _label="Table with two horizo
       </caption>
       <thead>
         <tr>
-          <td></td>
+          <td colspan="1" rowspan="2"></td>
           <th class="align-left" data-sort="sort-undefined" scope="col">
             Header 1
           </th>
@@ -168,6 +168,65 @@ exports[`kol-table-stateless-wc should render with _label="Table with two horizo
             Cell 2.1
           </td>
           <td class="center" style="text-align: center;">
+            Cell 2.2
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</kol-table-stateless-wc>
+`;
+
+exports[`kol-table-stateless-wc should render with _label="Table with two spanned horizontal and vertical headers" _headerCells={"horizontal":[[{"label":"H-Header","colSpan":2}],[{"key":"leadHeader1","label":"Sub H-Header 1"},{"key":"leadHeader2","label":"Sub H-Header 2"}]],"vertical":[[{"label":"V-Header","rowSpan":2}],[{"label":"Sub V-Header 1"},{"label":"Sub V-Header 2"}]]} _data=[{"leadHeader1":"Cell 1.1","leadHeader2":"Cell 1.2"},{"leadHeader1":"Cell 2.1","leadHeader2":"Cell 2.2"}] 1`] = `
+<kol-table-stateless-wc class="kol-table-stateless-wc">
+  <div class="table">
+    <table>
+      <div aria-describedby="caption" class="focus-element"></div>
+      <caption id="caption">
+        Table with two spanned horizontal and vertical headers
+      </caption>
+      <thead>
+        <tr>
+          <td colspan="2" rowspan="2"></td>
+          <th colspan="2" data-sort="sort-undefined" scope="colgroup">
+            H-Header
+          </th>
+        </tr>
+        <tr>
+          <th data-sort="sort-undefined" scope="col">
+            Sub H-Header 1
+          </th>
+          <th data-sort="sort-undefined" scope="col">
+            Sub H-Header 2
+          </th>
+        </tr>
+        <tr aria-hidden="true" class="head-spacer">
+          <td colspan="3"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th data-sort="sort-undefined" rowspan="2" scope="row">
+            V-Header
+          </th>
+          <th data-sort="sort-undefined" scope="row">
+            Sub V-Header 1
+          </th>
+          <td>
+            Cell 1.1
+          </td>
+          <td>
+            Cell 1.2
+          </td>
+        </tr>
+        <tr>
+          <th data-sort="sort-undefined" scope="row">
+            Sub V-Header 2
+          </th>
+          <td>
+            Cell 2.1
+          </td>
+          <td>
             Cell 2.2
           </td>
         </tr>
