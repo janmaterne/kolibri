@@ -32,7 +32,10 @@ export const validateMsg = (component: Generic.Element.Component, value?: String
 			new Set(['MsgPropType']),
 			value as MsgPropType,
 			{
-				defaultValue: undefined,
+				defaultValue: {
+					_description: '',
+					_type: 'error',
+				},
 			},
 		);
 	});
