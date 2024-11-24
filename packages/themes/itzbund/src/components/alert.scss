@@ -3,50 +3,34 @@
 
 @layer kol-theme-component {
 	.kol-alert {
+		&--default {
+			--alert-border-color: var(--color-anthrazit);
+		}
+
+		&--error {
+			--alert-border-color: var(--color-rotton);
+		}
+
+		&--info {
+			--alert-border-color: var(--color-petrol);
+		}
+
+		&--success {
+			--alert-border-color: var(--color-gras);
+		}
+
+		&--warning {
+			--alert-border-color: var(--color-warn);
+		}
+
 		&__container {
 			display: flex;
 			place-items: center;
 			gap: rem(8);
 		}
 
-		&--default {
-			border-color: var(--color-anthrazit);
-
-			.kol-alert__heading-icon {
-				background-color: var(--color-anthrazit);
-			}
-		}
-
-		&--error {
-			border-color: var(--color-rotton);
-
-			.kol-alert__heading-icon {
-				background-color: var(--color-rotton);
-			}
-		}
-
-		&--info {
-			border-color: var(--color-petrol);
-
-			.kol-alert__heading-icon {
-				background-color: var(--color-petrol);
-			}
-		}
-
-		&--success {
-			border-color: var(--color-gras);
-
-			.kol-alert__heading-icon {
-				background-color: var(--color-gras);
-			}
-		}
-
-		&--warning {
-			border-color: var(--color-warn);
-
-			.kol-alert__heading-icon {
-				background-color: var(--color-warn);
-			}
+		&__heading-icon {
+			background-color: var(--alert-border-color);
 		}
 	}
 }
