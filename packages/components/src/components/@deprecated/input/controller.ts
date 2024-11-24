@@ -162,7 +162,10 @@ export class InputController extends ControlledInputController implements Watche
 		this.validateAccessKey(this.component._accessKey);
 		this.validateAdjustHeight(this.component._adjustHeight);
 		this.validateError(this.component._error);
-		this.validateMsg(this.component._msg);
+		// _msg should only override _error if it is also defined.
+		if (this.component._msg) {
+			this.validateMsg(this.component._msg);
+		}
 		this.validateDisabled(this.component._disabled);
 		this.validateHideError(this.component._hideError);
 		this.validateHideLabel(this.component._hideLabel);

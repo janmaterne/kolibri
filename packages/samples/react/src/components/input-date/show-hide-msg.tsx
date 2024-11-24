@@ -11,8 +11,8 @@ function onGenerator(setter: (cb: (b: boolean) => boolean) => void) {
 }
 
 export const InputDateShowHideMsg = () => {
-	const [showMsg, setShowMsg] = useState(false);
-	const [isTouched, setIsTouched] = useState(false);
+	const [showMsg, setShowMsg] = useState(true);
+	const [isTouched, setIsTouched] = useState(true);
 	const [hideMsg, setHideMsg] = useState(false);
 
 	const onMsg = onGenerator(setShowMsg);
@@ -25,39 +25,35 @@ export const InputDateShowHideMsg = () => {
 				<p>This example shows how messages work in input fields.</p>
 			</SampleDescription>
 
-			<div className="flex gap-4 items-center">
-				<KolButton _label="Toggle Msg" _type="button" _on={onMsg} />
-				<KolButton _label="Toggle Touched" _type="button" _on={onTouched} />
-				<KolButton _label="Toggle Hide Msg" _type="button" _on={onHideMsg} />
+			<div className="flex gap-4 flex-col">
+				<div className="flex gap-4 items-center">
+					<KolButton _label="Toggle Msg" _type="button" _on={onMsg} />
+					<KolButton _label="Toggle Touched" _type="button" _on={onTouched} />
+					<KolButton _label="Toggle Hide Msg" _type="button" _on={onHideMsg} />
+				</div>
+				<pre>
+					Message exists: {showMsg && isTouched ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, isTouched: {isTouched ? 'Yes' : 'No'})<br />
+					Message visible: {showMsg && isTouched && !hideMsg ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, isTouched: {isTouched ? 'Yes' : 'No'}, hideMsg:{' '}
+					{hideMsg ? 'Yes' : 'No'})
+				</pre>
+				<KolInputDate _error={showMsg ? 'error message' : undefined} _hideError={hideMsg} _label="Date (_error)" _touched={isTouched} />
+				{msgTypes.map((type) => (
+					<KolInputDate
+						key={type}
+						_hideError={hideMsg}
+						_label={`Date (_msg, ${type})`}
+						_msg={
+							showMsg
+								? {
+										_description: `${type} message`,
+										_type: type,
+									}
+								: undefined
+						}
+						_touched={isTouched}
+					/>
+				))}
 			</div>
-			<br />
-			<hr />
-			<br />
-			<pre>
-				Message exists: {showMsg && isTouched ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, isTouched: {isTouched ? 'Yes' : 'No'})<br />
-				Message visible: {showMsg && isTouched && !hideMsg ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, isTouched: {isTouched ? 'Yes' : 'No'}, hideMsg:{' '}
-				{hideMsg ? 'Yes' : 'No'})
-			</pre>
-			<br />
-			<hr />
-			<br />
-			<KolInputDate _error={showMsg ? 'error message' : undefined} _hideError={hideMsg} _label="Date (_error)" _touched={isTouched} />
-			{msgTypes.map((type) => (
-				<KolInputDate
-					key={type}
-					_hideError={hideMsg}
-					_label="Date (_msg)"
-					_msg={
-						showMsg
-							? {
-									_description: `${type} message`,
-									_type: type,
-								}
-							: undefined
-					}
-					_touched={isTouched}
-				/>
-			))}
 		</>
 	);
 };
