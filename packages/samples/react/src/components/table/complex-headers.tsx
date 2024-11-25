@@ -39,12 +39,26 @@ export const TableComplexHeaders: FC = () => (
 					},
 				]}
 				_headers={{
-					vertical: [[{ label: 'Berlin', rowSpan: 2 }, { label: 'München' }]],
+					vertical: [
+						[
+							{
+								label: 'Berlin',
+								rowSpan: 2,
+							},
+							{
+								label: 'München',
+							},
+						],
+					],
 					horizontal: [
 						[
 							{
 								label: '',
-								colSpan: 7,
+								asTd: true,
+							},
+							{
+								label: 'Workdays',
+								colSpan: 5,
 							},
 							{
 								label: 'Weekend',
@@ -52,7 +66,6 @@ export const TableComplexHeaders: FC = () => (
 							},
 						],
 						[
-							{ label: '' },
 							{
 								label: 'District',
 								key: 'asp',
