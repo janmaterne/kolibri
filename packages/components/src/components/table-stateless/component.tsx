@@ -21,7 +21,6 @@ import type {
 	TableStatelessStates,
 } from '../../schema';
 import {
-	devHint,
 	validateLabel,
 	validateTableCallbacks,
 	validateTableData,
@@ -259,30 +258,17 @@ export class KolTableStateless implements TableStatelessAPI {
 		return max;
 	}
 
-	/**
-	 * Header keys are only the keys that are in the last header line,
-	 * because the columns are divided into the most granular form in this line.
-	 */
 	private getThePrimaryHeadersWithKeysIfExists(headers: KoliBriTableHeaderCell[][]): KoliBriTableHeaderCell[] {
 		const primaryHeadersWithKeys: KoliBriTableHeaderCell[] = [];
-		const lastIdx = headers.length - 1;
-		const lastRow = headers[lastIdx];
-		if (!Array.isArray(lastRow)) {
-			devHint('The header is not an array.');
-			return primaryHeadersWithKeys;
-		}
-		lastRow.forEach((cell, idx) => {
-			if (typeof cell.key === 'string') {
-				/**
-				 * Interessting cases
-				 * - An empty key should also work.
-				 * - The key property is duplicated in the header cell.
-				 */
-				primaryHeadersWithKeys.push(cell);
-			} else {
-				devHint(`The key property is missing in the header cell (${idx}).`);
-			}
+
+		headers.forEach((cells) => {
+			cells.forEach((cell) => {
+				if (typeof cell.key === 'string') {
+					primaryHeadersWithKeys.push(cell);
+				}
+			});
 		});
+
 		return primaryHeadersWithKeys;
 	}
 

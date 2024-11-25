@@ -53,8 +53,9 @@ export const TableComplexHeaders: FC = () => (
 					horizontal: [
 						[
 							{
-								label: '',
-								asTd: true,
+								label: 'District',
+								rowSpan: 2,
+								key: 'asp',
 							},
 							{
 								label: 'Workdays',
@@ -66,10 +67,6 @@ export const TableComplexHeaders: FC = () => (
 							},
 						],
 						[
-							{
-								label: 'District',
-								key: 'asp',
-							},
 							{
 								label: 'Monday',
 								key: 'monday',
