@@ -2,35 +2,36 @@
 
 @layer kol-theme-component {
 	.kol-button-link {
-		:is(a, button) {
-			color: var(--color-primary);
-			font-style: normal;
-			font-weight: 400;
-			text-decoration-line: underline;
-			font-size: inherit;
+		.kol-button {
+			&__element {
+				color: var(--color-primary);
+				font-style: normal;
+				font-weight: 400;
+				text-decoration-line: underline;
+				font-size: inherit;
 
-			:focus {
-				outline: none;
+				:focus {
+					outline: none;
+				}
 
-				.kol-span-wc {
-					border-radius: var(--border-radius);
-					outline: calc(var(--border-width) * 2) solid;
+				&:hover {
+					&:visited {
+						color: var(--visited);
+					}
 				}
 			}
 
-			&:hover {
-				.kol-span-wc {
+			&__text {
+				border-radius: var(--border-radius);
+				outline: calc(var(--border-width) * 2) solid;
+
+				&:hover {
 					.span-label {
 						text-decoration-thickness: 0.25em;
 					}
 				}
-
-				&:visited {
-					color: var(--visited);
-				}
 			}
 		}
-
 		.skip {
 			left: rem(-99999);
 			overflow: hidden;

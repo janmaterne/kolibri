@@ -2,13 +2,15 @@
 
 @layer kol-theme-component {
 	.kol-button-link {
-		a,
-		button {
-			border-radius: rem(32);
-			font-family: var(--font-family-sans);
-			/* text-transform: uppercase; */
+		.kol-button {
+			$root: &;
+			&__element {
+				border-radius: rem(32);
+				font-family: var(--font-family-sans);
+				/* text-transform: uppercase; */
+			}
 
-			.kol-span-wc {
+			&__text {
 				border-radius: rem(32);
 				border-style: solid;
 				min-width: rem(44);
@@ -24,132 +26,80 @@
 				transition-timing-function: ease-in-out;
 				transition-duration: 0.5s;
 				transition-property: background, color, border-color;
-			}
-		}
 
-		button {
-			a,
-			button {
-				.hide-label {
-					> .kol-span-wc {
-						padding: 0 rem(8);
+				background-color: var(--background-color);
+				border-color: var(--border-color);
+				color: var(--color);
+
+				@at-root #{$root}--hide-label & {
+					padding: 0 rem(8);
+
+					.span-label {
+						display: none;
 					}
 				}
-			}
-		}
 
-		.kol-link-wc,
-		button {
-			&.primary > a,
-			&.primary > a:disabled:hover,
-			&.primary,
-			&.primary:disabled:hover {
-				.kol-span-wc {
-					background-color: var(--color-petrol);
-					border-color: var(--color-petrol);
-					color: var(--color-weiss);
-				}
-			}
+				&--primary {
+					--background-color: var(--color-petrol);
+					--border-color: var(--color-petrol);
+					--color: var(--color-weiss);
 
-			&.primary,
-			&.primary > a {
-				&:hover,
-				&:focus {
-					.kol-span-wc {
-						background-color: var(--color-achat);
-						border-color: var(--color-achat);
+					&:not([disabled]):hover,
+					&:focus {
+						--background-color: var(--color-achat);
+						--border-color: var(--color-achat);
 					}
 				}
-			}
 
-			&.secondary > a,
-			&.secondary > a:disabled:hover,
-			&.secondary > .kol-span-wc,
-			&.secondary:disabled:hover {
-				.kol-span-wc {
-					background-color: var(--color-weiss);
-					border-color: var(--color-petrol);
-					color: var(--color-petrol);
-				}
-			}
+				&--secondary {
+					--background-color: var(--color-weiss);
+					--border-color: var(--color-petrol);
+					--color: var(--color-petrol);
 
-			&.secondary,
-			&.secondary > a {
-				&:hover,
-				&:focus {
-					.kol-span-wc {
-						background-color: var(--color-petrol);
-						border-color: var(--color-petrol);
-						color: var(--color-weiss);
+					&:not([disabled]):hover,
+					&:focus {
+						--background-color: var(--color-petrol);
+						--border-color: var(--color-petrol);
+						--color: var(--color-weiss);
 					}
 				}
-			}
 
-			&.normal,
-			&.normal > a,
-			&.normal > a:disabled:hover,
-			&.normal:disabled:hover {
-				.kol-span-wc {
-					background-color: var(--color-weiss);
-					border-color: var(--color-anthrazit);
-					color: var(--color-anthrazit);
-				}
-			}
+				&--normal {
+					--background-color: var(--color-weiss);
+					--border-color: var(--color-anthrazit);
+					--color: var(--color-anthrazit);
 
-			&.normal,
-			&.normal > a {
-				&:hover,
-				&:focus {
-					.kol-span-wc {
-						background-color: var(--color-anthrazit);
-						border-color: var(--color-anthrazit);
-						color: var(--color-weiss);
+					&:not([disabled]):hover,
+					&:focus {
+						--background-color: var(--color-anthrazit);
+						--border-color: var(--color-anthrazit);
+						--color: var(--color-weiss);
 					}
 				}
-			}
 
-			&.danger,
-			&.danger > a,
-			&.danger > a:disabled:hover,
-			&.danger:disabled:hover {
-				.kol-span-wc {
-					background-color: var(--color-weiss);
-					border-color: var(--color-blut);
-					color: var(--color-blut);
-				}
-			}
+				&--danger {
+					--background-color: var(--color-weiss);
+					--border-color: var(--color-blut);
+					--color: var(--color-blut);
 
-			&.danger,
-			&.danger > a {
-				&:hover,
-				&:focus {
-					.kol-span-wc {
-						background-color: var(--color-blut);
-						border-color: var(--color-blut);
-						color: var(--color-weiss);
+					&:not([disabled]):hover,
+					&:focus {
+						--background-color: var(--color-blut);
+						--border-color: var(--color-blut);
+						--color: var(--color-weiss);
 					}
 				}
-			}
 
-			&.ghost,
-			&.ghost > a,
-			&.ghost > a:disabled:hover,
-			&.ghost:disabled:hover {
-				.kol-span-wc {
-					background-color: var(--color-ghost);
-					border-color: transparent;
-					color: var(--color-anthrazit);
-				}
-			}
+				&--ghost {
+					--background-color: var(--color-ghost);
+					--border-color: transparent;
+					--color: var(--color-anthrazit);
 
-			&.ghost,
-			&.ghost > a {
-				&:hover,
-				&:focus {
-					.kol-span-wc {
-						background-color: var(--color-ghost);
-						border-color: var(--color-ghost);
-						color: var(--color-anthrazit);
+					&:not([disabled]):hover,
+					&:focus {
+						--background-color: var(--color-ghost);
+						--border-color: var(--color-ghost);
+						--color: var(--color-anthrazit);
 					}
 				}
 			}
