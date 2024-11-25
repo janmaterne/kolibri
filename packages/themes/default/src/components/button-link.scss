@@ -13,17 +13,25 @@
 
 				&:focus {
 					outline: none;
+					// das geht
+					//.kol-button__text {
+					//	border-radius: var(--border-radius);
+					//	outline: calc(var(--border-width) * 2) solid;
+					//}
 				}
 
 				&:visited {
 					color: var(--visited);
 				}
 			}
+
 			&__text {
-				&:focus {
+				// das nicht?!?!
+				@at-root #{$root}__element:focus & {
 					border-radius: var(--border-radius);
 					outline: calc(var(--border-width) * 2) solid;
 				}
+
 				@at-root #{$root}:hover:not([disabled]) &,
 					#{$root}:hover:not([aria-disabled]) & {
 					.span-label {
