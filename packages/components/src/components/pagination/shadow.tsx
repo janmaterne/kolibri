@@ -89,7 +89,7 @@ export class KolPagination implements PaginationAPI {
 					ellipsis = false;
 					return (
 						<li key={nonce()}>
-							<span class="separator" aria-hidden="true"></span>
+							<span class="kol-pagination__separator" aria-hidden="true"></span>
 						</li>
 					);
 				} else {
@@ -100,11 +100,11 @@ export class KolPagination implements PaginationAPI {
 		return (
 			<Host class="kol-pagination">
 				<nav aria-label={this.state._label}>
-					<ul class="navigation-list">
+					<ul class="kol-pagination__navigation-list">
 						{this.state._hasButtons.first && (
 							<li>
 								<KolButtonWcTag
-									class="first"
+									class="kol-pagination__button kol-pagination__button--first"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={this.state._page <= 1}
@@ -119,7 +119,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.previous && (
 							<li>
 								<KolButtonWcTag
-									class="previous"
+									class="kol-pagination__button kol-pagination__button--previous"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={this.state._page <= 1}
@@ -135,7 +135,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.next && (
 							<li>
 								<KolButtonWcTag
-									class="next"
+									class="kol-pagination__button kol-pagination__button--next"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={count <= this.state._page}
@@ -150,7 +150,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.last && (
 							<li>
 								<KolButtonWcTag
-									class="last"
+									class="kol-pagination__button kol-pagination__button--last"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={count <= this.state._page}

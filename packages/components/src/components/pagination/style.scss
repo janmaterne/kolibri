@@ -3,25 +3,25 @@
 @import '../tooltip/style.scss';
 
 @layer kol-component {
-	:host {
+	.kol-pagination {
 		align-items: center;
 		display: grid;
 		font-size: rem(16);
 		gap: rem(16);
 		grid-template-columns: 1fr auto;
-	}
 
-	.navigation-list {
-		align-items: center;
-		display: inline-flex;
-		flex-wrap: wrap;
-		gap: 0.5em;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
+		&__navigation-list {
+			align-items: center;
+			display: inline-flex;
+			flex-wrap: wrap;
+			gap: 0.5em;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
 
-	.separator:before {
-		content: '•••';
+		&__separator:before {
+			content: '•••';
+		}
 	}
 }
