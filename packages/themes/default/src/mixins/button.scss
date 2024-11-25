@@ -3,75 +3,7 @@
 
 @mixin kol-button {
 	.kol-button {
-		--text-background-color: unset;
-		--text-border-color: unset;
-		--text-color: unset;
-
-		--text-hover-background-color: unset;
-		--text-hover-border-color: unset;
-		--text-hover-color: unset;
-
-		&__element {
-			&:disabled:hover {
-				.kol-button__text {
-					background-color: var(--text-background-color);
-					border-color: var(--text-border-color);
-					color: var(--text-color);
-					box-shadow: none;
-				}
-			}
-
-			&:focus {
-				outline: none;
-				.kol-button__text {
-					@include focus-outline;
-				}
-			}
-
-			.loading {
-				.kol-button__text {
-					.kol-icon {
-						animation: spin 5s infinite linear;
-					}
-				}
-			}
-
-			&.kol-button--hide-label {
-				.kol-button__text {
-					padding: rem(12.8);
-					width: unset;
-					.span-label {
-						display: none;
-					}
-				}
-			}
-		}
-
-		&__text {
-			background-color: var(--text-background-color);
-			border-color: var(--text-border-color);
-			color: var(--text-color);
-
-			&:hover,
-			&:active {
-				box-shadow: 0 rem(2) rem(8) rem(2) rgba(8, 35, 48, 0.24);
-				background-color: var(--text-hover-background-color);
-				border-color: var(--text-hover-border-color);
-				color: var(--text-hover-color);
-			}
-
-			&:active {
-				box-shadow: none;
-				outline: none;
-			}
-
-			&:disabled:hover {
-				background-color: var(--text-background-color);
-				border-color: var(--text-border-color);
-				color: var(--text-color);
-				box-shadow: none;
-			}
-		}
+		$root: &;
 
 		&--primary {
 			--text-background-color: var(--color-primary);
@@ -99,51 +31,102 @@
 			--text-box-shadow: none;
 		}
 
-		/*-----------*/
 		&--primary,
 		&--secondary,
 		&--normal,
 		&--danger,
 		&--ghost {
-			--text-hover-background-color: var(--color-primary-variant);
-			--text-hover-border-color: var(--color-primary-variant);
-			--text-hover-color: var(--color-light);
-		}
-
-		&--danger {
-			--text-hover-background-color: var(--color-danger);
-			--text-hover-border-color: var(--color-danger);
-		}
-
-		//!** small ghost button *!*/
-		&--ghost {
-			&.kol-button__element {
-				.small {
-					.kol-button__text {
-						border: none;
-						background-color: transparent;
-						box-shadow: none;
-
-						> span {
-							border-radius: 1.5em;
-							border-style: solid;
-							border-width: var(--border-width);
-							border-color: var(--color-light);
-							background-color: var(--color-light);
-						}
-					}
-				}
+			&:not([disabled]):hover {
+				--text-background-color: var(--color-primary-variant);
+				--text-border-color: var(--color-primary-variant);
+				--text-color: var(--color-light);
 			}
 		}
 
-		/** :is(a,button) with transparent background */
-		.kol-button__element,
-		.ghost .kol-button__element.small {
-			&.transparent {
-				.kol-button__text,
-				.kol-button__text > span {
-					background-color: transparent;
-					border-color: transparent;
+		&--danger {
+			&:not([disabled]):hover {
+				--text-background-color: var(--color-danger);
+				--text-border-color: var(--color-danger);
+			}
+		}
+
+		&__element {
+			&:focus {
+				outline: none;
+			}
+		}
+
+		&__text {
+			background-color: var(--text-background-color);
+			border-color: var(--text-border-color);
+			color: var(--text-color);
+
+			&:hover,
+			&:active {
+				box-shadow: 0 rem(2) rem(8) rem(2) rgba(8, 35, 48, 0.24);
+				background-color: var(--text-background-color);
+				border-color: var(--text-border-color);
+				color: var(--text-color);
+			}
+
+			&:active {
+				box-shadow: none;
+				outline: none;
+			}
+
+			&:disabled:hover {
+				background-color: var(--text-background-color);
+				border-color: var(--text-border-color);
+				color: var(--text-color);
+				box-shadow: none;
+			}
+
+			@at-root #{$root}--hide-label & {
+				padding: rem(12.8);
+				width: unset;
+
+				.span-label {
+					display: none;
+				}
+			}
+
+			@at-root #{$root}--ghost.small & {
+				border: none;
+				--text-background-color: transparent;
+				box-shadow: none;
+
+				> .span-container {
+					border-radius: 1.5em;
+					border-style: solid;
+					border-width: var(--border-width);
+					--text-border-color: var(--color-light);
+					--text-background-color: var(--color-light);
+				}
+			}
+
+			@at-root #{$root}__element:focus {
+				@include focus-outline;
+			}
+
+			@at-root #{$root}__element:disabled:hover & {
+				background-color: var(--text-background-color);
+				border-color: var(--text-border-color);
+				color: var(--text-color);
+				box-shadow: none;
+			}
+
+			@at-root #{root}__element.loading & {
+				.kol-icon {
+					animation: spin 5s infinite linear;
+				}
+			}
+
+			@at-root #{$root}__element.transparent & {
+				--text-background-color: transparent;
+				--text-border-color: transparent;
+				.span-container {
+					--text-background-color: transparent;
+					--text-border-color: transparent;
 				}
 			}
 		}

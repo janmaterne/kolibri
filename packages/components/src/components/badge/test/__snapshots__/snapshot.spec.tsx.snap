@@ -5,7 +5,7 @@ exports[`kol-badge should render with _label="**Te**xt" 1`] = `
   <template shadowrootmode="open">
     <span style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
-        <span>
+        <span class="kol-span__container">
           <span class="md span-label">
             <strong>
               Te
@@ -25,7 +25,7 @@ exports[`kol-badge should render with _label="Text" _color="#000000" 1`] = `
   <template shadowrootmode="open">
     <span style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
-        <span>
+        <span class="kol-span__container">
           <span class="md span-label">
             Text
           </span>
@@ -42,7 +42,7 @@ exports[`kol-badge should render with _label="Text" _icons="codicon codicon-home
   <template shadowrootmode="open">
     <span style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
-        <span>
+        <span class="kol-span__container">
           <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
           <span class="md span-label">
             Text
@@ -60,7 +60,7 @@ exports[`kol-badge should render with _label="Text" _icons="codicon codicon-home
   <template shadowrootmode="open">
     <span style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
-        <span>
+        <span class="kol-span__container">
           <kol-icon _icons="codicon codicon-home" _label="" class="icon left"></kol-icon>
           <span class="md span-label">
             Text
@@ -78,7 +78,7 @@ exports[`kol-badge should render with _label="Text" 1`] = `
   <template shadowrootmode="open">
     <span style="background-color: #000; color: #959595;">
       <span class="kol-span-wc">
-        <span>
+        <span class="kol-span__container">
           <span class="md span-label">
             Text
           </span>
