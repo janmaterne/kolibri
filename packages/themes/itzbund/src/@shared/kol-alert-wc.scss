@@ -3,7 +3,7 @@
 		margin-top: calc(2 * var(--spacing));
 		display: block;
 
-		.kol-alert__heading {
+		&__heading {
 			display: flex;
 			place-items: center;
 		}
