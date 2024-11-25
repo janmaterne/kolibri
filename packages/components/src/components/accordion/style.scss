@@ -4,7 +4,7 @@
 @import '../../functional-components/Collapsible/collapsible';
 
 @layer kol-component {
-	:host {
+	.kol-accordion {
 		font-size: rem(16);
 	}
 }

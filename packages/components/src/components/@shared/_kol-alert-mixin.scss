@@ -4,22 +4,21 @@
 
 @mixin kol-alert-styles {
 	@layer kol-component {
-		.kol-alert-wc {
+		.kol-alert {
 			display: grid;
-		}
 
-		.kol-alert-wc .heading {
-			display: flex;
-			place-items: center;
-		}
+			&__container {
+				place-items: center;
+				display: flex;
+			}
+			&__container-content {
+				flex-grow: 1;
+			}
 
-		.kol-alert-wc .heading > div {
-			flex-grow: 1;
-		}
-
-		.close {
-			/* Visible with forced colors */
-			outline: transparent solid rem(1);
+			&__close-button {
+				/* Visible with forced colors */
+				outline: transparent solid rem(1);
+			}
 		}
 	}
 }

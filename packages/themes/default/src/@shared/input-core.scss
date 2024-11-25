@@ -6,7 +6,6 @@
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
-		@include kol-alert-theme;
 	}
 
 	.kol-input {
@@ -22,7 +21,7 @@
 			@include input-error;
 		}
 
-		.kol-alert-wc {
+		.kol-alert {
 			order: 1;
 		}
 
@@ -89,4 +88,6 @@
 		content: '*';
 		padding-left: 0.125em;
 	}
+
+	@include kol-alert-theme;
 }
