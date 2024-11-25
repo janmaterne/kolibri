@@ -2,9 +2,7 @@
 
 @mixin kol-button {
 	.kol-button {
-		--text-background-color: unset;
-		--text-border-color: unset;
-		--text-color: unset;
+		$root: &;
 
 		--text-focus-outline-color: var(--color-white);
 
@@ -14,13 +12,6 @@
 			text-decoration: none;
 			&:focus {
 				outline: none;
-			}
-
-			&:focus-visible {
-				.kol-button__text {
-					outline-offset: rem(-4);
-					outline: var(--text-focus-outline-color) solid rem(2);
-				}
 			}
 		}
 
@@ -48,6 +39,26 @@
 					0 rem(4) rem(5) rgb(9 49 142 / 4%),
 					0 rem(-4) rem(4) rgb(9 49 142 / 4%);
 			}
+
+			@at-root #{$root}--secondary & {
+				padding: calc(rem(12) - rem(2)) calc(rem(16) - rem(2));
+				border: rem(2) solid #0e47cb;
+			}
+
+			@at-root #{$root}--secondary.button:focus-visible & {
+				box-shadow: inset 0 0 0 rem(4) #0e47cb;
+			}
+
+			@at-root #{$root}:focus-visible & {
+				outline-offset: rem(-4);
+				outline: var(--text-focus-outline-color) solid rem(2);
+			}
+
+			@at-root #{$root}--hide-label & {
+				.span-label {
+					display: none;
+				}
+			}
 		}
 
 		&--primary {
@@ -65,17 +76,6 @@
 			--text-color: #0e47cb;
 			--text-border-color: #0e47cb;
 			--text-focus-outline-color: #fff;
-
-			.kol-button__text {
-				padding: calc(rem(12) - rem(2)) calc(rem(16) - rem(2));
-				border: rem(2) solid #0e47cb;
-			}
-
-			button:focus-visible {
-				.kol-button__text {
-					box-shadow: inset 0 0 0 rem(4) #0e47cb;
-				}
-			}
 
 			&:hover {
 				--text-color: #0e47cb;

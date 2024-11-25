@@ -2,31 +2,7 @@
 
 @mixin kol-button {
 	.kol-button {
-		--text-background-color: unset;
-		--text-border-color: unset;
-		--text-color: unset;
-
-		&__element {
-			background-color: transparent;
-		}
-
-		&--hide-label {
-			.kol-button__text {
-				padding: 0 rem(8);
-			}
-		}
-
-		&__text {
-			gap: 0.25em;
-			transition-delay: 0ms;
-			transition-timing-function: ease-in-out;
-			transition-duration: 0.5s;
-			transition-property: background, color, border-color;
-
-			background-color: var(--text-background-color);
-			border-color: var(--text-border-color);
-			color: var(--text-color);
-		}
+		$root: &;
 
 		&--primary {
 			--text-background-color: var(--color-petrol);
@@ -82,6 +58,30 @@
 			&:not([disabled]):hover,
 			&:focus {
 				--text-border-color: var(--color-ghost);
+			}
+		}
+
+		&__element {
+			background-color: transparent;
+		}
+
+		&__text {
+			gap: 0.25em;
+			transition-delay: 0ms;
+			transition-timing-function: ease-in-out;
+			transition-duration: 0.5s;
+			transition-property: background, color, border-color;
+
+			background-color: var(--text-background-color);
+			border-color: var(--text-border-color);
+			color: var(--text-color);
+
+			@at-root #{$root}--hide-label & {
+				padding: 0 rem(8);
+
+				.span-label {
+					display: none;
+				}
 			}
 		}
 	}
