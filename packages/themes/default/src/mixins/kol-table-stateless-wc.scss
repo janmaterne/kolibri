@@ -50,10 +50,6 @@
 		}
 
 		.table {
-			border-width: 0;
-			border-bottom-width: calc(var(--border-width) * 2);
-			border-color: var(--color-primary-variant);
-			border-style: solid;
 			padding: rem(8);
 
 			&:has(.focus-element:focus) {
@@ -63,6 +59,14 @@
 				outline-width: rem(3);
 				transition: outline-offset 0.2s linear;
 			}
+		}
+
+		table,
+		table caption {
+			border-width: 0;
+			border-bottom-width: calc(var(--border-width) * 2);
+			border-color: var(--color-primary-variant);
+			border-style: solid;
 		}
 
 		table {

@@ -668,10 +668,11 @@ export class KolTableStateless implements TableStatelessAPI {
 	private renderSpacer(variant: 'foot' | 'head', cellDefs: KoliBriTableHeaderCell[][] | KoliBriTableCell[][]): JSX.Element {
 		const verticalHeaderColpan = this.state._headerCells.vertical?.length || 0;
 		const colspan = cellDefs?.[0]?.reduce((acc, row) => acc + (row.colSpan || 1), 0);
+		const selectionCell = this.state._selection ? 1 : 0;
 
 		return (
 			<tr class={`${variant}-spacer`} aria-hidden="true">
-				<td colSpan={verticalHeaderColpan + colspan}></td>
+				<td colSpan={verticalHeaderColpan + colspan + selectionCell}></td>
 			</tr>
 		);
 	}
