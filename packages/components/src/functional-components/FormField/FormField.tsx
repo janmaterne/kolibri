@@ -1,5 +1,5 @@
 import type { JSX } from '@stencil/core';
-import { h, type FunctionalComponent as FC } from '@stencil/core';
+import { h, Fragment, type FunctionalComponent as FC } from '@stencil/core';
 import KolFormFieldMsgFc from '../FormFieldMsg2';
 import KolFormFieldLabelFc from '../FormFieldLabel';
 import KolFormFieldHintFc from '../FormFieldHint/FormFieldHint';
@@ -51,6 +51,8 @@ export type FormFieldProps = Omit<JSXBase.HTMLAttributes<HTMLElement>, 'id'> & {
 	renderNoHint?: boolean;
 	anotherChildren?: JSX.Element | JSX.Element[];
 
+	reverseLabelInput?: boolean;
+
 	FormFieldLabelProps?: JSXBase.HTMLAttributes<Omit<HTMLLabelElement | HTMLLegendElement, 'id' | 'hidden' | 'htmlFor'>> & { component?: 'label' | 'legend' };
 	FormFieldHintProps?: JSXBase.HTMLAttributes<HTMLElement>;
 	FormFieldTooltipProps?: Pick<JSXBase.HTMLAttributes<HTMLElement>, 'class'>;
@@ -82,6 +84,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		counter,
 		readOnly,
 		touched,
+		reverseLabelInput,
 		FormFieldLabelProps,
 		FormFieldHintProps,
 		FormFieldTooltipProps,
@@ -89,6 +92,8 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		FormFieldCounterProps,
 		...other
 	} = props;
+	const showLabel = !renderNoLabel;
+	const showHint = !renderNoHint;
 	const hasExpertSlot = showExpertSlot(label);
 	const hasError = checkHasError(msg, touched, readOnly);
 	const showFormFieldMsg = Boolean(hasError || (msg?._type !== 'error' && msg?._description));
@@ -104,13 +109,9 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		'hidden-error': Boolean(hideError),
 	};
 
-	return (
-		<Component
-			class={clsx('kol-input', getModifierClassNameByMsgType(msg), stateCssClasses, classNames)}
-			role={`presentation` /* Avoid element being read as 'clickable' in NVDA */}
-			{...other}
-		>
-			{!renderNoLabel && (
+	let componentList = [
+		<>
+			{showLabel && (
 				<KolFormFieldLabelFc
 					{...(FormFieldLabelProps || {})}
 					id={id}
@@ -121,7 +122,9 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 					shortKey={shortKey}
 				/>
 			)}
-			{!renderNoHint && <KolFormFieldHintFc {...(FormFieldHintProps || {})} id={id} hint={hint} />}
+			{showHint && <KolFormFieldHintFc {...(FormFieldHintProps || {})} id={id} hint={hint} />}
+		</>,
+		<>
 			{children}
 			<KolFormFieldTooltipFc
 				{...(FormFieldTooltipProps || {})}
@@ -132,6 +135,20 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 				align={tooltipAlign}
 				badgeText={badgeText}
 			/>
+		</>,
+	];
+
+	if (reverseLabelInput) {
+		componentList = componentList.reverse();
+	}
+
+	return (
+		<Component
+			class={clsx('kol-input', getModifierClassNameByMsgType(msg), stateCssClasses, classNames)}
+			role={`presentation` /* Avoid element being read as 'clickable' in NVDA */}
+			{...other}
+		>
+			{componentList}
 			{showFormFieldMsg && <KolFormFieldMsgFc {...(FormFieldMsgProps || {})} id={id} alert={alert} msg={msg} hideError={hideError} />}
 			{counter ? <KolFormFieldCounterFc {...(FormFieldCounterProps || {})} {...counter} /> : null}
 			{anotherChildren}

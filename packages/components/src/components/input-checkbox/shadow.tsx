@@ -90,6 +90,7 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 			'data-label-align': this.state._labelAlign || 'right',
 			'data-role': this.state._variant === 'button' ? 'button' : undefined,
 			alert: this.showAsAlert(),
+			reverseLabelInput: this.state._labelAlign === 'right',
 		};
 	}
 
