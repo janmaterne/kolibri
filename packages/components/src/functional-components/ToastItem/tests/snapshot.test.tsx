@@ -16,8 +16,8 @@ describe('ToastItemFc', () => {
 		const page = await renderFunctionalComponentToSpecPage(() => <ToastItemFc toast={basicToast} onClose={mockOnClose} status="settled" />);
 
 		expect(page.root).toMatchSnapshot();
-		expect(page.root?.querySelector('.heading')?.textContent).toContain('Test Toast');
-		expect(page.root?.querySelector('.content')?.textContent).toContain('Test Description');
+		expect(page.root?.querySelector('.kol-alert__heading')?.textContent).toContain('Test Toast');
+		expect(page.root?.querySelector('.kol-alert__content')?.textContent).toContain('Test Description');
 	});
 
 	it('should render with different status classes', async () => {

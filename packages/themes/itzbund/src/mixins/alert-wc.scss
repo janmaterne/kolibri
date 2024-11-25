@@ -1,49 +1,41 @@
 @import './rem';
 
 @mixin kol-alert-theme {
-	--kolibri-border-width: #{rem(1)};
+	.kol-alert {
+		--kolibri-border-width: #{rem(1)};
 
-	.default {
-		border-color: var(--color-anthrazit);
-	}
+		.default {
+			--alert-background-color: var(--color-anthrazit);
+			--alert-border-color: var(--color-anthrazit);
+		}
 
-	.heading {
-		gap: rem(8);
-	}
+		.error {
+			--alert-background-color: var(--color-rotton);
+			--alert-border-color: var(--color-rotton);
+		}
 
-	.default .heading-icon {
-		background-color: var(--color-anthrazit);
-	}
+		.info {
+			--alert-background-color: var(--color-petrol);
+			--alert-border-color: var(--color-petrol);
+		}
 
-	.error {
-		border-color: var(--color-rotton);
-	}
+		.success {
+			--alert-background-color: var(--color-gras);
+			--alert-border-color: var(--color-gras);
+		}
 
-	.error .heading-icon {
-		background-color: var(--color-rotton);
-	}
+		.warning {
+			--alert-background-color: var(--color-warn);
+			--alert-border-color: var(--color-warn);
+		}
 
-	.info {
-		border-color: var(--color-petrol);
-	}
+		&__container {
+			gap: rem(8);
+		}
 
-	.info .heading-icon {
-		background-color: var(--color-petrol);
-	}
-
-	.success {
-		border-color: var(--color-gras);
-	}
-
-	.success .heading-icon {
-		background-color: var(--color-gras);
-	}
-
-	.warning {
-		border-color: var(--color-warn);
-	}
-
-	.warning .heading-icon {
-		background-color: var(--color-warn);
+		&__heading-icon {
+			background-color: var(--alert-background-color);
+			border-color: var(--alert-border-color);
+		}
 	}
 }

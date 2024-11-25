@@ -128,7 +128,7 @@ $visible-options: 5;
 		order: 2;
 	}
 
-	.kol-alert-wc {
+	.kol-alert {
 		@include kol-alert-wc(--color-red);
 
 		order: 3;
