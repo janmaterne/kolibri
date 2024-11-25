@@ -13,11 +13,9 @@
 
 				&:focus {
 					outline: none;
-					// das geht
-					//.kol-button__text {
-					//	border-radius: var(--border-radius);
-					//	outline: calc(var(--border-width) * 2) solid;
-					//}
+
+					--text-border-radius: var(--border-radius);
+					--text-outline: calc(var(--border-width) * 2) solid;
 				}
 
 				&:visited {
@@ -26,11 +24,8 @@
 			}
 
 			&__text {
-				// das nicht?!?!
-				@at-root #{$root}__element:focus & {
-					border-radius: var(--border-radius);
-					outline: calc(var(--border-width) * 2) solid;
-				}
+				border-radius: var(--text-border-radius);
+				outline: var(--text-outline);
 
 				@at-root #{$root}:hover:not([disabled]) &,
 					#{$root}:hover:not([aria-disabled]) & {
