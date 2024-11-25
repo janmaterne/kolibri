@@ -81,18 +81,18 @@ export class KolQuote implements QuoteAPI {
 			<Host class="kol-quote">
 				<figure
 					class={{
-						[this.state._variant]: true,
+						[`kol-quote__figure kol-quote--${this.state._variant}`]: true,
 					}}
 				>
 					{this.state._variant === 'block' ? (
-						<blockquote cite={this.state._href}>
+						<blockquote class="kol-quote__blockquote" cite={this.state._href}>
 							{this.state._quote}
 							<span aria-hidden={!hasExpertSlot ? 'true' : undefined} hidden={!hasExpertSlot}>
 								<slot name="expert" />
 							</span>
 						</blockquote>
 					) : (
-						<q cite={this.state._href}>
+						<q class="kol-quote__quote" cite={this.state._href}>
 							{this.state._quote}
 							<span aria-hidden={!hasExpertSlot ? 'true' : undefined} hidden={!hasExpertSlot}>
 								<slot name="expert" />
@@ -100,8 +100,8 @@ export class KolQuote implements QuoteAPI {
 						</q>
 					)}
 					{typeof this.state._label === 'string' && this.state._label.length > 0 && (
-						<figcaption>
-							<cite>
+						<figcaption class="kol-quote__figcaption">
+							<cite class="kol-quote__cite">
 								<KolLinkTag _href={this.state._href} _label={this.state._label} _target="_blank" />
 							</cite>
 						</figcaption>

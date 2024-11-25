@@ -2,35 +2,35 @@
 @import '../style';
 
 @layer kol-component {
-	:host {
+	.kol-quote {
 		font-size: rem(16);
-	}
 
-	cite,
-	figure,
-	q + figcaption {
-		display: inline;
-		margin: 0;
-		padding: 0;
-	}
+		&__cite,
+		&__figure,
+		&__quote + &__figcaption {
+			display: inline;
+			margin: 0;
+			padding: 0;
+		}
 
-	blockquote:before {
-		content: open-quote;
-	}
+		&__blockquote::before {
+			content: open-quote;
+		}
 
-	blockquote::after {
-		content: close-quote;
-	}
+		&__blockquote::after {
+			content: close-quote;
+		}
 
-	cite:before {
-		content: '—';
-	}
+		&__cite::before {
+			content: '—';
+		}
 
-	.block cite:before {
-		padding-right: 0.5em;
-	}
+		&--block &__cite::before {
+			padding-right: 0.5em;
+		}
 
-	.inline cite:before {
-		padding: 0.5em;
+		&--inline &__cite::before {
+			padding: 0.5em;
+		}
 	}
 }

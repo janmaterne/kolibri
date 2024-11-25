@@ -3,15 +3,15 @@
 exports[`kol-quote should render with _label="Caption" _href="https://example.com" _quote="Text of the Quote" _variant="block" 1`] = `
 <kol-quote class="kol-quote">
   <template shadowrootmode="open">
-    <figure class="block">
-      <blockquote cite="https://example.com">
+    <figure class="kol-quote--block kol-quote__figure">
+      <blockquote cite="https://example.com" class="kol-quote__blockquote">
         Text of the Quote
         <span aria-hidden="true" hidden="">
           <slot name="expert"></slot>
         </span>
       </blockquote>
-      <figcaption>
-        <cite>
+      <figcaption class="kol-quote__figcaption">
+        <cite class="kol-quote__cite">
           <kol-link _href="https://example.com" _label="Caption" _target="_blank"></kol-link>
         </cite>
       </figcaption>
@@ -23,15 +23,15 @@ exports[`kol-quote should render with _label="Caption" _href="https://example.co
 exports[`kol-quote should render with _label="Caption" _href="https://example.com" _quote="Text of the Quote" _variant="inline" 1`] = `
 <kol-quote class="kol-quote">
   <template shadowrootmode="open">
-    <figure class="inline">
-      <q cite="https://example.com">
+    <figure class="kol-quote--inline kol-quote__figure">
+      <q cite="https://example.com" class="kol-quote__quote">
         Text of the Quote
         <span aria-hidden="true" hidden="">
           <slot name="expert"></slot>
         </span>
       </q>
-      <figcaption>
-        <cite>
+      <figcaption class="kol-quote__figcaption">
+        <cite class="kol-quote__cite">
           <kol-link _href="https://example.com" _label="Caption" _target="_blank"></kol-link>
         </cite>
       </figcaption>
@@ -43,15 +43,15 @@ exports[`kol-quote should render with _label="Caption" _href="https://example.co
 exports[`kol-quote should render with _label="Caption" _href="https://example.com" _quote="Text of the Quote" 1`] = `
 <kol-quote class="kol-quote">
   <template shadowrootmode="open">
-    <figure class="inline">
-      <q cite="https://example.com">
+    <figure class="kol-quote--inline kol-quote__figure">
+      <q cite="https://example.com" class="kol-quote__quote">
         Text of the Quote
         <span aria-hidden="true" hidden="">
           <slot name="expert"></slot>
         </span>
       </q>
-      <figcaption>
-        <cite>
+      <figcaption class="kol-quote__figcaption">
+        <cite class="kol-quote__cite">
           <kol-link _href="https://example.com" _label="Caption" _target="_blank"></kol-link>
         </cite>
       </figcaption>
