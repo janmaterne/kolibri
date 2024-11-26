@@ -209,7 +209,6 @@ export class KolCombobox implements ComboboxAPI {
 									id={this.state._id}
 									name={this.state._name}
 									required={this.state._required}
-									spellcheck="false"
 									{...this.controller.onFacade}
 									onFocus={(event) => {
 										this.controller.onFacade.onFocus(event);
@@ -245,7 +244,7 @@ export class KolCombobox implements ComboboxAPI {
 												data-index={index}
 												tabIndex={-1}
 												role="option"
-												aria-selected={this.state._value === option}
+												aria-selected={this.state._value === option ? 'true' : undefined}
 												onClick={(e) => {
 													this.selectOption(e, option as string);
 													this.toggleListbox();

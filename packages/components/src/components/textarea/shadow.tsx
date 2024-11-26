@@ -12,6 +12,7 @@ import type {
 	NamePropType,
 	RowsPropType,
 	ShortKeyPropType,
+	SpellCheckPropType,
 	Stringified,
 	SyncValueBySelectorPropType,
 	TextareaAPI,
@@ -141,7 +142,7 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 							required={this.state._required}
 							rows={this.state._rows}
 							placeholder={this.state._placeholder}
-							spellcheck="false"
+							spellcheck={this.state._spellCheck}
 							{...this.controller.onFacade}
 							onInput={this.onInput}
 							onFocus={(event) => {
@@ -285,6 +286,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	 * Adds a visual short key hint to the component.
 	 */
 	@Prop() public _shortKey?: ShortKeyPropType;
+
+	/**
+	 * Defines whether the browser should check the spelling and grammar.
+	 */
+	@Prop() public _spellCheck?: SpellCheckPropType;
 
 	/**
 	 * Selector for synchronizing the value with another input element.
@@ -449,6 +455,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	@Watch('_shortKey')
 	public validateShortKey(value?: ShortKeyPropType): void {
 		this.controller.validateShortKey(value);
+	}
+
+	@Watch('_spellCheck')
+	public validateSpellCheck(value?: SpellCheckPropType): void {
+		this.controller.validateSpellCheck(value);
 	}
 
 	@Watch('_syncValueBySelector')

@@ -186,7 +186,6 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 							readOnly={this.state._readOnly}
 							required={this.state._required}
 							step={this.state._step}
-							spellcheck="false"
 							type={this.state._type}
 							value={this.state._value || undefined}
 							{...this.controller.onFacade}
