@@ -153,7 +153,6 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 							placeholder={this.state._placeholder}
 							readOnly={this.state._readOnly}
 							required={this.state._required}
-							spellcheck="false"
 							type={this._passwordVisible ? 'text' : 'password'}
 							value={this.state._value as string}
 							{...this.controller.onFacade}
@@ -168,11 +167,12 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 								this.inputHasFocus = false;
 							}}
 						/>
-						{this._variant === 'visibility-toggle' && this.inputRef && this.inputRef.value?.length > 0 ? (
+						{this._variant === 'visibility-toggle' ? (
 							<KolButtonWcTag
 								class="password-toggle-button"
 								_label={this._passwordVisible ? translate('kol-hide-password') : translate('kol-show-password')}
 								_variant="ghost"
+								_disabled={this._disabled}
 								_on={{
 									onClick: (): void => {
 										this._passwordVisible = !this._passwordVisible;
@@ -181,9 +181,7 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 								_hideLabel
 								_icons={this._passwordVisible ? 'codicon codicon-eye-closed' : 'codicon codicon-eye-watch'}
 							/>
-						) : (
-							''
-						)}
+						) : null}
 					</div>
 				</KolInputTag>
 			</Host>

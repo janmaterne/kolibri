@@ -230,7 +230,6 @@ export class KolSingleSelect implements SingleSelectAPI {
 									disabled={this.state._disabled}
 									name={this.state._name}
 									required={this.state._required}
-									spellcheck="false"
 									{...this.controller.onFacade}
 									onInput={this.onInput.bind(this)}
 									onChange={this.onChange.bind(this)}
@@ -277,7 +276,7 @@ export class KolSingleSelect implements SingleSelectAPI {
 												}}
 												tabIndex={-1}
 												role="option"
-												aria-selected={this.state._value === (option as Option<string>).value}
+												aria-selected={this.state._value === (option as Option<string>).value ? 'true' : undefined}
 												onClick={(event: Event) => {
 													this.selectOption(event, option as Option<string>);
 													this.refInput?.focus();
