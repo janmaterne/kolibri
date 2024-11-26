@@ -161,6 +161,8 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 			list: this.hasSuggestions ? `${this.state._id}-list` : undefined,
 			type: 'range',
 			tabIndex: -1,
+			id: undefined,
+			'aria-hidden': 'true',
 			ref: this.catchInputRangeRef,
 		};
 	}
