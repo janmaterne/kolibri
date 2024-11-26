@@ -2,6 +2,7 @@ import { test } from '@stencil/playwright';
 import { expect } from '@playwright/test';
 import type { FillAction } from './utils/FillAction';
 import type { InputTypeOnDefault } from '../schema';
+import { INPUTS_SELECTOR } from './utils/inputsSelector';
 
 const testInputCallbacks = <ElementType extends { _on?: InputTypeOnDefault } & (HTMLElement | SVGElement)>(
 	componentName: string,
@@ -22,7 +23,7 @@ const testInputCallbacks = <ElementType extends { _on?: InputTypeOnDefault } & (
 			test(`should call ${callbackName} when internal input emits`, async ({ page }) => {
 				await page.setContent(`<${componentName} _label="Input"></${componentName}>`);
 				const component = page.locator(componentName);
-				const input = page.locator('input');
+				const input = page.locator(INPUTS_SELECTOR);
 
 				const eventPromise = component.evaluate((element: ElementType, callbackName) => {
 					return new Promise<unknown>((resolve) => {
@@ -38,7 +39,7 @@ const testInputCallbacks = <ElementType extends { _on?: InputTypeOnDefault } & (
 				if (fillAction) {
 					await fillAction(page);
 				} else if (typeof testValue === 'string') {
-					await page.locator('input').fill(testValue);
+					await page.locator(INPUTS_SELECTOR).fill(testValue);
 				}
 				await page.waitForChanges();
 				await input.dispatchEvent(eventName);

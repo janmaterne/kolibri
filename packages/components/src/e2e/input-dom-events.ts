@@ -1,5 +1,6 @@
 import { test } from '@stencil/playwright';
 import { expect } from '@playwright/test';
+import { INPUTS_SELECTOR } from './utils/inputsSelector';
 
 const testInputDomEvents = (componentName: string) => {
 	test.describe('DOM events', () => {
@@ -12,7 +13,7 @@ const testInputDomEvents = (componentName: string) => {
 					});
 				}, event);
 				await page.waitForChanges();
-				await page.locator('input').dispatchEvent(event);
+				await page.locator(INPUTS_SELECTOR).dispatchEvent(event);
 				await expect(eventPromise).resolves.toBeTruthy();
 			});
 		});
