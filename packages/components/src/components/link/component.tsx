@@ -52,6 +52,7 @@ import { KolIconTag, KolTooltipWcTag } from '../../core/component-names';
 import { translate } from '../../i18n';
 import { validateAccessAndShortKey } from '../../schema/validators/access-and-short-key';
 import { KolSpanFc } from '../../functional-components';
+import clsx from 'clsx';
 
 /**
  * @internal
@@ -128,7 +129,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 		const hasAriaDescription = Boolean(this.state._ariaDescription?.trim()?.length);
 
 		return (
-			<Host class="kol-link-wc">
+			<Host class="kol-link">
 				<a
 					ref={this.catchRef}
 					{...tagAttrs}
@@ -143,11 +144,11 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 							? `${this.state._label}${isExternal ? ` (${translate('kol-open-link-in-tab')})` : ''}`
 							: undefined
 					}
-					class={{
-						disabled: this.state._disabled === true,
-						'external-link': isExternal,
-						'hide-label': this.state._hideLabel === true,
-					}}
+					class={clsx('kol-link__url', {
+						'kol-link--disabled': this.state._disabled === true,
+						'kol-link--external-link': isExternal,
+						'kol-link--hide-label': this.state._hideLabel === true,
+					})}
 					{...this.state._on}
 					// https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/click-events-have-key-events.md
 					onClick={this.onClick}
@@ -156,6 +157,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 					tabIndex={this.state._disabled ? -1 : this.state._tabIndex}
 				>
 					<KolSpanFc
+						class="kol-link__text"
 						badgeText={this.state._accessKey || this.state._shortKey}
 						icons={this.state._icons}
 						hideLabel={this.state._hideLabel}
@@ -165,7 +167,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 					</KolSpanFc>
 					{isExternal && (
 						<KolIconTag
-							class="external-link-icon"
+							class="kol-link__icon external-link-icon"
 							_label={this.state._hideLabel ? '' : translate('kol-open-link-in-tab')}
 							_icons={'codicon codicon-link-external'}
 							aria-hidden={this.state._hideLabel}
@@ -178,6 +180,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 					 * verhindert aber nicht das Aria-Labelledby vorgelesen wird.
 					 */
 					aria-hidden="true"
+					class="kol-link__tooltip"
 					hidden={hasExpertSlot || !this.state._hideLabel}
 					_badgeText={this.state._accessKey || this.state._shortKey}
 					_align={this.state._tooltipAlign}
