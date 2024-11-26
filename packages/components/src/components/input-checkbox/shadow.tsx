@@ -1,5 +1,6 @@
 import type {
 	CheckedPropType,
+	FocusableElement,
 	HideErrorPropType,
 	IdPropType,
 	IndeterminatePropType,
@@ -23,15 +24,13 @@ import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
-import { tryToDispatchKoliBriEvent } from '../../utils/events';
 import { getRenderStates } from '../input/controller';
 import { InternalUnderlinedBadgeText } from '../../functional-components';
 import { InputCheckboxController } from './controller';
 import { KolIconTag, KolInputTag } from '../../core/component-names';
-import type { FocusableElement } from '../../schema/interfaces/FocusableElement';
 
 /**
- * @slot expert - Die Beschriftung der Checkbox.
+ * @slot expert - Checkbox description.
  */
 @Component({
 	tag: 'kol-input-checkbox',
@@ -447,30 +446,10 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 		this._indeterminate = false;
 
 		const value = this.getModelValue();
-
-		// Event handling
-		tryToDispatchKoliBriEvent('input', this.host, value);
-
-		// Callback
-		if (typeof this._on?.onInput === 'function') {
-			this._on.onInput(event, value);
-		}
+		this.controller.onFacade.onInput(event, true, value);
 	};
 
 	private onChange = (event: Event): void => {
-		const value = this.getModelValue();
-
-		// Event handling
-		// stopPropagation(event);
-		tryToDispatchKoliBriEvent('change', this.host, value);
-
-		// Static form handling
-		// this.controller.setFormAssociatedValue(value);
-		this.controller.setFormAssociatedCheckboxValue(value);
-
-		// Callback
-		if (typeof this._on?.onChange === 'function') {
-			this._on.onChange(event, value);
-		}
+		this.controller.onFacade.onChange(event, this.getModelValue());
 	};
 }

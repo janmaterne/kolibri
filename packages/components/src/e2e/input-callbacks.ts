@@ -1,24 +1,33 @@
 import { test } from '@stencil/playwright';
 import { expect } from '@playwright/test';
+import type { FillAction } from './utils/FillAction';
+import type { InputTypeOnDefault } from '../schema';
 
-const testInputCallbacks = (componentName: string, testValue: string = 'Test Input') => {
+const testInputCallbacks = <ElementType extends { _on?: InputTypeOnDefault } & (HTMLElement | SVGElement)>(
+	componentName: string,
+	testValue: unknown = 'Test Input',
+	fillAction?: FillAction,
+	omittedEvents: string[] = [],
+) => {
 	test.describe('Callbacks', () => {
-		[
+		const EVENTS: [string, string, unknown?][] = [
 			['click', 'onClick'],
 			['focus', 'onFocus'],
 			['blur', 'onBlur'],
 			['input', 'onInput', testValue],
 			['change', 'onChange', testValue],
-		].forEach(([eventName, callbackName, testValue]) => {
+		];
+
+		EVENTS.filter(([eventName]) => !omittedEvents.includes(eventName)).forEach(([eventName, callbackName, testValue]) => {
 			test(`should call ${callbackName} when internal input emits`, async ({ page }) => {
 				await page.setContent(`<${componentName} _label="Input"></${componentName}>`);
 				const component = page.locator(componentName);
 				const input = page.locator('input');
 
-				const eventPromise = component.evaluate((element: HTMLKolInputTextElement, callbackName) => {
-					return new Promise<void | string>((resolve) => {
+				const eventPromise = component.evaluate((element: ElementType, callbackName) => {
+					return new Promise<unknown>((resolve) => {
 						element._on = {
-							[callbackName]: (_event: InputEvent, value?: string) => {
+							[callbackName]: (_event: InputEvent, value?: unknown) => {
 								resolve(value);
 							},
 						};
@@ -26,9 +35,12 @@ const testInputCallbacks = (componentName: string, testValue: string = 'Test Inp
 				}, callbackName);
 				await page.waitForChanges();
 
-				if (testValue) {
-					await input.fill(testValue);
+				if (fillAction) {
+					await fillAction(page);
+				} else if (typeof testValue === 'string') {
+					await page.locator('input').fill(testValue);
 				}
+				await page.waitForChanges();
 				await input.dispatchEvent(eventName);
 
 				await expect(eventPromise).resolves.toBe(testValue);

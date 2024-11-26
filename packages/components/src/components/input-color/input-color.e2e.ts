@@ -5,7 +5,7 @@ const COMPONENT_NAME = 'kol-input-color';
 const TEST_VALUE = '#cc006e';
 
 test.describe(COMPONENT_NAME, () => {
-	testInputValueReflection(COMPONENT_NAME, TEST_VALUE);
-	testInputCallbacks(COMPONENT_NAME, TEST_VALUE);
+	testInputValueReflection<HTMLKolInputColorElement>(COMPONENT_NAME, TEST_VALUE);
+	testInputCallbacks<HTMLKolInputColorElement>(COMPONENT_NAME, TEST_VALUE);
 	testInputDomEvents(COMPONENT_NAME);
 });

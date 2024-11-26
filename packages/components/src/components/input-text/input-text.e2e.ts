@@ -18,7 +18,7 @@ test.describe('kol-input-text', () => {
 		});
 	});
 
-	testInputValueReflection('kol-input-text', 'Hello World');
-	testInputCallbacks('kol-input-text');
+	testInputValueReflection<HTMLKolInputTextElement>('kol-input-text', 'Hello World');
+	testInputCallbacks<HTMLKolInputTextElement>('kol-input-text');
 	testInputDomEvents('kol-input-text');
 });
