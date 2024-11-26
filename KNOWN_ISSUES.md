@@ -86,4 +86,4 @@ The use of `aria-label` or `aria-labelledby` on `<kol-icon>` or its nested eleme
 - The issue is browser-specific and does not consistently occur in Chrome, Edge, or Safari.
 
 ### Conclusion:
-This is a limitation in Firefox’s ARIA implementation. Until it is resolved, alternative strategies like visually hidden text near the element or redundant error messages should be used to ensure accessibility.
+This is a limitation in Firefox’s ARIA implementation. Until it is resolved, alternative strategies like visually hidden text near the element or redundant error messages should be used to ensure accessibility. We have created a ticket for this: https://github.com/public-ui/kolibri/issues/7119
