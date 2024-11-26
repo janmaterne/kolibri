@@ -1,4 +1,4 @@
-import { KolButton, KolInputDate } from '@public-ui/react';
+import { KolInputCheckbox, KolInputDate } from '@public-ui/react';
 import React, { useState } from 'react';
 import { SampleDescription } from '../SampleDescription';
 
@@ -6,7 +6,7 @@ const msgTypes = ['default', 'error', 'info', 'success', 'warning'] as const;
 
 function onGenerator(setter: (cb: (b: boolean) => boolean) => void) {
 	return {
-		onClick: () => setter((b) => !b),
+		onChange: () => setter((b) => !b),
 	};
 }
 
@@ -27,9 +27,9 @@ export const InputDateShowHideMsg = () => {
 
 			<div className="flex gap-4 flex-col">
 				<div className="flex gap-4 items-center">
-					<KolButton _label="Toggle Msg" _type="button" _on={onMsg} />
-					<KolButton _label="Toggle Touched" _type="button" _on={onTouched} />
-					<KolButton _label="Toggle Hide Msg" _type="button" _on={onHideMsg} />
+					<KolInputCheckbox _label="Toggle Msg" _on={onMsg} _checked={showMsg} _variant="button" />
+					<KolInputCheckbox _label="Toggle Touched" _on={onTouched} _checked={isTouched} _variant="button" />
+					<KolInputCheckbox _label="Toggle Hide Msg" _on={onHideMsg} _checked={hideMsg} _variant="button" />
 				</div>
 				<pre>
 					Message exists: {showMsg && isTouched ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, isTouched: {isTouched ? 'Yes' : 'No'})<br />
