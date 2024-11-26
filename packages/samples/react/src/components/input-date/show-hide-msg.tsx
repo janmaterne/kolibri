@@ -32,7 +32,7 @@ export const InputDateShowHideMsg = () => {
 					<KolInputCheckbox _label="Toggle Hide Msg" _on={onHideMsg} _checked={hideMsg} _variant="button" />
 				</div>
 				<pre>
-					Message exists: {showMsg && isTouched ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, isTouched: {isTouched ? 'Yes' : 'No'})<br />
+					Message exists: {showMsg ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'})<br />
 					Non-Error-Message visible: {showMsg && !hideMsg ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, hideMsg: {hideMsg ? 'Yes' : 'No'})<br />
 					Error-Message visible: {showMsg && isTouched && !hideMsg ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, isTouched: {isTouched ? 'Yes' : 'No'},
 					hideMsg: {hideMsg ? 'Yes' : 'No'})
