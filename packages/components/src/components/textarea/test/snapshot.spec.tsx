@@ -6,5 +6,6 @@ import { KolTextarea } from '../shadow';
 
 executeInputSnapshotTests<TextareaProps>(KolTextareaTag, [KolTextarea], {
 	_rows: 5,
+	_spellCheck: true,
 	_value: 'Value',
 });

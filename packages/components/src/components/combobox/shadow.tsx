@@ -209,7 +209,6 @@ export class KolCombobox implements ComboboxAPI {
 									id={this.state._id}
 									name={this.state._name}
 									required={this.state._required}
-									spellcheck="false"
 									{...this.controller.onFacade}
 									onFocus={(event) => {
 										this.controller.onFacade.onFocus(event);
