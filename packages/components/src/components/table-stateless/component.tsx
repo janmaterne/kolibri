@@ -276,10 +276,8 @@ export class KolTableStateless implements TableStatelessAPI {
 		let primaryHeadersWithKeys: KoliBriTableHeaderCell[] = this.getThePrimaryHeadersWithKeysIfExists(headers.horizontal ?? []);
 
 		/**
-		 * Mir war bisher nicht klar, dass die Datenausrichtung implizit durch die Header definiert wird.
-		 * Anfangs wurde das durch das Property `_orientation` definiert.
-		 *
-		 * TODO: Das Property `_orientation` sollte wieder eingeführt werden?!
+		 * It is important to note that the rendering direction of the data is implicitly set,
+		 * if either the horizontal or vertical header cells have keys.
 		 */
 		this.horizontal = true;
 		if (primaryHeadersWithKeys.length === 0) {
