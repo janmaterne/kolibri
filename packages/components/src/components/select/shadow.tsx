@@ -11,12 +11,9 @@ import type {
 	LabelWithExpertSlotPropType,
 	MsgPropType,
 	NamePropType,
-	Optgroup,
-	Option,
 	OptionsWithOptgroupPropType,
 	RowsPropType,
 	SelectAPI,
-	SelectOption,
 	SelectStates,
 	ShortKeyPropType,
 	Stringified,
@@ -32,10 +29,6 @@ import { propagateSubmitEventToForm } from '../form/controller';
 import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
 import KolSelectFc, { type SelectStateWrapperProps } from '../../functional-component-wrappers/SelectStateWrapper';
 import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
-
-const isSelected = (valueList: unknown[] | null, optionValue: unknown): boolean => {
-	return Array.isArray(valueList) && valueList.includes(optionValue);
-};
 
 /**
  * @slot - Die Beschriftung des Eingabefeldes.
@@ -73,31 +66,6 @@ export class KolSelect implements SelectAPI, FocusableElement {
 	// eslint-disable-next-line @typescript-eslint/require-await
 	public async kolFocus() {
 		this.selectRef?.focus();
-	}
-
-	private renderOptgroup(optgroup: Optgroup<string>, preKey: string): JSX.Element {
-		return (
-			<optgroup disabled={optgroup.disabled} label={optgroup.label}>
-				{optgroup.options?.map((option: SelectOption<W3CInputValue>, index: number) => {
-					const key = `${preKey}-${index}`;
-					if (Array.isArray((option as Optgroup<string>).options)) {
-						return this.renderOptgroup(option as Optgroup<string>, key);
-					} else {
-						return (
-							<option
-								disabled={option.disabled}
-								key={key}
-								// label={option.label}
-								selected={isSelected(this.state._value, (option as Option<W3CInputValue>).value)}
-								value={key}
-							>
-								{option.label}
-							</option>
-						);
-					}
-				})}
-			</optgroup>
-		);
 	}
 
 	private getFormFieldProps(): FormFieldStateWrapperProps {
