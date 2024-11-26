@@ -33,8 +33,9 @@ export const InputDateShowHideMsg = () => {
 				</div>
 				<pre>
 					Message exists: {showMsg && isTouched ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, isTouched: {isTouched ? 'Yes' : 'No'})<br />
-					Message visible: {showMsg && isTouched && !hideMsg ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, isTouched: {isTouched ? 'Yes' : 'No'}, hideMsg:{' '}
-					{hideMsg ? 'Yes' : 'No'})
+					Non-Error-Message visible: {showMsg && !hideMsg ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, hideMsg: {hideMsg ? 'Yes' : 'No'})<br />
+					Error-Message visible: {showMsg && isTouched && !hideMsg ? 'Yes' : 'No'} (showMsg: {showMsg ? 'Yes' : 'No'}, isTouched: {isTouched ? 'Yes' : 'No'},
+					hideMsg: {hideMsg ? 'Yes' : 'No'})
 				</pre>
 				<KolInputDate _error={showMsg ? 'error message' : undefined} _hideError={hideMsg} _label="Date (_error)" _touched={isTouched} />
 				{msgTypes.map((type) => (
