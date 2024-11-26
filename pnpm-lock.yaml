@@ -836,54 +836,6 @@ importers:
         specifier: 5.6.3
         version: 5.6.3
 
-  packages/themes/bmf:
-    devDependencies:
-      '@public-ui/components':
-        specifier: workspace:*
-        version: link:../../components
-      '@public-ui/visual-tests':
-        specifier: workspace:*
-        version: link:../../tools/visual-tests
-      '@rollup/plugin-commonjs':
-        specifier: 28.0.1
-        version: 28.0.1(rollup@4.27.3)
-      '@rollup/plugin-node-resolve':
-        specifier: 15.3.0
-        version: 15.3.0(rollup@4.27.3)
-      '@rollup/plugin-typescript':
-        specifier: 12.1.1
-        version: 12.1.1(rollup@4.27.3)(tslib@2.6.3)(typescript@5.6.3)
-      '@typescript-eslint/eslint-plugin':
-        specifier: 7.18.0
-        version: 7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)
-      '@typescript-eslint/parser':
-        specifier: 7.18.0
-        version: 7.18.0(eslint@8.57.1)(typescript@5.6.3)
-      eslint:
-        specifier: 8.57.1
-        version: 8.57.1
-      nodemon:
-        specifier: 3.1.7
-        version: 3.1.7
-      postcss:
-        specifier: 8.4.49
-        version: 8.4.49
-      rollup:
-        specifier: 4.27.3
-        version: 4.27.3
-      rollup-plugin-postcss:
-        specifier: 4.0.2
-        version: 4.0.2(postcss@8.4.49)(ts-node@10.9.2(@swc/core@1.5.28)(@types/node@22.9.0)(typescript@5.6.3))
-      sass:
-        specifier: 1.81.0
-        version: 1.81.0
-      typescript:
-        specifier: 5.6.3
-        version: 5.6.3
-      unbuild:
-        specifier: 1.2.1
-        version: 1.2.1(sass@1.81.0)
-
   packages/themes/default:
     devDependencies:
       '@public-ui/components':
