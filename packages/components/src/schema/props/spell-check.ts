@@ -6,7 +6,7 @@ import { watchBoolean } from '../utils';
 export type SpellCheckPropType = boolean;
 
 /**
- * Defines whether the spellcheck should be enabled.
+ * Defines whether the browser should check the spelling and grammar.
  */
 export type PropSpellCheck = {
 	spellCheck: SpellCheckPropType;

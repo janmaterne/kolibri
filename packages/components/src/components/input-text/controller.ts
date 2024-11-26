@@ -7,7 +7,7 @@ import type {
 	SpellCheckPropType,
 	SuggestionsPropType,
 } from '../../schema';
-import { inputTextTypeOptions, validateSuggestions, watchBoolean, watchValidator } from '../../schema';
+import { inputTextTypeOptions, validateSpellCheck, validateSuggestions, watchValidator } from '../../schema';
 
 import { InputPasswordController } from '../input-password/controller';
 
@@ -49,7 +49,7 @@ export class InputTextController extends InputTextEmailController implements Inp
 	}
 
 	public validateSpellCheck(value?: SpellCheckPropType): void {
-		watchBoolean(this.component, '_spellCheck', value);
+		validateSpellCheck(this.component, value);
 	}
 
 	public validateType(value?: InputTextType): void {

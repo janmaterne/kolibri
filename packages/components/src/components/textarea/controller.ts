@@ -1,6 +1,5 @@
 import type { CSSResize, HasCounterPropType, RowsPropType, SpellCheckPropType, TextareaProps, TextareaWatches } from '../../schema';
-import { validateHasCounter } from '../../schema';
-import { cssResizeOptions, validateRows, watchBoolean, watchNumber, watchString, watchValidator } from '../../schema';
+import { cssResizeOptions, validateHasCounter, validateRows, validateSpellCheck, watchBoolean, watchNumber, watchString, watchValidator } from '../../schema';
 
 import { InputIconController } from '../@deprecated/input/controller-icon';
 
@@ -63,7 +62,7 @@ export class TextareaController extends InputIconController implements TextareaW
 	}
 
 	public validateSpellCheck(value?: SpellCheckPropType): void {
-		watchBoolean(this.component, '_spellCheck', value);
+		validateSpellCheck(this.component, value);
 	}
 
 	public validateValue(value?: string): void {
