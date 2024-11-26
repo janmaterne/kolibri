@@ -5,7 +5,6 @@
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
-		@include kol-alert-theme;
 	}
 
 	.kol-link-wc {
@@ -16,4 +15,6 @@
 	.mandatory-fields-hint {
 		@include indented-text;
 	}
+
+	@include kol-alert-theme;
 }

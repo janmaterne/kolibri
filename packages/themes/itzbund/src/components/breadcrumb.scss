@@ -1,6 +1,8 @@
 @layer kol-theme-component {
-	li > span {
-		font-weight: bold;
-		/* text-transform: uppercase; */
+	.kol-breadcrumb {
+		&__list-element-span {
+			font-weight: bold;
+			/* text-transform: uppercase; */
+		}
 	}
 }

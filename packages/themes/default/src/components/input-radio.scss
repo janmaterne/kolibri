@@ -6,7 +6,6 @@
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
-		@include kol-alert-theme;
 	}
 
 	label {
@@ -40,8 +39,8 @@
 		border-color: var(--color-primary);
 	}
 
-	.kol-alert-wc {
-		@include kol-alert-wc;
+	.kol-alert {
+		@include kol-alert;
 	}
 
 	.required legend > span::after {
@@ -105,7 +104,7 @@
 		background-color: var(--color-mute-variant);
 	}
 
-	.kol-alert-wc.error {
+	.kol-alert.error {
 		order: 3;
 	}
 
@@ -141,7 +140,7 @@
 			outline-color: var(--color-danger);
 		}
 
-		.kol-alert-wc.error {
+		.kol-alert.error {
 			margin-left: -0.25em;
 		}
 	}
@@ -165,4 +164,6 @@
 	.radio-input-wrapper label {
 		padding-left: 0;
 	}
+
+	@include kol-alert-theme;
 }
