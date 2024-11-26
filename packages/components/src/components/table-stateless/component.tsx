@@ -1,5 +1,5 @@
 import type { JSX } from '@stencil/core';
-import { Component, Element, h, Host, Listen, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Fragment, h, Host, Listen, Prop, State, Watch } from '@stencil/core';
 
 import { KolButtonWcTag, KolIconTag, KolTooltipWcTag } from '../../core/component-names';
 import type { TranslationKey } from '../../i18n';
@@ -599,6 +599,25 @@ export class KolTableStateless implements TableStatelessAPI {
 	}
 
 	/**
+	 * This header cell is rendered as a TD element when in addition to the horizontal header rows
+	 * there are also vertical header columns. In this case, the cell is rendered blank above the
+	 * vertical header columns.
+	 */
+	private renderHeaderTdCell(): JSX.Element {
+		return (
+			<Fragment>
+				{Array.isArray(this.state._headerCells.horizontal) &&
+					this.state._headerCells.horizontal.length > 0 &&
+					Array.isArray(this.state._headerCells.vertical) &&
+					this.state._headerCells.vertical.length > 0 &&
+					Array.isArray(this.state._headerCells.horizontal) && (
+						<td aria-hidden="true" colSpan={this.state._headerCells.vertical.length} rowSpan={this.state._headerCells.horizontal.length}></td>
+					)}
+			</Fragment>
+		);
+	}
+
+	/**
 	 *  Renders a table header cell (`<th>`), with optional sorting functionality.
 	 *  If the cell has a `sortDirection` property, a sort button is rendered within the header.
 	 *
@@ -725,12 +744,7 @@ export class KolTableStateless implements TableStatelessAPI {
 									this.state._headerCells.horizontal.map((cols, rowIndex) => (
 										<tr key={`thead-${rowIndex}`}>
 											{this.state._selection && this.renderHeadingSelectionCell()}
-											{rowIndex === 0 &&
-												Array.isArray(this.state._headerCells.vertical) &&
-												this.state._headerCells.vertical.length > 0 &&
-												Array.isArray(this.state._headerCells.horizontal) && (
-													<td colSpan={this.state._headerCells.vertical.length} rowSpan={this.state._headerCells.horizontal.length}></td>
-												)}
+											{rowIndex === 0 && this.renderHeaderTdCell()}
 											{Array.isArray(cols) &&
 												cols.map((cell, colIndex) => {
 													if (cell.asTd === true) {
