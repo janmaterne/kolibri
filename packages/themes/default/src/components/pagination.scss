@@ -5,10 +5,12 @@
 	.kol-pagination {
 		font-family: var(--font-family);
 
-		&__button {
-			outline: none;
+		&__navigation-list {
+			.button:focus {
+				outline: none;
+			}
 
-			&-inner {
+			.button-inner {
 				background-color: var(--color-light);
 				border-radius: var(--border-radius);
 				border: rem(1) solid var(--color-primary);
@@ -22,30 +24,32 @@
 				transition-property: background-color, color, border-color;
 			}
 
-			&:focus &-inner {
+			.button:focus .button-inner {
 				@include focus-outline;
 			}
 
-			&:is(:active, :hover):not(:disabled) &-inner {
+			.button:is(:active, :hover):not(:disabled) .button-inner {
 				background-color: var(--color-primary-variant);
 				border-color: var(--color-primary-variant);
 				box-shadow: 0 rem(2) rem(8) rem(2) rgba(8, 35, 48, 0.24);
 				color: var(--color-light);
 			}
 
-			&:active &-inner {
+			.button:active .button-inner {
 				color: var(--color-light);
 				outline: none;
 			}
-		}
 
-		&__button--selected {
-			opacity: 1;
+			.selected {
+				button {
+					opacity: 1;
+				}
 
-			& .kol-pagination__button-inner {
-				background-color: var(--color-primary);
-				color: var(--color-light);
-				border: 0;
+				.button-inner {
+					background-color: var(--color-primary);
+					color: var(--color-light);
+					border: 0;
+				}
 			}
 		}
 	}

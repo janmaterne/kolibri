@@ -22,7 +22,7 @@ import {
 	watchValidator,
 } from '../../schema';
 import type { JSX } from '@stencil/core';
-import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, h, Prop, State, Watch } from '@stencil/core';
 
 import { translate } from '../../i18n';
 import { nonce } from '../../utils/dev.utils';
@@ -98,13 +98,13 @@ export class KolPagination implements PaginationAPI {
 			});
 
 		return (
-			<Host class="kol-pagination">
+			<div class="kol-pagination">
 				<nav aria-label={this.state._label}>
 					<ul class="kol-pagination__navigation-list">
 						{this.state._hasButtons.first && (
 							<li>
 								<KolButtonWcTag
-									class="kol-pagination__button kol-pagination__button--first"
+									class="first"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={this.state._page <= 1}
@@ -119,7 +119,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.previous && (
 							<li>
 								<KolButtonWcTag
-									class="kol-pagination__button kol-pagination__button--previous"
+									class="previous"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={this.state._page <= 1}
@@ -135,7 +135,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.next && (
 							<li>
 								<KolButtonWcTag
-									class="kol-pagination__button kol-pagination__button--next"
+									class="next"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={count <= this.state._page}
@@ -150,7 +150,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.last && (
 							<li>
 								<KolButtonWcTag
-									class="kol-pagination__button kol-pagination__button--last"
+									class="last"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={count <= this.state._page}
@@ -176,7 +176,7 @@ export class KolPagination implements PaginationAPI {
 						_value={[this.state._pageSize]}
 					></KolSelectTag>
 				)}
-			</Host>
+			</div>
 		);
 	}
 
