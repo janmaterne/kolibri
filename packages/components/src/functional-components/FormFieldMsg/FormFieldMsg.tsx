@@ -3,15 +3,16 @@ import type { AlertPropType, HideErrorPropType, IdPropType, MsgPropType } from '
 import type { FunctionalComponent } from '@stencil/core';
 import { h } from '@stencil/core';
 import KolAlertFc from '../Alert';
+import type { JSXBase } from '@stencil/core/internal';
 
-type FormFieldMsgProps = {
-	_alert?: AlertPropType;
-	_msg?: MsgPropType;
-	_hideError?: HideErrorPropType;
-	_id: IdPropType;
+type FormFieldMsgProps = JSXBase.HTMLAttributes<HTMLDivElement> & {
+	alert?: AlertPropType;
+	msg?: MsgPropType;
+	hideError?: HideErrorPropType;
+	id: IdPropType;
 };
 
-const FormFieldMsgFc: FunctionalComponent<FormFieldMsgProps> = ({ _alert, _msg, _hideError, _id }) => (
+const FormFieldMsgFc: FunctionalComponent<FormFieldMsgProps> = ({ alert, msg, hideError, id, class: classNames, ...other }) => (
 	<KolAlertFc
 		/**
 		 * This message is read out by screen readers if the input field
@@ -19,17 +20,21 @@ const FormFieldMsgFc: FunctionalComponent<FormFieldMsgProps> = ({ _alert, _msg, 
 		 * attribute. It also does this if <code>aria-hidden=true</code>
 		 * is set.
 		 */
-		aria-hidden="true"
-		id={`${_id}-error`}
-		alert={_alert}
+		id={`${id}-error`}
+		alert={alert}
 		type="error"
-		class={clsx({
-			error: true,
-			'visually-hidden': _hideError === true,
-		})}
-		{..._msg}
+		class={clsx(
+			{
+				error: true,
+				'visually-hidden': hideError === true,
+			},
+			classNames,
+		)}
+		{...msg}
+		{...other}
+		aria-hidden="true"
 	>
-		{_msg?._description || undefined}
+		{msg?._description || undefined}
 	</KolAlertFc>
 );
 

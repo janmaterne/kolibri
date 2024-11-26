@@ -10,16 +10,9 @@ type FormFieldTooltipProps = Pick<JSXBase.HTMLAttributes<HTMLElement>, 'class'> 
 	badgeText?: string;
 	hideLabel?: boolean;
 	label: string;
-	hasExpertSlot?: boolean;
 };
 
-const FormFieldTooltipFc: FC<FormFieldTooltipProps> = ({ id, align, badgeText, hideLabel, label, class: classNames, hasExpertSlot }) => {
-	const useTooltopInsteadOfLabel = !hasExpertSlot && hideLabel;
-
-	if (!useTooltopInsteadOfLabel) {
-		return null;
-	}
-
+const FormFieldTooltipFc: FC<FormFieldTooltipProps> = ({ id, align, badgeText, hideLabel, label, class: classNames }) => {
 	return (
 		<KolTooltipWcTag
 			/**

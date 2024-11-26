@@ -104,7 +104,6 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 			type: this._passwordVisible ? 'text' : 'password',
 			state: this.state,
 			...this.controller.onFacade,
-			// onChange: this.onChange,
 			onInput: this.onInput,
 			onKeyDown: this.onKeyDown,
 			onFocus: (event: Event) => {

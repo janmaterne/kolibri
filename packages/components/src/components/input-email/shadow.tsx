@@ -103,7 +103,6 @@ export class KolInputEmail implements InputEmailAPI, FocusableElement {
 			state: this.state,
 			type: 'email',
 			...this.controller.onFacade,
-			// onChange: this.onChange,
 			onInput: this.onInput,
 			onKeyDown: this.onKeyDown,
 			onFocus: (event: Event) => {

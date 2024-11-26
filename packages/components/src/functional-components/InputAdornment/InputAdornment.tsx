@@ -1,5 +1,4 @@
 import { type FunctionalComponent as FC } from '@stencil/core';
-//import type { JSXBase } from '@stencil/core/internal';
 
 const InputAdornment: FC = (_, children, utils) => {
 	return utils.map(children, (child) => {

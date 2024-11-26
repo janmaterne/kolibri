@@ -6,7 +6,7 @@ import { buildBadgeTextString } from '../../schema';
 import { isString } from 'lodash-es';
 
 type LabelProps = {
-	label: string;
+	label?: string;
 	accessKey?: string;
 	shortKey?: string;
 	hasExpertSlot?: boolean;
@@ -21,6 +21,10 @@ type FormFieldLabelProps = JSXBase.HTMLAttributes<Omit<HTMLLabelElement | HTMLLe
 const LabelFc: FC<LabelProps> = ({ hasExpertSlot, accessKey, shortKey, label }) => {
 	if (hasExpertSlot) {
 		return <slot name="expert"></slot>;
+	}
+
+	if (!label) {
+		return null;
 	}
 
 	const hasBadgeText = isString(accessKey) || isString(shortKey);

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KolInputContainerFc should render correctly 1`] = `null`;
+
+exports[`KolInputContainerFc should render with children 1`] = `
+<kol-icon
+  _icons="codicon codicon-start-icon"
+  _label=""
+  _tabindex="-1"
+/>
+`;

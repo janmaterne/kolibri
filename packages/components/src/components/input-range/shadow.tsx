@@ -122,11 +122,9 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 	private getFormFieldProps(): FormFieldStateWrapperProps {
 		return {
 			state: this.state,
-			class: clsx('kol-input-range', 'range', {
-				// 'has-value': this.state._hasValue,
-			}),
+			class: clsx('kol-input-range', 'range'),
 			tooltipAlign: this._tooltipAlign,
-			// onClick: () => this.catchInputRangeRef?.focus(),
+			onClick: () => this.refInputRange?.focus(),
 			alert: this.showAsAlert(),
 		};
 	}

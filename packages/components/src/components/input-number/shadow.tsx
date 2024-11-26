@@ -97,8 +97,6 @@ export class KolInputNumber implements InputNumberAPI, FocusableElement {
 			state: this.state,
 			type: 'number',
 			...this.controller.onFacade,
-			// onChange: this.onChange,
-			// onInput: this.onInput,
 			onKeyDown: this.onKeyDown,
 			onFocus: (event: Event) => {
 				this.controller.onFacade.onFocus(event);

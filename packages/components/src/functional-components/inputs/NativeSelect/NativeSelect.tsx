@@ -8,7 +8,7 @@ type SelectAttributes = JSXBase.SelectHTMLAttributes<HTMLSelectElement>;
 
 export type SelectProps = DefaultInputProps<SelectAttributes> & NativeOptionListProps;
 
-const TextAreaFc: FC<SelectProps> = (props) => {
+const NativeSelectFc: FC<SelectProps> = (props) => {
 	const { options, value, OptionProps, OptionGroupProps, ariaDescribedBy, hideLabel, label, ...other } = props;
 
 	const inputProps: SelectAttributes = {
@@ -23,4 +23,4 @@ const TextAreaFc: FC<SelectProps> = (props) => {
 	);
 };
 
-export default TextAreaFc;
+export default NativeSelectFc;

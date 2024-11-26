@@ -1,6 +1,6 @@
 import type { JSX } from '@stencil/core';
 import { h, Fragment, type FunctionalComponent as FC } from '@stencil/core';
-import KolFormFieldMsgFc from '../FormFieldMsg2';
+import KolFormFieldMsgFc from '../FormFieldMsg';
 import KolFormFieldLabelFc from '../FormFieldLabel';
 import KolFormFieldHintFc from '../FormFieldHint/FormFieldHint';
 import KolFormFieldCounterFc from '../FormFieldCounter';
@@ -97,6 +97,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 	const hasError = checkHasError(msg, touched, readOnly);
 	const showFormFieldMsg = Boolean(hasError || (msg?._type !== 'error' && msg?._description));
 	const badgeText = buildBadgeTextString(accessKey, shortKey);
+	const useTooltopInsteadOfLabel = !hasExpertSlot && hideLabel;
 
 	const stateCssClasses = {
 		disabled: Boolean(disabled),
@@ -125,15 +126,9 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		</>,
 		<>
 			{children}
-			<KolFormFieldTooltipFc
-				{...(FormFieldTooltipProps || {})}
-				id={id}
-				label={label}
-				hideLabel={hideLabel}
-				hasExpertSlot={hasExpertSlot}
-				align={tooltipAlign}
-				badgeText={badgeText}
-			/>
+			{useTooltopInsteadOfLabel && (
+				<KolFormFieldTooltipFc {...(FormFieldTooltipProps || {})} id={id} label={label} hideLabel={hideLabel} align={tooltipAlign} badgeText={badgeText} />
+			)}
 		</>,
 	];
 
