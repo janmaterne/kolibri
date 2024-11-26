@@ -1,7 +1,16 @@
 import { h, type FunctionalComponent as FC } from '@stencil/core';
 import type { JSXBase } from '@stencil/core/internal';
 import { getDefaultProps } from '../_helpers/getDefaultProps';
-import type { DefaultInputProps, AriaProps } from '../_types';
+import type { DefaultInputProps } from '../_types';
+
+type AriaProps = {
+	'aria-label'?: string;
+	'aria-describedby'?: string;
+	'aria-selected'?: boolean;
+	'aria-controls'?: string;
+	'aria-autocomplete'?: 'both';
+	'aria-activedescendant'?: string;
+};
 
 export type ComboboxProps = DefaultInputProps<JSXBase.InputHTMLAttributes<HTMLInputElement>> & {
 	value: string | number | string[];

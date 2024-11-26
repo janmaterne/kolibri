@@ -27,6 +27,20 @@ const SALUTATION_OPTIONS: SelectOption<string>[] = [
 	},
 ];
 
+const groupedOptions: Record<string, any> = COUNTRY_OPTIONS.reduce(
+	(acc, option) => {
+		const firstLetter = (option.label as string).charAt(0).toUpperCase();
+		if (!acc[firstLetter]) {
+			acc[firstLetter] = { label: firstLetter, options: [] };
+		}
+		acc[firstLetter].options.push(option);
+		return acc;
+	},
+	{} as Record<string, { label: string; options: SelectOption<string>[] }>,
+);
+
+const groupedOptionsArray = Object.values(groupedOptions);
+
 export const SelectCases = forwardRef<HTMLKolSelectElement, Components.KolSelect>(function SelectCases(props, ref) {
 	return (
 		<div className="grid gap-4">
@@ -59,6 +73,8 @@ export const SelectCases = forwardRef<HTMLKolSelectElement, Components.KolSelect
 			/>
 			<KolSelect {...props} _options={SALUTATION_OPTIONS} _label="With access key" _accessKey="c" />
 			<KolSelect {...props} _options={SALUTATION_OPTIONS} _label="With short key" _shortKey="s" />
+			<KolSelect {...props} _options={groupedOptionsArray} _label="With grouped by first letter" _value={['Albanien']} />
+			<KolSelect {...props} _options={groupedOptionsArray} _label="With grouped by first letter (multiple)" _multiple _value={['Albanien']} />
 		</div>
 	);
 });

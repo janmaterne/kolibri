@@ -11,6 +11,7 @@ import type {
 	InputTextStates,
 	KoliBriHorizontalIcons,
 	TextareaStates,
+	SelectStates,
 } from '../../schema';
 
 import KolInputContainerFc, { type InputContainerProps } from '../../functional-components/InputContainer';
@@ -20,6 +21,7 @@ import clsx from 'clsx';
 
 type InputState =
 	| TextareaStates
+	| SelectStates
 	| InputTextStates
 	| InputEmailStates
 	| InputPasswordStates
