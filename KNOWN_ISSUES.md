@@ -76,7 +76,7 @@ There is a Bug Report for this Issue:
 
 ## Firefox Accessibility Issue with `aria-label`
 
-Issue: https://github.com/public-ui/kolibri/issues/7076
+Related: [🐞 GitHub issue #7076](https://github.com/public-ui/kolibri/issues/7076)
 
 The use of `aria-label` or `aria-labelledby` on `<kol-icon>` or its nested elements does not work reliably in Firefox. Even applying these attributes directly to `<kol-icon>` has no effect, which points to a browser-specific issue with ARIA support in custom elements or shadow DOM contexts.
 
