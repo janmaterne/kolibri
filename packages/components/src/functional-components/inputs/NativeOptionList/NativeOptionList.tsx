@@ -4,6 +4,8 @@ import NativeOptionFc from '../NativeOption/NativeOption';
 import type { JSXBase } from '@stencil/core/internal';
 
 export type NativeOptionListProps = {
+	preKey?: string;
+	disabled?: boolean;
 	value?: W3CInputValue | W3CInputValue[];
 	options?: SelectOption<W3CInputValue>[];
 
@@ -11,25 +13,32 @@ export type NativeOptionListProps = {
 	OptionGroupProps?: Omit<JSXBase.OptgroupHTMLAttributes<HTMLOptGroupElement>, 'label'>;
 };
 
-const NativeOptionListFc: FC<NativeOptionListProps> = ({ options, value, OptionProps = {}, OptionGroupProps = {} }) => {
+const NativeOptionListFc: FC<NativeOptionListProps> = ({ preKey, options, value, OptionProps = {}, OptionGroupProps = {} }) => {
 	if (!options?.length) {
 		return null;
 	}
 
 	return (
 		<>
-			{options.map(({ label, ...other }, index) => {
-				const key = `-${index}`;
+			{options.map(({ label, disabled, ...other }, index) => {
+				const key = [preKey, `-${index}`].join('');
 
 				if ('options' in other && options.length) {
 					return (
 						<optgroup key={key} {...OptionGroupProps} label={label?.toString()}>
-							<NativeOptionListFc OptionGroupProps={OptionGroupProps} OptionProps={OptionProps} options={other.options} value={value} />
+							<NativeOptionListFc
+								OptionGroupProps={OptionGroupProps}
+								OptionProps={OptionProps}
+								options={other.options}
+								value={value}
+								disabled={disabled}
+								preKey={key}
+							/>
 						</optgroup>
 					);
 				}
 
-				return <NativeOptionFc key={key} {...OptionProps} label={label} selectedValue={value} value={key} {...other} />;
+				return <NativeOptionFc key={key} {...OptionProps} label={label} selectedValue={value} value={key} disabled={disabled} />;
 			})}
 		</>
 	);

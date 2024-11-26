@@ -295,6 +295,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input accesskey="V" autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -303,12 +309,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input accesskey="V" autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -318,6 +318,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _alert="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -325,12 +331,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -340,6 +340,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox disabled kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" disabled="" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -347,12 +353,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" disabled="" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -362,6 +362,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -372,12 +378,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
       <span class="hint" id="id-nonce-hint">
         Hint
       </span>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -387,6 +387,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -394,12 +400,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -409,6 +409,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -416,12 +422,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -431,6 +431,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -438,12 +444,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -453,6 +453,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _hide-error="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox hidden-error kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -460,12 +466,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -475,6 +475,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -482,12 +488,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -497,6 +497,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext" _readonly="">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -504,12 +510,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -519,6 +519,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -527,12 +533,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -542,6 +542,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext" _touched="">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error touched" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -549,12 +555,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -564,6 +564,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -571,12 +577,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -586,6 +586,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input accesskey="V" autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -594,12 +600,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input accesskey="V" autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -609,6 +609,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _alert="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -616,12 +622,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -631,6 +631,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox disabled kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" disabled="" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -638,12 +644,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" disabled="" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -653,6 +653,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -663,12 +669,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
       <span class="hint" id="id-nonce-hint">
         Hint
       </span>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -678,6 +678,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -685,12 +691,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -700,6 +700,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -707,12 +713,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -722,6 +722,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -729,12 +735,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -744,6 +744,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _hide-error="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox hidden-error kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -751,12 +757,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -766,6 +766,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -773,12 +779,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -788,6 +788,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext" _readonly="">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -795,12 +801,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -810,6 +810,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -818,12 +824,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -833,6 +833,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext" _touched="">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch touched" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -840,12 +846,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -855,6 +855,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -862,12 +868,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1168,6 +1168,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input accesskey="V" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -1176,12 +1182,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input accesskey="V" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1191,6 +1191,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _alert="" _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1198,12 +1204,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1213,6 +1213,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default disabled kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" disabled="" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1220,12 +1226,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" disabled="" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1235,6 +1235,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1245,12 +1251,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
       <span class="hint" id="id-nonce-hint">
         Hint
       </span>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1260,6 +1260,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1267,12 +1273,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1282,6 +1282,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1289,12 +1295,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1304,6 +1304,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1311,12 +1317,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1326,6 +1326,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _hide-error="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default hidden-error kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1333,12 +1339,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1348,6 +1348,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1355,12 +1361,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1370,6 +1370,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext" _readonly="">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1377,12 +1383,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1392,6 +1392,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -1400,12 +1406,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1415,6 +1415,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext" _touched="">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error touched" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1422,12 +1428,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1437,6 +1437,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked default kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1444,12 +1450,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1459,6 +1459,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input accesskey="V" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -1467,12 +1473,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input accesskey="V" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1482,6 +1482,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _alert="" _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1489,12 +1495,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1504,6 +1504,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked disabled kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" disabled="" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1511,12 +1517,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" disabled="" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1526,6 +1526,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1536,12 +1542,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
       <span class="hint" id="id-nonce-hint">
         Hint
       </span>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1551,6 +1551,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1558,12 +1564,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1573,6 +1573,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1580,12 +1586,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1595,6 +1595,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1602,12 +1608,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1617,6 +1617,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _hide-error="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked hidden-error kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1624,12 +1630,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1639,6 +1639,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1646,12 +1652,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1661,6 +1661,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext" _readonly="">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1668,12 +1674,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1683,6 +1683,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -1691,12 +1697,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1706,6 +1706,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext" _touched="">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error touched" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1713,12 +1719,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1728,6 +1728,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="button checkbox checked kol-input kol-input-checkbox msg-type-error" data-label-align="right" data-role="button" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1735,12 +1741,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1750,6 +1750,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input accesskey="V" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -1758,12 +1764,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input accesskey="V" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1773,6 +1773,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _alert="" _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1780,12 +1786,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1795,6 +1795,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked disabled kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" disabled="" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1802,12 +1808,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" disabled="" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1817,6 +1817,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1827,12 +1833,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
       <span class="hint" id="id-nonce-hint">
         Hint
       </span>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1842,6 +1842,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1849,12 +1855,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1864,6 +1864,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1871,12 +1877,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1886,6 +1886,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1893,12 +1899,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1908,6 +1908,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _hide-error="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked hidden-error kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1915,12 +1921,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1930,6 +1930,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1937,12 +1943,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1952,6 +1952,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext" _readonly="">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -1959,12 +1965,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1974,6 +1974,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -1982,12 +1988,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -1997,6 +1997,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext" _touched="">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch touched" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2004,12 +2010,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2019,6 +2019,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _checked="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox checked kol-input kol-input-checkbox msg-type-error switch" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2026,12 +2032,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" checked="" class="checkbox-input-element" id="id-nonce" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2041,6 +2041,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input accesskey="V" autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -2049,12 +2055,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input accesskey="V" autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2064,6 +2064,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _alert="" _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2071,12 +2077,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2086,6 +2086,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default disabled indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" disabled="" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2093,12 +2099,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" disabled="" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2108,6 +2108,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2118,12 +2124,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
       <span class="hint" id="id-nonce-hint">
         Hint
       </span>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2133,6 +2133,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2140,12 +2146,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2155,6 +2155,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2162,12 +2168,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2177,6 +2177,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2184,12 +2190,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2199,6 +2199,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _hide-error="" _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default hidden-error indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2206,12 +2212,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2221,6 +2221,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2228,12 +2234,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2243,6 +2243,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext" _readonly="">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2250,12 +2256,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2265,6 +2265,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           Label
@@ -2273,12 +2279,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2288,6 +2288,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext" _touched="">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error touched" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2295,12 +2301,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
@@ -2310,6 +2310,12 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
 <kol-input-checkbox _indeterminate="" _placeholder="Hier steht ein Platzhaltertext">
   <template shadowrootmode="open">
     <div class="checkbox default indeterminate kol-input kol-input-checkbox msg-type-error" data-label-align="right" role="presentation">
+      <div class="input">
+        <label class="checkbox-container">
+          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
+          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
+        </label>
+      </div>
       <label class="input-label" htmlfor="id-nonce" id="id-nonce-label">
         <span class="input-label-span">
           <span>
@@ -2317,12 +2323,6 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           </span>
         </span>
       </label>
-      <div class="input">
-        <label class="checkbox-container">
-          <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
-          <input autocapitalize="off" autocorrect="off" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" slot="input" type="checkbox" value="true">
-        </label>
-      </div>
     </div>
   </template>
 </kol-input-checkbox>
