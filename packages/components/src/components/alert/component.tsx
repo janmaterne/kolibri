@@ -1,6 +1,6 @@
 import type { JSX } from '@stencil/core';
 import { alertTypeOptions, alertVariantOptions, setState, validateHasCloser, validateLabel, watchBoolean, watchValidator } from '../../schema';
-import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, h, Prop, State, Watch } from '@stencil/core';
 import { watchHeadingLevel } from '../heading/validation';
 import type { AlertAPI, AlertStates, AlertType, AlertVariant, HasCloserPropType, HeadingLevel, KoliBriAlertEventCallbacks, LabelPropType } from '../../schema';
 import KolAlertFc, { type KolAlertFcProps } from '../../functional-components/Alert';
@@ -37,11 +37,9 @@ export class KolAlertWc implements AlertAPI {
 		};
 
 		return (
-			<Host>
-				<KolAlertFc {...props}>
-					<slot />
-				</KolAlertFc>
-			</Host>
+			<KolAlertFc {...props}>
+				<slot />
+			</KolAlertFc>
 		);
 	}
 

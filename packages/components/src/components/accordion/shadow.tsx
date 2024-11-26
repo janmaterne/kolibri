@@ -1,5 +1,5 @@
 // https://codepen.io/mbxtr/pen/OJPOYg?html-preprocessor=haml
-import { Component, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, h, Method, Prop, State, Watch } from '@stencil/core';
 import type { JSX } from '@stencil/core';
 import type {
 	AccordionAPI,
@@ -71,7 +71,7 @@ export class KolAccordion implements AccordionAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		const { _open, _label, _disabled, _level } = this.state;
-		const rootClass = 'accordion';
+		const rootClass = 'kol-accordion';
 
 		const props: CollapsibleProps = {
 			id: this.nonce,
@@ -94,11 +94,9 @@ export class KolAccordion implements AccordionAPI, FocusableElement {
 		};
 
 		return (
-			<Host class="kol-accordion">
-				<KolCollapsibleFc {...props}>
-					<slot />
-				</KolCollapsibleFc>
-			</Host>
+			<KolCollapsibleFc {...props}>
+				<slot />
+			</KolCollapsibleFc>
 		);
 	}
 
