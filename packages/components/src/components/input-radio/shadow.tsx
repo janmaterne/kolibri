@@ -83,7 +83,6 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 			state: this.state,
 			class: clsx('kol-input-radio', 'fieldset', this.state._orientation),
 			tooltipAlign: this._tooltipAlign,
-			inputHasFocus: this.inputHasFocus,
 			onClick: () => this.inputRef?.focus(),
 			alert: this.showAsAlert(),
 			renderNoHint: true,

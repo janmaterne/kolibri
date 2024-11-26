@@ -126,7 +126,6 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 				// 'has-value': this.state._hasValue,
 			}),
 			tooltipAlign: this._tooltipAlign,
-			inputHasFocus: this.inputHasFocus,
 			// onClick: () => this.catchInputRangeRef?.focus(),
 			alert: this.showAsAlert(),
 		};

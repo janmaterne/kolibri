@@ -75,7 +75,6 @@ export class KolSelect implements SelectAPI, FocusableElement {
 				'has-value': this.state._hasValue,
 			}),
 			tooltipAlign: this._tooltipAlign,
-			inputHasFocus: this.inputHasFocus,
 			onClick: () => this.selectRef?.focus(),
 			alert: this.showAsAlert(),
 		};

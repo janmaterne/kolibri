@@ -33,7 +33,6 @@ export type FormFieldProps = Omit<JSXBase.HTMLAttributes<HTMLElement>, 'id'> & {
 	component?: 'div' | 'fieldset';
 	id: string;
 	alert?: boolean;
-	inputHasFocus?: boolean;
 	disabled?: boolean;
 	msg?: MsgPropType;
 	tooltipAlign?: AlignPropType;

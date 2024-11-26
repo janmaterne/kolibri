@@ -93,7 +93,6 @@ export class KolInputPassword implements InputPasswordAPI, FocusableElement {
 				'has-value': this.state._hasValue,
 			}),
 			tooltipAlign: this._tooltipAlign,
-			inputHasFocus: this.inputHasFocus,
 			onClick: () => this.inputRef?.focus(),
 			alert: this.showAsAlert(),
 		};

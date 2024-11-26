@@ -71,7 +71,6 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 			state: this.state,
 			class: 'kol-input-color color',
 			tooltipAlign: this._tooltipAlign,
-			inputHasFocus: this.inputHasFocus,
 			onClick: () => this.inputRef?.focus(),
 			alert: this.showAsAlert(),
 		};

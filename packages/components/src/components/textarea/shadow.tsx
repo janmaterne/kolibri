@@ -91,7 +91,6 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 				'has-counter': !!this.state._hasCounter,
 			}),
 			tooltipAlign: this._tooltipAlign,
-			inputHasFocus: this.inputHasFocus,
 			onClick: () => this.textareaRef?.focus(),
 			alert: this.showAsAlert(),
 		};
