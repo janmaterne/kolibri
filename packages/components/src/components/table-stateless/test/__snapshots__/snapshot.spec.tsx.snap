@@ -10,7 +10,7 @@ exports[`kol-table-stateless-wc should render with _label="Table with horizontal
       </caption>
       <thead>
         <tr>
-          <td colspan="1" rowspan="1"></td>
+          <td aria-hidden="true" colspan="1" rowspan="1"></td>
           <th class="align-left" data-sort="sort-undefined" scope="col">
             Header1
           </th>
@@ -128,7 +128,7 @@ exports[`kol-table-stateless-wc should render with _label="Table with two horizo
       </caption>
       <thead>
         <tr>
-          <td colspan="1" rowspan="2"></td>
+          <td aria-hidden="true" colspan="1" rowspan="2"></td>
           <th class="align-left" data-sort="sort-undefined" scope="col">
             Header 1
           </th>
@@ -187,7 +187,7 @@ exports[`kol-table-stateless-wc should render with _label="Table with two spanne
       </caption>
       <thead>
         <tr>
-          <td colspan="2" rowspan="2"></td>
+          <td aria-hidden="true" colspan="2" rowspan="2"></td>
           <th colspan="2" data-sort="sort-undefined" scope="colgroup">
             H-Header
           </th>
