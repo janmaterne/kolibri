@@ -688,7 +688,7 @@ export class KolTableStateless implements TableStatelessAPI {
 		const selectionCell = this.state._selection ? 1 : 0;
 
 		return (
-			<tr class={`${variant}-spacer`} aria-hidden="true">
+			<tr aria-hidden="true" class={`${variant}-spacer`}>
 				<td colSpan={verticalHeaderColpan + colspan + selectionCell}></td>
 			</tr>
 		);
