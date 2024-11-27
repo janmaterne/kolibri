@@ -92,7 +92,7 @@ exports[`kol-input should render with _label="Label" _name="field" _placeholder=
 `;
 
 exports[`kol-input should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _msg={"_type":"error","_description":"Es ist ein Fehler aufgetreten"} _hideError=true 1`] = `
-<kol-input _name="field" _placeholder="Hier steht ein Platzhaltertext" class="hidden-error kol-input msg-type-error">
+<kol-input _name="field" _placeholder="Hier steht ein Platzhaltertext" class="hidden-error kol-input">
   <!---->
   <label class="input-label" id="undefined-label">
     <span class="input-label-span"></span>
@@ -104,7 +104,7 @@ exports[`kol-input should render with _label="Label" _name="field" _placeholder=
 `;
 
 exports[`kol-input should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _msg={"_type":"error","_description":"Es ist ein Fehler aufgetreten"} 1`] = `
-<kol-input _name="field" _placeholder="Hier steht ein Platzhaltertext" class="kol-input msg-type-error">
+<kol-input _name="field" _placeholder="Hier steht ein Platzhaltertext" class="kol-input">
   <!---->
   <label class="input-label" id="undefined-label">
     <span class="input-label-span"></span>
