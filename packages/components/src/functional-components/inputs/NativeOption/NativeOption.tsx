@@ -6,9 +6,10 @@ export type NativeOptionProps = Omit<JSXBase.OptionHTMLAttributes<HTMLOptionElem
 	selectedValue?: W3CInputValue | W3CInputValue[];
 	value: W3CInputValue;
 	label: W3CInputValue;
+	index?: string | number;
 };
 
-const NativeOptionFc: FC<NativeOptionProps> = ({ selectedValue, selected, value, label, ...other }) => {
+const NativeOptionFc: FC<NativeOptionProps> = ({ index, selectedValue, selected, value, label, ...other }) => {
 	if (!selectedValue) {
 		selectedValue = [];
 	} else if (!Array.isArray(selectedValue)) {
@@ -16,7 +17,7 @@ const NativeOptionFc: FC<NativeOptionProps> = ({ selectedValue, selected, value,
 	}
 
 	return (
-		<option selected={selected || selectedValue.includes(label)} value={value} {...other}>
+		<option selected={selected || selectedValue.includes(value)} value={index || value} {...other}>
 			{label}
 		</option>
 	);

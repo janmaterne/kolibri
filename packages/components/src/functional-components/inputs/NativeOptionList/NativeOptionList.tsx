@@ -13,32 +13,35 @@ export type NativeOptionListProps = {
 	OptionGroupProps?: Omit<JSXBase.OptgroupHTMLAttributes<HTMLOptGroupElement>, 'label'>;
 };
 
-const NativeOptionListFc: FC<NativeOptionListProps> = ({ preKey, options, value, OptionProps = {}, OptionGroupProps = {} }) => {
+const NativeOptionListFc: FC<NativeOptionListProps> = ({ preKey, options, value: selectedValue, OptionProps = {}, OptionGroupProps = {} }) => {
 	if (!options?.length) {
 		return null;
 	}
 
 	return (
 		<>
-			{options.map(({ label, disabled, ...other }, index) => {
+			{options.map((option, index) => {
 				const key = [preKey, `-${index}`].join('');
 
-				if ('options' in other && options.length) {
+				if ('options' in option) {
+					if (!options.length) {
+						return null;
+					}
+
+					const { label, ...other } = option;
+
 					return (
 						<optgroup key={key} {...OptionGroupProps} label={label?.toString()}>
-							<NativeOptionListFc
-								OptionGroupProps={OptionGroupProps}
-								OptionProps={OptionProps}
-								options={other.options}
-								value={value}
-								disabled={disabled}
-								preKey={key}
-							/>
+							<NativeOptionListFc OptionGroupProps={OptionGroupProps} OptionProps={OptionProps} value={selectedValue} preKey={key} {...other} />
 						</optgroup>
 					);
 				}
 
-				return <NativeOptionFc key={key} {...OptionProps} label={label} selectedValue={value} value={key} disabled={disabled} />;
+				if ('value' in option) {
+					return <NativeOptionFc key={key} {...OptionProps} index={key} selectedValue={selectedValue} {...option} />;
+				}
+
+				return null;
 			})}
 		</>
 	);
