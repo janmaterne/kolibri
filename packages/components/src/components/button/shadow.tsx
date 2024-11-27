@@ -19,7 +19,6 @@ import type {
 import type { JSX } from '@stencil/core';
 import { Component, h, Method, Prop } from '@stencil/core';
 import { KolButtonWcTag } from '../../core/component-names';
-import clsx from 'clsx';
 
 @Component({
 	tag: 'kol-button',
@@ -60,7 +59,6 @@ export class KolButton implements ButtonProps, FocusableElement {
 		return (
 			<KolButtonWcTag
 				ref={this.catchRef}
-				class={clsx('kol-button')}
 				_accessKey={this._accessKey}
 				_ariaControls={this._ariaControls}
 				_ariaDescription={this._ariaDescription}

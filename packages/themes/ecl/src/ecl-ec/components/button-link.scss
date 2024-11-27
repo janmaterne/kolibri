@@ -1,55 +1,41 @@
 @import '../../mixins/rem';
 
 @layer kol-theme-component {
-	.kol-button-link {
-		.kol-button {
-			&__element {
-				color: var(--color-primary);
-				font-style: normal;
-				font-weight: 400;
-				text-decoration-line: underline;
-				font-size: inherit;
+	.kol-button {
+		&__element {
+			color: var(--color-primary);
+			font-style: normal;
+			font-weight: 400;
+			text-decoration-line: underline;
+			font-size: inherit;
 
-				:focus {
-					outline: none;
-				}
-
-				&:hover {
-					&:visited {
-						color: var(--visited);
-					}
-				}
+			:focus {
+				outline: none;
 			}
 
-			&__text {
-				border-radius: var(--border-radius);
-				outline: calc(var(--border-width) * 2) solid;
-
-				&:hover {
-					.span-label {
-						text-decoration-thickness: 0.25em;
-					}
+			&:hover {
+				&:visited {
+					color: var(--visited);
 				}
 			}
 		}
-		.skip {
-			left: rem(-99999);
-			overflow: hidden;
-			position: absolute;
-			z-index: 9999999;
 
-			&:focus {
-				background-color: white;
-				left: unset;
-				position: unset;
+		&__text {
+			border-radius: var(--border-radius);
+			outline: calc(var(--border-width) * 2) solid;
+
+			&:hover {
+				.span-label {
+					text-decoration-thickness: 0.25em;
+				}
 			}
 		}
+	}
 
-		.badge-text-hint {
-			background-color: var(--color-mute-variant);
-			border-radius: rem(3);
-			color: var(--color-text);
-			padding: 0 0.3em;
-		}
+	.badge-text-hint {
+		background-color: var(--color-mute-variant);
+		border-radius: rem(3);
+		color: var(--color-text);
+		padding: 0 0.3em;
 	}
 }

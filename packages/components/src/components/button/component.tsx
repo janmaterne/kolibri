@@ -112,7 +112,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 		const badgeText = this.state._accessKey || this.state._shortKey;
 
 		return (
-			<Host>
+			<Host class="kol-button">
 				<button
 					ref={this.catchRef}
 					accessKey={this.state._accessKey || undefined}

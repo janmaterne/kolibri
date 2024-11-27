@@ -1,6 +1,6 @@
 @layer kol-theme-component {
-	.kol-button-link {
-		.kol-button__element {
+	.kol-button {
+		&__element {
 			appearance: none;
 			color: var(--color-blue);
 			text-decoration: underline;

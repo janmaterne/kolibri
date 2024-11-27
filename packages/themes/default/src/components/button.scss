@@ -5,7 +5,7 @@
 	.kol-button {
 		font-family: var(--font-family);
 
-		.kol-button__text {
+		&__text {
 			font-weight: 700;
 			border-radius: var(--border-radius);
 			border-style: solid;

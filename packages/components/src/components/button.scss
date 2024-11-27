@@ -1,14 +1,15 @@
 @import './@shared/mixins';
 @import './tooltip/style.scss';
 
-@layer kol-component {
+@mixin kol-button($block-classname) {
 	:host {
 		//Needed for custom width
 		display: inline-block;
 	}
-	.kol-button {
+	.#{$block-classname } {
 		font-style: rem(16);
-		:is(.kol-button__element) {
+
+		&__element {
 			display: inline-flex;
 			place-items: center;
 			text-align: center;
@@ -18,11 +19,12 @@
 				/* Render zero-width character as first element to set the baseline correctly. */
 				content: '\200B';
 			}
-			/* TODO: Why we need this? */
-			.kol-button__text {
-				margin: auto;
-				width: 100%;
-			}
+		}
+
+		&__text {
+			// Needed for custom width
+			margin: auto;
+			width: 100%;
 		}
 	}
 }

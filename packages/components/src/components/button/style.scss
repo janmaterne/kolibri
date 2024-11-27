@@ -1,3 +1,7 @@
 @import '../@shared/mixins';
 @import '../style';
 @import '../button';
+
+@layer kol-component {
+	@include kol-button('kol-button');
+}

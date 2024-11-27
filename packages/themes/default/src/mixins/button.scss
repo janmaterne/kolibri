@@ -61,24 +61,11 @@
 			border-color: var(--text-border-color);
 			color: var(--text-color);
 
-			&:hover,
-			&:active {
+			&:hover {
 				box-shadow: 0 rem(2) rem(8) rem(2) rgba(8, 35, 48, 0.24);
 				background-color: var(--text-background-color);
 				border-color: var(--text-border-color);
 				color: var(--text-color);
-			}
-
-			&:active {
-				box-shadow: none;
-				outline: none;
-			}
-
-			&:disabled:hover {
-				background-color: var(--text-background-color);
-				border-color: var(--text-border-color);
-				color: var(--text-color);
-				box-shadow: none;
 			}
 
 			@at-root #{$root}--hide-label & {
@@ -90,7 +77,7 @@
 				}
 			}
 
-			@at-root #{$root}--ghost.small & {
+			@at-root #{$root}--ghost & {
 				border: none;
 				--text-background-color: transparent;
 				box-shadow: none;
@@ -113,21 +100,6 @@
 				border-color: var(--text-border-color);
 				color: var(--text-color);
 				box-shadow: none;
-			}
-
-			@at-root #{root}__element.loading & {
-				.kol-icon {
-					animation: spin 5s infinite linear;
-				}
-			}
-
-			@at-root #{$root}__element.transparent & {
-				--text-background-color: transparent;
-				--text-border-color: transparent;
-				.span-container {
-					--text-background-color: transparent;
-					--text-border-color: transparent;
-				}
 			}
 		}
 
