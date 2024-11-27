@@ -77,20 +77,6 @@
 				}
 			}
 
-			@at-root #{$root}--ghost & {
-				border: none;
-				--text-background-color: transparent;
-				box-shadow: none;
-
-				> .span-container {
-					border-radius: 1.5em;
-					border-style: solid;
-					border-width: var(--border-width);
-					--text-border-color: var(--color-light);
-					--text-background-color: var(--color-light);
-				}
-			}
-
 			@at-root #{$root}__element:focus {
 				@include focus-outline;
 			}
