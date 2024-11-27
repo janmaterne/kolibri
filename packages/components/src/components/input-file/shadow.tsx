@@ -174,6 +174,11 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 	@Prop() public _error?: string;
 
 	/**
+	 * Special property that reflects the files property of the input element. Can not be set from outside.
+	 */
+	@Prop({ mutable: true, reflect: true }) public _files?: FileList | null;
+
+	/**
 	 * Hides the error message but leaves it in the DOM for the input's aria-describedby.
 	 * @TODO: Change type back to `HideErrorPropType` after Stencil#4663 has been resolved.
 	 */
@@ -407,8 +412,9 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 
 	private onInput = (event: Event): void => {
 		if (this.inputRef instanceof HTMLInputElement && this.inputRef.type === 'file') {
-			const value = this.inputRef.files;
-			this.controller.onFacade.onInput(event, false, value);
+			const files = this.inputRef.files;
+			this._files = files;
+			this.controller.onFacade.onInput(event, false, files);
 		}
 	};
 }
