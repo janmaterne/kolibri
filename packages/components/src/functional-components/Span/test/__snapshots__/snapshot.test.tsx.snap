@@ -2,7 +2,7 @@
 
 exports[`KolSpanFc should allow markdown in label 1`] = `
 <span class="kol-span-wc">
-  <span>
+  <span class="kol-span__container">
     <span class="md span-label">
       <strong>
         Bold Label
@@ -15,7 +15,7 @@ exports[`KolSpanFc should allow markdown in label 1`] = `
 
 exports[`KolSpanFc should hide label when hideLabel is true 1`] = `
 <span class="hide-label kol-span-wc">
-  <span>
+  <span class="kol-span__container">
     <span aria-hidden="true" class="span-label" hidden=""></span>
   </span>
 </span>
@@ -23,7 +23,7 @@ exports[`KolSpanFc should hide label when hideLabel is true 1`] = `
 
 exports[`KolSpanFc should render with badge text 1`] = `
 <span class="kol-span-wc">
-  <span>
+  <span class="kol-span__container">
     <span class="span-label">
       Label with
       <u>
@@ -40,7 +40,7 @@ exports[`KolSpanFc should render with badge text 1`] = `
 
 exports[`KolSpanFc should render with default props 1`] = `
 <span class="kol-span-wc">
-  <span>
+  <span class="kol-span__container">
     <span class="span-label">
       Default Label
     </span>
@@ -52,7 +52,7 @@ exports[`KolSpanFc should render with default props 1`] = `
 exports[`KolSpanFc should render with icons 1`] = `
 <span class="kol-span-wc">
   <kol-icon _icons="top-icon" _label="" class="icon top"></kol-icon>
-  <span>
+  <span class="kol-span__container">
     <kol-icon _icons="left-icon" _label="" class="icon left"></kol-icon>
     <span class="span-label">
       Label with Icons
