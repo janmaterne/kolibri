@@ -12,13 +12,14 @@ import type {
 	NamePropType,
 	RowsPropType,
 	ShortKeyPropType,
+	SpellCheckPropType,
 	Stringified,
 	SyncValueBySelectorPropType,
 	TextareaAPI,
 	TextareaStates,
 	TooltipAlignPropType,
 } from '../../schema';
-import { buildBadgeTextString, devWarning, setState, showExpertSlot } from '../../schema';
+import { buildBadgeTextString, setState, showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
@@ -141,7 +142,7 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 							required={this.state._required}
 							rows={this.state._rows}
 							placeholder={this.state._placeholder}
-							spellcheck="false"
+							spellcheck={this.state._spellCheck}
 							{...this.controller.onFacade}
 							onInput={this.onInput}
 							onFocus={(event) => {
@@ -287,6 +288,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	@Prop() public _shortKey?: ShortKeyPropType;
 
 	/**
+	 * Defines whether the browser should check the spelling and grammar.
+	 */
+	@Prop() public _spellCheck?: SpellCheckPropType;
+
+	/**
 	 * Selector for synchronizing the value with another input element.
 	 * @internal
 	 */
@@ -428,11 +434,6 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 
 	@Watch('_resize')
 	public validateResize(value?: CSSResize): void {
-		if (value === 'both' || value === 'horizontal') {
-			devWarning(
-				'In version 3 (v3), horizontal resizing is abolished. The corresponding property is then reduced to the properties `none` (default) and `vertical`.',
-			);
-		}
 		this.controller.validateResize(value);
 	}
 
@@ -449,6 +450,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	@Watch('_shortKey')
 	public validateShortKey(value?: ShortKeyPropType): void {
 		this.controller.validateShortKey(value);
+	}
+
+	@Watch('_spellCheck')
+	public validateSpellCheck(value?: SpellCheckPropType): void {
+		this.controller.validateSpellCheck(value);
 	}
 
 	@Watch('_syncValueBySelector')
