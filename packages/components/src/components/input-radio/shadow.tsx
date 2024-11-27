@@ -75,18 +75,19 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 
 	private getFormFieldProps(): FormFieldStateWrapperProps {
 		return {
+			state: this.state,
 			component: 'fieldset',
 			FormFieldLabelProps: {
 				component: 'legend',
 				class: 'block w-full mb-1 leading-normal',
 			},
-			state: this.state,
 			class: clsx('kol-input-radio', 'fieldset', this.state._orientation),
 			tooltipAlign: this._tooltipAlign,
 			onClick: () => this.inputRef?.focus(),
 			alert: this.showAsAlert(),
 			renderNoHint: true,
 			anotherChildren: (<KolFormFieldHintFc hint={this.state._hint} />) as JSX.Element,
+			hideLabel: false,
 		};
 	}
 
