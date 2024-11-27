@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _accessKey="V" 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _accessKey="V" 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _accesskey="V" _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -11,14 +11,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input accesskey="V" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input accesskey="V" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _alert=true 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _alert=true 1`] = `
 <kol-input-file _alert="" _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _alert="" _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -28,14 +28,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _disabled=true 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _disabled=true 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _disabled="" _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -45,14 +45,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" disabled="" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" disabled="" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _hint="Hint" 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _hint="Hint" 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _hint="Hint" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -62,14 +62,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _icons={"left":{"icon":"codicon codicon-arrow-left"},"right":{"icon":"codicon codicon-arrow-right"}} 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _icons={"left":{"icon":"codicon codicon-arrow-left"},"right":{"icon":"codicon codicon-arrow-right"}} 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -79,14 +79,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _icons={"left":{"icon":"codicon codicon-arrow-left"}} 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _icons={"left":{"icon":"codicon codicon-arrow-left"}} 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -96,14 +96,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _icons={"right":{"icon":"codicon codicon-arrow-right"}} 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _icons={"right":{"icon":"codicon codicon-arrow-right"}} 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -113,14 +113,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _msg={"_type":"error","_description":"Es ist ein Fehler aufgetreten"} _hideError=true 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _msg={"_type":"error","_description":"Es ist ein Fehler aufgetreten"} _hideError=true 1`] = `
 <kol-input-file _hide-error="" _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _hideerror="" _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -130,14 +130,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _msg={"_type":"error","_description":"Es ist ein Fehler aufgetreten"} 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _msg={"_type":"error","_description":"Es ist ein Fehler aufgetreten"} 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -147,14 +147,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _readOnly=true 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _readOnly=true 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" _readonly="" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -164,14 +164,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _shortKey="S" 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _shortKey="S" 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _hint="" _id="id-nonce" _label="Label" _shortkey="S" _tooltipalign="top" class="file" role="presentation">
@@ -182,14 +182,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _smartButton={"_icons":["codicon codicon-eye"],"_hideLabel":true,"_label":"einblenden"} 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _smartButton={"_icons":["codicon codicon-eye"],"_hideLabel":true,"_label":"einblenden"} 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -199,14 +199,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" _touched=true 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _touched=true 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" _touched="" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _alert="" _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" _touched="" class="file" role="presentation">
@@ -216,14 +216,14 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>
 </kol-input-file>
 `;
 
-exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" _value="File" 1`] = `
+exports[`kol-input-file should render with _label="Label" _name="field" _placeholder="Hier steht ein Platzhaltertext" 1`] = `
 <kol-input-file _placeholder="Hier steht ein Platzhaltertext" class="kol-input-file">
   <template shadowrootmode="open">
     <kol-input _hint="" _id="id-nonce" _label="Label" _tooltipalign="top" class="file" role="presentation">
@@ -233,7 +233,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
         </span>
       </span>
       <div slot="input">
-        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file" value="File">
+        <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" spellcheck="false" type="file">
       </div>
     </kol-input>
   </template>

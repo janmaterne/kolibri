@@ -125,7 +125,6 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 							required={this.state._required}
 							spellcheck="false"
 							type="file"
-							value={this.state._value as string}
 							{...this.controller.onFacade}
 							onChange={this.onChange}
 							onInput={this.onInput}
@@ -266,11 +265,6 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 	 */
 	@Prop({ mutable: true, reflect: true }) public _touched?: boolean = false;
 
-	/**
-	 * Defines the value of the input.
-	 */
-	@Prop() public _value?: string;
-
 	@State() public state: InputFileStates = {
 		_hideError: false,
 		_id: `id-${nonce()}`,
@@ -393,11 +387,6 @@ export class KolInputFile implements InputFileAPI, FocusableElement {
 	@Watch('_touched')
 	public validateTouched(value?: boolean): void {
 		this.controller.validateTouched(value);
-	}
-
-	@Watch('_value')
-	public validateValue(value?: string): void {
-		this.controller.validateValue(value);
 	}
 
 	public componentWillLoad(): void {

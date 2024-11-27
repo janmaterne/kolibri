@@ -33,7 +33,6 @@ type OptionalProps = {
 	on: InputTypeOnDefault;
 	smartButton: Stringified<ButtonProps>;
 	tabIndex: number;
-	value: string;
 } & PropAccessKey &
 	PropDisabled &
 	PropHideError &
@@ -54,7 +53,6 @@ type OptionalStates = {
 	on: InputTypeOnDefault;
 	smartButton: ButtonProps;
 	tabIndex: number;
-	value: string;
 } & PropAccessKey &
 	PropDisabled &
 	PropHideLabel &
