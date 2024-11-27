@@ -1,6 +1,6 @@
 @mixin kol-link {
 	.kol-link {
-		&__url {
+		&__element {
 			appearance: none;
 			color: var(--color-blue);
 			line-height: 1.2;

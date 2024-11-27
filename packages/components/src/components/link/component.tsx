@@ -144,7 +144,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 							? `${this.state._label}${isExternal ? ` (${translate('kol-open-link-in-tab')})` : ''}`
 							: undefined
 					}
-					class={clsx('kol-link__url', {
+					class={clsx('kol-link__element', {
 						'kol-link--disabled': this.state._disabled === true,
 						'kol-link--external-link': isExternal,
 						'kol-link--hide-label': this.state._hideLabel === true,

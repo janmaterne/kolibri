@@ -2,7 +2,7 @@
 
 @mixin kol-link {
 	.kol-link {
-		&__url {
+		&__element {
 			text-decoration-line: none;
 			background-image: repeating-linear-gradient(to right, #66ddec, #66ddec);
 			background-repeat: no-repeat;

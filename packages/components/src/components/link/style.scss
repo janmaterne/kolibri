@@ -1,3 +1,5 @@
 @import '../@shared/mixins';
 @import '../style';
 @import '../link';
+
+@include kol-link('kol-link');

@@ -1,14 +1,14 @@
 @import './@shared/mixins';
 @import './tooltip/style.scss';
 
-@layer kol-component {
-	.kol-link {
+@mixin kol-link($block-classname) {
+	.#{$block-classname} {
 		$root: &;
 
 		display: inline-block;
 		font-size: rem(16);
 
-		&__url {
+		&__element {
 			align-items: baseline;
 			display: inline-flex;
 			place-items: center;
@@ -35,7 +35,7 @@
 			.span-label {
 				text-decoration-line: underline;
 
-				@at-root #{$root}__url:is(:focus, :hover):not([aria-disabled]) {
+				@at-root #{$root}__element:is(:focus, :hover):not([aria-disabled]) {
 					text-decoration-line: underline;
 				}
 			}

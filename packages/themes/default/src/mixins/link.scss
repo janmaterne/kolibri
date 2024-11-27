@@ -4,7 +4,7 @@
 	.kol-link {
 		$root: &;
 
-		&__url {
+		&__element {
 			color: var(--color-primary);
 			font-style: normal;
 			font-weight: 400;
@@ -16,36 +16,36 @@
 			&:visited {
 				color: var(--visited);
 			}
+
+			.skip {
+				left: rem(-99999);
+				overflow: hidden;
+				position: absolute;
+				z-index: 9999999;
+				line-height: 1;
+
+				&:focus {
+					background-color: white;
+					left: unset;
+					position: unset;
+				}
+			}
 		}
 
 		&__text {
-			@at-root #{$root}__url:focus {
+			@at-root #{$root}__element:focus {
 				border-radius: var(--border-radius);
 				outline: var(--border-width) solid;
 			}
 
 			.span-label {
-				@at-root #{$root}__url:is(:focus, :hover):not([aria-disabled]) {
+				@at-root #{$root}__element:is(:focus, :hover):not([aria-disabled]) {
 					text-decoration-thickness: 0.25em;
 				}
-				@at-root #{$root}__url:is(:focus, :hover):not([disabled]) {
+				@at-root #{$root}__element:is(:focus, :hover):not([disabled]) {
 					text-decoration-thickness: 0.25em;
 				}
 			}
-		}
-
-		.skip {
-			left: rem(-99999);
-			overflow: hidden;
-			position: absolute;
-			z-index: 9999999;
-			line-height: 1;
-		}
-
-		.skip:focus {
-			background-color: white;
-			left: unset;
-			position: unset;
 		}
 	}
 }
