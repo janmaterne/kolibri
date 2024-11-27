@@ -22,7 +22,7 @@ import {
 	watchValidator,
 } from '../../schema';
 import type { JSX } from '@stencil/core';
-import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
 
 import { translate } from '../../i18n';
 import { nonce } from '../../utils/dev.utils';
@@ -98,7 +98,7 @@ export class KolPagination implements PaginationAPI {
 			});
 
 		return (
-			<div class="kol-pagination">
+			<Host class="kol-pagination">
 				<nav aria-label={this.state._label}>
 					<ul class="kol-pagination__navigation-list">
 						{this.state._hasButtons.first && (
@@ -176,7 +176,7 @@ export class KolPagination implements PaginationAPI {
 						_value={[this.state._pageSize]}
 					></KolSelectTag>
 				)}
-			</div>
+			</Host>
 		);
 	}
 

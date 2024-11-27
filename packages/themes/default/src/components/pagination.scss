@@ -2,9 +2,11 @@
 @import '../mixins/rem';
 
 @layer kol-theme-component {
-	.kol-pagination {
+	:host {
 		font-family: var(--font-family);
+	}
 
+	.kol-pagination {
 		&__navigation-list {
 			.button:focus {
 				outline: none;
