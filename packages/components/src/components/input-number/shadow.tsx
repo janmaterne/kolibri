@@ -69,6 +69,11 @@ export class KolInputNumber implements InputNumberAPI, FocusableElement {
 		this.inputRef?.focus();
 	}
 
+	private readonly onInput = (event: InputEvent) => {
+		this._value = Number(this.inputRef?.value);
+		this.controller.onFacade.onInput(event);
+	};
+
 	private readonly onKeyDown = (event: KeyboardEvent) => {
 		if (event.code === 'Enter' || event.code === 'NumpadEnter') {
 			propagateSubmitEventToForm({
@@ -151,6 +156,7 @@ export class KolInputNumber implements InputNumberAPI, FocusableElement {
 							type="number"
 							value={this.state._value as string}
 							{...this.controller.onFacade}
+							onInput={this.onInput}
 							onKeyDown={this.onKeyDown}
 							onFocus={(event) => {
 								this.controller.onFacade.onFocus(event);
@@ -317,7 +323,7 @@ export class KolInputNumber implements InputNumberAPI, FocusableElement {
 	/**
 	 * Defines the value of the input.
 	 */
-	@Prop({ mutable: true }) public _value?: number | Iso8601 | null;
+	@Prop({ mutable: true, reflect: true }) public _value?: number | Iso8601 | null;
 
 	@State() public state: InputNumberStates = {
 		_autoComplete: 'off',
