@@ -368,14 +368,14 @@ test.describe('kol-input-date', () => {
 				_touched
 			></kol-input-date>`);
 
-			await expect(page.locator('.kol-alert-wc')).toBeVisible();
+			await expect(page.locator('.kol-alert')).toBeVisible();
 
 			const input = page.locator('kol-input-date');
 			await input.evaluate((element: HTMLKolInputDateElement) => {
 				element._error = undefined;
 			});
 
-			await expect(page.locator('.kol-alert-wc')).not.toBeVisible();
+			await expect(page.locator('.kol-alert')).not.toBeVisible();
 		});
 		test('should display and hide message based on _msg value', async ({ page }) => {
 			await page.setContent(`<kol-input-date
@@ -384,14 +384,14 @@ test.describe('kol-input-date', () => {
 				_touched
 			> </kol-input-date>`);
 
-			await expect(page.locator('.kol-alert-wc')).toBeVisible();
+			await expect(page.locator('.kol-alert')).toBeVisible();
 
 			const input = page.locator('kol-input-date');
 			await input.evaluate((element: HTMLKolInputDateElement) => {
 				element._msg = undefined;
 			});
 
-			await expect(page.locator('.kol-alert-wc')).not.toBeVisible();
+			await expect(page.locator('.kol-alert')).not.toBeVisible();
 		});
 	});
 });
