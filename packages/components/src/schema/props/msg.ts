@@ -20,11 +20,23 @@ export type PropMsg = {
 export const validateMsg = (component: Generic.Element.Component, value?: Stringified<MsgPropType>): void => {
 	objectObjectHandler(value, () => {
 		try {
-			value = parseJson<MsgPropType>(value as string);
+			value = parseJson<MsgPropType>(value);
 			// eslint-disable-next-line no-empty
 		} catch (e) {
 			// value keeps original value
 		}
-		watchValidator(component, `_msg`, (value) => isObject(value), new Set(['MsgPropType']), value);
+		watchValidator<MsgPropType>(
+			component,
+			`_msg`,
+			(value) => isObject(value) && typeof value?._description === 'string',
+			new Set(['MsgPropType']),
+			value as MsgPropType,
+			{
+				defaultValue: {
+					_description: '',
+					_type: 'error',
+				},
+			},
+		);
 	});
 };
