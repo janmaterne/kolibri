@@ -19,7 +19,7 @@
 		gap: rem(4);
 	}
 
-	fieldset .kol-alert-wc {
+	fieldset .kol-alert {
 		order: 1;
 	}
 
@@ -28,7 +28,7 @@
 		@include kol-typography-hint;
 	}
 
-	fieldset .kol-alert-wc {
+	fieldset .kol-alert {
 		order: 3;
 	}
 
@@ -104,7 +104,7 @@
 		border-color: var(--color-red-1xx);
 	}
 
-	.kol-alert-wc {
+	.kol-alert {
 		@include kol-alert-wc(--color-red);
 		order: 1;
 		width: 100%;

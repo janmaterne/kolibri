@@ -1,11 +1,13 @@
 import { h, type FunctionalComponent as FC } from '@stencil/core';
 import type { JSXBase } from '@stencil/core/internal';
 import clsx from 'clsx';
-import type { InternalAlertProps } from '../../schema';
-import { Log } from '../../schema';
+
+import { Log, type InternalAlertProps } from '../../schema';
 import { translate } from '../../i18n';
+import { KolButtonWcTag } from '../../core/component-names';
+
 import AlertIcon from '../AlertIcon';
-import { KolButtonWcTag, KolHeadingWcTag } from '../../core/component-names';
+import KolHeadingFc from '../Heading';
 
 export type KolAlertFcProps = JSXBase.HTMLAttributes<HTMLDivElement> &
 	Partial<Omit<InternalAlertProps, 'on'>> & {
@@ -33,22 +35,26 @@ const KolAlertFc: FC<KolAlertFcProps> = (props, children) => {
 	}
 
 	const rootProps: Partial<JSXBase.HTMLAttributes<HTMLDivElement>> = {
-		class: clsx('kol-alert-wc', 'alert', type, variant, { hasCloser: !!hasCloser }, classNames),
+		class: clsx('kol-alert', `kol-alert--${type}`, `kol-alert--${variant}`, { 'kol-alert--hasCloser': !!hasCloser }, classNames),
 		role: alert ? 'alert' : undefined,
 		...other,
 	};
 
 	return (
 		<div {...rootProps}>
-			<div class="heading">
+			<div class="kol-alert__container">
 				<AlertIcon label={label} type={type} />
-				<div class="heading-content">
-					{label ? <KolHeadingWcTag _label={label} _level={level} /> : null}
-					{variant === 'msg' && <div class="content">{children}</div>}
+				<div class="kol-alert__container-content">
+					{label ? (
+						<KolHeadingFc class="kol-alert__heading" level={level}>
+							{label}
+						</KolHeadingFc>
+					) : null}
+					{variant === 'msg' && <div class="kol-alert__content">{children}</div>}
 				</div>
 				{hasCloser && (
 					<KolButtonWcTag
-						class="close"
+						class="kol-alert__close-button close"
 						_ariaDescription={label?.trim() || ''}
 						_hideLabel
 						_icons={{
@@ -62,7 +68,7 @@ const KolAlertFc: FC<KolAlertFcProps> = (props, children) => {
 					></KolButtonWcTag>
 				)}
 			</div>
-			{variant === 'card' && <div class="content">{children}</div>}
+			{variant === 'card' && <div class="kol-alert__content">{children}</div>}
 		</div>
 	);
 };

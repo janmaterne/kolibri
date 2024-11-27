@@ -1,6 +1,6 @@
 import type { BreadcrumbAPI, BreadcrumbLinkProps, BreadcrumbStates, LabelPropType, LinkProps, Stringified } from '../../schema';
 import { a11yHintLabelingLandmarks, validateLabel } from '../../schema';
-import { Component, Fragment, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, Fragment, h, Prop, State, Watch } from '@stencil/core';
 
 import { addNavLabel, removeNavLabel } from '../../utils/unique-nav-labels';
 import { watchNavLinks } from '../nav/validation';
@@ -19,18 +19,22 @@ export class KolBreadcrumb implements BreadcrumbAPI {
 	private readonly renderLink = (link: BreadcrumbLinkProps, index: number): JSX.Element => {
 		const lastIndex = this.state._links.length - 1;
 		return (
-			<li key={index}>
-				{index !== 0 && <KolIconTag _label="" _icons="codicon codicon-chevron-right" />}
+			<li class="kol-breadcrumb__list-element" key={index}>
+				{index !== 0 && <KolIconTag class="kol-breadcrumb__icon" _label="" _icons="codicon codicon-chevron-right" />}
 				{index === lastIndex ? (
-					<span>
+					<span class="kol-breadcrumb__list-element-span">
 						{link._hideLabel ? (
-							<KolIconTag _label={link._label} _icons={typeof link._icons === 'string' ? link._icons : 'codicon codicon-symbol-event'} />
+							<KolIconTag
+								class="kol-breadcrumb__icon"
+								_label={link._label}
+								_icons={typeof link._icons === 'string' ? link._icons : 'codicon codicon-symbol-event'}
+							/>
 						) : (
 							<>{link._label}</>
 						)}
 					</span>
 				) : (
-					<KolLinkTag {...link}></KolLinkTag>
+					<KolLinkTag class="kol-breadcrumb__link" {...link}></KolLinkTag>
 				)}
 			</li>
 		);
@@ -38,18 +42,16 @@ export class KolBreadcrumb implements BreadcrumbAPI {
 
 	public render(): JSX.Element {
 		return (
-			<Host class="kol-breadcrumb">
-				<nav aria-label={this.state._label}>
-					<ul>
-						{this.state._links.length === 0 && (
-							<li>
-								<KolIconTag _label="" _icons="codicon codicon-home" />…
-							</li>
-						)}
-						{this.state._links.map(this.renderLink)}
-					</ul>
-				</nav>
-			</Host>
+			<nav class="kol-breadcrumb" aria-label={this.state._label}>
+				<ul class="kol-breadcrumb__list">
+					{this.state._links.length === 0 && (
+						<li>
+							<KolIconTag class="kol-breadcrumb_icon" _label="" _icons="codicon codicon-home" />…
+						</li>
+					)}
+					{this.state._links.map(this.renderLink)}
+				</ul>
+			</nav>
 		);
 	}
 

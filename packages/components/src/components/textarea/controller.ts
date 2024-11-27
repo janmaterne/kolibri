@@ -50,6 +50,9 @@ export class TextareaController extends InputIconController implements TextareaW
 			(value) => typeof value === 'string' && cssResizeOptions.includes(value),
 			new Set(`String {${cssResizeOptions.join(', ')}`),
 			value,
+			{
+				defaultValue: 'vertical'
+			},
 		);
 	}
 

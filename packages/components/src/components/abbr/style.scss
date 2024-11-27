@@ -3,11 +3,7 @@
 @import '../tooltip/style.scss';
 
 @layer kol-component {
-	:host {
+	.kol-abbr {
 		font-size: rem(16);
-	}
-
-	:host > abbr {
-		cursor: help;
 	}
 }

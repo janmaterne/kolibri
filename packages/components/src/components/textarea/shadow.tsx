@@ -19,13 +19,13 @@ import type {
 	TextareaStates,
 	TooltipAlignPropType,
 } from '../../schema';
-import { buildBadgeTextString, devWarning, setState, showExpertSlot } from '../../schema';
+import { buildBadgeTextString, setState, showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../span/InternalUnderlinedBadgeText';
+import { InternalUnderlinedBadgeText } from '../../functional-components';
 import { TextareaController } from './controller';
 import { KolInputTag } from '../../core/component-names';
 
@@ -434,11 +434,6 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 
 	@Watch('_resize')
 	public validateResize(value?: CSSResize): void {
-		if (value === 'both' || value === 'horizontal') {
-			devWarning(
-				'In version 3 (v3), horizontal resizing is abolished. The corresponding property is then reduced to the properties `none` (default) and `vertical`.',
-			);
-		}
 		this.controller.validateResize(value);
 	}
 
