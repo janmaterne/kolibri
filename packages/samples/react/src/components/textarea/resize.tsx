@@ -13,10 +13,9 @@ export const TextareaResize: FC = () => (
 		</SampleDescription>
 
 		<KolForm className="w-full grid gap-4">
-			<KolTextarea _resize="both" _label="Text input (both)" />
-			<KolTextarea _resize="vertical" _label="Text input (vertical)" className="mt" />
-			<KolTextarea _resize="horizontal" _label="Text input (horizontal)" className="mt" />
-			<KolTextarea _resize="none" _label="Text input (none)" className="mt" />
+			<KolTextarea _label="Text input (unset)" />
+			<KolTextarea _resize="vertical" _label="Text input (vertical)" />
+			<KolTextarea _resize="none" _label="Text input (none)" />
 		</KolForm>
 	</>
 );

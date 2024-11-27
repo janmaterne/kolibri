@@ -6,7 +6,6 @@
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
-		@include kol-alert-theme;
 	}
 
 	.kol-input {
@@ -108,4 +107,6 @@
 		border-color: var(--color-mute-variant);
 		color: var(--color-text);
 	}
+
+	@include kol-alert-theme;
 }

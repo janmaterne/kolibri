@@ -4,7 +4,7 @@ import type { AlertType } from '../../schema';
 import { translate } from '../../i18n';
 
 const Icon: FC<{ ariaLabel: string; icon: string; label?: string }> = ({ ariaLabel, icon }) => {
-	return <KolIconTag class="heading-icon" _label={ariaLabel} _icons={icon} />;
+	return <KolIconTag class="kol-alert__heading-icon" _label={ariaLabel} _icons={icon} />;
 };
 
 const AlertIcon: FC<{ label?: string; type?: AlertType }> = ({ type, label }) => {

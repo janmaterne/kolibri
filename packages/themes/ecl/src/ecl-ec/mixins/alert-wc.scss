@@ -7,86 +7,87 @@
 }
 
 @mixin kol-alert-theme {
-	font-family: var(--font-family);
+	.kol-alert {
+		$root: &;
 
-	div {
-		background-color: var(--color-white);
-	}
+		font-family: var(--font-family);
 
-	div.card {
-		border-style: solid;
-		border-width: rem(2);
-	}
+		&--msg {
+			border: none;
+		}
 
-	div.msg {
-		border: none;
-	}
+		&--card {
+			padding-bottom: rem(24);
+			padding-inline-end: rem(8);
+			padding-inline-start: rem(24);
+			padding-top: rem(24);
+			border-style: solid;
+			border-width: rem(2);
+		}
 
-	.msg .heading .kol-icon {
-		font-size: 1.5em;
-		margin: var(--spacing-2xs);
-	}
+		&--default {
+			--alert-accent-color: var(--color-grey);
+		}
 
-	.msg .heading > div {
-		padding: var(--spacing-2xs);
-	}
+		&--error {
+			--alert-accent-color: var(--color-red);
+		}
 
-	.card {
-		padding-bottom: rem(24);
-		padding-inline-end: rem(8);
-		padding-inline-start: rem(24);
-		padding-top: rem(24);
-	}
+		&--info {
+			--alert-accent-color: var(--color-blue);
+		}
 
-	.card .heading {
-		gap: rem(8);
-	}
+		&--success {
+			--alert-accent-color: var(--color-green);
+		}
 
-	.card .content {
-		margin-left: rem(40);
-	}
+		&--warning {
+			--alert-accent-color: var(--color-orange);
+		}
 
-	.card .heading .kol-icon {
-		font-size: rem(32);
-	}
+		&__container {
+			background-color: var(--color-white);
 
-	.default {
-		border-color: var(--color-grey);
-	}
+			@at-root #{$root}--card & {
+				gap: rem(8);
+			}
+		}
 
-	.default .heading .kol-icon {
-		color: var(--color-grey);
-	}
+		&__container-content {
+			@at-root #{$root}--msg & {
+				padding: var(--spacing-2xs);
+			}
+		}
 
-	.error {
-		border-color: var(--color-red);
-	}
+		&__close-button {
+			.button {
+				color: var(--alert-accent-color);
+			}
 
-	.error .heading .kol-icon {
-		color: var(--color-red);
-	}
+			.kol-icon {
+				@at-root #{$root}--card & {
+					font-size: rem(32);
+				}
+			}
+		}
 
-	.info {
-		border-color: var(--color-blue);
-	}
+		&__heading-icon {
+			color: var(--alert-accent-color);
 
-	.info .heading .kol-icon {
-		color: var(--color-blue);
-	}
+			@at-root #{$root}--msg & {
+				font-size: 1.5em;
+				margin: var(--spacing-2xs);
+			}
 
-	.success {
-		border-color: var(--color-green);
-	}
+			@at-root #{$root}--card & {
+				font-size: rem(32);
+			}
+		}
 
-	.success .heading .kol-icon {
-		color: var(--color-green);
-	}
-
-	.warning {
-		border-color: var(--color-orange);
-	}
-
-	.warning .heading .kol-icon {
-		color: var(--color-orange);
+		&__content {
+			@at-root #{$root}--card & {
+				margin-left: rem(40);
+			}
+		}
 	}
 }
