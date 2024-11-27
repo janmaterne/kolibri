@@ -52,7 +52,7 @@ export class TextareaController extends InputIconController implements TextareaW
 			new Set(`String {${cssResizeOptions.join(', ')}`),
 			value,
 			{
-				defaultValue: 'vertical'
+				defaultValue: 'vertical',
 			},
 		);
 	}

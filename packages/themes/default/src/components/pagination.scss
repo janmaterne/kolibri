@@ -6,53 +6,49 @@
 		font-family: var(--font-family);
 	}
 
-	.kol-pagination {
-		&__navigation-list {
-			.button:focus {
-				outline: none;
-			}
+	.button {
+		&:focus {
+			outline: none;
+		}
 
-			.button-inner {
-				background-color: var(--color-light);
-				border-radius: var(--border-radius);
-				border: rem(1) solid var(--color-primary);
-				color: var(--color-primary);
-				font-weight: 700;
-				min-height: var(--a11y-min-size);
-				min-width: var(--a11y-min-size);
-				padding: rem(8);
-				text-align: center;
-				transition-duration: 0.5s;
-				transition-property: background-color, color, border-color;
-			}
+		.kol-pagination--selected & {
+			opacity: 1;
+		}
+	}
 
-			.button:focus .button-inner {
-				@include focus-outline;
-			}
+	.button-inner {
+		background-color: var(--color-light);
+		border-radius: var(--border-radius);
+		border: rem(1) solid var(--color-primary);
+		color: var(--color-primary);
+		font-weight: 700;
+		min-height: var(--a11y-min-size);
+		min-width: var(--a11y-min-size);
+		padding: rem(8);
+		text-align: center;
+		transition-duration: 0.5s;
+		transition-property: background-color, color, border-color;
 
-			.button:is(:active, :hover):not(:disabled) .button-inner {
-				background-color: var(--color-primary-variant);
-				border-color: var(--color-primary-variant);
-				box-shadow: 0 rem(2) rem(8) rem(2) rgba(8, 35, 48, 0.24);
-				color: var(--color-light);
-			}
+		.button:focus & {
+			@include focus-outline;
+		}
 
-			.button:active .button-inner {
-				color: var(--color-light);
-				outline: none;
-			}
+		.button:is(:active, :hover):not(:disabled) & {
+			background-color: var(--color-primary-variant);
+			border-color: var(--color-primary-variant);
+			box-shadow: 0 rem(2) rem(8) rem(2) rgba(8, 35, 48, 0.24);
+			color: var(--color-light);
+		}
 
-			.selected {
-				button {
-					opacity: 1;
-				}
+		.button:active & {
+			color: var(--color-light);
+			outline: none;
+		}
 
-				.button-inner {
-					background-color: var(--color-primary);
-					color: var(--color-light);
-					border: 0;
-				}
-			}
+		.kol-pagination--selected & {
+			background-color: var(--color-primary);
+			color: var(--color-light);
+			border: 0;
 		}
 	}
 }

@@ -3,34 +3,42 @@
 
 @layer kol-component {
 	.kol-quote {
+		$root: &;
 		font-size: rem(16);
+		display: inline;
+		margin: 0;
+		padding: 0;
 
-		&__cite,
-		&__figure,
-		&__quote + &__figcaption {
-			display: inline;
-			margin: 0;
-			padding: 0;
+		&__cite {
+			&::before {
+				content: '—';
+
+				@at-root #{$root}--block & {
+					padding-right: 0.5em;
+				}
+
+				@at-root #{$root}--inline & {
+					padding: 0.5em;
+				}
+			}
 		}
 
-		&__blockquote::before {
-			content: open-quote;
+		&__figcaption {
+			@at-root #{$root}--block & {
+				display: inline;
+				margin: 0;
+				padding: 0;
+			}
 		}
 
-		&__blockquote::after {
-			content: close-quote;
-		}
+		&__blockquote {
+			&::before {
+				content: open-quote;
+			}
 
-		&__cite::before {
-			content: '—';
-		}
-
-		&--block &__cite::before {
-			padding-right: 0.5em;
-		}
-
-		&--inline &__cite::before {
-			padding: 0.5em;
+			&::after {
+				content: close-quote;
+			}
 		}
 	}
 }

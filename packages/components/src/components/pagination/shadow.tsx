@@ -104,7 +104,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.first && (
 							<li>
 								<KolButtonWcTag
-									class="first"
+									class="kol-pagination--first"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={this.state._page <= 1}
@@ -119,7 +119,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.previous && (
 							<li>
 								<KolButtonWcTag
-									class="previous"
+									class="kol-pagination--previous"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={this.state._page <= 1}
@@ -135,7 +135,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.next && (
 							<li>
 								<KolButtonWcTag
-									class="next"
+									class="kol-pagination--next"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={count <= this.state._page}
@@ -150,7 +150,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.last && (
 							<li>
 								<KolButtonWcTag
-									class="last"
+									class="kol-pagination--last"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={count <= this.state._page}
@@ -318,7 +318,7 @@ export class KolPagination implements PaginationAPI {
 					}}
 				>
 					<span slot="expert">
-						<span class="visually-hidden">{translate('kol-page')}</span> {NUMBER_FORMATTER.format(page)}
+						<span class="kol-pagination--visually-hidden">{translate('kol-page')}</span> {NUMBER_FORMATTER.format(page)}
 					</span>
 				</KolButtonWcTag>
 			</li>
@@ -328,9 +328,9 @@ export class KolPagination implements PaginationAPI {
 	private getSelectedPageButton(page: number): JSX.Element {
 		return (
 			<li key={nonce()}>
-				<KolButtonWcTag class="selected" _customClass={this.state._customClass} _disabled={true} _label="">
+				<KolButtonWcTag class="kol-pagination--selected" _customClass={this.state._customClass} _disabled={true} _label="">
 					<span slot="expert">
-						<span class="visually-hidden">{translate('kol-page')}</span> {NUMBER_FORMATTER.format(page)}
+						<span class="kol-pagination--visually-hidden">{translate('kol-page')}</span> {NUMBER_FORMATTER.format(page)}
 					</span>
 				</KolButtonWcTag>
 			</li>

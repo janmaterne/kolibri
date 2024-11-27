@@ -3,6 +3,7 @@
 @import '../tooltip/style.scss';
 
 @layer kol-component {
+	/* TODO. Wenn #7126 erledigt ist, :host-Block in .kol-pagination verschieben. */
 	:host {
 		align-items: center;
 		display: grid;

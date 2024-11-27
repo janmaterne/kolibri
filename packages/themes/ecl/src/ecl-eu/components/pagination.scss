@@ -6,58 +6,54 @@
 		font-family: var(--font-family);
 	}
 
-	.kol-pagination {
-		&__navigation-list {
-			.button {
-				--kolibri-spacing: #{rem(4)};
-				border-radius: rem(4);
+	.button {
+		--kolibri-spacing: #{rem(4)};
+		border-radius: rem(4);
 
-				&:focus {
-					outline: none;
-				}
-			}
+		&:focus {
+			outline: none;
+		}
+	}
 
-			.button-inner {
-				min-height: var(--a11y-min-size);
-				min-width: var(--a11y-min-size);
-				border-radius: rem(4);
-				font:
-					normal normal 400 rem(16) / rem(20) Arial,
-					sans-serif;
-				padding: rem(12);
-				background-color: #fc0;
-				color: #171a22;
-			}
+	.button-inner {
+		min-height: var(--a11y-min-size);
+		min-width: var(--a11y-min-size);
+		border-radius: rem(4);
+		font:
+			normal normal 400 rem(16) / rem(20) Arial,
+			sans-serif;
+		padding: rem(12);
+		background-color: #fc0;
+		color: #171a22;
 
-			.button:focus-visible .button-inner {
-				outline-offset: rem(-4);
-				outline: rem(2) solid var(--color-black);
-			}
+		.button:focus-visible & {
+			outline-offset: rem(-4);
+			outline: rem(2) solid var(--color-black);
+		}
 
-			button:not(:disabled):active .button-inner,
-			button:not(:disabled):hover .button-inner {
-				background-color: #fc0;
-				border-color: #fc0;
-				box-shadow:
-					0 rem(2) rem(4) rgb(9 49 142 / 8%),
-					0 0 rem(10) rgb(9 49 142 / 4%),
-					0 rem(4) rem(5) rgb(9 49 142 / 4%),
-					0 rem(-4) rem(4) rgb(9 49 142 / 4%);
-			}
+		button:not(:disabled):active &,
+		button:not(:disabled):hover & {
+			background-color: #fc0;
+			border-color: #fc0;
+			box-shadow:
+				0 rem(2) rem(4) rgb(9 49 142 / 8%),
+				0 0 rem(10) rgb(9 49 142 / 4%),
+				0 rem(4) rem(5) rgb(9 49 142 / 4%),
+				0 rem(-4) rem(4) rgb(9 49 142 / 4%);
+		}
 
-			.button:disabled .button-inner {
-				opacity: 0.5;
-				cursor: not-allowed;
-			}
+		.button:disabled & {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
 
-			.selected .button-inner {
-				background-color: var(--color-blue);
-				border-color: var(--color-blue);
-				color: var(--color-white);
-				font-weight: bold;
-				text-decoration: underline;
-				opacity: 1;
-			}
+		.kol-pagination--selected & {
+			background-color: var(--color-blue);
+			border-color: var(--color-blue);
+			color: var(--color-white);
+			font-weight: bold;
+			text-decoration: underline;
+			opacity: 1;
 		}
 	}
 }
