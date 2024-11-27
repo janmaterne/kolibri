@@ -3,7 +3,7 @@ import React from 'react';
 import { KolTableStateless } from '@public-ui/react';
 import { SampleDescription } from '../SampleDescription';
 
-const DATA = [{ left: 'Left Example', center: 'Center Example', right: 'Right Example' }];
+const DATA = [{ left: 'Left Example', center: 'Center Example', right: 'Right Example' }, {}, {}, {}];
 
 export const TableStateless: FC = () => (
 	<>

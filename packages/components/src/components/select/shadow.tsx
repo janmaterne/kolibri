@@ -166,7 +166,6 @@ export class KolSelect implements SelectAPI, FocusableElement {
 								name={this.state._name}
 								required={this.state._required}
 								size={this.state._rows}
-								spellcheck="false"
 								{...this.controller.onFacade}
 								onInput={this.onInput.bind(this)}
 								onChange={this.onChange.bind(this)}
