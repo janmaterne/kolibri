@@ -54,11 +54,6 @@ const TABLE_HEADERS: KoliBriTableHeaders = {
 	horizontal: [
 		[
 			{
-				label: '',
-				rowSpan: 2,
-				asTd: true,
-			},
-			{
 				label: 'Workdays',
 				colSpan: 5,
 			},

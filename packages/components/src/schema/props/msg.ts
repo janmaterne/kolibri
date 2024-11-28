@@ -1,7 +1,8 @@
 import type { Generic } from 'adopted-style-sheets';
 import type { AlertProps } from '../components';
-import { objectObjectHandler, parseJson, watchValidator } from '../utils';
 import type { Stringified } from '../types';
+import { objectObjectHandler, parseJson, watchValidator } from '../utils';
+import { isObject } from '../validators';
 
 /* types */
 export type MsgPropType = AlertProps & {
@@ -19,12 +20,23 @@ export type PropMsg = {
 export const validateMsg = (component: Generic.Element.Component, value?: Stringified<MsgPropType>): void => {
 	objectObjectHandler(value, () => {
 		try {
-			value = parseJson<MsgPropType>(value as string);
+			value = parseJson<MsgPropType>(value);
 			// eslint-disable-next-line no-empty
 		} catch (e) {
 			// value keeps original value
 		}
-
-		watchValidator(component, `_msg`, (value) => typeof value === 'object', new Set(['Object']), value);
+		watchValidator<MsgPropType>(
+			component,
+			`_msg`,
+			(value) => isObject(value) && typeof value?._description === 'string',
+			new Set(['MsgPropType']),
+			value as MsgPropType,
+			{
+				defaultValue: {
+					_description: '',
+					_type: 'error',
+				},
+			},
+		);
 	});
 };
