@@ -13,6 +13,18 @@
 		text-decoration: none;
 	}
 
+	.kol-pagination {
+		&__button {
+			&--selected .button-inner {
+				background-color: var(--color-blue);
+				border-color: var(--color-blue);
+				color: var(--color-white);
+				opacity: 1;
+				text-decoration: underline;
+			}
+		}
+	}
+
 	.button-inner {
 		background-color: var(--color-yellow);
 		border: rem(2) solid var(--color-yellow);
@@ -35,14 +47,6 @@
 		.button:disabled & {
 			cursor: not-allowed;
 			opacity: 0.5;
-		}
-
-		.kol-pagination--selected & {
-			background-color: var(--color-blue);
-			border-color: var(--color-blue);
-			color: var(--color-white);
-			opacity: 1;
-			text-decoration: underline;
 		}
 	}
 }

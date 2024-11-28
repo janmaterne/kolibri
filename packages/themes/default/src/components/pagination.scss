@@ -6,13 +6,21 @@
 		font-family: var(--font-family);
 	}
 
-	.button {
-		&:focus {
-			outline: none;
-		}
+	.kol-pagination {
+		&__button {
+			&--selected .button {
+				opacity: 1;
 
-		.kol-pagination--selected & {
-			opacity: 1;
+				&:focus {
+					outline: none;
+				}
+			}
+
+			&--selected .button-inner {
+				background-color: var(--color-primary);
+				color: var(--color-light);
+				border: 0;
+			}
 		}
 	}
 
@@ -43,12 +51,6 @@
 		.button:active & {
 			color: var(--color-light);
 			outline: none;
-		}
-
-		.kol-pagination--selected & {
-			background-color: var(--color-primary);
-			color: var(--color-light);
-			border: 0;
 		}
 	}
 }

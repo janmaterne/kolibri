@@ -104,7 +104,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.first && (
 							<li>
 								<KolButtonWcTag
-									class="kol-pagination--first"
+									class="kol-pagination__button kol-pagination__button--first"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={this.state._page <= 1}
@@ -119,7 +119,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.previous && (
 							<li>
 								<KolButtonWcTag
-									class="kol-pagination--previous"
+									class="kol-pagination__button kol-pagination__button--previous"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={this.state._page <= 1}
@@ -135,7 +135,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.next && (
 							<li>
 								<KolButtonWcTag
-									class="kol-pagination--next"
+									class="kol-pagination__button kol-pagination__button--next"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={count <= this.state._page}
@@ -150,7 +150,7 @@ export class KolPagination implements PaginationAPI {
 						{this.state._hasButtons.last && (
 							<li>
 								<KolButtonWcTag
-									class="kol-pagination--last"
+									class="kol-pagination__button kol-pagination__button--last"
 									exportparts="icon"
 									_customClass={this.state._customClass}
 									_disabled={count <= this.state._page}
@@ -318,7 +318,7 @@ export class KolPagination implements PaginationAPI {
 					}}
 				>
 					<span slot="expert">
-						<span class="kol-pagination--visually-hidden">{translate('kol-page')}</span> {NUMBER_FORMATTER.format(page)}
+						<span class="visually-hidden">{translate('kol-page')}</span> {NUMBER_FORMATTER.format(page)}
 					</span>
 				</KolButtonWcTag>
 			</li>
@@ -328,9 +328,9 @@ export class KolPagination implements PaginationAPI {
 	private getSelectedPageButton(page: number): JSX.Element {
 		return (
 			<li key={nonce()}>
-				<KolButtonWcTag class="kol-pagination--selected" _customClass={this.state._customClass} _disabled={true} _label="">
+				<KolButtonWcTag class="kol-pagination__button kol-pagination__button--selected" _customClass={this.state._customClass} _disabled={true} _label="">
 					<span slot="expert">
-						<span class="kol-pagination--visually-hidden">{translate('kol-page')}</span> {NUMBER_FORMATTER.format(page)}
+						<span class="visually-hidden">{translate('kol-page')}</span> {NUMBER_FORMATTER.format(page)}
 					</span>
 				</KolButtonWcTag>
 			</li>

@@ -6,6 +6,19 @@
 		font-family: var(--font-family-sans);
 	}
 
+	.kol-pagination {
+		&__button {
+			&--selected .button-inner {
+				background-color: var(--color-achat);
+				border-color: var(--color-achat);
+				color: var(--color-weiss);
+				font-weight: bold;
+				opacity: 1;
+				text-decoration: underline;
+			}
+		}
+	}
+
 	.button-inner {
 		background-color: var(--color-weiss);
 		border-radius: rem(32);
@@ -34,15 +47,6 @@
 		.button:disabled & {
 			cursor: not-allowed;
 			opacity: 0.5;
-		}
-
-		.kol-pagination--selected & {
-			background-color: var(--color-achat);
-			border-color: var(--color-achat);
-			color: var(--color-weiss);
-			font-weight: bold;
-			opacity: 1;
-			text-decoration: underline;
 		}
 	}
 }
