@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`kol-quote should render with _label="Caption" _href="https://example.com" _quote="Text of the Quote" _variant="block" 1`] = `
-<kol-quote class="kol-quote">
+<kol-quote>
   <template shadowrootmode="open">
-    <figure class="kol-quote--block kol-quote__figure">
+    <figure class="kol-quote kol-quote--block">
       <blockquote cite="https://example.com" class="kol-quote__blockquote">
         Text of the Quote
         <span aria-hidden="true" hidden="">
@@ -21,9 +21,9 @@ exports[`kol-quote should render with _label="Caption" _href="https://example.co
 `;
 
 exports[`kol-quote should render with _label="Caption" _href="https://example.com" _quote="Text of the Quote" _variant="inline" 1`] = `
-<kol-quote class="kol-quote">
+<kol-quote>
   <template shadowrootmode="open">
-    <figure class="kol-quote--inline kol-quote__figure">
+    <figure class="kol-quote kol-quote--inline">
       <q cite="https://example.com" class="kol-quote__quote">
         Text of the Quote
         <span aria-hidden="true" hidden="">
@@ -41,9 +41,9 @@ exports[`kol-quote should render with _label="Caption" _href="https://example.co
 `;
 
 exports[`kol-quote should render with _label="Caption" _href="https://example.com" _quote="Text of the Quote" 1`] = `
-<kol-quote class="kol-quote">
+<kol-quote>
   <template shadowrootmode="open">
-    <figure class="kol-quote--inline kol-quote__figure">
+    <figure class="kol-quote kol-quote--inline">
       <q cite="https://example.com" class="kol-quote__quote">
         Text of the Quote
         <span aria-hidden="true" hidden="">
