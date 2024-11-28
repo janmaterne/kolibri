@@ -1,16 +1,20 @@
 @import '../../mixins/rem';
 
 @layer kol-theme-component {
-	:host {
+	.kol-progress {
 		font-family: var(--font-family);
-	}
 
-	:host progress,
-	:host span {
-		display: block;
-		height: 0;
-		overflow: hidden;
-		width: 0;
+		&__progress,
+		span {
+			display: block;
+			height: 0;
+			overflow: hidden;
+			width: 0;
+		}
+
+		&__progress {
+			display: none;
+		}
 	}
 
 	svg line:first-child,
@@ -23,9 +27,5 @@
 	svg circle:last-child {
 		stroke: var(--color-blue-130);
 		fill: transparent;
-	}
-
-	progress {
-		display: none;
 	}
 }

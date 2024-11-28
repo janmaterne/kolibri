@@ -2,65 +2,69 @@
 @import '../style';
 
 @layer kol-component {
-	:host {
+	.kol-progress {
 		font-size: rem(16);
-	}
 
-	progress {
-		display: block;
-		height: 0;
-		overflow: hidden;
-		width: 0;
-	}
-
-	.bar {
-		width: rem(150);
-
-		.border {
-			fill: transparent;
-			stroke: black;
+		&__progress {
+			display: block;
+			height: 0;
+			overflow: hidden;
+			width: 0;
 		}
 
-		.background {
-			fill: lightgray;
-			stroke: white;
+		&__bar {
+			width: rem(150);
+
+			&--border {
+				fill: transparent;
+				stroke: black;
+			}
+
+			&--background {
+				fill: lightgray;
+				stroke: white;
+			}
+
+			&--progress {
+				fill: #0075ff;
+				stroke: transparent;
+				transition: 250ms ease-in-out 50ms;
+			}
 		}
 
-		.progress {
-			fill: #0075ff;
-			stroke: transparent;
-			transition: 250ms ease-in-out 50ms;
+		&__cycle {
+			&--background {
+				fill: transparent;
+				stroke: lightgray;
+			}
+
+			&--border {
+				fill: transparent;
+				stroke: black;
+			}
+
+			&--whitespace {
+				fill: transparent;
+				stroke: white;
+			}
+
+			&--progress {
+				fill: transparent;
+				stroke: #0075ff;
+				transform-origin: 50% 50%;
+				transform: rotate(-90deg);
+				transition: 250ms ease-in-out 50ms;
+			}
 		}
-	}
-
-	.cycle .background {
-		fill: transparent;
-		stroke: lightgray;
-	}
-
-	.cycle .border {
-		fill: transparent;
-		stroke: black;
-	}
-
-	.cycle .whitespace {
-		fill: transparent;
-		stroke: white;
-	}
-
-	.cycle .progress {
-		fill: transparent;
-		stroke: #0075ff;
-		transform-origin: 50% 50%;
-		transform: rotate(-90deg);
-		transition: 250ms ease-in-out 50ms;
 	}
 
 	/* https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion */
 	@media (prefers-reduced-motion) {
-		.progress {
-			transition-duration: 0s;
-			transition-delay: 0s;
+		.kol-progress {
+			&__progress {
+				transition-duration: 0s;
+				transition-delay: 0s;
+			}
 		}
 	}
 }
