@@ -26,5 +26,9 @@
 		&__separator:before {
 			content: '•••';
 		}
+
+		&--visually-hidden {
+			@extend .visually-hidden;
+		}
 	}
 }
