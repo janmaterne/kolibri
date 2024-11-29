@@ -3,6 +3,7 @@
 @import '../tooltip/style.scss';
 
 @layer kol-component {
+	/* TODO. Once #7126 is completed, move :host block into .kol-pagination  */
 	:host {
 		align-items: center;
 		display: grid;
@@ -11,17 +12,19 @@
 		grid-template-columns: 1fr auto;
 	}
 
-	.navigation-list {
-		align-items: center;
-		display: inline-flex;
-		flex-wrap: wrap;
-		gap: 0.5em;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
+	.kol-pagination {
+		&__navigation-list {
+			align-items: center;
+			display: inline-flex;
+			flex-wrap: wrap;
+			gap: 0.5em;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
 
-	.separator:before {
-		content: '•••';
+		&__separator:before {
+			content: '•••';
+		}
 	}
 }
