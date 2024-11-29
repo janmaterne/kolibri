@@ -19,7 +19,7 @@ export const FormWrap = <P,>({ RefComponent: Component, ...props }: { RefCompone
 						_variant="secondary"
 					/>
 					<KolButton _label="Reset" _type="reset" _variant="tertiary" />
-					<KolButton _label="Help" _type="button" _variant="ghost" />
+					<KolButton _label="Help" _variant="ghost" />
 				</div>
 			</div>
 		</KolForm>

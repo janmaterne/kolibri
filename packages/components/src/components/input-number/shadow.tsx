@@ -152,7 +152,6 @@ export class KolInputNumber implements InputNumberAPI, FocusableElement {
 							required={this.state._required}
 							placeholder={this.state._placeholder}
 							step={this.state._step}
-							spellcheck="false"
 							type="number"
 							value={this.state._value as string}
 							{...this.controller.onFacade}

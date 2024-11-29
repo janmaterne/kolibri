@@ -75,11 +75,14 @@ export class InputController extends ControlledInputController implements Watche
 	 * @deprecated
 	 */
 	public validateError(value?: string): void {
-		const message: MsgPropType = {
-			_description: value || '',
-			_type: 'error',
-		};
-		this.validateMsg(message);
+		if (typeof value === 'string' && value.length > 0) {
+			this.validateMsg({
+				_description: value,
+				_type: 'error',
+			});
+		} else {
+			this.validateMsg(undefined);
+		}
 	}
 
 	public validateHideError(value?: HideErrorPropType): void {
@@ -159,7 +162,10 @@ export class InputController extends ControlledInputController implements Watche
 		this.validateAccessKey(this.component._accessKey);
 		this.validateAdjustHeight(this.component._adjustHeight);
 		this.validateError(this.component._error);
-		this.validateMsg(this.component._msg);
+		// _msg should only override _error if it is also defined.
+		if (this.component._msg) {
+			this.validateMsg(this.component._msg);
+		}
 		this.validateDisabled(this.component._disabled);
 		this.validateHideError(this.component._hideError);
 		this.validateHideLabel(this.component._hideLabel);

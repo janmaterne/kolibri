@@ -10,7 +10,7 @@
 
 	.toast {
 		margin-top: rem(16);
-
-		@include kol-alert-theme;
 	}
+
+	@include kol-alert-theme;
 }

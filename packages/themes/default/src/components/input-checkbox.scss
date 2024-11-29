@@ -7,7 +7,6 @@
 @layer kol-theme-component {
 	:host {
 		font-family: var(--font-family);
-		@include kol-alert-theme;
 	}
 
 	.kol-input {
@@ -62,7 +61,7 @@
 		cursor: not-allowed;
 	}
 
-	.kol-input > .kol-alert-wc.error {
+	.kol-input > .kol-alert.error {
 		order: 1;
 		padding-top: calc(var(--spacing) / 2);
 		grid-column: span 2 / auto;
@@ -102,8 +101,8 @@
 		box-shadow: none;
 	}
 
-	.kol-alert-wc {
-		@include kol-alert-wc;
+	.kol-alert {
+		@include kol-alert;
 	}
 
 	/* CHECKBOX */
@@ -293,4 +292,6 @@
 			border-width: rem(1) 0 rem(1) rem(1);
 		}
 	}
+
+	@include kol-alert-theme;
 }

@@ -54,6 +54,7 @@ export * from './required';
 export * from './rows';
 export * from './short-key';
 export * from './show';
+export * from './spell-check';
 export * from './suggestions';
 export * from './sync-value-by-selector';
 export * from './tab-behavior';

@@ -2,52 +2,35 @@
 @import '../mixins/rem';
 
 @layer kol-theme-component {
-	.default {
-		border-color: var(--color-anthrazit);
-	}
+	.kol-alert {
+		&--default {
+			--alert-border-color: var(--color-anthrazit);
+		}
 
-	.heading {
-		gap: rem(8);
-	}
+		&--error {
+			--alert-border-color: var(--color-rotton);
+		}
 
-	.kol-alert-wc .heading {
-		display: flex;
-		place-items: center;
-	}
+		&--info {
+			--alert-border-color: var(--color-petrol);
+		}
 
-	.default .heading-icon {
-		background-color: var(--color-anthrazit);
-	}
+		&--success {
+			--alert-border-color: var(--color-gras);
+		}
 
-	.error {
-		border-color: var(--color-rotton);
-	}
+		&--warning {
+			--alert-border-color: var(--color-warn);
+		}
 
-	.error .heading-icon {
-		background-color: var(--color-rotton);
-	}
+		&__container {
+			display: flex;
+			place-items: center;
+			gap: rem(8);
+		}
 
-	.info {
-		border-color: var(--color-petrol);
-	}
-
-	.info .heading-icon {
-		background-color: var(--color-petrol);
-	}
-
-	.success {
-		border-color: var(--color-gras);
-	}
-
-	.success .heading-icon {
-		background-color: var(--color-gras);
-	}
-
-	.warning {
-		border-color: var(--color-warn);
-	}
-
-	.warning .heading-icon {
-		background-color: var(--color-warn);
+		&__heading-icon {
+			background-color: var(--alert-border-color);
+		}
 	}
 }
