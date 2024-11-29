@@ -15,19 +15,6 @@
 		}
 	}
 
-	.kol-pagination {
-		&__button {
-			&--selected .button-inner {
-				background-color: var(--color-blue);
-				border-color: var(--color-blue);
-				color: var(--color-white);
-				font-weight: bold;
-				text-decoration: underline;
-				opacity: 1;
-			}
-		}
-	}
-
 	.button-inner {
 		min-height: var(--a11y-min-size);
 		min-width: var(--a11y-min-size);
@@ -53,6 +40,15 @@
 				0 0 rem(10) rgb(9 49 142 / 4%),
 				0 rem(4) rem(5) rgb(9 49 142 / 4%),
 				0 rem(-4) rem(4) rgb(9 49 142 / 4%);
+		}
+
+		.kol-pagination__button--selected & {
+			background-color: var(--color-blue);
+			border-color: var(--color-blue);
+			color: var(--color-white);
+			font-weight: bold;
+			text-decoration: underline;
+			opacity: 1;
 		}
 
 		.button:disabled & {

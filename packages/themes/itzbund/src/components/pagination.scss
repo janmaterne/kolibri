@@ -6,19 +6,6 @@
 		font-family: var(--font-family-sans);
 	}
 
-	.kol-pagination {
-		&__button {
-			&--selected .button-inner {
-				background-color: var(--color-achat);
-				border-color: var(--color-achat);
-				color: var(--color-weiss);
-				font-weight: bold;
-				opacity: 1;
-				text-decoration: underline;
-			}
-		}
-	}
-
 	.button-inner {
 		background-color: var(--color-weiss);
 		border-radius: rem(32);
@@ -35,6 +22,15 @@
 
 		.hide-label & {
 			padding: 0 rem(8);
+		}
+
+		.kol-pagination__button--selected & {
+			background-color: var(--color-achat);
+			border-color: var(--color-achat);
+			color: var(--color-weiss);
+			font-weight: bold;
+			opacity: 1;
+			text-decoration: underline;
 		}
 
 		.button:not(:disabled):hover &,
