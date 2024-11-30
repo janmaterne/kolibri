@@ -93,7 +93,7 @@ const KolAlertFc: FC<KolAlertFcProps> = (props, children) => {
 	return (
 		<div {...rootProps}>
 			<div class={bemContainer}>
-				<AlertIcon label={label} type={type} />
+				<AlertIcon type={type} />
 				<div class={bemContainerContent}>
 					{label ? (
 						<KolHeadingFc class={bemHeading} level={level}>

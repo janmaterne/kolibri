@@ -3,22 +3,22 @@ import { KolIconTag } from '../../core/component-names';
 import type { AlertType } from '../../schema';
 import { translate } from '../../i18n';
 
-const Icon: FC<{ ariaLabel: string; icon: string; label?: string }> = ({ ariaLabel, icon }) => {
-	return <KolIconTag class="kol-alert__heading-icon" _label={ariaLabel} _icons={icon} />;
+const Icon: FC<{ icon: string; label: string }> = ({ icon, label }) => {
+	return <KolIconTag class="kol-alert__heading-icon" _label={label} _icons={icon} />;
 };
 
-const AlertIcon: FC<{ label?: string; type?: AlertType }> = ({ type, label }) => {
+const AlertIcon: FC<{ type?: AlertType }> = ({ type }) => {
 	switch (type) {
 		case 'error':
-			return <Icon ariaLabel={translate('kol-error')} icon="codicon codicon-error" label={label} />;
+			return <Icon icon="codicon codicon-error" label={translate('kol-error')} />;
 		case 'info':
-			return <Icon ariaLabel={translate('kol-info')} icon="codicon codicon-info" label={label} />;
+			return <Icon icon="codicon codicon-info" label={translate('kol-info')} />;
 		case 'warning':
-			return <Icon ariaLabel={translate('kol-warning')} icon="codicon codicon-warning" label={label} />;
+			return <Icon icon="codicon codicon-warning" label={translate('kol-warning')} />;
 		case 'success':
-			return <Icon ariaLabel={translate('kol-success')} icon="codicon codicon-pass" label={label} />;
+			return <Icon icon="codicon codicon-pass" label={translate('kol-success')} />;
 		default:
-			return <Icon ariaLabel={translate('kol-message')} icon="codicon codicon-comment" label={label} />;
+			return <Icon icon="codicon codicon-comment" label={translate('kol-message')} />;
 	}
 };
 
