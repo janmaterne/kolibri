@@ -138,7 +138,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					type={this.state._type}
 				>
 					<KolSpanFc
-						class="kol-button__text button-inner"
+						class="kol-button__text"
 						badgeText={badgeText}
 						icons={this.state._icons}
 						hideLabel={this.state._hideLabel}
