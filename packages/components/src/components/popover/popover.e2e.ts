@@ -5,7 +5,7 @@ test.describe('kol-popover', () => {
 	test('should display popover when _show is true and hide when _show is false', async ({ page }) => {
 		await page.setContent(`<kol-popover-wc _align="top">Dropdown-Inhalt</kol-popover-wc>`);
 		const popoverComponent = page.locator('kol-popover-wc');
-		const popoverElement = popoverComponent.locator('.popover');
+		const popoverElement = popoverComponent.locator('.kol-popover__content');
 
 		await expect(popoverElement).not.toBeVisible();
 		await popoverComponent.evaluate(() => {
