@@ -36,9 +36,6 @@
 
 			&:focus {
 				--text-focus-outline-color: var(--color-blue);
-				.kol-button__text {
-					outline-offset: rem(-6);
-				}
 			}
 
 			&:hover {
@@ -80,9 +77,6 @@
 
 			&:focus {
 				--text-focus-outline-color: var(--color-blue);
-				.kol-button__text {
-					outline-offset: rem(-2);
-				}
 			}
 
 			&:hover {
@@ -101,6 +95,14 @@
 				.span-label {
 					display: none;
 				}
+			}
+
+			@at-root #{$root}--secondary:focus & {
+				outline-offset: rem(-6);
+			}
+
+			@at-root #{$root}--ghost:focus & {
+				outline-offset: rem(-2);
 			}
 		}
 	}

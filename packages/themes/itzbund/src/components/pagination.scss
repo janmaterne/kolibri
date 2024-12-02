@@ -4,45 +4,45 @@
 	.kol-button {
 		border-radius: rem(32);
 		font-family: var(--font-family-sans);
-	}
 
-	.kol-button__text {
-		background-color: var(--color-weiss);
-		border-radius: rem(32);
-		border: var(--spacing) solid var(--color-anthrazit);
-		color: var(--color-anthrazit);
-		font-size: inherit;
-		gap: 0.25em;
-		min-height: var(--a11y-min-size);
-		min-width: var(--a11y-min-size);
-		padding: 0 rem(16);
-		transition-duration: 0.5s;
-		transition-property: background, color, border-color;
-		transition-timing-function: ease-in-out;
+		&__text {
+			background-color: var(--color-weiss);
+			border-radius: rem(32);
+			border: var(--spacing) solid var(--color-anthrazit);
+			color: var(--color-anthrazit);
+			font-size: inherit;
+			gap: 0.25em;
+			min-height: var(--a11y-min-size);
+			min-width: var(--a11y-min-size);
+			padding: 0 rem(16);
+			transition-duration: 0.5s;
+			transition-property: background, color, border-color;
+			transition-timing-function: ease-in-out;
 
-		.kol-button--hide-label & {
-			padding: 0 rem(8);
-		}
+			&:not(:disabled):hover &,
+			&:focus & {
+				background-color: var(--color-anthrazit);
+				border-color: var(--color-anthrazit);
+				color: var(--color-weiss);
+			}
 
-		.kol-pagination__button--selected & {
-			background-color: var(--color-achat);
-			border-color: var(--color-achat);
-			color: var(--color-weiss);
-			font-weight: bold;
-			opacity: 1;
-			text-decoration: underline;
-		}
+			:disabled & {
+				cursor: not-allowed;
+				opacity: 0.5;
+			}
 
-		.kol-button:not(:disabled):hover &,
-		.kol-button:focus & {
-			background-color: var(--color-anthrazit);
-			border-color: var(--color-anthrazit);
-			color: var(--color-weiss);
-		}
+			&--hide-label & {
+				padding: 0 rem(8);
+			}
 
-		.kol-button :disabled & {
-			cursor: not-allowed;
-			opacity: 0.5;
+			.kol-pagination__button--selected & {
+				background-color: var(--color-achat);
+				border-color: var(--color-achat);
+				color: var(--color-weiss);
+				font-weight: bold;
+				opacity: 1;
+				text-decoration: underline;
+			}
 		}
 	}
 }

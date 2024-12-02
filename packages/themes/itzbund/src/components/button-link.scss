@@ -7,6 +7,70 @@
 		font-family: var(--font-family-sans);
 		/* text-transform: uppercase; */
 
+		&--primary {
+			--background-color: var(--color-petrol);
+			--border-color: var(--color-petrol);
+			--color: var(--color-weiss);
+
+			&:not([disabled]):hover,
+			&:focus {
+				--background-color: var(--color-achat);
+				--border-color: var(--color-achat);
+			}
+		}
+
+		&--secondary {
+			--background-color: var(--color-weiss);
+			--border-color: var(--color-petrol);
+			--color: var(--color-petrol);
+
+			&:not([disabled]):hover,
+			&:focus {
+				--background-color: var(--color-petrol);
+				--border-color: var(--color-petrol);
+				--color: var(--color-weiss);
+			}
+		}
+
+		&--normal {
+			--background-color: var(--color-weiss);
+			--border-color: var(--color-anthrazit);
+			--color: var(--color-anthrazit);
+
+			&:not([disabled]):hover,
+			&:focus {
+				--background-color: var(--color-anthrazit);
+				--border-color: var(--color-anthrazit);
+				--color: var(--color-weiss);
+			}
+		}
+
+		&--danger {
+			--background-color: var(--color-weiss);
+			--border-color: var(--color-blut);
+			--color: var(--color-blut);
+
+			&:not([disabled]):hover,
+			&:focus {
+				--background-color: var(--color-blut);
+				--border-color: var(--color-blut);
+				--color: var(--color-weiss);
+			}
+		}
+
+		&--ghost {
+			--background-color: var(--color-ghost);
+			--border-color: transparent;
+			--color: var(--color-anthrazit);
+
+			&:not([disabled]):hover,
+			&:focus {
+				--background-color: var(--color-ghost);
+				--border-color: var(--color-ghost);
+				--color: var(--color-anthrazit);
+			}
+		}
+
 		&__text {
 			border-radius: rem(32);
 			border-style: solid;
@@ -33,70 +97,6 @@
 
 				.span-label {
 					display: none;
-				}
-			}
-
-			&--primary {
-				--background-color: var(--color-petrol);
-				--border-color: var(--color-petrol);
-				--color: var(--color-weiss);
-
-				&:not([disabled]):hover,
-				&:focus {
-					--background-color: var(--color-achat);
-					--border-color: var(--color-achat);
-				}
-			}
-
-			&--secondary {
-				--background-color: var(--color-weiss);
-				--border-color: var(--color-petrol);
-				--color: var(--color-petrol);
-
-				&:not([disabled]):hover,
-				&:focus {
-					--background-color: var(--color-petrol);
-					--border-color: var(--color-petrol);
-					--color: var(--color-weiss);
-				}
-			}
-
-			&--normal {
-				--background-color: var(--color-weiss);
-				--border-color: var(--color-anthrazit);
-				--color: var(--color-anthrazit);
-
-				&:not([disabled]):hover,
-				&:focus {
-					--background-color: var(--color-anthrazit);
-					--border-color: var(--color-anthrazit);
-					--color: var(--color-weiss);
-				}
-			}
-
-			&--danger {
-				--background-color: var(--color-weiss);
-				--border-color: var(--color-blut);
-				--color: var(--color-blut);
-
-				&:not([disabled]):hover,
-				&:focus {
-					--background-color: var(--color-blut);
-					--border-color: var(--color-blut);
-					--color: var(--color-weiss);
-				}
-			}
-
-			&--ghost {
-				--background-color: var(--color-ghost);
-				--border-color: transparent;
-				--color: var(--color-anthrazit);
-
-				&:not([disabled]):hover,
-				&:focus {
-					--background-color: var(--color-ghost);
-					--border-color: var(--color-ghost);
-					--color: var(--color-anthrazit);
 				}
 			}
 		}
