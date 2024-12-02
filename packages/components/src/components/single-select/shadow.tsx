@@ -699,7 +699,7 @@ export class KolSingleSelect implements SingleSelectAPI {
 		this._touched = this._touched === true;
 		this.controller.componentWillLoad();
 		this.oldValue = this._value;
-		this._filteredOptions = this._options;
+		this._filteredOptions = this.state._options;
 		this.updateInputValue(this._value);
 	}
 
