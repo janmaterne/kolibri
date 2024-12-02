@@ -9,17 +9,14 @@
 		}
 		.#{$block-classname } {
 			font-style: rem(16);
+			display: inline-flex;
+			place-items: center;
+			text-align: center;
+			text-decoration-line: none;
 
-			&__element {
-				display: inline-flex;
-				place-items: center;
-				text-align: center;
-				text-decoration-line: none;
-
-				&::before {
-					/* Render zero-width character as first element to set the baseline correctly. */
-					content: '\200B';
-				}
+			&::before {
+				/* Render zero-width character as first element to set the baseline correctly. */
+				content: '\200B';
 			}
 
 			&__text {

@@ -4,6 +4,8 @@
 	.kol-button {
 		$root: &;
 
+		background-color: transparent;
+
 		&--primary {
 			--text-background-color: var(--color-petrol);
 			--text-border-color: var(--color-petrol);
@@ -59,10 +61,6 @@
 			&:focus {
 				--text-border-color: var(--color-ghost);
 			}
-		}
-
-		&__element {
-			background-color: transparent;
 		}
 
 		&__text {

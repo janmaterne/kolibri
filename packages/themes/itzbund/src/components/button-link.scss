@@ -3,11 +3,9 @@
 @layer kol-theme-component {
 	.kol-button {
 		$root: &;
-		&__element {
-			border-radius: rem(32);
-			font-family: var(--font-family-sans);
-			/* text-transform: uppercase; */
-		}
+		border-radius: rem(32);
+		font-family: var(--font-family-sans);
+		/* text-transform: uppercase; */
 
 		&__text {
 			border-radius: rem(32);

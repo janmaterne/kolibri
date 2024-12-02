@@ -6,7 +6,7 @@
 		font-family: var(--font-family);
 	}
 
-	.kol-button__element {
+	.kol-button {
 		.kol-pagination__button--selected & {
 			opacity: 1;
 		}
@@ -31,18 +31,18 @@
 			border: 0;
 		}
 
-		.kol-button__element:focus & {
+		.kol-button:focus & {
 			@include focus-outline;
 		}
 
-		.kol-button__element:is(:active, :hover):not(:disabled) & {
+		.kol-button:is(:active, :hover):not(:disabled) & {
 			background-color: var(--color-primary-variant);
 			border-color: var(--color-primary-variant);
 			box-shadow: 0 rem(2) rem(8) rem(2) rgba(8, 35, 48, 0.24);
 			color: var(--color-light);
 		}
 
-		.kol-button__element:active & {
+		.kol-button:active & {
 			color: var(--color-light);
 			outline: none;
 		}

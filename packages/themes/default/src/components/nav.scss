@@ -19,7 +19,7 @@
 	}
 
 	.entry-item a,
-	.entry-item .kol-button__element {
+	.entry-item .kol-button {
 		align-items: center;
 		color: var(--color-primary);
 		display: flex;
@@ -55,12 +55,12 @@
 	}
 
 	.active .entry-item a,
-	.active .entry-item .kol-button__element {
+	.active .entry-item .kol-button {
 		font-weight: bold;
 	}
 
 	.active .list .entry-item a,
-	.active .list .entry-item .kol-button__element {
+	.active .list .entry-item .kol-button {
 		font-weight: normal;
 		border-left-color: transparent;
 	}
@@ -68,15 +68,13 @@
 	.expand-button {
 		margin-left: rem(8);
 
-		.kol-button__element {
-			&:hover {
-				background-color: var(--color-primary);
-				color: var(--color-light);
-			}
+		.kol-button &:hover {
+			background-color: var(--color-primary);
+			color: var(--color-light);
+		}
 
-			&:focus-visible {
-				@include focus-outline;
-			}
+		&:focus-visible {
+			@include focus-outline;
 		}
 
 		.kol-button__text {

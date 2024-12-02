@@ -1,7 +1,7 @@
 @import '../mixins/rem';
 
 @layer kol-theme-component {
-	.kol-button__element {
+	.kol-button {
 		border-radius: rem(32);
 		font-family: var(--font-family-sans);
 	}
@@ -33,14 +33,14 @@
 			text-decoration: underline;
 		}
 
-		.kol-button__element:not(:disabled):hover &,
-		.kol-button__element:focus & {
+		.kol-button:not(:disabled):hover &,
+		.kol-button:focus & {
 			background-color: var(--color-anthrazit);
 			border-color: var(--color-anthrazit);
 			color: var(--color-weiss);
 		}
 
-		.kol-button__element :disabled & {
+		.kol-button :disabled & {
 			cursor: not-allowed;
 			opacity: 0.5;
 		}

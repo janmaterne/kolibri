@@ -6,9 +6,8 @@
 		font-family: var(--font-family-sans);
 		/* text-transform: uppercase; */
 
-		&__element {
-			border-radius: rem(32);
-		}
+		border-radius: rem(32);
+
 		&__text {
 			border-radius: rem(32);
 			border-style: solid;

@@ -2,21 +2,19 @@
 
 @layer kol-theme-component {
 	.kol-button {
-		&__element {
-			color: var(--color-primary);
-			font-style: normal;
-			font-weight: 400;
-			text-decoration-line: underline;
-			font-size: inherit;
+		color: var(--color-primary);
+		font-style: normal;
+		font-weight: 400;
+		text-decoration-line: underline;
+		font-size: inherit;
 
-			:focus {
-				outline: none;
-			}
+		:focus {
+			outline: none;
+		}
 
-			&:hover {
-				&:visited {
-					color: var(--visited);
-				}
+		&:hover {
+			&:visited {
+				color: var(--visited);
 			}
 		}
 

@@ -5,6 +5,10 @@
 	.kol-button {
 		$root: &;
 
+		&:focus {
+			outline: none;
+		}
+
 		&--primary {
 			--text-background-color: var(--color-primary);
 			--text-border-color: var(--color-primary);
@@ -50,12 +54,6 @@
 			}
 		}
 
-		&__element {
-			&:focus {
-				outline: none;
-			}
-		}
-
 		&__text {
 			background-color: var(--text-background-color);
 			border-color: var(--text-border-color);
@@ -77,11 +75,11 @@
 				}
 			}
 
-			@at-root #{$root}__element:focus {
+			@at-root #{$root}:focus {
 				@include focus-outline;
 			}
 
-			@at-root #{$root}__element:disabled:hover & {
+			@at-root #{$root}:disabled:hover & {
 				background-color: var(--text-background-color);
 				border-color: var(--text-border-color);
 				color: var(--text-color);

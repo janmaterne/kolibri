@@ -4,22 +4,20 @@
 	.kol-button {
 		$root: &;
 
-		&__element {
-			color: var(--color-primary);
-			font-style: normal;
-			font-weight: 400;
-			font-size: inherit;
+		color: var(--color-primary);
+		font-style: normal;
+		font-weight: 400;
+		font-size: inherit;
 
-			&:focus {
-				outline: none;
+		&:focus {
+			outline: none;
 
-				--text-border-radius: var(--border-radius);
-				--text-outline: calc(var(--border-width) * 2) solid;
-			}
+			--text-border-radius: var(--border-radius);
+			--text-outline: calc(var(--border-width) * 2) solid;
+		}
 
-			&:visited {
-				color: var(--visited);
-			}
+		&:visited {
+			color: var(--visited);
 		}
 
 		&__text {

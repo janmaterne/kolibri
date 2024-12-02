@@ -112,7 +112,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 		const badgeText = this.state._accessKey || this.state._shortKey;
 
 		return (
-			<Host class="kol-button">
+			<Host>
 				<button
 					ref={this.catchRef}
 					accessKey={this.state._accessKey || undefined}
@@ -121,7 +121,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					aria-expanded={mapBoolean2String(this.state._ariaExpanded)}
 					aria-label={this.state._hideLabel && typeof this.state._label === 'string' ? this.state._label : undefined}
 					aria-selected={mapStringOrBoolean2String(this.state._ariaSelected)}
-					class={clsx('kol-button__element', {
+					class={clsx('kol-button', {
 						'kol-button--disabled': this.state._disabled === true,
 						[`kol-button--${this.state._variant as string}`]: this.state._variant !== 'custom',
 						'kol-button--hide-label': this.state._hideLabel === true,

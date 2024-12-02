@@ -6,13 +6,12 @@
 
 		--text-focus-outline-color: var(--color-white);
 
-		&__element {
-			appearance: none;
-			border-radius: rem(4);
-			text-decoration: none;
-			&:focus {
-				outline: none;
-			}
+		appearance: none;
+		border-radius: rem(4);
+		text-decoration: none;
+
+		&:focus {
+			outline: none;
 		}
 
 		&__text {

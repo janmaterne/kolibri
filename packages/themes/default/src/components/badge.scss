@@ -13,15 +13,13 @@
 
 		&__smart-button {
 			.kol-button {
-				&__element {
-					color: inherit;
-					border-top-right-radius: var(--border-radius);
-					border-bottom-right-radius: var(--border-radius);
-					padding: rem(3.2);
-					&:hover {
-						background-color: var(--color-primary-variant);
-						color: var(--color-light);
-					}
+				color: inherit;
+				border-top-right-radius: var(--border-radius);
+				border-bottom-right-radius: var(--border-radius);
+				padding: rem(3.2);
+				&:hover {
+					background-color: var(--color-primary-variant);
+					color: var(--color-light);
 				}
 
 				&__text {
