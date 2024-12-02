@@ -1,7 +1,7 @@
 @import '../@shared/mixins';
 @import '../style';
 @import '../input-line';
-@import '../link';
+@import '../@shared/kol-link-mixin';
 
 @include kol-alert-styles;
 

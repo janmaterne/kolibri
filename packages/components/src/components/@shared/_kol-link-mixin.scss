@@ -1,0 +1,36 @@
+@import 'mixins';
+@import '../tooltip/style';
+
+@mixin kol-link-styles($block-classname) {
+	@layer kol-component {
+		:host {
+			display: inline-block;
+		}
+
+		.#{$block-classname} {
+			$root: &;
+
+			font-size: rem(16);
+			align-items: baseline;
+			display: inline-flex;
+			place-items: center;
+			text-align: left;
+			text-decoration-line: none;
+
+			&__text {
+				.span-label {
+					text-decoration-line: underline;
+
+					@at-root #{$root}:is(:focus, :hover):not([aria-disabled]) {
+						text-decoration-line: underline;
+					}
+				}
+			}
+
+			.kol-icon.external-link-icon {
+				display: inline-flex;
+				margin-left: rem(8);
+			}
+		}
+	}
+}

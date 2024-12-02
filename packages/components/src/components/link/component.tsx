@@ -129,7 +129,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 		const hasAriaDescription = Boolean(this.state._ariaDescription?.trim()?.length);
 
 		return (
-			<Host class="kol-link">
+			<Host>
 				<a
 					ref={this.catchRef}
 					{...tagAttrs}
@@ -144,7 +144,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 							? `${this.state._label}${isExternal ? ` (${translate('kol-open-link-in-tab')})` : ''}`
 							: undefined
 					}
-					class={clsx('kol-link__element', {
+					class={clsx('kol-link', {
 						'kol-link--disabled': this.state._disabled === true,
 						'kol-link--external-link': isExternal,
 						'kol-link--hide-label': this.state._hideLabel === true,

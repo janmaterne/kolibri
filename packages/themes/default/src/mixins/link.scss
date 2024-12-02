@@ -4,45 +4,30 @@
 	.kol-link {
 		$root: &;
 
-		&__element {
-			color: var(--color-primary);
-			font-style: normal;
-			font-weight: 400;
-			line-height: 1;
+		color: var(--color-primary);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1;
 
-			&:focus {
-				outline: none;
-			}
-			&:visited {
-				color: var(--visited);
-			}
+		&:focus {
+			outline: none;
+		}
 
-			.skip {
-				left: rem(-99999);
-				overflow: hidden;
-				position: absolute;
-				z-index: 9999999;
-				line-height: 1;
-
-				&:focus {
-					background-color: white;
-					left: unset;
-					position: unset;
-				}
-			}
+		&:visited {
+			color: var(--visited);
 		}
 
 		&__text {
-			@at-root #{$root}__element:focus {
+			@at-root #{$root}:focus {
 				border-radius: var(--border-radius);
 				outline: var(--border-width) solid;
 			}
 
 			.span-label {
-				@at-root #{$root}__element:is(:focus, :hover):not([aria-disabled]) {
+				@at-root #{$root}:is(:focus, :hover):not([aria-disabled]) {
 					text-decoration-thickness: 0.25em;
 				}
-				@at-root #{$root}__element:is(:focus, :hover):not([disabled]) {
+				@at-root #{$root}:is(:focus, :hover):not([disabled]) {
 					text-decoration-thickness: 0.25em;
 				}
 			}

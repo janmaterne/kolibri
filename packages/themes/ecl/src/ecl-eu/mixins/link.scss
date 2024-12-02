@@ -1,13 +1,11 @@
 @mixin kol-link {
 	.kol-link {
-		&__element {
-			appearance: none;
-			color: var(--color-blue);
-			line-height: 1.2;
+		appearance: none;
+		color: var(--color-blue);
+		line-height: 1.2;
 
-			&:hover {
-				color: var(--color-blue-130);
-			}
+		&:hover {
+			color: var(--color-blue-130);
 		}
 	}
 }
