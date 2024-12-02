@@ -6,9 +6,12 @@
 		$root: &;
 		font-family: var(--font-family);
 
+		&_navigation {
+			background-color: var(--color-mute);
+		}
+
 		&__list {
 			list-style: none;
-			background-color: var(--color-mute);
 
 			// nested lists
 			&--nested {

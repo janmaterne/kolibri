@@ -232,7 +232,7 @@ export class KolNav implements NavAPI {
 					'kol-nav--is-compact': this.state._hideLabel,
 				}}
 			>
-				<nav aria-label={this.state._label} id="nav">
+				<nav class="kol-nav_navigation" aria-label={this.state._label} id="nav">
 					<this.linkList collapsible={collapsible} hideLabel={hideLabel} deep={0} links={this.state._links} orientation={orientation}></this.linkList>
 				</nav>
 				{hasCompactButton && (

@@ -4,7 +4,7 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
 <kol-nav>
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
-      <nav aria-label="Nav Label" id="nav">
+      <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
         <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
@@ -38,7 +38,7 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
 <kol-nav>
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
-      <nav aria-label="Nav Label" id="nav">
+      <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
         <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
@@ -75,7 +75,7 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
 <kol-nav>
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
-      <nav aria-label="Nav Label" id="nav">
+      <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
         <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
@@ -109,7 +109,7 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
 <kol-nav>
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
-      <nav aria-label="Nav Label" id="nav">
+      <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
         <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
@@ -143,7 +143,7 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
 <kol-nav>
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
-      <nav aria-label="Nav Label" id="nav">
+      <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
         <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
@@ -177,7 +177,7 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
 <kol-nav>
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--is-compact kol-nav--vertical">
-      <nav aria-label="Nav Label" id="nav">
+      <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
         <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="hide-label kol-nav__entry">
@@ -211,7 +211,7 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
 <kol-nav>
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
-      <nav aria-label="Nav Label" id="nav">
+      <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
         <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
