@@ -10,36 +10,15 @@
 			list-style: none;
 			background-color: var(--color-mute);
 
-			&--active .kol-nav__entry a,
-			&--active .kol-nav__entry .button {
-				font-weight: normal;
-				border-left-color: transparent;
-			}
-
-			&--active .kol-nav__entry .kol-nav__entry--item a,
-			&--active .kol-nav__entry .kol-nav__entry--item .button {
-				font-weight: bold;
-			}
-
-			&--vertical .kol-nav__entry .kol-nav__entry--item a,
-			&--vertical .kol-nav__entry .kol-nav__entry--item .button {
-				border-left: rem(2) solid transparent;
-				padding-left: rem(8);
-			}
-
-			&--horizontal .kol-nav__entry .kol-nav__entry--item a,
-			&--horizontal .kol-nav__entry .kol-nav__entry--item .button {
-				padding: 0 rem(16);
-			}
-
-			&--vertical &--active .kol-nav__entry .kol-nav__entry--item a,
-			&--vertical &--active .kol-nav__entry .kol-nav__entry--item .button {
-				border-left-color: var(--color-primary);
-			}
-
 			// nested lists
-			&.kol-nav__list {
+			&--nested {
 				padding-left: rem(16);
+
+				a,
+				button {
+					font-weight: normal !important;
+					border-left-color: transparent !important;
+				}
 			}
 		}
 
@@ -61,25 +40,42 @@
 					&:focus-visible {
 						@include focus-outline;
 					}
-				}
-			}
 
-			&--expand-button {
-				margin-left: rem(8);
-
-				.button {
-					&:hover {
-						background-color: var(--color-primary);
-						color: var(--color-light);
+					.kol-nav__list--vertical & {
+						border-left: rem(2) solid transparent;
+						padding-left: rem(8);
 					}
 
-					&:focus-visible {
-						@include focus-outline;
+					.kol-nav__list--horizontal & {
+						padding: 0 rem(16);
+					}
+
+					.kol-nav__list--vertical .kol-nav__list--active & {
+						border-left-color: var(--color-primary);
+					}
+
+					.kol-nav__list--active & {
+						font-weight: bold;
 					}
 				}
 
-				.button-inner {
-					justify-content: center;
+				&--expand-button {
+					margin-left: rem(8);
+
+					.button {
+						&:hover {
+							background-color: var(--color-primary);
+							color: var(--color-light);
+						}
+
+						&:focus-visible {
+							@include focus-outline;
+						}
+					}
+
+					.button-inner {
+						justify-content: center;
+					}
 				}
 			}
 		}
