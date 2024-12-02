@@ -48,18 +48,32 @@ export class KolInputWc implements Props {
 	}
 
 	public render(): JSX.Element {
-		const isMessageValidError = Boolean(this._msg?._type === 'error' && this._msg._description && this._msg._description?.length > 0);
-		const hasError = !this._readOnly && isMessageValidError && this._touched === true;
-		const showFormFieldMsg = Boolean(hasError || (this._msg?._type !== 'error' && this._msg?._description));
+		/**
+		 * We support 5 types of messages:
+		 * - default
+		 * - info
+		 * - success
+		 * - warning
+		 * - error
+		 *
+		 * The message is shown if:
+		 * - the message text is not an empty string
+		 * - we show only one message at a time
+		 * - by error messages the input must be touched
+		 */
+		const hasValidMsg =
+			typeof this._msg === 'object' && this._msg !== null && typeof this._msg?._description === 'string' && this._msg?._description.length > 0;
+		const showMsg = hasValidMsg && (this._touched === true || this._msg?._type !== 'error');
+
 		const hasExpertSlot = showExpertSlot(this._label);
 		const hasHint = typeof this._hint === 'string' && this._hint.length > 0;
 		const useTooltopInsteadOfLabel = !hasExpertSlot && this._hideLabel;
 
 		return (
 			<Host
-				class={clsx('kol-input', this.getModifierClassNameByMsgType(), {
+				class={clsx('kol-input', this.getModifierClassNameByMsgType(showMsg), {
 					disabled: this._disabled === true,
-					error: hasError === true,
+					[this._msg?._type || 'error']: showMsg === true,
 					'read-only': this._readOnly === true,
 					required: this._required === true,
 					touched: this._touched === true,
@@ -120,7 +134,7 @@ export class KolInputWc implements Props {
 						_label={this._label}
 					></KolTooltipWcTag>
 				)}
-				{showFormFieldMsg && <KolFormFieldMsgFc _alert={this._alert} _hideError={this._hideError} _msg={this._msg} _id={this._id} />}
+				{showMsg && <KolFormFieldMsgFc _alert={this._alert} _hideError={this._hideError} _msg={this._msg} _id={this._id} />}
 				{Array.isArray(this._suggestions) && this._suggestions.length > 0 && (
 					<datalist id={`${this._id}-list`}>
 						{this._suggestions.map((option: W3CInputValue) => (
@@ -266,8 +280,8 @@ export class KolInputWc implements Props {
 	 */
 	@Prop() public _touched?: boolean = false;
 
-	private getModifierClassNameByMsgType() {
-		if (this._msg?._type) {
+	private getModifierClassNameByMsgType(showMsg: boolean) {
+		if (showMsg && this._msg?._type) {
 			return {
 				default: 'msg-type-default',
 				info: 'msg-type-info',
