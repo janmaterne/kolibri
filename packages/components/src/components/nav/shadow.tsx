@@ -23,7 +23,7 @@ import {
 	watchValidator,
 } from '../../schema';
 import type { JSX } from '@stencil/core';
-import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, h, Prop, State, Watch } from '@stencil/core';
 
 import { translate } from '../../i18n';
 import { addNavLabel, removeNavLabel } from '../../utils/unique-nav-labels';
@@ -100,12 +100,12 @@ export class KolNav implements NavAPI {
 				: undefined;
 
 		return (
-			<div class={{ entry: true, 'hide-label': hideLabel }}>
+			<div class={{ 'kol-nav__entry': true, 'hide-label': hideLabel }}>
 				{entryIsLink(entry) ? (
-					<KolLinkWcTag class="entry-item" {...entry} _hideLabel={hideLabel} _icons={icons} />
+					<KolLinkWcTag class="kol-nav__entry--item" {...entry} _hideLabel={hideLabel} _icons={icons} />
 				) : (
 					<KolButtonWcTag
-						class="entry-item"
+						class="kol-nav__entry--item"
 						_label={entry._label}
 						_hideLabel={hideLabel}
 						_icons={icons}
@@ -129,7 +129,7 @@ export class KolNav implements NavAPI {
 	private expandButton(collapsible: boolean, link: ButtonWithChildrenProps, expanded: boolean): JSX.Element {
 		return (
 			<KolButtonWcTag
-				class="expand-button"
+				class="kol-nav__entry--expand-button"
 				_ariaExpanded={expanded}
 				_disabled={!collapsible}
 				_icons={'codicon codicon-' + (expanded ? 'remove' : 'add')}
@@ -154,9 +154,9 @@ export class KolNav implements NavAPI {
 		return (
 			<li
 				class={{
-					active,
-					expanded,
-					'has-children': hasChildren,
+					'kol-nav__list--active': active,
+					'kol-nav__list--expanded': expanded,
+					'kol-nav__list--has-children': hasChildren,
 				}}
 				key={index}
 			>
@@ -174,7 +174,10 @@ export class KolNav implements NavAPI {
 		orientation: Orientation;
 	}): JSX.Element => {
 		return (
-			<ul class={`list ${props.deep === 0 && props.orientation === 'horizontal' ? ' horizontal' : ' vertical'}`} data-deep={props.deep}>
+			<ul
+				class={`kol-nav__list ${props.deep === 0 && props.orientation === 'horizontal' ? ' kol-nav__list--horizontal' : ' kol-nav__list--vertical'}`}
+				data-deep={props.deep}
+			>
 				{props.links.map((link, index: number) => {
 					return this.li(props.collapsible, props.hideLabel, props.deep, index, link, props.orientation);
 				})}
@@ -217,40 +220,45 @@ export class KolNav implements NavAPI {
 		const hideLabel = this.state._hideLabel === true;
 		const orientation = this.state._orientation;
 		return (
-			<Host class="kol-nav">
-				<div
+			<div
+				class={{
+					'kol-nav': true,
+					[`kol-nav--${orientation}`]: true,
+					'kol-nav--compact': this.state._hideLabel,
+				}}
+			>
+				<nav
+					aria-label={this.state._label}
+					id="nav"
 					class={{
-						nav: true,
-						[orientation]: true,
-						'is-compact': this.state._hideLabel,
+						'kol-nav__navigation': true,
+						'kol-nav__navigation--compact': this.state._hideLabel,
 					}}
 				>
-					<nav aria-label={this.state._label} id="nav">
-						<this.linkList collapsible={collapsible} hideLabel={hideLabel} deep={0} links={this.state._links} orientation={orientation}></this.linkList>
-					</nav>
-					{hasCompactButton && (
-						<div class="compact">
-							<KolButtonTag
-								_ariaControls="nav"
-								_ariaExpanded={!hideLabel}
-								_icons={hideLabel ? 'codicon codicon-chevron-right' : 'codicon codicon-chevron-left'}
-								_hideLabel
-								_label={translate(hideLabel ? 'kol-nav-maximize' : 'kol-nav-minimize')}
-								_on={{
-									onClick: (): void => {
-										this.state = {
-											...this.state,
-											_hideLabel: this.state._hideLabel === false,
-										};
-									},
-								}}
-								_tooltipAlign="right"
-								_variant="ghost"
-							></KolButtonTag>
-						</div>
-					)}
-				</div>
-			</Host>
+					<this.linkList collapsible={collapsible} hideLabel={hideLabel} deep={0} links={this.state._links} orientation={orientation}></this.linkList>
+				</nav>
+				{hasCompactButton && (
+					<div class="kol-nav__compact">
+						<KolButtonTag
+							_ariaControls="nav"
+							_ariaExpanded={!hideLabel}
+							_icons={hideLabel ? 'codicon codicon-chevron-right' : 'codicon codicon-chevron-left'}
+							_hideLabel
+							_label={translate(hideLabel ? 'kol-nav-maximize' : 'kol-nav-minimize')}
+							_on={{
+								onClick: (): void => {
+									this.state = {
+										...this.state,
+										_hideLabel: this.state._hideLabel === false,
+									};
+								},
+							}}
+							_tooltipAlign="right"
+							_variant="ghost"
+						></KolButtonTag>
+					</div>
+				)}
+			</div>
 		);
 	}
 

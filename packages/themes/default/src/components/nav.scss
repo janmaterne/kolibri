@@ -2,8 +2,56 @@
 @import '../mixins/focus-outline';
 
 @layer kol-theme-component {
-	:host {
+	.kol-nav {
 		font-family: var(--font-family);
+
+		&__entry {
+			&--entry-item a,
+			&--entry-item .button {
+				align-items: center;
+				color: var(--color-primary);
+				display: flex;
+				gap: rem(8);
+				min-height: var(--a11y-min-size);
+				text-decoration: none;
+
+				.vertical & {
+					border-left: rem(2) solid transparent;
+					padding-left: rem(8);
+				}
+
+				.horizontal & {
+					padding: 0 rem(16);
+				}
+
+				.vertical .active & {
+					border-left-color: var(--color-primary);
+				}
+
+				&:focus-visible {
+					@include focus-outline;
+				}
+			}
+
+			&--expand-button {
+				margin-left: rem(8);
+
+				.button {
+					&:hover {
+						background-color: var(--color-primary);
+						color: var(--color-light);
+					}
+
+					&:focus-visible {
+						@include focus-outline;
+					}
+				}
+
+				.button-inner {
+					justify-content: center;
+				}
+			}
+		}
 	}
 
 	nav {
@@ -16,33 +64,6 @@
 
 	.kol-link-wc {
 		display: flex;
-	}
-
-	.entry-item a,
-	.entry-item .button {
-		align-items: center;
-		color: var(--color-primary);
-		display: flex;
-		gap: rem(8);
-		min-height: var(--a11y-min-size);
-		text-decoration: none;
-
-		.vertical & {
-			border-left: rem(2) solid transparent;
-			padding-left: rem(8);
-		}
-
-		.horizontal & {
-			padding: 0 rem(16);
-		}
-
-		.vertical .active & {
-			border-left-color: var(--color-primary);
-		}
-
-		&:focus-visible {
-			@include focus-outline;
-		}
 	}
 
 	.entry-item a:hover {
@@ -63,24 +84,5 @@
 	.active .list .entry-item .button {
 		font-weight: normal;
 		border-left-color: transparent;
-	}
-
-	.expand-button {
-		margin-left: rem(8);
-
-		.button {
-			&:hover {
-				background-color: var(--color-primary);
-				color: var(--color-light);
-			}
-
-			&:focus-visible {
-				@include focus-outline;
-			}
-		}
-
-		.button-inner {
-			justify-content: center;
-		}
 	}
 }

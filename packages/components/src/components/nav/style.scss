@@ -3,39 +3,45 @@
 @import '../tooltip/style.scss';
 
 @layer kol-component {
-	:host {
+	.kol-nav {
+		$root: &;
 		font-size: rem(16);
-	}
-
-	:host > div {
 		display: grid;
 		place-items: center;
-	}
 
-	:not(.is-compact) nav {
-		width: 100%;
-	}
+		&--horizontal {
+			.nav {
+				width: 100%;
+			}
+		}
 
-	.list {
-		display: flex;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
+		&__list {
+			display: flex;
+			list-style: none;
+			margin: 0;
+			padding: 0;
 
-	.list.vertical {
-		flex-direction: column;
-	}
+			&--vertical {
+				flex-direction: column;
+			}
 
-	.list.horizontal {
-		flex-wrap: wrap;
-	}
+			&--horizontal {
+				flex-wrap: wrap;
+			}
+		}
 
-	.entry {
-		display: flex;
-	}
+		&__entry {
+			display: flex;
 
-	.entry-item {
-		flex-grow: 1;
+			&--item {
+				flex-grow: 1;
+			}
+		}
+
+		:not(.kol-nav--compact) {
+			@at-root #{$root}__navigation {
+				width: 100%;
+			}
+		}
 	}
 }
