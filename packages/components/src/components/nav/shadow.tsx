@@ -229,7 +229,7 @@ export class KolNav implements NavAPI {
 				class={{
 					'kol-nav': true,
 					[`kol-nav--${orientation}`]: true,
-					'kol-nav--compact': this.state._hideLabel,
+					'kol-nav--is-compact': this.state._hideLabel,
 				}}
 			>
 				<nav aria-label={this.state._label} id="nav">
