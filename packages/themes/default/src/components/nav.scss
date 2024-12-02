@@ -63,24 +63,24 @@
 					}
 				}
 			}
-		}
 
-		&__expand-button {
-			margin-left: rem(8);
+			&--expand-button {
+				margin-left: rem(8);
 
-			.button {
-				&:hover {
-					background-color: var(--color-primary);
-					color: var(--color-light);
+				.button {
+					&:hover {
+						background-color: var(--color-primary);
+						color: var(--color-light);
+					}
+
+					&:focus-visible {
+						@include focus-outline;
+					}
 				}
 
-				&:focus-visible {
-					@include focus-outline;
+				.button-inner {
+					justify-content: center;
 				}
-			}
-
-			.button-inner {
-				justify-content: center;
 			}
 		}
 	}
