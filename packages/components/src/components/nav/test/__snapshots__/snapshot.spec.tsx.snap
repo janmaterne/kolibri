@@ -176,7 +176,7 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
 exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepage","_href":"#"},{"_label":"Nav - aria-current","_href":"#","_active":true},{"_label":"3 Navigation point","_href":"#","_icons":"codicon codicon-home","_children":[{"_label":"3.1 Navigation point","_icons":"codicon codicon-home","_href":"#"}]},{"_label":"6 Keine eigene Seite, mit Icon","_icons":"codicon codicon-squirrel"}] _hideLabel=true 1`] = `
 <kol-nav>
   <template shadowrootmode="open">
-    <div class="kol-nav kol-nav--compact kol-nav--vertical">
+    <div class="kol-nav kol-nav--is-compact kol-nav--vertical">
       <nav aria-label="Nav Label" id="nav">
         <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
