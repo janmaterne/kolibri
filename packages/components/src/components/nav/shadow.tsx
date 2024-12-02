@@ -177,7 +177,7 @@ export class KolNav implements NavAPI {
 			<ul
 				class={{
 					'kol-nav__list': true,
-					'kol-nav__list--vertical': props.deep === 0 && props.orientation === 'vertical',
+					'kol-nav__list--vertical': props.orientation === 'vertical',
 					'kol-nav__list--horizontal': props.deep === 0 && props.orientation === 'horizontal',
 					'kol-nav__list--nested': props.deep > 0,
 				}}
