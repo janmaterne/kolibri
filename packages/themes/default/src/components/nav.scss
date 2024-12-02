@@ -3,29 +3,75 @@
 
 @layer kol-theme-component {
 	.kol-nav {
+		$root: &;
 		font-family: var(--font-family);
 
+		&__list {
+			list-style: none;
+			background-color: var(--color-mute);
+
+			&--active .kol-nav__entry a,
+			&--active .kol-nav__entry .button {
+				font-weight: normal;
+				border-left-color: transparent;
+			}
+
+			&--active .kol-nav__entry .kol-nav__entry--item a,
+			&--active .kol-nav__entry .kol-nav__entry--item .button {
+				font-weight: bold;
+			}
+
+			&--vertical .kol-nav__entry .kol-nav__entry--item a,
+			&--vertical .kol-nav__entry .kol-nav__entry--item .button {
+				border-left: rem(2) solid transparent;
+				padding-left: rem(8);
+			}
+
+			&--horizontal .kol-nav__entry .kol-nav__entry--item a,
+			&--horizontal .kol-nav__entry .kol-nav__entry--item .button {
+				padding: 0 rem(16);
+			}
+
+			&--vertical &--active .kol-nav__entry .kol-nav__entry--item a,
+			&--vertical &--active .kol-nav__entry .kol-nav__entry--item .button {
+				border-left-color: var(--color-primary);
+			}
+
+			// nested lists
+			&.kol-nav__list {
+				padding-left: rem(16);
+			}
+		}
+
 		&__entry {
-			&--entry-item a,
-			&--entry-item .button {
-				align-items: center;
-				color: var(--color-primary);
-				display: flex;
-				gap: rem(8);
-				min-height: var(--a11y-min-size);
-				text-decoration: none;
-
-				.vertical & {
-					border-left: rem(2) solid transparent;
-					padding-left: rem(8);
+			&--item {
+				a:hover {
+					text-decoration: underline;
 				}
 
-				.horizontal & {
-					padding: 0 rem(16);
-				}
+				a,
+				button {
+					align-items: center;
+					color: var(--color-primary);
+					display: flex;
+					gap: rem(8);
+					min-height: var(--a11y-min-size);
+					text-decoration: none;
 
-				.vertical .active & {
-					border-left-color: var(--color-primary);
+					&:focus-visible {
+						@include focus-outline;
+					}
+				}
+			}
+		}
+
+		&__expand-button {
+			margin-left: rem(8);
+
+			.button {
+				&:hover {
+					background-color: var(--color-primary);
+					color: var(--color-light);
 				}
 
 				&:focus-visible {
@@ -33,56 +79,13 @@
 				}
 			}
 
-			&--expand-button {
-				margin-left: rem(8);
-
-				.button {
-					&:hover {
-						background-color: var(--color-primary);
-						color: var(--color-light);
-					}
-
-					&:focus-visible {
-						@include focus-outline;
-					}
-				}
-
-				.button-inner {
-					justify-content: center;
-				}
+			.button-inner {
+				justify-content: center;
 			}
 		}
 	}
 
-	nav {
-		background-color: var(--color-mute);
-	}
-
-	ul {
-		list-style: none;
-	}
-
 	.kol-link-wc {
 		display: flex;
-	}
-
-	.entry-item a:hover {
-		text-decoration: underline;
-	}
-
-	// nested lists
-	.list .list {
-		padding-left: rem(16);
-	}
-
-	.active .entry-item a,
-	.active .entry-item .button {
-		font-weight: bold;
-	}
-
-	.active .list .entry-item a,
-	.active .list .entry-item .button {
-		font-weight: normal;
-		border-left-color: transparent;
 	}
 }

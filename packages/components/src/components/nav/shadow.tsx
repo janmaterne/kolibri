@@ -129,7 +129,7 @@ export class KolNav implements NavAPI {
 	private expandButton(collapsible: boolean, link: ButtonWithChildrenProps, expanded: boolean): JSX.Element {
 		return (
 			<KolButtonWcTag
-				class="kol-nav__entry--expand-button"
+				class="kol-nav__expand-button"
 				_ariaExpanded={expanded}
 				_disabled={!collapsible}
 				_icons={'codicon codicon-' + (expanded ? 'remove' : 'add')}
@@ -227,14 +227,7 @@ export class KolNav implements NavAPI {
 					'kol-nav--compact': this.state._hideLabel,
 				}}
 			>
-				<nav
-					aria-label={this.state._label}
-					id="nav"
-					class={{
-						'kol-nav__navigation': true,
-						'kol-nav__navigation--compact': this.state._hideLabel,
-					}}
-				>
+				<nav aria-label={this.state._label} id="nav">
 					<this.linkList collapsible={collapsible} hideLabel={hideLabel} deep={0} links={this.state._links} orientation={orientation}></this.linkList>
 				</nav>
 				{hasCompactButton && (
