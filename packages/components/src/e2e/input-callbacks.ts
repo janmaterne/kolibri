@@ -1,5 +1,6 @@
-import { test } from '@stencil/playwright';
-import { expect } from '@playwright/test';
+import { type E2EPage, test } from '@stencil/playwright';
+import type { Locator } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
 import type { FillAction } from './utils/FillAction';
 import type { InputTypeOnDefault } from '../schema';
 import { INPUTS_SELECTOR } from './utils/inputsSelector';
@@ -9,6 +10,8 @@ const testInputCallbacks = <ElementType extends { _on?: InputTypeOnDefault } & (
 	testValue: unknown = 'Test Input',
 	fillAction?: FillAction,
 	omittedEvents: string[] = [],
+	additionalProperties?: string,
+	selectInput?: (page: Page & E2EPage) => Locator,
 ) => {
 	test.describe('Callbacks', () => {
 		const EVENTS: [string, string, unknown?][] = [
@@ -21,9 +24,9 @@ const testInputCallbacks = <ElementType extends { _on?: InputTypeOnDefault } & (
 
 		EVENTS.filter(([eventName]) => !omittedEvents.includes(eventName)).forEach(([eventName, callbackName, testValue]) => {
 			test(`should call ${callbackName} when internal input emits`, async ({ page }) => {
-				await page.setContent(`<${componentName} _label="Input"></${componentName}>`);
+				await page.setContent(`<${componentName} _label="Input" ${additionalProperties}></${componentName}>`);
 				const component = page.locator(componentName);
-				const input = page.locator(INPUTS_SELECTOR);
+				const input = selectInput ? selectInput(page) : page.locator(INPUTS_SELECTOR);
 
 				const eventPromise = component.evaluate((element: ElementType, callbackName) => {
 					return new Promise<unknown>((resolve) => {

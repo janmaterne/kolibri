@@ -7,9 +7,10 @@ const testInputValueReflection = <ElementType extends { _value?: unknown } & (HT
 	componentName: string,
 	testValue?: unknown,
 	fillAction?: FillAction,
+	additionalProperties?: string,
 ) => {
 	test(`should reflect the _value property on the web component`, async ({ page }) => {
-		await page.setContent(`<${componentName} _label="Input"></${componentName}>`);
+		await page.setContent(`<${componentName} _label="Input" ${additionalProperties}></${componentName}>`);
 		if (fillAction) {
 			await fillAction(page);
 		} else if (typeof testValue === 'string') {

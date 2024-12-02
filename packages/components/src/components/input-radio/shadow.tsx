@@ -10,24 +10,23 @@ import type {
 	NamePropType,
 	Orientation,
 	RadioOptionsPropType,
+	ShortKeyPropType,
 	StencilUnknown,
 	Stringified,
 	SyncValueBySelectorPropType,
 	TooltipAlignPropType,
-	ShortKeyPropType,
 } from '../../schema';
 import { buildBadgeTextString, showExpertSlot } from '../../schema';
 import type { JSX } from '@stencil/core';
 import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
-import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
+import { stopPropagation } from '../../utils/events';
 import { getRenderStates } from '../input/controller';
-import { InternalUnderlinedBadgeText } from '../../functional-components';
+import { InternalUnderlinedBadgeText, KolFormFieldMsgFc } from '../../functional-components';
 import { InputRadioController } from './controller';
 import { propagateSubmitEventToForm } from '../form/controller';
 import { KolInputTag } from '../../core/component-names';
-import { KolFormFieldMsgFc } from '../../functional-components';
 
 /**
  * @slot - Die Legende/Überschrift der Radiobuttons.
@@ -43,8 +42,6 @@ import { KolFormFieldMsgFc } from '../../functional-components';
 })
 export class KolInputRadio implements InputRadioAPI, FocusableElement {
 	@Element() private readonly host?: HTMLKolInputRadioElement;
-	private currentValue?: StencilUnknown;
-
 	private inputRef?: HTMLInputElement;
 
 	private readonly catchRef = (ref?: HTMLInputElement) => {
@@ -54,7 +51,7 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 	@Method()
 	// eslint-disable-next-line @typescript-eslint/require-await
 	public async getValue(): Promise<StencilUnknown | undefined> {
-		return this.currentValue;
+		return this._value;
 	}
 
 	/**
@@ -301,7 +298,7 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 	 * Defines the value of the input.
 	 * @see Known bug: https://github.com/ionic-team/stencil/issues/3902
 	 */
-	@Prop() public _value?: StencilUnknown;
+	@Prop({ mutable: true, reflect: true }) public _value?: StencilUnknown;
 
 	@State() public state: InputRadioStates = {
 		_hideError: false,
@@ -429,7 +426,6 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 
 	public componentWillLoad(): void {
 		this._touched = this._touched === true;
-		this.currentValue = this._value;
 		this.controller.componentWillLoad();
 	}
 
@@ -437,13 +433,7 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 		if (event.target instanceof HTMLInputElement) {
 			const option = this.controller.getOptionByKey(event.target.value);
 			if (option !== undefined) {
-				// Event handling
-				tryToDispatchKoliBriEvent('input', this.host, option.value);
-
-				// Callback
-				if (typeof this.state._on?.onInput === 'function') {
-					this.state._on.onInput(event, option.value);
-				}
+				this.controller.onFacade.onInput(event, true, option.value);
 			}
 		}
 	};
@@ -452,19 +442,12 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 		if (event.target instanceof HTMLInputElement) {
 			const option = this.controller.getOptionByKey(event.target.value);
 			if (option !== undefined) {
+				this.controller.onFacade.onChange(event, option.value);
+
 				// Event handling
 				stopPropagation(event);
-				tryToDispatchKoliBriEvent('change', this.host, option.value);
 
-				// Static form handling
-				this.controller.setFormAssociatedValue(option.value);
-
-				// Callback
-				if (typeof this.state._on?.onChange === 'function') {
-					this.state._on.onChange(event, option.value);
-				}
-
-				this.currentValue = option.value;
+				this._value = option.value;
 			}
 		}
 	};
