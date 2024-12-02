@@ -25,7 +25,7 @@ import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
-import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
+import { stopPropagation } from '../../utils/events';
 import { getRenderStates } from '../input/controller';
 import { InternalUnderlinedBadgeText } from '../../functional-components';
 import { SelectController } from './controller';
@@ -334,7 +334,7 @@ export class KolSelect implements SelectAPI, FocusableElement {
 	/**
 	 * Defines the value of the input.
 	 */
-	@Prop({ mutable: true }) public _value?: Stringified<W3CInputValue[]>;
+	@Prop({ mutable: true, reflect: true }) public _value?: Stringified<W3CInputValue[]>;
 
 	@State() public state: SelectStates = {
 		_hasValue: false,
@@ -482,22 +482,13 @@ export class KolSelect implements SelectAPI, FocusableElement {
 			.filter((option) => option.selected === true)
 			.map((option) => this.controller.getOptionByKey(option.value)?.value as string);
 
-		// Event handling
-		tryToDispatchKoliBriEvent('input', this.host, this._value);
-
-		// Callback
-		this.state._on?.onInput?.(event, this._value);
+		this.controller.onFacade.onInput(event, true, this._value);
 	}
 
 	private onChange(event: Event): void {
+		this.controller.onFacade.onChange(event, this._value);
+
 		// Event handling
 		stopPropagation(event);
-		tryToDispatchKoliBriEvent('change', this.host, this._value);
-
-		// Static form handling
-		this.controller.setFormAssociatedValue(this._value as unknown as string);
-
-		// Callback
-		this.state._on?.onChange?.(event, this._value);
 	}
 }

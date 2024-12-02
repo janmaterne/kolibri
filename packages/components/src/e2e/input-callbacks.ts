@@ -12,6 +12,7 @@ const testInputCallbacks = <ElementType extends { _on?: InputTypeOnDefault } & (
 	omittedEvents: string[] = [],
 	additionalProperties?: string,
 	selectInput?: (page: Page & E2EPage) => Locator,
+	equalityCheck: 'toBe' | 'toEqual' = 'toBe',
 ) => {
 	test.describe('Callbacks', () => {
 		const EVENTS: [string, string, unknown?][] = [
@@ -47,7 +48,7 @@ const testInputCallbacks = <ElementType extends { _on?: InputTypeOnDefault } & (
 				await page.waitForChanges();
 				await input.dispatchEvent(eventName);
 
-				await expect(eventPromise).resolves.toBe(testValue);
+				await expect(eventPromise).resolves[equalityCheck](testValue);
 			});
 		});
 	});

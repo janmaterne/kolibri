@@ -8,6 +8,7 @@ const testInputValueReflection = <ElementType extends { _value?: unknown } & (HT
 	testValue?: unknown,
 	fillAction?: FillAction,
 	additionalProperties?: string,
+	equalityCheck: 'toBe' | 'toEqual' = 'toBe',
 ) => {
 	test(`should reflect the _value property on the web component`, async ({ page }) => {
 		await page.setContent(`<${componentName} _label="Input" ${additionalProperties}></${componentName}>`);
@@ -19,7 +20,7 @@ const testInputValueReflection = <ElementType extends { _value?: unknown } & (HT
 
 		const valueDomProperty = await page.locator(componentName).evaluate((element: ElementType) => element._value);
 
-		expect(valueDomProperty).toBe(testValue);
+		expect(valueDomProperty)[equalityCheck](testValue);
 	});
 };
 
