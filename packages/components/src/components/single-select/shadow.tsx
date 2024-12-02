@@ -20,7 +20,7 @@ import type { JSX } from '@stencil/core';
 import { Component, Element, Fragment, h, Host, Listen, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
-import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
+import { stopPropagation } from '../../utils/events';
 import { SingleSelectController } from './controller';
 import { KolIconTag, KolInputTag } from '../../core/component-names';
 import { InternalUnderlinedBadgeText } from '../../functional-components';
@@ -55,7 +55,7 @@ export class KolSingleSelect implements SingleSelectAPI {
 	@Method()
 	// eslint-disable-next-line @typescript-eslint/require-await
 	public async getValue(): Promise<string | undefined> {
-		return this.state._value;
+		return this._value;
 	}
 
 	@Method()
@@ -85,7 +85,7 @@ export class KolSingleSelect implements SingleSelectAPI {
 
 	private onBlur() {
 		if (Array.isArray(this.state._options) && this.state._options.length > 0 && !this.state._options.some((option) => option.label === this._inputValue)) {
-			this._inputValue = this.state._options.find((option) => (option as Option<string>).value === this.state._value)?.label as string;
+			this._inputValue = this.state._options.find((option) => (option as Option<string>).value === this._value)?.label as string;
 			this._filteredOptions = [...this.state._options];
 		}
 		this._isOpen = false;
@@ -96,23 +96,23 @@ export class KolSingleSelect implements SingleSelectAPI {
 			return;
 		} else {
 			this._focusedOptionIndex = -1;
-			this.state._value = '';
+			this._value = '';
 			this._inputValue = '';
 			this._filteredOptions = [...this.state._options];
 
-			this.controller.setFormAssociatedValue(this.state._value);
+			this.controller.setFormAssociatedValue(this._value);
 		}
 	}
 
 	private selectOption(event: Event, option: Option<string>) {
-		this.state._value = option.value;
+		this._value = option.value;
 		this._inputValue = option.label as string;
 		this.controller.onFacade.onChange(event, option.value);
 		this.controller.onFacade.onInput(event, false, option.value);
 
 		this._filteredOptions = [...this.state._options];
 
-		this.controller.setFormAssociatedValue(this.state._value);
+		this.controller.setFormAssociatedValue(this._value);
 	}
 
 	private onInput(event: Event) {
@@ -239,7 +239,7 @@ export class KolSingleSelect implements SingleSelectAPI {
 									{...this.controller.onFacade}
 									onInput={this.onInput.bind(this)}
 									onChange={this.onChange.bind(this)}
-									onClick={this.toggleListbox.bind(this)}
+									onClick={this.onClick.bind(this)}
 									onFocus={(event) => {
 										this.controller.onFacade.onFocus(event);
 										this.inputHasFocus = true;
@@ -282,7 +282,7 @@ export class KolSingleSelect implements SingleSelectAPI {
 												}}
 												tabIndex={-1}
 												role="option"
-												aria-selected={this.state._value === (option as Option<string>).value ? 'true' : undefined}
+												aria-selected={this._value === (option as Option<string>).value ? 'true' : undefined}
 												onClick={(event: Event) => {
 													this.selectOption(event, option as Option<string>);
 													this.refInput?.focus();
@@ -314,7 +314,7 @@ export class KolSingleSelect implements SingleSelectAPI {
 													name="options"
 													id={`option-radio-${index}`}
 													value={(option as Option<string>).value}
-													checked={this.state._value === (option as Option<string>).value || index === this._focusedOptionIndex}
+													checked={this._value === (option as Option<string>).value || index === this._focusedOptionIndex}
 												/>
 
 												<label htmlFor={`option-radio-${index}`} class="radio-label">
@@ -555,14 +555,13 @@ export class KolSingleSelect implements SingleSelectAPI {
 	/**
 	 * Defines the value of the input.
 	 */
-	@Prop({ mutable: true }) public _value?: string;
+	@Prop({ mutable: true, reflect: true }) public _value?: string;
 
 	@State() public state: SingleSelectStates = {
 		_hideError: false,
 		_id: `id-${nonce()}`,
 		_label: '', // ⚠ required
 		_options: [],
-		_value: '',
 	};
 
 	@State() private inputHasFocus = false;
@@ -707,13 +706,17 @@ export class KolSingleSelect implements SingleSelectAPI {
 		if (this.oldValue !== this.refInput?.value) {
 			this.oldValue = this.refInput?.value;
 		}
+
+		if (!this._isOpen) {
+			this.controller.onFacade.onChange(event, this._value);
+		}
+
 		// Event handling
 		stopPropagation(event);
-		tryToDispatchKoliBriEvent('change', this.host, this._value);
+	}
 
-		// Callback
-		if (typeof this.state._on?.onChange === 'function' && !this._isOpen) {
-			this.state._on.onChange(event, this._value && this.oldValue !== this.refInput?.value);
-		}
+	private onClick(event: MouseEvent): void {
+		this.toggleListbox(event);
+		this.controller.onFacade.onClick(event);
 	}
 }
