@@ -19,6 +19,7 @@ import type {
 import type { JSX } from '@stencil/core';
 import { Component, h, Host, Method, Prop } from '@stencil/core';
 import { KolLinkWcTag } from '../../core/component-names';
+import clsx from 'clsx';
 
 @Component({
 	tag: 'kol-link-button',
@@ -54,11 +55,10 @@ export class KolLinkButton implements LinkButtonProps, FocusableElement {
 			<Host class="kol-link-button">
 				<KolLinkWcTag
 					ref={this.catchRef}
-					class={{
-						button: true,
-						[this._variant as string]: this._variant !== 'custom',
+					class={clsx('kol-link-button', {
+						[`kol-link--${this._variant as string}`]: this._variant !== 'custom',
 						[this._customClass as string]: this._variant === 'custom' && typeof this._customClass === 'string' && this._customClass.length > 0,
-					}}
+					})}
 					_accessKey={this._accessKey}
 					_ariaCurrentValue={this._ariaCurrentValue}
 					_ariaDescription={this._ariaDescription}

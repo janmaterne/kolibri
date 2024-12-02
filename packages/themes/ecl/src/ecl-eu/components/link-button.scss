@@ -1,132 +1,128 @@
 @import '../../mixins/rem';
 
 @layer kol-theme-component {
-	:host {
+	.kol-link-button {
 		--kolibri-spacing: #{rem(4)};
 		font-family: var(--font-family);
 	}
 
-	a,
-	button {
+	.kol-link {
+		$root: &;
+
 		appearance: none;
 		border-radius: rem(4);
 		text-decoration: none;
-	}
 
-	a:focus,
-	button:focus {
-		outline: none;
-	}
+		&:focus {
+			outline: none;
+		}
 
-	a > .kol-span-wc,
-	button > .kol-span-wc {
-		min-height: rem(44);
-		min-width: rem(44);
-		border-radius: rem(4);
-		font:
-			normal normal 400 rem(16) / rem(20) arial,
-			sans-serif;
-		font-weight: 400;
-		margin: 0;
-		padding: rem(12);
-	}
+		&__text {
+			min-height: rem(44);
+			min-width: rem(44);
+			border-radius: rem(4);
+			font:
+				normal normal 400 rem(16) / rem(20) arial,
+				sans-serif;
+			font-weight: 400;
+			margin: 0;
+			padding: rem(12);
 
-	a:focus-visible > .kol-span-wc,
-	button:focus-visible > .kol-span-wc {
-		outline-offset: rem(-4);
-		outline-style: solid;
-		outline-width: rem(2);
-	}
+			background-color: var(--background-color);
+			color: var(--color);
+			outline-color: var(--outline-color);
+			border: var(--border);
 
-	a:active > .kol-span-wc,
-	button:active > .kol-span-wc,
-	a:hover > .kol-span-wc,
-	button:hover > .kol-span-wc {
-		box-shadow:
-			0 rem(2) rem(4) rgb(9 49 142 / 8%),
-			0 0 rem(10) rgb(9 49 142 / 4%),
-			0 rem(4) rem(5) rgb(9 49 142 / 4%),
-			0 rem(-4) rem(4) rgb(9 49 142 / 4%);
-	}
+			@at-root #{$root}:focus-visible & {
+				outline-offset: rem(-4);
+				outline-style: solid;
+				outline-width: rem(2);
+			}
 
-	.primary a > .kol-span-wc,
-	.primary button > .kol-span-wc {
-		background-color: #0e47cb;
-		color: #fff;
-	}
+			@at-root #{$root}:active & {
+				box-shadow:
+					0 rem(2) rem(4) rgb(9 49 142 / 8%),
+					0 0 rem(10) rgb(9 49 142 / 4%),
+					0 rem(4) rem(5) rgb(9 49 142 / 4%),
+					0 rem(-4) rem(4) rgb(9 49 142 / 4%);
+			}
+			@at-root #{$root}:hover & {
+				box-shadow:
+					0 rem(2) rem(4) rgb(9 49 142 / 8%),
+					0 0 rem(10) rgb(9 49 142 / 4%),
+					0 rem(4) rem(5) rgb(9 49 142 / 4%),
+					0 rem(-4) rem(4) rgb(9 49 142 / 4%);
+			}
 
-	.primary a:focus-visible > .kol-span-wc,
-	.primary button:focus-visible > .kol-span-wc {
-		outline-color: #fff;
-	}
+			@at-root #{$root}--secondary & {
+				padding: calc(rem(12) - rem(2)) calc(rem(16) - rem(2));
+			}
+		}
 
-	.primary a:hover > .kol-span-wc,
-	.primary button:hover > .kol-span-wc {
-		background-color: #3e6cd5;
-	}
+		&--primary {
+			--background-color: #0e47cb;
+			--color: #fff;
 
-	.secondary a > .kol-span-wc,
-	.secondary button > .kol-span-wc {
-		background-color: #fff;
-		border: rem(2) solid #0e47cb;
-		color: #0e47cb;
-		padding: calc(rem(12) - rem(2)) calc(rem(16) - rem(2));
-	}
+			&:focus-visible {
+				--outline-color: #fff;
+			}
 
-	.secondary a:focus-visible > .kol-span-wc,
-	.secondary button:focus-visible > .kol-span-wc {
-		box-shadow: inset 0 0 0 rem(4) #0e47cb;
-		outline-color: #fff;
-	}
+			&:hover {
+				--background-color: #3e6cd5;
+			}
+		}
 
-	.secondary a:hover > .kol-span-wc,
-	.secondary button:hover > .kol-span-wc {
-		border-color: #0e47cb;
-		color: #0e47cb;
-	}
+		&--secondary {
+			--background-color: #fff;
+			--border: #{rem(2) solid #0e47cb};
+			--color: #0e47cb;
 
-	.normal a > .kol-span-wc,
-	.normal button > .kol-span-wc {
-		background-color: #fc0;
-		color: #171a22;
-	}
+			&:focus-visible {
+				--box-shadow: inset 0 0 0 rem(4) #0e47cb;
+				--outline-color: #fff;
+			}
 
-	.normal a:focus-visible > .kol-span-wc,
-	.normal button:focus-visible > .kol-span-wc {
-		outline-color: #000;
-	}
+			&:hover {
+				--border-color: #0e47cb;
+				--color: #0e47cb;
+			}
+		}
 
-	.normal a:hover > .kol-span-wc,
-	.normal button:hover > .kol-span-wc {
-		background-color: #fc0;
-		border-color: #fc0;
-	}
+		&--normal {
+			--background-color: #fc0;
+			--color: #171a22;
 
-	.danger a .kol-span-wc,
-	.danger button .kol-span-wc {
-		background-color: var(--color-red);
-		border-color: var(--color-red);
-		color: var(--color-white);
-	}
+			&:focus-visible {
+				--outline-color: #000;
+			}
 
-	.danger a:hover .kol-span-wc,
-	.danger button:hover .kol-span-wc {
-		background-color: var(--color-red);
-		border-color: var(--color-red);
-	}
+			&:hover {
+				--background-color: #fc0;
+				--border-color: #fc0;
+			}
+		}
 
-	.ghost a > .kol-span-wc,
-	.ghost button > .kol-span-wc {
-		color: #0e47cb;
-	}
+		&--danger {
+			--background-color: var(--color-red);
+			--border-color: var(--color-red);
+			--color: var(--color-white);
 
-	.ghost a:focus-visible > .kol-span-wc,
-	.ghost button:focus-visible > .kol-span-wc {
-		outline-color: #0e47cb;
-	}
+			&:hover {
+				--background-color: var(--color-red);
+				--border-color: var(--color-red);
+			}
+		}
 
-	.ghost a:hover > .kol-span-wc,
-	.ghost button:hover > .kol-span-wc {
-		color: #0e47cb;
+		&--ghost {
+			--color: #0e47cb;
+
+			&:focus-visible {
+				--outline-color: #0e47cb;
+			}
+
+			&:hover {
+				--color: #0e47cb;
+			}
+		}
 	}
 }
