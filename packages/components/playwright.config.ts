@@ -30,6 +30,8 @@ export default createConfig({
 	use: {
 		baseURL: TEST_URL,
 		timezoneId: 'Europe/Berlin',
+		screenshot: 'only-on-failure',
+		navigationTimeout: 60 * 1000, // Rendering the sample page sometimes needs longer than 30 seconds, which led to test failures.
 	},
 	webServer: {
 		url: TEST_URL,
