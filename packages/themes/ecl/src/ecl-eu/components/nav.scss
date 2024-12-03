@@ -1,46 +1,69 @@
 @import '../../mixins/rem';
 
 @layer kol-theme-component {
-	:host {
+	.kol-nav {
 		font-family: var(--font-family);
-	}
 
-	.list {
-		display: flex;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
+		li > ul,
+		li + li {
+			border-color: var(--color-blue-75);
+			border-style: solid;
+			border-width: 0;
+			border-top-width: rem(2);
+		}
 
-	.list.vertical {
-		flex-direction: column;
-	}
+		/* custom. */
+		&__navigation {
+			background-color: var(--color-blue);
+		}
 
-	.entry {
-		display: flex;
-	}
+		&__list {
+			display: flex;
+			list-style: none;
+			margin: 0;
+			padding: 0;
 
-	.entry .kol-button-wc:first-child,
-	.entry .kol-link-wc,
-	.entry .kol-span-wc {
-		flex-grow: 1;
-	}
+			&--vertical {
+				flex-direction: column;
+			}
+		}
 
-	/* custom. */
-	nav {
-		background-color: var(--color-blue);
-	}
+		&__entry {
+			display: flex;
 
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
+			&--link {
+				text-decoration: none;
+			}
 
-	.expand-button button {
-		background-color: var(--color-blue-130);
-		margin: auto;
-		height: 100%;
+			.kol-button-wc:first-child,
+			.kol-link-wc,
+			.kol-span-wc {
+				flex-grow: 1;
+			}
+
+			&--expand-button button {
+				background-color: var(--color-blue-130);
+				margin: auto;
+				height: 100%;
+			}
+		}
+
+		:is(.kol-button-wc, .kol-link-wc):focus-within .kol-span-wc {
+			border-color: var(--color-white);
+		}
+
+		:is(.kol-button-wc, .kol-link-wc):focus-within .kol-span-wc,
+		:is(.kol-button-wc, .kol-link-wc):hover .kol-span-wc {
+			text-decoration: underline;
+		}
+
+		&__entry--expand-button kol-icon::part(icon)::before {
+			content: '\eab6';
+		}
+
+		&list--expanded &__entry--expand-button kol-icon::part(icon)::before {
+			content: '\eab4';
+		}
 	}
 
 	.kol-span-wc {
@@ -52,34 +75,5 @@
 		justify-items: start;
 		padding: rem(16);
 		height: 100%;
-	}
-
-	li > ul,
-	li + li {
-		border-color: var(--color-blue-75);
-		border-style: solid;
-		border-width: 0;
-		border-top-width: rem(2);
-	}
-
-	a {
-		text-decoration: none;
-	}
-
-	:is(.kol-button-wc, .kol-link-wc):focus-within .kol-span-wc {
-		border-color: var(--color-white);
-	}
-
-	:is(.kol-button-wc, .kol-link-wc):focus-within .kol-span-wc,
-	:is(.kol-button-wc, .kol-link-wc):hover .kol-span-wc {
-		text-decoration: underline;
-	}
-
-	div > .expand-button kol-icon::part(icon)::before {
-		content: '\eab6';
-	}
-
-	.expanded > div > .expand-button kol-icon::part(icon)::before {
-		content: '\eab4';
 	}
 }
