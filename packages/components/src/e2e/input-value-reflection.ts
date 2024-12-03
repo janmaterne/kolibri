@@ -7,7 +7,7 @@ const testInputValueReflection = <ElementType extends { _value?: unknown } & (HT
 	componentName: string,
 	testValue?: unknown,
 	fillAction?: FillAction,
-	additionalProperties?: string,
+	additionalProperties: string = '',
 	equalityCheck: 'toBe' | 'toEqual' = 'toBe',
 ) => {
 	test(`should reflect the _value property on the web component`, async ({ page }) => {

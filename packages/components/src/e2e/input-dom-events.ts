@@ -2,7 +2,7 @@ import { type E2EPage, test } from '@stencil/playwright';
 import { expect, type Locator, type Page } from '@playwright/test';
 import { INPUTS_SELECTOR } from './utils/inputsSelector';
 
-const testInputDomEvents = (componentName: string, additionalProperties?: string, selectInput?: (page: Page & E2EPage) => Locator) => {
+const testInputDomEvents = (componentName: string, additionalProperties: string = '', selectInput?: (page: Page & E2EPage) => Locator) => {
 	test.describe('DOM events', () => {
 		['click', 'focus', 'blur', 'input', 'change'].forEach((event) => {
 			test(`should emit ${event} when internal input emits ${event}`, async ({ page }) => {

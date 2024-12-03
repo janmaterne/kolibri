@@ -10,7 +10,7 @@ const testInputCallbacks = <ElementType extends { _on?: InputTypeOnDefault } & (
 	testValue: unknown = 'Test Input',
 	fillAction?: FillAction,
 	omittedEvents: string[] = [],
-	additionalProperties?: string,
+	additionalProperties: string = '',
 	selectInput?: (page: Page & E2EPage) => Locator,
 	equalityCheck: 'toBe' | 'toEqual' = 'toBe',
 ) => {
