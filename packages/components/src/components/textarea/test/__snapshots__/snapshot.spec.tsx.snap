@@ -12,7 +12,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;"><textarea accesskey="V" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="input"><textarea accesskey="V" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
   </template>
@@ -30,7 +30,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="input"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
   </template>
@@ -48,7 +48,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;"><textarea autocapitalize="off" autocorrect="off" disabled="" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="input"><textarea autocapitalize="off" autocorrect="off" disabled="" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
   </template>
@@ -69,7 +69,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
       <span class="hint" id="id-nonce-hint">
         Hint
       </span>
-      <div class="input" style="position: relative;"><textarea aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="input"><textarea aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
   </template>
@@ -87,7 +87,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="icon-left icon-right input" style="position: relative;">
+      <div class="icon-left icon-right input">
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-left" _label="" _tabindex="-1"></kol-icon><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-right" _label="" _tabindex="-1"></kol-icon>
       </div>
@@ -107,7 +107,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="icon-left input" style="position: relative;">
+      <div class="icon-left input">
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-left" _label="" _tabindex="-1"></kol-icon><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
@@ -126,7 +126,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="icon-right input" style="position: relative;"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="icon-right input"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-right" _label="" _tabindex="-1"></kol-icon>
       </div>
     </div>
@@ -145,7 +145,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="input"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
   </template>
@@ -163,7 +163,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="input"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
   </template>
@@ -181,7 +181,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" readonly="" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="input"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" readonly="" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
   </template>
@@ -200,7 +200,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="input"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
   </template>
@@ -218,7 +218,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="input"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
   </template>
@@ -236,7 +236,7 @@ exports[`kol-textarea should render with _label="Label" _name="field" _placehold
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
+      <div class="input"><textarea autocapitalize="off" autocorrect="off" id="id-nonce" name="field" placeholder="Hier steht ein Platzhaltertext" rows="5" value="Value" style="resize: vertical;"></textarea>
       </div>
     </div>
   </template>

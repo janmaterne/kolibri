@@ -12,7 +12,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select accesskey="V" autocapitalize="off" autocorrect="off" id="id-nonce" name="field">
@@ -44,7 +44,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" name="field">
@@ -76,7 +76,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" disabled="" id="id-nonce" name="field">
@@ -111,7 +111,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
       <span class="hint" id="id-nonce-hint">
         Hint
       </span>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" id="id-nonce" name="field">
@@ -143,7 +143,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="icon-left icon-right input" style="position: relative;">
+      <div class="icon-left icon-right input">
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-left" _label="" _tabindex="-1"></kol-icon>
         <form class="input-slot">
           <input hidden="" type="submit">
@@ -177,7 +177,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="icon-left input" style="position: relative;">
+      <div class="icon-left input">
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-left" _label="" _tabindex="-1"></kol-icon>
         <form class="input-slot">
           <input hidden="" type="submit">
@@ -210,7 +210,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="icon-right input" style="position: relative;">
+      <div class="icon-right input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" name="field">
@@ -243,7 +243,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" name="field">
@@ -275,7 +275,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" name="field">
@@ -308,7 +308,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select accesskey="V" autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field">
@@ -340,7 +340,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field">
@@ -372,7 +372,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" disabled="" id="id-nonce" multiple="" name="field">
@@ -407,7 +407,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
       <span class="hint" id="id-nonce-hint">
         Hint
       </span>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field">
@@ -439,7 +439,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="icon-left icon-right input" style="position: relative;">
+      <div class="icon-left icon-right input">
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-left" _label="" _tabindex="-1"></kol-icon>
         <form class="input-slot">
           <input hidden="" type="submit">
@@ -473,7 +473,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="icon-left input" style="position: relative;">
+      <div class="icon-left input">
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-left" _label="" _tabindex="-1"></kol-icon>
         <form class="input-slot">
           <input hidden="" type="submit">
@@ -506,7 +506,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="icon-right input" style="position: relative;">
+      <div class="icon-right input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field">
@@ -539,7 +539,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field">
@@ -571,7 +571,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field">
@@ -603,7 +603,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field">
@@ -636,7 +636,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field">
@@ -668,7 +668,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field">
@@ -700,7 +700,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" multiple="" name="field">
@@ -732,7 +732,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" name="field">
@@ -765,7 +765,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" name="field">
@@ -797,7 +797,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" name="field">
@@ -829,7 +829,7 @@ exports[`kol-select should render with _label="Label" _name="field" _placeholder
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <form class="input-slot">
           <input hidden="" type="submit">
           <select autocapitalize="off" autocorrect="off" id="id-nonce" name="field">

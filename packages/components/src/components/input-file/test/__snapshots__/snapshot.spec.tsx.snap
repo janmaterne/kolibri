@@ -12,7 +12,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input accesskey="V" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </div>
@@ -31,7 +31,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </div>
@@ -50,7 +50,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input autocapitalize="off" autocorrect="off" disabled="" id="id-nonce" name="field" type="file" value="File">
       </div>
     </div>
@@ -72,7 +72,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
       <span class="hint" id="id-nonce-hint">
         Hint
       </span>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input aria-describedby="id-nonce-hint" autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </div>
@@ -91,7 +91,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="icon-left icon-right input" style="position: relative;">
+      <div class="icon-left icon-right input">
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-left" _label="" _tabindex="-1"></kol-icon>
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-right" _label="" _tabindex="-1"></kol-icon>
@@ -112,7 +112,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="icon-left input" style="position: relative;">
+      <div class="icon-left input">
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-left" _label="" _tabindex="-1"></kol-icon>
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
@@ -132,7 +132,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="icon-right input" style="position: relative;">
+      <div class="icon-right input">
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
         <kol-icon _icons="codicon codicon-codicon codicon-arrow-right" _label="" _tabindex="-1"></kol-icon>
       </div>
@@ -152,7 +152,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </div>
@@ -171,7 +171,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </div>
@@ -190,7 +190,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </div>
@@ -210,7 +210,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </div>
@@ -229,7 +229,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
         <kol-button-wc _hidelabel="" _label="einblenden" _tabindex="-1" tabindex="0"></kol-button-wc>
       </div>
@@ -249,7 +249,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </div>
@@ -268,7 +268,7 @@ exports[`kol-input-file should render with _label="Label" _name="field" _placeho
           </span>
         </span>
       </label>
-      <div class="input" style="position: relative;">
+      <div class="input">
         <input autocapitalize="off" autocorrect="off" id="id-nonce" name="field" type="file" value="File">
       </div>
     </div>

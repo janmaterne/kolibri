@@ -31,7 +31,7 @@ const KolInputContainerFc: FC<InputContainerProps> = (props, children) => {
 	const { class: classNames, startAdornment, endAdornment, ...other } = props;
 
 	return (
-		<div class={clsx('input', classNames)} style={{ position: 'relative' }} {...other}>
+		<div class={clsx('input', classNames)} {...other}>
 			{renderInputAdornment(startAdornment)}
 			{children}
 			{renderInputAdornment(endAdornment)}
