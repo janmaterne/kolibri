@@ -97,7 +97,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 	const hasError = checkHasError(msg, touched, readOnly);
 	const showFormFieldMsg = Boolean(hasError || (msg?.type !== 'error' && msg?.description));
 	const badgeText = buildBadgeTextString(accessKey, shortKey);
-	const useTooltopInsteadOfLabel = !hasExpertSlot && hideLabel;
+	const useTooltipInsteadOfLabel = !hasExpertSlot && hideLabel;
 
 	const stateCssClasses = {
 		disabled: Boolean(disabled),
@@ -126,7 +126,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		</>,
 		<>
 			{children}
-			{useTooltopInsteadOfLabel && (
+			{useTooltipInsteadOfLabel && (
 				<KolFormFieldTooltipFc {...(formFieldTooltipProps || {})} id={id} label={label} hideLabel={hideLabel} align={tooltipAlign} badgeText={badgeText} />
 			)}
 		</>,
