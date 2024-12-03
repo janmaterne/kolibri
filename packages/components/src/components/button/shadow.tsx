@@ -57,7 +57,7 @@ export class KolButton implements ButtonProps, FocusableElement {
 
 	public render(): JSX.Element {
 		return (
-			<Host class="kol-button">
+			<Host>
 				<KolButtonWcTag
 					ref={this.catchRef}
 					class={{

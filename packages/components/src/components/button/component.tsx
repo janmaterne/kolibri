@@ -121,6 +121,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					aria-label={this.state._hideLabel && typeof this.state._label === 'string' ? this.state._label : undefined}
 					aria-selected={mapStringOrBoolean2String(this.state._ariaSelected)}
 					class={{
+						'kol-button': true,
 						button: true,
 						disabled: this.state._disabled === true,
 						[this.state._variant as string]: this.state._variant !== 'custom',
@@ -138,7 +139,7 @@ export class KolButtonWc implements ButtonAPI, FocusableElement {
 					type={this.state._type}
 				>
 					<KolSpanFc
-						class="button-inner"
+						class="button-inner kol-button__text"
 						badgeText={badgeText}
 						icons={this.state._icons}
 						hideLabel={this.state._hideLabel}
