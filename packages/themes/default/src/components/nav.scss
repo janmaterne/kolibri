@@ -61,24 +61,24 @@
 						font-weight: bold;
 					}
 				}
+			}
 
-				&--expand-button {
-					margin-left: rem(8);
+			&--expand-button {
+				margin-left: rem(8);
 
-					.button {
-						&:hover {
-							background-color: var(--color-primary);
-							color: var(--color-light);
-						}
-
-						&:focus-visible {
-							@include focus-outline;
-						}
+				.button {
+					&:hover {
+						background-color: var(--color-primary);
+						color: var(--color-light);
 					}
 
-					.button-inner {
-						justify-content: center;
+					&:focus-visible {
+						@include focus-outline;
 					}
+				}
+
+				.button-inner {
+					justify-content: center;
 				}
 			}
 		}
