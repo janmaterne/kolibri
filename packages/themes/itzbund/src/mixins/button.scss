@@ -19,8 +19,8 @@
 		transition-property: background, color, border-color;
 	}
 
-	.kol-link-wc.primary > a > .kol-span-wc,
-	.kol-link-wc.primary > a:disabled:hover > .kol-span-wc,
+	.kol-link.primary > a > .kol-span-wc,
+	.kol-link.primary > a:disabled:hover > .kol-span-wc,
 	button.primary > .kol-span-wc,
 	button.primary:disabled:hover > .kol-span-wc {
 		background-color: var(--color-petrol);
@@ -28,16 +28,16 @@
 		color: var(--color-weiss);
 	}
 
-	.kol-link-wc.primary > a:hover > .kol-span-wc,
-	.kol-link-wc.primary > a:focus > .kol-span-wc,
+	.kol-link.primary > a:hover > .kol-span-wc,
+	.kol-link.primary > a:focus > .kol-span-wc,
 	button.primary:hover > .kol-span-wc,
 	button.primary:focus > .kol-span-wc {
 		background-color: var(--color-achat);
 		border-color: var(--color-achat);
 	}
 
-	.kol-link-wc.secondary > a > .kol-span-wc,
-	.kol-link-wc.secondary > a:disabled:hover > .kol-span-wc,
+	.kol-link.secondary > a > .kol-span-wc,
+	.kol-link.secondary > a:disabled:hover > .kol-span-wc,
 	button.secondary > .kol-span-wc,
 	button.secondary:disabled:hover > .kol-span-wc {
 		background-color: var(--color-weiss);
@@ -45,8 +45,8 @@
 		color: var(--color-petrol);
 	}
 
-	.kol-link-wc.secondary > a:hover > .kol-span-wc,
-	.kol-link-wc.secondary > a:focus > .kol-span-wc,
+	.kol-link.secondary > a:hover > .kol-span-wc,
+	.kol-link.secondary > a:focus > .kol-span-wc,
 	button.secondary:hover > .kol-span-wc,
 	button.secondary:focus > .kol-span-wc {
 		background-color: var(--color-petrol);
@@ -54,8 +54,8 @@
 		color: var(--color-weiss);
 	}
 
-	.kol-link-wc.normal > a > .kol-span-wc,
-	.kol-link-wc.normal > a:disabled:hover > .kol-span-wc,
+	.kol-link.normal > a > .kol-span-wc,
+	.kol-link.normal > a:disabled:hover > .kol-span-wc,
 	button.normal > .kol-span-wc,
 	button.normal:disabled:hover > .kol-span-wc {
 		background-color: var(--color-weiss);
@@ -63,8 +63,8 @@
 		color: var(--color-anthrazit);
 	}
 
-	.kol-link-wc.normal > a:hover > .kol-span-wc,
-	.kol-link-wc.normal > a:focus > .kol-span-wc,
+	.kol-link.normal > a:hover > .kol-span-wc,
+	.kol-link.normal > a:focus > .kol-span-wc,
 	button.normal:hover > .kol-span-wc,
 	button.normal:focus > .kol-span-wc {
 		background-color: var(--color-anthrazit);
@@ -72,8 +72,8 @@
 		color: var(--color-weiss);
 	}
 
-	.kol-link-wc.danger > a > .kol-span-wc,
-	.kol-link-wc.danger > a:disabled:hover > .kol-span-wc,
+	.kol-link.danger > a > .kol-span-wc,
+	.kol-link.danger > a:disabled:hover > .kol-span-wc,
 	button.danger > .kol-span-wc,
 	button.danger:disabled:hover > .kol-span-wc {
 		background-color: var(--color-weiss);
@@ -81,8 +81,8 @@
 		color: var(--color-blut);
 	}
 
-	.kol-link-wc.danger > a:hover > .kol-span-wc,
-	.kol-link-wc.danger > a:focus > .kol-span-wc,
+	.kol-link.danger > a:hover > .kol-span-wc,
+	.kol-link.danger > a:focus > .kol-span-wc,
 	button.danger:hover > .kol-span-wc,
 	button.danger:focus > .kol-span-wc {
 		background-color: var(--color-blut);
@@ -90,8 +90,8 @@
 		color: var(--color-weiss);
 	}
 
-	.kol-link-wc.ghost > a > .kol-span-wc,
-	.kol-link-wc.ghost > a:disabled:hover > .kol-span-wc,
+	.kol-link.ghost > a > .kol-span-wc,
+	.kol-link.ghost > a:disabled:hover > .kol-span-wc,
 	button.ghost > .kol-span-wc,
 	button.ghost:disabled:hover > .kol-span-wc {
 		background-color: var(--color-ghost);
@@ -99,8 +99,8 @@
 		color: var(--color-anthrazit);
 	}
 
-	.kol-link-wc.ghost > a:hover > .kol-span-wc,
-	.kol-link-wc.ghost > a:focus > .kol-span-wc,
+	.kol-link.ghost > a:hover > .kol-span-wc,
+	.kol-link.ghost > a:focus > .kol-span-wc,
 	button.ghost:hover > .kol-span-wc,
 	button.ghost:focus > .kol-span-wc {
 		background-color: var(--color-ghost);
