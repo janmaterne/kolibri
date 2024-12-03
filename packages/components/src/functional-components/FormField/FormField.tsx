@@ -109,7 +109,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		'hidden-error': Boolean(hideError),
 	};
 
-	let componentList = [
+	const componentList = [
 		<>
 			{showLabel && (
 				<KolFormFieldLabelFc
@@ -133,7 +133,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 	];
 
 	if (reverseLabelInput) {
-		componentList = componentList.reverse();
+		componentList.reverse();
 	}
 
 	return (
