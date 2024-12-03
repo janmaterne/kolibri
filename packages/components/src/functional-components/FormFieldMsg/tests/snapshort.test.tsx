@@ -1,11 +1,12 @@
 import { h } from '@stencil/core';
 import FormFieldMsgFc from '../FormFieldMsg';
 import { renderFunctionalComponentToSpecPage } from '../../../utils/testing';
+import type { InternMsgPropType } from '../../../schema';
 
 describe('FormFieldMsgFc', () => {
 	it('should render with all props', async () => {
 		const alert = true;
-		const msg = { _description: 'This is an error message' };
+		const msg: InternMsgPropType = { description: 'This is an error message' };
 		const id = 'test-id';
 		const classNames = 'custom-class';
 		const page = await renderFunctionalComponentToSpecPage(() => <FormFieldMsgFc alert={alert} msg={msg} id={id} class={classNames} />);
@@ -35,9 +36,9 @@ describe('FormFieldMsgFc', () => {
 	});
 
 	it('should render the message correctly', async () => {
-		const msg = { _description: 'This is an error message' };
+		const msg: InternMsgPropType = { description: 'This is an error message' };
 		const page = await renderFunctionalComponentToSpecPage(() => <FormFieldMsgFc id="test-id" msg={msg} />);
 
-		expect(page.root?.textContent).toBe(msg._description);
+		expect(page.root?.textContent).toBe(msg.description);
 	});
 });

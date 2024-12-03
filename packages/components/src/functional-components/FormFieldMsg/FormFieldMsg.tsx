@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { AlertPropType, HideErrorPropType, IdPropType, MsgPropType } from '../../schema';
+import type { AlertPropType, HideErrorPropType, IdPropType, InternMsgPropType } from '../../schema';
 import type { FunctionalComponent } from '@stencil/core';
 import { h } from '@stencil/core';
 import KolAlertFc from '../Alert';
@@ -7,7 +7,7 @@ import type { JSXBase } from '@stencil/core/internal';
 
 type FormFieldMsgProps = JSXBase.HTMLAttributes<HTMLDivElement> & {
 	alert?: AlertPropType;
-	msg?: MsgPropType;
+	msg?: InternMsgPropType;
 	hideError?: HideErrorPropType;
 	id: IdPropType;
 };
@@ -34,7 +34,7 @@ const FormFieldMsgFc: FunctionalComponent<FormFieldMsgProps> = ({ alert, msg, hi
 		{...other}
 		aria-hidden="true"
 	>
-		{msg?._description || undefined}
+		{msg?.description || undefined}
 	</KolAlertFc>
 );
 

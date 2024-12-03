@@ -7,23 +7,23 @@ import KolFormFieldCounterFc from '../FormFieldCounter';
 import KolFormFieldTooltipFc from '../FormFieldTooltip';
 import type { JSXBase } from '@stencil/core/internal';
 import clsx from 'clsx';
-import type { AlignPropType, MsgPropType } from '../../schema';
+import type { AlignPropType, InternMsgPropType } from '../../schema';
 import { buildBadgeTextString, showExpertSlot } from '../../schema';
 
-function getModifierClassNameByMsgType(msg?: { _type?: string }) {
-	if (msg?._type) {
+function getModifierClassNameByMsgType(msg?: { type?: string }) {
+	if (msg?.type) {
 		return {
 			default: 'msg-type-default',
 			info: 'msg-type-info',
 			success: 'msg-type-success',
 			warning: 'msg-type-warning',
 			error: 'msg-type-error',
-		}[msg?._type];
+		}[msg?.type];
 	}
 }
 
-function checkHasError(msg?: MsgPropType, touched?: boolean, readOnly?: boolean): boolean {
-	const isMessageValidError = Boolean(msg?._type === 'error' && msg._description && msg._description?.length > 0);
+function checkHasError(msg?: InternMsgPropType, touched?: boolean, readOnly?: boolean): boolean {
+	const isMessageValidError = Boolean(msg?.type === 'error' && msg.description && msg.description?.length > 0);
 	const hasError = !readOnly && isMessageValidError && touched === true;
 
 	return hasError;
@@ -34,7 +34,7 @@ export type FormFieldProps = Omit<JSXBase.HTMLAttributes<HTMLElement>, 'id'> & {
 	id: string;
 	alert?: boolean;
 	disabled?: boolean;
-	msg?: MsgPropType;
+	msg?: InternMsgPropType;
 	tooltipAlign?: AlignPropType;
 	hint?: string;
 	label: string;
@@ -95,7 +95,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 	const showHint = !renderNoHint;
 	const hasExpertSlot = showExpertSlot(label);
 	const hasError = checkHasError(msg, touched, readOnly);
-	const showFormFieldMsg = Boolean(hasError || (msg?._type !== 'error' && msg?._description));
+	const showFormFieldMsg = Boolean(hasError || (msg?.type !== 'error' && msg?.description));
 	const badgeText = buildBadgeTextString(accessKey, shortKey);
 	const useTooltopInsteadOfLabel = !hasExpertSlot && hideLabel;
 

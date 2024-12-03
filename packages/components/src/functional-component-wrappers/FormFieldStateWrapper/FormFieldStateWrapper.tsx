@@ -1,16 +1,17 @@
 import { h, type FunctionalComponent as FC } from '@stencil/core';
 import KolFormFieldFc, { type FormFieldProps } from '../../functional-components/FormField';
-import type {
-	InputColorStates,
-	InputEmailStates,
-	InputFileStates,
-	InputNumberStates,
-	InputPasswordStates,
-	InputRangeStates,
-	InputTextStates,
-	InputCheckboxStates,
-	InputRadioStates,
-	SelectStates,
+import {
+	type InputColorStates,
+	type InputEmailStates,
+	type InputFileStates,
+	type InputNumberStates,
+	type InputPasswordStates,
+	type InputRangeStates,
+	type InputTextStates,
+	type InputCheckboxStates,
+	type InputRadioStates,
+	type SelectStates,
+	convertMsgToInternMsg,
 } from '../../schema';
 
 type InputState =
@@ -33,7 +34,7 @@ function getFormFieldProps(state: InputState): FormFieldProps {
 	const props: FormFieldProps = {
 		id: state._id,
 		disabled: state._disabled,
-		msg: state._msg,
+		msg: convertMsgToInternMsg(state._msg),
 		hint: state._hint,
 		label: state._label,
 		hideLabel: state._hideLabel,
