@@ -8,7 +8,7 @@ export type SelectStateWrapperProps = Partial<SelectProps> & {
 	state: SelectStates;
 };
 
-function getTextAreaProps(state: SelectStates): SelectProps {
+function getSelectProps(state: SelectStates): SelectProps {
 	const { ariaDescribedBy } = getRenderStates(state);
 
 	const props: SelectProps = {
@@ -29,8 +29,8 @@ function getTextAreaProps(state: SelectStates): SelectProps {
 	return props;
 }
 
-const TextAreaStateWrapper: FC<SelectStateWrapperProps> = ({ state, ...other }) => {
-	return <KolSelectFc {...getTextAreaProps(state)} {...other} />;
+const SelectStateWrapper: FC<SelectStateWrapperProps> = ({ state, ...other }) => {
+	return <KolSelectFc {...getSelectProps(state)} {...other} />;
 };
 
-export default TextAreaStateWrapper;
+export default SelectStateWrapper;
