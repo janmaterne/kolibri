@@ -27,8 +27,8 @@ import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
 import { InputRadioController } from './controller';
 import { propagateSubmitEventToForm } from '../form/controller';
 
-import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
-import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
+import KolFormFieldStateWrapperFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolInputStateWrapperFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
 import KolFormFieldHintFc from '../../functional-components/FormFieldHint';
 
 /**
@@ -92,7 +92,11 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 	}
 
 	public render(): JSX.Element {
-		return <KolFormFieldFc {...this.getFormFieldProps()}>{this.state._options.map((option, index) => this.renderOption(option, index))}</KolFormFieldFc>;
+		return (
+			<KolFormFieldStateWrapperFc {...this.getFormFieldProps()}>
+				{this.state._options.map((option, index) => this.renderOption(option, index))}
+			</KolFormFieldStateWrapperFc>
+		);
 	}
 
 	private getOptionProps(option: RadioOption<StencilUnknown>): FormFieldStateWrapperProps {
@@ -151,9 +155,9 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 		const selected = this.state._value === option.value;
 
 		return (
-			<KolFormFieldFc key={customId} {...this.getOptionProps(option)} renderNoLabel>
+			<KolFormFieldStateWrapperFc key={customId} {...this.getOptionProps(option)} renderNoLabel>
 				<div class="radio-input-wrapper">
-					<KolInputFc {...this.getInputProps(option, index, selected)} />
+					<KolInputStateWrapperFc {...this.getInputProps(option, index, selected)} />
 					<label
 						class="radio-label"
 						htmlFor={`${customId}`}
@@ -169,7 +173,7 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 						</span>
 					</label>
 				</div>
-			</KolFormFieldFc>
+			</KolFormFieldStateWrapperFc>
 		);
 	}
 

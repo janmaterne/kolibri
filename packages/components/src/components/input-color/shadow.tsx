@@ -21,8 +21,8 @@ import type { JSX } from '@stencil/core';
 import { Component, Element, h, Method, Prop, State, Watch } from '@stencil/core';
 
 import { nonce } from '../../utils/dev.utils';
-import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
-import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
+import KolFormFieldStateWrapperFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolInputStateWrapperFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
 import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 import { InputColorController } from './controller';
 
@@ -96,11 +96,11 @@ export class KolInputColor implements InputColorAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		return (
-			<KolFormFieldFc {...this.getFormFieldProps()}>
+			<KolFormFieldStateWrapperFc {...this.getFormFieldProps()}>
 				<KolInputContainerFc state={this.state}>
-					<KolInputFc {...this.getInputProps()} />
+					<KolInputStateWrapperFc {...this.getInputProps()} />
 				</KolInputContainerFc>
-			</KolFormFieldFc>
+			</KolFormFieldStateWrapperFc>
 		);
 	}
 

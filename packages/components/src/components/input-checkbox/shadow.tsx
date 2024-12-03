@@ -29,8 +29,8 @@ import { tryToDispatchKoliBriEvent } from '../../utils/events';
 import { InputCheckboxController } from './controller';
 import type { FocusableElement } from '../../schema/interfaces/FocusableElement';
 
-import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
-import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
+import KolFormFieldStateWrapperFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolInputStateWrapperFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
 import KolIconFc from '../../functional-components/Icon';
 
 /**
@@ -133,14 +133,14 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		return (
-			<KolFormFieldFc {...this.getFormFieldProps()}>
+			<KolFormFieldStateWrapperFc {...this.getFormFieldProps()}>
 				<div class="input">
 					<div class="checkbox-container">
 						<KolIconFc {...this.getIconProps()} />
-						<KolInputFc {...this.getInputProps()} />
+						<KolInputStateWrapperFc {...this.getInputProps()} />
 					</div>
 				</div>
-			</KolFormFieldFc>
+			</KolFormFieldStateWrapperFc>
 		);
 	}
 

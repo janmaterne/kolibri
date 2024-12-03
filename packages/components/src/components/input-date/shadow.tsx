@@ -28,8 +28,8 @@ import { deprecatedHint } from '../../schema';
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
-import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
-import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
+import KolFormFieldStateWrapperFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolInputStateWrapperFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
 import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 import { InputDateController } from './controller';
 
@@ -158,11 +158,11 @@ export class KolInputDate implements InputDateAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		return (
-			<KolFormFieldFc {...this.getFormFieldProps()}>
+			<KolFormFieldStateWrapperFc {...this.getFormFieldProps()}>
 				<KolInputContainerFc state={this.state}>
-					<KolInputFc {...this.getInputProps()} />
+					<KolInputStateWrapperFc {...this.getInputProps()} />
 				</KolInputContainerFc>
-			</KolFormFieldFc>
+			</KolFormFieldStateWrapperFc>
 		);
 	}
 

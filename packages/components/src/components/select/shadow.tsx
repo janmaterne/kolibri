@@ -26,8 +26,8 @@ import { nonce } from '../../utils/dev.utils';
 import { stopPropagation, tryToDispatchKoliBriEvent } from '../../utils/events';
 import { SelectController } from './controller';
 import { propagateSubmitEventToForm } from '../form/controller';
-import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
-import KolSelectFc, { type SelectStateWrapperProps } from '../../functional-component-wrappers/SelectStateWrapper';
+import KolFormFieldStateWrapperFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolSelectStateWrapperFc, { type SelectStateWrapperProps } from '../../functional-component-wrappers/SelectStateWrapper';
 import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 
 /**
@@ -100,7 +100,7 @@ export class KolSelect implements SelectAPI, FocusableElement {
 
 	public render(): JSX.Element {
 		return (
-			<KolFormFieldFc {...this.getFormFieldProps()}>
+			<KolFormFieldStateWrapperFc {...this.getFormFieldProps()}>
 				<KolInputContainerFc state={this.state}>
 					{/* deprecated: remove from theme and replace/refactor 'flex-grow: 1;' */}
 					<form
@@ -114,10 +114,10 @@ export class KolSelect implements SelectAPI, FocusableElement {
 						}}
 					>
 						<input type="submit" hidden />
-						<KolSelectFc {...this.getSelectProps()} />
+						<KolSelectStateWrapperFc {...this.getSelectProps()} />
 					</form>
 				</KolInputContainerFc>
-			</KolFormFieldFc>
+			</KolFormFieldStateWrapperFc>
 		);
 	}
 

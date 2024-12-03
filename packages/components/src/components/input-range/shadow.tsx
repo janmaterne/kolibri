@@ -23,8 +23,8 @@ import type {
 
 import { nonce } from '../../utils/dev.utils';
 import { propagateSubmitEventToForm } from '../form/controller';
-import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
-import KolInputFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
+import KolFormFieldStateWrapperFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
+import KolInputStateWrapperFc, { type InputStateWrapperProps } from '../../functional-component-wrappers/InputStateWrapper';
 import KolInputContainerFc from '../../functional-component-wrappers/InputContainerStateWrapper';
 import { InputRangeController } from './controller';
 import KolSuggestionsFc from '../../functional-components/Suggestions';
@@ -182,17 +182,17 @@ export class KolInputRange implements InputRangeAPI, FocusableElement {
 		};
 
 		return (
-			<KolFormFieldFc {...this.getFormFieldProps()}>
+			<KolFormFieldStateWrapperFc {...this.getFormFieldProps()}>
 				<KolInputContainerFc state={this.state}>
 					<div id="input" class="input-slot">
 						<div class="inputs-wrapper" style={inputsWrapperStyle}>
-							<KolInputFc {...this.getInputRangeProps()} />
-							<KolInputFc {...this.getInputNumberProps()} />
+							<KolInputStateWrapperFc {...this.getInputRangeProps()} />
+							<KolInputStateWrapperFc {...this.getInputNumberProps()} />
 						</div>
 						{this.hasSuggestions && <KolSuggestionsFc id={this.state._id} suggestions={this.state._suggestions} />}
 					</div>
 				</KolInputContainerFc>
-			</KolFormFieldFc>
+			</KolFormFieldStateWrapperFc>
 		);
 	}
 
