@@ -4,7 +4,7 @@ import { KolSelect } from '@public-ui/react';
 
 import { ERROR_MSG } from '../../../shares/constants';
 
-import type { Components, SelectOption } from '@public-ui/components';
+import type { Components, Optgroup, SelectOption, StencilUnknown } from '@public-ui/components';
 import { COUNTRY_OPTIONS } from '../../../shares/country';
 
 const SALUTATION_OPTIONS: SelectOption<string>[] = [
@@ -27,17 +27,16 @@ const SALUTATION_OPTIONS: SelectOption<string>[] = [
 	},
 ];
 
-const groupedOptions: Record<string, any> = COUNTRY_OPTIONS.reduce(
-	(acc, option) => {
-		const firstLetter = (option.label as string).charAt(0).toUpperCase();
-		if (!acc[firstLetter]) {
-			acc[firstLetter] = { label: firstLetter, options: [] };
-		}
-		acc[firstLetter].options.push(option);
-		return acc;
-	},
-	{} as Record<string, { label: string; options: SelectOption<string>[] }>,
-);
+type GroupedOptionsType = Record<string, Optgroup<StencilUnknown>>;
+
+const groupedOptions: GroupedOptionsType = COUNTRY_OPTIONS.reduce((acc, option) => {
+	const firstLetter = (option.label as string).charAt(0).toUpperCase();
+	if (!acc[firstLetter]) {
+		acc[firstLetter] = { label: firstLetter, options: [] };
+	}
+	acc[firstLetter].options.push({ label: option.label, value: option.label });
+	return acc;
+}, {} as GroupedOptionsType);
 
 const groupedOptionsArray = Object.values(groupedOptions);
 
