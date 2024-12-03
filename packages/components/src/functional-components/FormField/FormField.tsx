@@ -52,11 +52,11 @@ export type FormFieldProps = Omit<JSXBase.HTMLAttributes<HTMLElement>, 'id'> & {
 
 	reverseLabelInput?: boolean;
 
-	FormFieldLabelProps?: JSXBase.HTMLAttributes<Omit<HTMLLabelElement | HTMLLegendElement, 'id' | 'hidden' | 'htmlFor'>> & { component?: 'label' | 'legend' };
-	FormFieldHintProps?: JSXBase.HTMLAttributes<HTMLElement>;
-	FormFieldTooltipProps?: Pick<JSXBase.HTMLAttributes<HTMLElement>, 'class'>;
-	FormFieldMsgProps?: JSXBase.HTMLAttributes<HTMLDivElement>;
-	FormFieldCounterProps?: JSXBase.HTMLAttributes<HTMLSpanElement>;
+	formFieldLabelProps?: JSXBase.HTMLAttributes<Omit<HTMLLabelElement | HTMLLegendElement, 'id' | 'hidden' | 'htmlFor'>> & { component?: 'label' | 'legend' };
+	formFieldHintProps?: JSXBase.HTMLAttributes<HTMLElement>;
+	formFieldTooltipProps?: Pick<JSXBase.HTMLAttributes<HTMLElement>, 'class'>;
+	formFieldMsgProps?: JSXBase.HTMLAttributes<HTMLDivElement>;
+	formFieldCounterProps?: JSXBase.HTMLAttributes<HTMLSpanElement>;
 } & {
 	[key: `data-${string}`]: unknown;
 };
@@ -84,11 +84,11 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		readOnly,
 		touched,
 		reverseLabelInput,
-		FormFieldLabelProps,
-		FormFieldHintProps,
-		FormFieldTooltipProps,
-		FormFieldMsgProps,
-		FormFieldCounterProps,
+		formFieldLabelProps,
+		formFieldHintProps,
+		formFieldTooltipProps,
+		formFieldMsgProps,
+		formFieldCounterProps,
 		...other
 	} = props;
 	const showLabel = !renderNoLabel;
@@ -113,7 +113,7 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 		<>
 			{showLabel && (
 				<KolFormFieldLabelFc
-					{...(FormFieldLabelProps || {})}
+					{...(formFieldLabelProps || {})}
 					id={id}
 					hasExpertSlot={hasExpertSlot}
 					hideLabel={hideLabel}
@@ -122,12 +122,12 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 					shortKey={shortKey}
 				/>
 			)}
-			{showHint && <KolFormFieldHintFc {...(FormFieldHintProps || {})} id={id} hint={hint} />}
+			{showHint && <KolFormFieldHintFc {...(formFieldHintProps || {})} id={id} hint={hint} />}
 		</>,
 		<>
 			{children}
 			{useTooltopInsteadOfLabel && (
-				<KolFormFieldTooltipFc {...(FormFieldTooltipProps || {})} id={id} label={label} hideLabel={hideLabel} align={tooltipAlign} badgeText={badgeText} />
+				<KolFormFieldTooltipFc {...(formFieldTooltipProps || {})} id={id} label={label} hideLabel={hideLabel} align={tooltipAlign} badgeText={badgeText} />
 			)}
 		</>,
 	];
@@ -143,8 +143,8 @@ const KolFormFieldFc: FC<FormFieldProps> = (props, children) => {
 			{...other}
 		>
 			{componentList}
-			{showFormFieldMsg && <KolFormFieldMsgFc {...(FormFieldMsgProps || {})} id={id} alert={alert} msg={msg} hideError={hideError} />}
-			{counter ? <KolFormFieldCounterFc {...(FormFieldCounterProps || {})} {...counter} /> : null}
+			{showFormFieldMsg && <KolFormFieldMsgFc {...(formFieldMsgProps || {})} id={id} alert={alert} msg={msg} hideError={hideError} />}
+			{counter ? <KolFormFieldCounterFc {...(formFieldCounterProps || {})} {...counter} /> : null}
 			{anotherChildren}
 		</Component>
 	);

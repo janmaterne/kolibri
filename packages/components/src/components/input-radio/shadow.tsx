@@ -77,7 +77,7 @@ export class KolInputRadio implements InputRadioAPI, FocusableElement {
 		return {
 			state: this.state,
 			component: 'fieldset',
-			FormFieldLabelProps: {
+			formFieldLabelProps: {
 				component: 'legend',
 				class: 'block w-full mb-1 leading-normal',
 			},
