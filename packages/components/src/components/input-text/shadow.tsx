@@ -19,6 +19,7 @@ import type {
 	MsgPropType,
 	NamePropType,
 	ShortKeyPropType,
+	SpellCheckPropType,
 	Stringified,
 	SuggestionsPropType,
 	SyncValueBySelectorPropType,
@@ -253,6 +254,11 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 	@Prop() public _shortKey?: ShortKeyPropType;
 
 	/**
+	 * Defines whether the browser should check the spelling and grammar.
+	 */
+	@Prop() public _spellCheck?: SpellCheckPropType;
+
+	/**
 	 * Suggestions to provide for the input.
 	 */
 	@Prop() public _suggestions?: SuggestionsPropType;
@@ -421,6 +427,11 @@ export class KolInputText implements InputTextAPI, FocusableElement {
 	@Watch('_shortKey')
 	public validateShortKey(value?: ShortKeyPropType): void {
 		this.controller.validateShortKey(value);
+	}
+
+	@Watch('_spellCheck')
+	public validateSpellCheck(value?: SpellCheckPropType): void {
+		this.controller.validateSpellCheck(value);
 	}
 
 	@Watch('_suggestions')

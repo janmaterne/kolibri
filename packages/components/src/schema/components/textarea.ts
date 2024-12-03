@@ -16,15 +16,13 @@ import type {
 	PropRequired,
 	PropRows,
 	PropShortKey,
+	PropSpellCheck,
 	PropSyncValueBySelector,
 	PropTouched,
 } from '../props';
 import type { InputTypeOnDefault, KoliBriHorizontalIcons, Stringified } from '../types';
 
-/**
- * TODO: In version 3 (v3), horizontal resizing is abolished. The corresponding property is then reduced to the properties `none` (default) and `vertical`.
- */
-export const cssResizeOptions = ['both', 'horizontal', 'vertical', 'none'] as const;
+export const cssResizeOptions = ['vertical', 'none'] as const;
 export type CSSResize = (typeof cssResizeOptions)[number];
 
 type RequiredProps = PropLabelWithExpertSlot;
@@ -49,12 +47,14 @@ type OptionalProps = {
 	PropHasCounter &
 	PropHideError &
 	PropHideLabel &
+	PropId &
 	PropName &
 	PropReadOnly &
 	PropRequired &
 	PropRows &
-	PropSyncValueBySelector &
 	PropShortKey &
+	PropSpellCheck &
+	PropSyncValueBySelector &
 	PropTouched;
 
 type RequiredStates = {
@@ -62,10 +62,11 @@ type RequiredStates = {
 	currentLength: number;
 	hasValue: boolean;
 	resize: CSSResize;
-} & PropId &
-	PropAdjustHeight &
+} & PropAdjustHeight &
 	PropHideError &
+	PropId &
 	PropLabelWithExpertSlot;
+
 type OptionalStates = {
 	alert: boolean;
 	error: string;
@@ -86,6 +87,7 @@ type OptionalStates = {
 	PropRequired &
 	PropRows &
 	PropShortKey &
+	PropSpellCheck &
 	PropTouched;
 
 export type TextareaProps = Generic.Element.Members<RequiredProps, OptionalProps>;

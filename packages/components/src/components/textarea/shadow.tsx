@@ -16,13 +16,14 @@ import type {
 	NamePropType,
 	RowsPropType,
 	ShortKeyPropType,
+	SpellCheckPropType,
 	Stringified,
 	SyncValueBySelectorPropType,
 	TextareaAPI,
 	TextareaStates,
 	TooltipAlignPropType,
 } from '../../schema';
-import { devWarning, setState } from '../../schema';
+import { setState } from '../../schema';
 
 import { nonce } from '../../utils/dev.utils';
 import KolFormFieldFc, { type FormFieldStateWrapperProps } from '../../functional-component-wrappers/FormFieldStateWrapper';
@@ -250,6 +251,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	@Prop() public _shortKey?: ShortKeyPropType;
 
 	/**
+	 * Defines whether the browser should check the spelling and grammar.
+	 */
+	@Prop() public _spellCheck?: SpellCheckPropType;
+
+	/**
 	 * Selector for synchronizing the value with another input element.
 	 * @internal
 	 */
@@ -391,11 +397,6 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 
 	@Watch('_resize')
 	public validateResize(value?: CSSResize): void {
-		if (value === 'both' || value === 'horizontal') {
-			devWarning(
-				'In version 3 (v3), horizontal resizing is abolished. The corresponding property is then reduced to the properties `none` (default) and `vertical`.',
-			);
-		}
 		this.controller.validateResize(value);
 	}
 
@@ -412,6 +413,11 @@ export class KolTextarea implements TextareaAPI, FocusableElement {
 	@Watch('_shortKey')
 	public validateShortKey(value?: ShortKeyPropType): void {
 		this.controller.validateShortKey(value);
+	}
+
+	@Watch('_spellCheck')
+	public validateSpellCheck(value?: SpellCheckPropType): void {
+		this.controller.validateSpellCheck(value);
 	}
 
 	@Watch('_syncValueBySelector')
