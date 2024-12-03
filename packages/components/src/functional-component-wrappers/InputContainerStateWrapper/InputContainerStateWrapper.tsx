@@ -49,7 +49,7 @@ function getInputContainerProps(state: InputState): { icons: KoliBriHorizontalIc
 	return { icons, smartButton };
 }
 
-const InputContainerStateWrappeFc: FC<InputContainerStateWrapperProps> = ({ state, endAdornment: defaultEndAdornment }, children) => {
+const InputContainerStateWrapperFc: FC<InputContainerStateWrapperProps> = ({ state, endAdornment: defaultEndAdornment }, children) => {
 	const { icons, smartButton } = getInputContainerProps(state);
 
 	let leftIconProps: IconOrIconClass | undefined = icons?.left;
@@ -97,4 +97,4 @@ const InputContainerStateWrappeFc: FC<InputContainerStateWrapperProps> = ({ stat
 	);
 };
 
-export default InputContainerStateWrappeFc;
+export default InputContainerStateWrapperFc;
