@@ -1,6 +1,9 @@
 import type { JSX } from '@stencil/core';
-import { Component, Element, h, Host, Listen, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Fragment, h, Host, Listen, Prop, State, Watch } from '@stencil/core';
 
+import { KolButtonWcTag, KolIconTag, KolTooltipWcTag } from '../../core/component-names';
+import type { TranslationKey } from '../../i18n';
+import { translate } from '../../i18n';
 import type {
 	KoliBriTableCell,
 	KoliBriTableDataType,
@@ -26,12 +29,9 @@ import {
 	validateTableSelection,
 	watchString,
 } from '../../schema';
-import { KolButtonWcTag, KolIconTag, KolTooltipWcTag } from '../../core/component-names';
-import type { TranslationKey } from '../../i18n';
-import { translate } from '../../i18n';
-import { tryToDispatchKoliBriEvent } from '../../utils/events';
 import { Events } from '../../schema/enums';
 import { nonce } from '../../utils/dev.utils';
+import { tryToDispatchKoliBriEvent } from '../../utils/events';
 
 /**
  * @internal
@@ -230,7 +230,7 @@ export class KolTableStateless implements TableStatelessAPI {
 		let max = 0;
 		horizontalHeaders.forEach((row) => {
 			let count = 0;
-			row.forEach((col) => (count += col.colSpan ?? 1));
+			Array.isArray(row) && row.forEach((col) => (count += col.colSpan ?? 1));
 			if (max < count) {
 				max = count;
 			}
@@ -245,7 +245,7 @@ export class KolTableStateless implements TableStatelessAPI {
 		let max = 0;
 		verticalHeaders.forEach((col) => {
 			let count = 0;
-			col.forEach((row) => (count += row.rowSpan ?? 1));
+			Array.isArray(col) && col.forEach((row) => (count += row.rowSpan ?? 1));
 			if (max < count) {
 				max = count;
 			}
@@ -258,34 +258,41 @@ export class KolTableStateless implements TableStatelessAPI {
 		return max;
 	}
 
-	private filterHeaderKeys(headers: KoliBriTableHeaderCell[][]): KoliBriTableHeaderCell[] {
-		const primaryHeader: KoliBriTableHeaderCell[] = [];
+	private getThePrimaryHeadersWithKeysIfExists(headers: KoliBriTableHeaderCell[][]): KoliBriTableHeaderCell[] {
+		const primaryHeadersWithKeys: KoliBriTableHeaderCell[] = [];
+
 		headers.forEach((cells) => {
 			cells.forEach((cell) => {
 				if (typeof cell.key === 'string') {
-					primaryHeader.push(cell);
+					primaryHeadersWithKeys.push(cell);
 				}
 			});
 		});
-		return primaryHeader;
+
+		return primaryHeadersWithKeys;
 	}
 
-	private getPrimaryHeader(headers: KoliBriTableHeaders): KoliBriTableHeaderCell[] {
-		let primaryHeader: KoliBriTableHeaderCell[] = this.filterHeaderKeys(headers.horizontal ?? []);
+	private getPrimaryHeaders(headers: KoliBriTableHeaders): KoliBriTableHeaderCell[] {
+		let primaryHeadersWithKeys: KoliBriTableHeaderCell[] = this.getThePrimaryHeadersWithKeysIfExists(headers.horizontal ?? []);
+
+		/**
+		 * It is important to note that the rendering direction of the data is implicitly set,
+		 * if either the horizontal or vertical header cells have keys.
+		 */
 		this.horizontal = true;
-		if (primaryHeader.length === 0) {
-			primaryHeader = this.filterHeaderKeys(headers.vertical ?? []);
-			if (primaryHeader.length > 0) {
+		if (primaryHeadersWithKeys.length === 0) {
+			primaryHeadersWithKeys = this.getThePrimaryHeadersWithKeysIfExists(headers.vertical ?? []);
+			if (primaryHeadersWithKeys.length > 0) {
 				this.horizontal = false;
 			}
 		}
-		return primaryHeader;
+		return primaryHeadersWithKeys;
 	}
 
 	private createDataField(data: KoliBriTableDataType[], headers: KoliBriTableHeaders, isFoot?: boolean): (KoliBriTableCell & KoliBriTableDataType)[][] {
 		headers.horizontal = Array.isArray(headers?.horizontal) ? headers.horizontal : [];
 		headers.vertical = Array.isArray(headers?.vertical) ? headers.vertical : [];
-		const primaryHeader = this.getPrimaryHeader(headers);
+		const primaryHeader = this.getPrimaryHeaders(headers);
 		const maxCols = this.getNumberOfCols(headers.horizontal, data);
 		let maxRows = this.getNumberOfRows(headers.vertical, data);
 		let startRow = 0;
@@ -313,8 +320,7 @@ export class KolTableStateless implements TableStatelessAPI {
 						dataRow.push({
 							...rows,
 							asTd: false,
-							// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-							data: {} as KoliBriTableDataType,
+							data: {},
 						});
 						let rowSpan = 1;
 						if (typeof rows.rowSpan === 'number' && rows.rowSpan > 1) {
@@ -343,9 +349,7 @@ export class KolTableStateless implements TableStatelessAPI {
 						dataRow.push({
 							...primaryHeader[j],
 							colSpan: undefined,
-							// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 							data: row,
-							// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 							label: row[primaryHeader[j].key as unknown as string] as string,
 							rowSpan: undefined,
 						});
@@ -361,9 +365,7 @@ export class KolTableStateless implements TableStatelessAPI {
 						dataRow.push({
 							...primaryHeader[i],
 							colSpan: undefined,
-							// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 							data: data[j],
-							// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 							label: data[j][primaryHeader[i].key as unknown as number] as string,
 							rowSpan: undefined,
 						});
@@ -380,6 +382,7 @@ export class KolTableStateless implements TableStatelessAPI {
 					colspan += col.colSpan || 1;
 				});
 			}
+
 			if (Array.isArray(headers.vertical) && headers.vertical.length > 0) {
 				colspan -= headers.vertical.length;
 				headers.vertical[0].forEach((row) => {
@@ -596,6 +599,25 @@ export class KolTableStateless implements TableStatelessAPI {
 	}
 
 	/**
+	 * This header cell is rendered as a TD element when in addition to the horizontal header rows
+	 * there are also vertical header columns. In this case, the cell is rendered blank above the
+	 * vertical header columns.
+	 */
+	private renderHeaderTdCell(): JSX.Element {
+		return (
+			<Fragment>
+				{Array.isArray(this.state._headerCells.horizontal) &&
+					this.state._headerCells.horizontal.length > 0 &&
+					Array.isArray(this.state._headerCells.vertical) &&
+					this.state._headerCells.vertical.length > 0 &&
+					Array.isArray(this.state._headerCells.horizontal) && (
+						<td aria-hidden="true" colSpan={this.state._headerCells.vertical.length} rowSpan={this.state._headerCells.horizontal.length}></td>
+					)}
+			</Fragment>
+		);
+	}
+
+	/**
 	 *  Renders a table header cell (`<th>`), with optional sorting functionality.
 	 *  If the cell has a `sortDirection` property, a sort button is rendered within the header.
 	 *
@@ -661,11 +683,13 @@ export class KolTableStateless implements TableStatelessAPI {
 	}
 
 	private renderSpacer(variant: 'foot' | 'head', cellDefs: KoliBriTableHeaderCell[][] | KoliBriTableCell[][]): JSX.Element {
+		const verticalHeaderColpan = this.state._headerCells.vertical?.length || 0;
 		const colspan = cellDefs?.[0]?.reduce((acc, row) => acc + (row.colSpan || 1), 0);
+		const selectionCell = this.state._selection ? 1 : 0;
 
 		return (
-			<tr class={`${variant}-spacer`} aria-hidden="true">
-				<td colSpan={colspan}></td>
+			<tr aria-hidden="true" class={`${variant}-spacer`}>
+				<td colSpan={verticalHeaderColpan + colspan + selectionCell}></td>
 			</tr>
 		);
 	}
@@ -720,35 +744,37 @@ export class KolTableStateless implements TableStatelessAPI {
 									this.state._headerCells.horizontal.map((cols, rowIndex) => (
 										<tr key={`thead-${rowIndex}`}>
 											{this.state._selection && this.renderHeadingSelectionCell()}
-											{cols.map((cell, colIndex) => {
-												if (cell.asTd === true) {
-													return (
-														<td
-															key={`thead-${rowIndex}-${colIndex}-${cell.label}`}
-															class={{
-																[cell.textAlign as string]: typeof cell.textAlign === 'string' && cell.textAlign.length > 0,
-															}}
-															colSpan={cell.colSpan}
-															rowSpan={cell.rowSpan}
-															style={{
-																textAlign: cell.textAlign,
-																width: cell.width,
-															}}
-															ref={
-																typeof cell.render === 'function'
-																	? (el) => {
-																			this.cellRender(cell, el);
-																		}
-																	: undefined
-															}
-														>
-															{typeof cell.render !== 'function' ? cell.label : ''}
-														</td>
-													);
-												} else {
-													return this.renderHeadingCell(cell, rowIndex, colIndex, false);
-												}
-											})}
+											{rowIndex === 0 && this.renderHeaderTdCell()}
+											{Array.isArray(cols) &&
+												cols.map((cell, colIndex) => {
+													if (cell.asTd === true) {
+														return (
+															<td
+																key={`thead-${rowIndex}-${colIndex}-${cell.label}`}
+																class={{
+																	[cell.textAlign as string]: typeof cell.textAlign === 'string' && cell.textAlign.length > 0,
+																}}
+																colSpan={cell.colSpan}
+																rowSpan={cell.rowSpan}
+																style={{
+																	textAlign: cell.textAlign,
+																	width: cell.width,
+																}}
+																ref={
+																	typeof cell.render === 'function'
+																		? (el) => {
+																				this.cellRender(cell, el);
+																			}
+																		: undefined
+																}
+															>
+																{typeof cell.render !== 'function' ? cell.label : ''}
+															</td>
+														);
+													} else {
+														return this.renderHeadingCell(cell, rowIndex, colIndex, false);
+													}
+												})}
 										</tr>
 									)),
 									this.renderSpacer('head', this.state._headerCells.horizontal),

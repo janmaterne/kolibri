@@ -230,7 +230,6 @@ export class KolSingleSelect implements SingleSelectAPI {
 									disabled={this.state._disabled}
 									name={this.state._name}
 									required={this.state._required}
-									spellcheck="false"
 									{...this.controller.onFacade}
 									onInput={this.onInput.bind(this)}
 									onChange={this.onChange.bind(this)}

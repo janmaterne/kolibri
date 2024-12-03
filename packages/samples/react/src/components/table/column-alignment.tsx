@@ -72,7 +72,6 @@ export const TableColumnAlignment: FC = () => (
 				_headers={{
 					horizontal: [
 						[
-							{ label: '', asTd: true },
 							{ label: 'left', key: 'left', textAlign: 'left' },
 							{ label: 'center', key: 'center', textAlign: 'center' },
 							{ label: 'right', key: 'right', textAlign: 'right' },

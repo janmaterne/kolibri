@@ -6,6 +6,9 @@ export type KoliBriSortDirection = 'ASC' | 'DESC' | 'NOS';
 export type KoliBriTableDataType = Record<string, unknown>;
 
 export type KoliBriTableCell = {
+	/**
+	 * @deprecated It should be working without this property, too. (needs a refactoring)
+	 */
 	asTd?: boolean;
 	colSpan?: number;
 	label: string;

@@ -21,6 +21,6 @@
 		"skipLibCheck": true,
 		"resolveJsonModule": true,
 	},
-	"include": ["stencil.config.ts", ".eslintrc.js"],
+	"include": ["stencil.config.ts", ".eslintrc.js", "test-env.js"],
 	"exclude": ["node_modules"]
 }

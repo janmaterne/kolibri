@@ -1,12 +1,22 @@
+/* eslint-env node, browser */
+
 global.HTMLDivElement = class HTMLDivElement extends HTMLElement {};
 
 class MutationObserver {
-	constructor(callback) {}
+	constructor() {}
 	disconnect() {}
-	ResizeObserver(element, initObject) {}
+	ResizeObserver() {}
 	takeRecords() {
 		return [];
 	}
 }
 
 global.MutationObserver = MutationObserver;
+
+class ResizeObserverMock {
+	observe() {}
+	unobserve() {}
+	disconnect() {}
+}
+
+global.ResizeObserver = ResizeObserverMock;
