@@ -26,6 +26,10 @@
 		}
 
 		&__entry {
+			&--link {
+				display: flex;
+			}
+
 			&--item {
 				a:hover {
 					text-decoration: underline;
@@ -82,9 +86,5 @@
 				}
 			}
 		}
-	}
-
-	.kol-link-wc {
-		display: flex;
 	}
 }

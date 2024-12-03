@@ -102,7 +102,7 @@ export class KolNav implements NavAPI {
 		return (
 			<div class={{ 'kol-nav__entry': true, 'hide-label': hideLabel }}>
 				{entryIsLink(entry) ? (
-					<KolLinkWcTag class="kol-nav__entry--item" {...entry} _hideLabel={hideLabel} _icons={icons} />
+					<KolLinkWcTag class="kol-nav__entry--item kol-nav__entry--link" {...entry} _hideLabel={hideLabel} _icons={icons} />
 				) : (
 					<KolButtonWcTag
 						class="kol-nav__entry--item"
@@ -175,12 +175,7 @@ export class KolNav implements NavAPI {
 	}): JSX.Element => {
 		return (
 			<ul
-				class={{
-					'kol-nav__list': true,
-					'kol-nav__list--vertical': props.orientation === 'vertical',
-					'kol-nav__list--horizontal': props.deep === 0 && props.orientation === 'horizontal',
-					'kol-nav__list--nested': props.deep > 0,
-				}}
+				class={`kol-nav__list ${props.deep > 0 && 'kol-nav__list--nested'} ${props.deep === 0 && props.orientation === 'horizontal' ? ' kol-nav__list--horizontal' : ' kol-nav__list--vertical'}`}
 				data-deep={props.deep}
 			>
 				{props.links.map((link, index: number) => {

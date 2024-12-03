@@ -5,20 +5,20 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
       <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
-        <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
+        <ul class="false kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--active">
             <div class="kol-nav__entry">
-              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--has-children">
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="3 Navigation point" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="3 Navigation point" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
               <kol-button-wc _hidelabel="" _icons="codicon codicon-add" _label="kol-nav-label-open" class="kol-nav__entry--expand-button"></kol-button-wc>
             </div>
           </li>
@@ -39,20 +39,20 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
       <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
-        <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
+        <ul class="false kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--active">
             <div class="kol-nav__entry">
-              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--has-children">
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="3 Navigation point" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="3 Navigation point" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
               <kol-button-wc _hidelabel="" _icons="codicon codicon-add" _label="kol-nav-label-open" class="kol-nav__entry--expand-button"></kol-button-wc>
             </div>
           </li>
@@ -76,20 +76,20 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
       <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
-        <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
+        <ul class="false kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--active">
             <div class="kol-nav__entry">
-              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--has-children">
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="3 Navigation point" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="3 Navigation point" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
               <kol-button-wc _hidelabel="" _icons="codicon codicon-add" _label="kol-nav-label-open" class="kol-nav__entry--expand-button"></kol-button-wc>
             </div>
           </li>
@@ -110,20 +110,20 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
       <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
-        <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
+        <ul class="false kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--active">
             <div class="kol-nav__entry">
-              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--has-children">
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _icons="codicon codicon-home" _label="3 Navigation point" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _icons="codicon codicon-home" _label="3 Navigation point" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
               <kol-button-wc _hidelabel="" _icons="codicon codicon-add" _label="kol-nav-label-open" class="kol-nav__entry--expand-button"></kol-button-wc>
             </div>
           </li>
@@ -144,20 +144,20 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
       <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
-        <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
+        <ul class="false kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--active">
             <div class="kol-nav__entry">
-              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--has-children">
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="3 Navigation point" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="3 Navigation point" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
               <kol-button-wc _hidelabel="" _icons="codicon codicon-add" _label="kol-nav-label-open" class="kol-nav__entry--expand-button"></kol-button-wc>
             </div>
           </li>
@@ -178,20 +178,20 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--is-compact kol-nav--vertical">
       <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
-        <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
+        <ul class="false kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="hide-label kol-nav__entry">
-              <kol-link-wc _hidelabel="" _href="#" _icons="codicon codicon-symbol-method" _label="Homepage" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _hidelabel="" _href="#" _icons="codicon codicon-symbol-method" _label="Homepage" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--active">
             <div class="hide-label kol-nav__entry">
-              <kol-link-wc _active="" _hidelabel="" _href="#" _icons="codicon codicon-symbol-method" _label="Nav - aria-current" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _active="" _hidelabel="" _href="#" _icons="codicon codicon-symbol-method" _label="Nav - aria-current" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--has-children">
             <div class="hide-label kol-nav__entry">
-              <kol-link-wc _hidelabel="" _href="#" _icons="codicon codicon-home" _label="3 Navigation point" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _hidelabel="" _href="#" _icons="codicon codicon-home" _label="3 Navigation point" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
               <kol-button-wc _hidelabel="" _icons="codicon codicon-add" _label="kol-nav-label-open" class="kol-nav__entry--expand-button"></kol-button-wc>
             </div>
           </li>
@@ -212,20 +212,20 @@ exports[`kol-nav should render with _label="Nav Label" _links=[{"_label":"Homepa
   <template shadowrootmode="open">
     <div class="kol-nav kol-nav--vertical">
       <nav aria-label="Nav Label" class="kol-nav_navigation" id="nav">
-        <ul class="kol-nav__list kol-nav__list--vertical" data-deep="0">
+        <ul class="false kol-nav__list kol-nav__list--vertical" data-deep="0">
           <li>
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="Homepage" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--active">
             <div class="kol-nav__entry">
-              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _active="" _href="#" _label="Nav - aria-current" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
             </div>
           </li>
           <li class="kol-nav__list--has-children">
             <div class="kol-nav__entry">
-              <kol-link-wc _href="#" _label="3 Navigation point" class="kol-nav__entry--item"></kol-link-wc>
+              <kol-link-wc _href="#" _label="3 Navigation point" class="kol-nav__entry--item kol-nav__entry--link"></kol-link-wc>
               <kol-button-wc _hidelabel="" _icons="codicon codicon-add" _label="kol-nav-label-open" class="kol-nav__entry--expand-button"></kol-button-wc>
             </div>
           </li>
