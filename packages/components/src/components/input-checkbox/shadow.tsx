@@ -135,10 +135,10 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 		return (
 			<KolFormFieldFc {...this.getFormFieldProps()}>
 				<div class="input">
-					<label class="checkbox-container">
+					<div class="checkbox-container">
 						<KolIconFc {...this.getIconProps()} />
 						<KolInputFc {...this.getInputProps()} />
-					</label>
+					</div>
 				</div>
 			</KolFormFieldFc>
 		);
