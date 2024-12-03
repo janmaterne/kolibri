@@ -7,7 +7,6 @@ describe('getDefaultProps', () => {
 			title: '',
 			autoCapitalize: 'off',
 			autoCorrect: 'off',
-			spellcheck: false,
 			'aria-describedby': undefined,
 			'aria-label': undefined,
 		});

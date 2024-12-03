@@ -6,6 +6,7 @@ import type { DefaultInputProps } from '../_types';
 export type InputProps = DefaultInputProps<JSXBase.InputHTMLAttributes<HTMLInputElement>> & {
 	value: string | number | string[];
 	suggestions?: VNode;
+	spellcheck?: boolean;
 } & {
 	[key: `data-${string}`]: unknown;
 	[key: `aria-${string}`]: unknown;

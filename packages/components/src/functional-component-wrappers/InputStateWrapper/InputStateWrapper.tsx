@@ -51,6 +51,7 @@ function getInputProps(state: InputState): InputProps {
 	if ('_maxLength' in state) props.maxlength = state._maxLength;
 	if ('_placeholder' in state) props.placeholder = state._placeholder;
 	if ('_autoComplete' in state) props.autoComplete = state._autoComplete;
+	if ('_spellCheck' in state) props.spellcheck = state._spellCheck;
 	if ('_pattern' in state) props.pattern = state._pattern;
 	if ('_readOnly' in state) props.readOnly = state._readOnly;
 	if ('_min' in state) props.min = state._min;
