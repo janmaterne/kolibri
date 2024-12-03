@@ -21,8 +21,8 @@
 				.span-label {
 					text-decoration-line: underline;
 
-					@at-root #{$root}:is(:focus, :hover):not([aria-disabled]) {
-						text-decoration-line: underline;
+					@at-root #{$root}:is(:focus, :hover):not([aria-disabled], [disabled]) & {
+						text-decoration-thickness: 0.2em;
 					}
 				}
 			}

@@ -18,16 +18,13 @@
 		}
 
 		&__text {
-			@at-root #{$root}:focus {
+			@at-root #{$root}:focus & {
 				border-radius: var(--border-radius);
 				outline: var(--border-width) solid;
 			}
 
 			.span-label {
-				@at-root #{$root}:is(:focus, :hover):not([aria-disabled]) {
-					text-decoration-thickness: 0.25em;
-				}
-				@at-root #{$root}:is(:focus, :hover):not([disabled]) {
+				@at-root #{$root}:is(:focus, :hover):not([aria-disabled], [disabled]) & {
 					text-decoration-thickness: 0.25em;
 				}
 			}
