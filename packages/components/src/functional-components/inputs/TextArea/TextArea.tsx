@@ -11,8 +11,8 @@ const TextAreaFc: FC<TextAreaProps> = (props) => {
 	const { ariaDescribedBy, hideLabel, label, ...other } = props;
 
 	const inputProps: JSXBase.TextareaHTMLAttributes<HTMLTextAreaElement> = {
-		...other,
 		...getDefaultProps({ ariaDescribedBy, hideLabel, label }),
+		...other,
 	};
 
 	return <textarea {...inputProps} />;

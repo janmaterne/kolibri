@@ -12,8 +12,8 @@ const NativeSelectFc: FC<SelectProps> = (props) => {
 	const { options, value, OptionProps, OptionGroupProps, ariaDescribedBy, hideLabel, label, ...other } = props;
 
 	const inputProps: SelectAttributes = {
-		...other,
 		...getDefaultProps({ ariaDescribedBy, hideLabel, label }),
+		...other,
 	};
 
 	return (

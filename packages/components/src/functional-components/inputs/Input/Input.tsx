@@ -16,9 +16,9 @@ const InputFc: FC<InputProps> = (props) => {
 
 	const inputProps: JSXBase.InputHTMLAttributes<HTMLInputElement> = {
 		type: 'text',
-		...other,
 		list: suggestions ? `${other.id}-list` : undefined,
 		...getDefaultProps({ ariaDescribedBy, hideLabel, label }),
+		...other,
 	};
 
 	return (
