@@ -7,8 +7,13 @@ const testInputDomEvents = (componentName: string, additionalProperties: string 
 		['click', 'focus', 'blur', 'input', 'change'].forEach((event) => {
 			test(`should emit ${event} when internal input emits ${event}`, async ({ page }) => {
 				await page.setContent(`<${componentName} _label="Input" ${additionalProperties}></${componentName}>`);
+				const component = page.locator(componentName);
 				const input = selectInput ? selectInput(page) : page.locator(INPUTS_SELECTOR);
-				const eventPromise = page.locator(componentName).evaluate(async (element, event) => {
+
+				await expect(component).toBeVisible();
+				await expect(input).toBeVisible();
+
+				const eventPromise = component.evaluate(async (element, event) => {
 					return new Promise((resolve) => {
 						element.addEventListener(event, resolve);
 					});
