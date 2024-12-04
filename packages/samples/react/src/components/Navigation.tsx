@@ -32,22 +32,41 @@ function TreeItem({ label, to, children }: any) {
 	);
 }
 
+const ignorePathList: Record<string, Record<string, boolean> | true> = {
+	scenarios: {
+		'appointment-form': true,
+	},
+};
+
+function ignorePath(parent: string, path: string): boolean {
+	return Boolean(ignorePathList[parent] && typeof ignorePathList[parent] === 'object' && ignorePathList[parent][path]);
+}
+
+function ignoreParentPath(parent: [string, unknown]): boolean {
+	const [first] = parent;
+	return Boolean(ignorePathList[first] === true);
+}
+
 function Navigation({ routes }: NavigationProps): React.ReactNode {
 	const buildSubTree = (parentName: string, children: Route) => {
-		return Object.keys(children).map((childName) => {
-			const isTreeExample = parentName === 'tree' && childName === 'basic/:subPage';
-			const subPathName = isTreeExample ? 'basic/home' : childName;
-			const label = isTreeExample ? 'basic' : childName;
+		return Object.keys(children)
+			.filter((path) => !ignorePath(parentName, path))
+			.map((childName) => {
+				const isTreeExample = parentName === 'tree' && childName === 'basic/:subPage';
+				const subPathName = isTreeExample ? 'basic/home' : childName;
+				const label = isTreeExample ? 'basic' : childName;
 
-			return <TreeItem key={[parentName, childName].join('/')} label={label} to={[parentName, subPathName].join('/')}></TreeItem>;
-		});
+				return <TreeItem key={[parentName, childName].join('/')} label={label} to={[parentName, subPathName].join('/')}></TreeItem>;
+			});
 	};
 
-	const parentTreeElements = Object.entries(routes).map(([parentName, children]) => (
-		<TreeItem key={parentName} label={parentName} to={parentName}>
-			{buildSubTree(parentName, children)}
-		</TreeItem>
-	));
+	const parentTreeElements = Object.entries(routes)
+		.filter((f) => !ignoreParentPath(f))
+		.map(([parentName, children]) => (
+			<TreeItem key={parentName} label={parentName} to={parentName}>
+				{buildSubTree(parentName, children)}
+			</TreeItem>
+		));
 
 	return (
 		<ComponentNavContainer>
