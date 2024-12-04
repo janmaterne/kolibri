@@ -24,7 +24,12 @@ const testInputCallbacks = <ElementType extends { _on?: InputTypeOnDefault } & (
 		];
 
 		EVENTS.filter(([eventName]) => !omittedEvents.includes(eventName)).forEach(([eventName, callbackName, testValue]) => {
-			test(`should call ${callbackName} when internal input emits`, async ({ page }) => {
+			test(`should call ${callbackName} when internal input emits`, async ({ page, browserName }) => {
+				test.skip(
+					componentName === 'kol-input-color' && eventName === 'click' && browserName === 'firefox',
+					'Clicking on an input[type=color] in Firefox currently makes the page close itself.',
+				);
+
 				await page.setContent(`<${componentName} _label="Input" ${additionalProperties}></${componentName}>`);
 				const component = page.locator(componentName);
 				const input = selectInput ? selectInput(page) : page.locator(INPUTS_SELECTOR);
