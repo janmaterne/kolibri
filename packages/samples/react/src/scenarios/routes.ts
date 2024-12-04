@@ -1,4 +1,5 @@
 import { Routes } from '../shares/types';
+import { AppointmentForm } from './appointment-form/AppointmentForm';
 import { CustomTooltipWidth } from './custom-tooltip-width';
 import { DisabledInteractiveElements } from './disabled-interactive-elements';
 import { InputsGetValue } from './inputs-get-value';
@@ -10,6 +11,7 @@ import { ChangeTabindex } from './change-tabindex';
 
 export const SCENARIO_ROUTES: Routes = {
 	scenarios: {
+		'appointment-form': AppointmentForm,
 		'custom-tooltip-width': CustomTooltipWidth,
 		'disabled-interactive-scenario': DisabledInteractiveElements,
 		'focus-elements': FocusElements,
