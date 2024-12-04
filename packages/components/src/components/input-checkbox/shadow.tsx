@@ -118,7 +118,7 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 							<span>{this.state._label}</span>
 						)}
 					</span>
-					<label slot="input" class="checkbox-container">
+					<div slot="input" class="checkbox-container">
 						<KolIconTag
 							class="icon"
 							_icons={
@@ -154,7 +154,7 @@ export class KolInputCheckbox implements InputCheckboxAPI, FocusableElement {
 							}}
 							onClick={undefined} // onClick is not needed since onChange already triggers the correct event
 						/>
-					</label>
+					</div>
 				</KolInputTag>
 			</Host>
 		);

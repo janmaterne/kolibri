@@ -10,10 +10,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           V
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input accesskey="V" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -28,10 +28,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -46,10 +46,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" disabled="" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -64,10 +64,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input aria-describedby="id-nonce-hint" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -82,10 +82,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -100,10 +100,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -118,10 +118,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -136,10 +136,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -154,10 +154,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -172,10 +172,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -191,10 +191,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           S
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -209,10 +209,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -227,10 +227,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -246,10 +246,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           V
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input accesskey="V" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -264,10 +264,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -282,10 +282,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" disabled="" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -300,10 +300,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input aria-describedby="id-nonce-hint" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -318,10 +318,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -336,10 +336,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -354,10 +354,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -372,10 +372,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -390,10 +390,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -408,10 +408,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -427,10 +427,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           S
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -445,10 +445,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -463,10 +463,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -482,10 +482,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           V
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input accesskey="V" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -500,10 +500,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -518,10 +518,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" disabled="" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -536,10 +536,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input aria-describedby="id-nonce-hint" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -554,10 +554,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -572,10 +572,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -590,10 +590,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -608,10 +608,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -626,10 +626,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -644,10 +644,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -663,10 +663,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           S
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -681,10 +681,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -699,10 +699,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-close" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -718,10 +718,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           V
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input accesskey="V" checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -736,10 +736,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -754,10 +754,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" disabled="" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -772,10 +772,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input aria-describedby="id-nonce-hint" checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -790,10 +790,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -808,10 +808,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -826,10 +826,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -844,10 +844,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -862,10 +862,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -880,10 +880,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -899,10 +899,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           S
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -917,10 +917,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -935,10 +935,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -954,10 +954,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           V
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input accesskey="V" checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -972,10 +972,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -990,10 +990,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" disabled="" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1008,10 +1008,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input aria-describedby="id-nonce-hint" checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1026,10 +1026,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1044,10 +1044,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1062,10 +1062,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1080,10 +1080,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1098,10 +1098,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1116,10 +1116,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1135,10 +1135,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           S
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1153,10 +1153,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1171,10 +1171,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1190,10 +1190,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           V
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input accesskey="V" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1208,10 +1208,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1226,10 +1226,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" disabled="" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1244,10 +1244,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input aria-describedby="id-nonce-hint" checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1262,10 +1262,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1280,10 +1280,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1298,10 +1298,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1316,10 +1316,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1334,10 +1334,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1352,10 +1352,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1371,10 +1371,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           S
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1389,10 +1389,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1407,10 +1407,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element visually-hidden" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1426,10 +1426,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           V
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input accesskey="V" checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1444,10 +1444,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1462,10 +1462,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" disabled="" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1480,10 +1480,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input aria-describedby="id-nonce-hint" checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1498,10 +1498,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1516,10 +1516,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1534,10 +1534,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1552,10 +1552,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1570,10 +1570,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1588,10 +1588,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1607,10 +1607,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           S
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1625,10 +1625,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1643,10 +1643,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-check" _label="" class="icon"></kol-icon>
         <input checked="" class="checkbox-input-element" id="id-nonce" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1662,10 +1662,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           V
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input accesskey="V" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1680,10 +1680,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1698,10 +1698,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" disabled="" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1716,10 +1716,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input aria-describedby="id-nonce-hint" class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1734,10 +1734,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1752,10 +1752,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1770,10 +1770,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1788,10 +1788,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1806,10 +1806,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1824,10 +1824,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1843,10 +1843,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           S
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1861,10 +1861,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
@@ -1879,10 +1879,10 @@ exports[`kol-input-checkbox should render with _label="Label" _name="field" _pla
           Label
         </span>
       </span>
-      <label class="checkbox-container" slot="input">
+      <div class="checkbox-container" slot="input">
         <kol-icon _icons="codicon codicon-remove" _label="" class="icon"></kol-icon>
         <input class="checkbox-input-element" id="id-nonce" indeterminate="" name="field" type="checkbox">
-      </label>
+      </div>
     </kol-input>
   </template>
 </kol-input-checkbox>
