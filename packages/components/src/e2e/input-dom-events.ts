@@ -6,6 +6,7 @@ const testInputDomEvents = (componentName: string, additionalProperties: string 
 	test.describe('DOM events', () => {
 		['click', 'focus', 'blur', 'input', 'change'].forEach((event) => {
 			test(`should emit ${event} when internal input emits ${event}`, async ({ page, browserName }) => {
+				/* See https://github.com/microsoft/playwright/issues/33864 */
 				test.skip(
 					componentName === 'kol-input-color' && event === 'click' && browserName === 'firefox',
 					'Clicking on an input[type=color] in Firefox currently makes the page close itself.',
