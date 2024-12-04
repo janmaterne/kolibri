@@ -167,7 +167,7 @@ export class KolLinkWc implements LinkAPI, FocusableElement {
 					</KolSpanFc>
 					{isExternal && (
 						<KolIconTag
-							class="kol-link__icon external-link-icon"
+							class="kol-link__icon"
 							_label={this.state._hideLabel ? '' : translate('kol-open-link-in-tab')}
 							_icons={'codicon codicon-link-external'}
 							aria-hidden={this.state._hideLabel}
