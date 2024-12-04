@@ -4,13 +4,14 @@
 @mixin kol-link-styles($block-classname) {
 	@layer kol-component {
 		:host {
+			// Causing linebreak, when removed
 			display: inline-block;
-			font-size: rem(16);
 		}
 
 		.#{$block-classname} {
 			$root: &;
 
+			font-size: rem(16);
 			align-items: baseline;
 			display: inline-flex;
 			place-items: center;

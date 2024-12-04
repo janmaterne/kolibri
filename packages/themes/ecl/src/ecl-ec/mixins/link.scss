@@ -1,5 +1,7 @@
 @mixin kol-link {
 	.kol-link {
+		font-family: var(--font-family);
+
 		appearance: none;
 		color: var(--color-blue);
 		line-height: 1.2;
